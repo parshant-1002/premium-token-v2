@@ -1,6 +1,10 @@
+import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
+import { getContentValue } from "../../helpers/constants";
 
-const Header = () => {
+const Header = ({content}) => {
+  const section = "HEADER"
+  console.log(getContentValue(content, section, "TWITTER"), "getContentValue")
   return (
     <section className={styles.homeInner}>
       <div className={styles.headerParent}>
@@ -10,30 +14,30 @@ const Header = () => {
             <span className={styles.token}>Token</span>
           </h1>
           <div className={styles.btParent}>
-            <div className={styles.bt}>
+            <Link className={styles.bt} to={getContentValue(content, section, "TWITTER")?.url}>
               <div className={styles.btChild} />
               <img
                 className={styles.socialIcons}
                 alt=""
-                src="/social-icons.svg"
+                src={getContentValue(content, section, "TWITTER")?.image || "/social-icons.svg"}
               />
-            </div>
-            <div className={styles.bt1}>
+            </Link>
+            <Link className={styles.bt1} to={getContentValue(content, section, "DISCORD")?.url}>
               <div className={styles.btItem} />
               <img
                 className={styles.socialIcons1}
                 alt=""
-                src="/social-icons-1.svg"
+                src={getContentValue(content, section, "TWITTER")?.image || "/social-icons-1.svg"}
               />
-            </div>
-            <div className={styles.bt2}>
+            </Link>
+            <Link className={styles.bt2} to={getContentValue(content, section, "TELEGRAM")?.url}>
               <div className={styles.btInner} />
               <img
                 className={styles.socialIcons2}
                 alt=""
-                src="/social-icons-2.svg"
+                src={getContentValue(content, section, "TWITTER")?.image || "/social-icons-2.svg"}
               />
-            </div>
+            </Link>
             <div className={styles.bt3}>
               <div className={styles.rectangleDiv} />
               <img className={styles.frameIcon} alt="" src="/frame.svg" />
