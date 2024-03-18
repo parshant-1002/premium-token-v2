@@ -1,0 +1,111 @@
+.maskGroupIcon,
+.wrapperMaskGroup {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  flex-shrink: 0;
+}
+.maskGroupIcon {
+  height: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  object-fit: contain;
+  top: 0;
+  transform: scale(1.259);
+}
+.wrapperMaskGroup {
+  height: 270px;
+  margin: 0 !important;
+  right: 0;
+  bottom: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 0;
+}
+.pinpng2Icon {
+  width: 226px;
+  height: 215px;
+  position: relative;
+  object-fit: contain;
+  z-index: 1;
+}
+.component1Child {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  left: 0;
+  background-color: var(--color-darkslategray-900);
+  backdrop-filter: blur(1000px);
+}
+.component1,
+.image39Icon {
+  position: relative;
+  z-index: 1;
+}
+.image39Icon {
+  height: 21px;
+  width: 114px;
+  object-fit: contain;
+}
+.component1 {
+  cursor: pointer;
+  border: 0;
+  padding: var(--padding-5xs) var(--padding-xs);
+  background-color: transparent;
+  align-self: stretch;
+  height: 37px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  gap: var(--gap-5xl);
+}
+.ceoProduct,
+.mikeStoneberg {
+  align-self: stretch;
+  position: relative;
+  font-weight: 800;
+}
+.ceoProduct {
+  font-size: var(--font-size-sm);
+  line-height: 22px;
+  font-weight: 500;
+  color: var(--a7d7cf);
+}
+.component1Parent,
+.shapeCombinerX,
+.team {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.shapeCombinerX {
+  padding: 0 var(--padding-12xs) 0 0;
+  gap: var(--gap-5xs);
+}
+.component1Parent,
+.team {
+  gap: var(--gap-xl);
+}
+.team {
+  width: 270px;
+  flex-shrink: 0;
+  align-items: flex-end;
+  position: relative;
+  gap: var(--gap-76xl);
+  text-align: center;
+  font-size: var(--h3-size);
+  color: var(--color-white);
+  font-family: var(--h2);
+}
+@media screen and (max-width: 450px) {
+  .team {
+    gap: 47px 95px;
+  }
+}

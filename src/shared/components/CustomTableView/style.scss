@@ -1,0 +1,22 @@
+.sorting {
+    cursor: $pointer;
+    width: 20px; height: 20px;
+    @include opacity (0);
+    @include position($absolute, $top:4px, $right: -31px);
+    z-index:1;
+}
+.down_sort {
+    @include position($absolute, $bottom:4px, $left: 0);
+    @include opacity (0.4);
+}
+.up_sort {
+    @include position($absolute, $top:-12px, $left: 0);
+    @include opacity (0.4);
+}
+.activeOrder {
+    @include opacity (1);
+}
+
+.table-responsive {
+    overflow: $hidden;
+}

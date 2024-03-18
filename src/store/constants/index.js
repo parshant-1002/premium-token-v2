@@ -1,0 +1,12 @@
+//Login Action
+export const LOGIN_REQUEST = "LOGIN_REQUEST";
+export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
+export const LOGOUT_REQUEST = "LOGOUT_REQUEST";
+export const SET_USER_DATA = "SET_USER_DATA";
+export const UPDATE_USER_DATA = "UPDATE_USER_DATA";
+
+//Forgot Password Action Types
+export const FORGOT_PASSWORD_REQUEST = "FORGOT_PASSWORD_REQUEST";
+export const CHANGE_PASSWORD_REQUEST = "CHANGE_PASSWORD_REQUEST";
+
+export const SET_DEVICE_TOKEN = "SET_DEVICE_TOKEN";
