@@ -16,6 +16,20 @@ import { Footer } from "./components/Footer";
 import { SocialMedia } from "./components/SocialMedia";
 import VideoSection from "./components/VideoSection";
 const Home = () => {
+  const[content, setContent] = useState({})
+  const dispatch = useDispatch()
+  const counterSettings = {
+    digits: 7,
+    delay: 200,
+    direction: 'rtl',
+  };
+
+  useEffect(()=>{ 
+    dispatch(getContent({},(data)=>{
+      setContent(data)
+    }))
+  },[])
+  console.log(content,"content")
   return (
     <>
       {/* <div className={styles.wrapperBgBlur}>
@@ -36,6 +50,7 @@ const Home = () => {
       <VideoSection/>
       <InformationSection />
       <WinnerSection />
+      <SmoothFlipCounter initialValue={123456} settings={counterSettings} />
       <DataAggregator />
       <RoadMap />
       <Featured />
