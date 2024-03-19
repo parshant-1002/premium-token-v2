@@ -212,7 +212,7 @@ a.btn {
     }
     &-lg {
         min-width: 180px;
-        padding: 0.95rem 1.95rem;
+        padding: 0.5rem 1.5rem;
         font-weight: $font-bold;
         min-height: 48px;
         @include font-size(1.125);
@@ -226,7 +226,7 @@ a.btn {
         @include border-radius (10px);
         text-transform: $uppercase;
         font-weight: $font-bold;
-        padding: 0.5rem 1.75rem;
+        padding: 0.625rem 1rem;
         @include font-size(1);      
         min-height: 44px;       
     }
@@ -413,7 +413,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .text{
     &-success {
-        color: $green-light-color-700 !important;
+        color: $green-tin-color-600 !important;
     }
     &-warning {
         color: $yellow-color-900 !important;
@@ -421,6 +421,7 @@ input[type="search"]::-webkit-search-results-decoration {
     &-danger {
         color: $error-color !important;
     }
+
 }
 
 // Avtar

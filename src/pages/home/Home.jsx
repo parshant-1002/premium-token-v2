@@ -15,14 +15,12 @@ import { Partners } from "./components/Partners";
 import { Footer } from "./components/Footer";
 import { SocialMedia } from "./components/SocialMedia";
 import VideoSection from "./components/VideoSection";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { getContent } from "../../store/actions/contentManagement";
 const Home = () => {
   const[content, setContent] = useState({})
   const dispatch = useDispatch()
-  const counterSettings = {
-    digits: 7,
-    delay: 200,
-    direction: 'rtl',
-  };
 
   useEffect(()=>{ 
     dispatch(getContent({},(data)=>{
@@ -50,7 +48,7 @@ const Home = () => {
       <VideoSection/>
       <InformationSection />
       <WinnerSection />
-      <SmoothFlipCounter initialValue={123456} settings={counterSettings} />
+   
       <DataAggregator />
       <RoadMap />
       <Featured />

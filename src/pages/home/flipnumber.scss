@@ -1,4 +1,6 @@
-$digitHeight : 90px;
+@import "../../assets/scss/base";
+
+$digitHeight : 108px;
 $speed : .5s;
 $baseColor :rgba(3, 11, 11, 0.6);
 $textColor : white;
@@ -6,28 +8,37 @@ $textColor : white;
 
 .numCounter {
     display: inline-block;
-    height: $digitHeight;
+    height: calc(($digitHeight)/2 - 14px);
     line-height: $digitHeight;
     text-shadow: 0 0 2px #FFF;
-    font-weight: bold;
+    font-weight: $font-bold;
     white-space: normal;
-    font-size: $digitHeight/1.5;
-
+    @include font-size(1.5);
+    @media (min-width:992px) {
+        font-size:calc($digitHeight/1.5);
+        height: $digitHeight;
+        @include font-size(4);
+    }
     >div {
         display: inline-block;
         vertical-align: top;
         height: 100%;
 
-        >b {
+        >span {
             display: inline-block;
-            width: $digitHeight/1.4;
+            width: calc($digitHeight/2 - 14px);
             height: 100%;
             margin: 0 .1em;
             border-radius: 8px;
             text-align: center;
             text-shadow: 2px 1px 3px rgba(black, .2);
             overflow: hidden;
-
+            font-weight: $font-bold;
+            @include font-size(1.5);
+            @media (min-width:992px) {
+                @include font-size(4);
+                width: calc($digitHeight/2.15);
+            }
             &::before {
                 content: ' 0 1 2 3 4 5 6 7 8 9 ';
                 display: block;
@@ -35,6 +46,12 @@ $textColor : white;
                 word-break: break-word;
                 transition: $speed cubic-bezier(.75, .15, .6, 1.15),
                     text-shadow 150ms;
+                font-weight: $font-bold;
+                @include font-size(1.5);
+                @media (min-width:992px) {
+                    @include font-size(4);
+                  
+                }
             }
 
             &.blur {
@@ -71,65 +88,59 @@ $textColor : white;
 //////////////////////////////////////// 
 // DEMO ONLY
 
-@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
-
-// html,
-// body {
-//     height: 100%;
-// }
-
-// body {
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     background: $baseColor;
-//     font-family: 'Fjalla One', Arial;
-//     perspective: 1000px;
-// }
 
 
 .numCounter {
-    overflow: hidden;
-    // padding: .4em;
-    text-align: center;
-
-    border-top: 1px solid rgba(white, .1);
-    border-left: .5px solid rgba(white, .01);
-
-
-    //  background:linear-gradient(to bottom, #555 1%, #333 4%, #1a1a1a 98%, #000 100%); 
-    border-radius: 16px;
-    // box-shadow:0 5px 12px #111, 0 0 8px 0 rgba(255,255,255,.1) inset;
-
-    background: linear-gradient(330deg, scale-color($baseColor, $lightness: 16%, $saturation: 10%),
-            scale-color($baseColor, $lightness: -14%, $saturation: -20%));
-
-    box-shadow: -20px -20px 60px scale-color($baseColor, $lightness: -25%, $saturation: -30%),
-        20px 20px 60px scale-color($baseColor, $lightness: 25%, $saturation: 30%);
-
-    b {
-        background: scale-color($baseColor, $lightness: -10%, $saturation: -10%);
-
-        background: linear-gradient(-30deg, scale-color($baseColor, $lightness: 8%, $saturation: 5%),
-                scale-color($baseColor, $lightness: -20%, $saturation: -22%));
-
-        color: $textColor;
-    }
+    overflow: hidden; 
+    text-align: center;    
 }
-
 .digit_card{
     flex: 1;
-        border-radius: 5px;
-        background: linear-gradient(180deg,
-                rgba(255, 255, 255, 0),
-                rgba(255, 255, 255, 0.1)),
-            rgba(3, 11, 11, 0.6);
-        border: 1px solid grey;
+    @include border-radius(3.658px);
+border: 1px solid rgba(255, 255, 255, 0.11);
+background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.10) 100%), rgba(3, 11, 11, 0.60);
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        padding: 10px 10px ;
-        min-width: 62px;
+        padding: 5px 5.488px ;
+        min-width: 36px;
+        margin-right: 3px;
+        position: $relative;
+        &:nth-child(2),  &:nth-child(5) {
+            margin-right:14px ;
+            @media (min-width:768px) {
+                margin-right:34px ;
+            }
+            &::before {
+                right: calc(0px - 19px/2 - 8px - 8px);
+                position: $absolute;
+                @media (min-width:768px) {
+                    right: calc(0px - 19px/2 - 8px - 8px);
+                }
+               
+            }
+        }
+        @media (min-width:768px) {
+            min-width: 62px;
+            @include border-radius(10px);
+            padding: 5px 15px ;
+            margin-right: 8px;
+        }
+}
+
+.market_counter {
+    margin:1rem $auto;
+    .currency_sign {
+        @include flexCenter;
+        svg {
+            max-width: 14px;
+            max-height: 28px;
+            @media (min-width:768px) {
+                max-width: 38px;
+                max-height: 77px;
+            }
+        }
+    }
 }
