@@ -1,0 +1,7 @@
+@import '../../../../assets/scss/base';
+
+.header {
+  @media (min-width:1200px) {
+    padding: 30px 0;
+  }
+}

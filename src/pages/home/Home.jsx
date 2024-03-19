@@ -1,4 +1,4 @@
-// components
+// componentsdiv
 import { Header } from "./components/Header";
 import { InformationSection } from "./components/InformationSection";
 import { DataAggregator } from "./components/DataAggregator";
@@ -14,24 +14,26 @@ import { Tokeninformation } from "./components/Tokeninformation";
 import { Partners } from "./components/Partners";
 import { Footer } from "./components/Footer";
 import { SocialMedia } from "./components/SocialMedia";
+import VideoSection from "./components/VideoSection";
 const Home = () => {
   return (
-    <div className={styles.home}>
-      <div className={styles.wrapperBgBlur}>
+    <>
+      {/* <div className={styles.wrapperBgBlur}>
         <img className={styles.bgBlurIcon} alt="" src="/bg-blur.svg" />
-      </div>
-      <section className={styles.wrapperBgBlurParent}>
+      </div> */}
+      {/* <section className={styles.wrapperBgBlurParent}>
         <div className={styles.wrapperBgBlur1}>
           <img className={styles.bgBlurIcon1} alt="" src="/bg-blur-1.svg" />
         </div>
         <img className={styles.bgBlurIcon2} alt="" src="/bg-blur-2@2x.png" />
       </section>
-      <img className={styles.bgBlurIcon3} alt="" src="/bg-blur-3@2x.png" />
+      <img className={styles.bgBlurIcon3} alt="" src="/bg-blur-3@2x.png" /> */}
       <Header/>
-      <div className={styles.wrapperBgBlur2}>
+      {/* <div className={styles.wrapperBgBlur2}>
         <img className={styles.bgBlurIcon4} alt="" src="/bg-blur-4.svg" />
       </div>
-      <img className={styles.bgBlurIcon5} alt="" src="/bg-blur-5@2x.png" />
+      <img className={styles.bgBlurIcon5} alt="" src="/bg-blur-5@2x.png" /> */}
+      <VideoSection/>
       <InformationSection />
       <WinnerSection />
       <DataAggregator />
@@ -61,7 +63,7 @@ const Home = () => {
       <Partners/>
       < SocialMedia/>
       <Footer />
-    </div>
+    </>
   );
 };
 
