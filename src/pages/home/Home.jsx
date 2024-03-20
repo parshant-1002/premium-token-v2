@@ -15,9 +15,11 @@ import { Partners } from "./components/Partners";
 import { Footer } from "./components/Footer";
 import { SocialMedia } from "./components/SocialMedia";
 import VideoSection from "./components/VideoSection";
+import { PremiumToken } from "./components/PremiumToken";
 const Home = () => {
   return (
     <>
+   
       {/* <div className={styles.wrapperBgBlur}>
         <img className={styles.bgBlurIcon} alt="" src="/bg-blur.svg" />
       </div> */}
@@ -38,6 +40,7 @@ const Home = () => {
       <WinnerSection />
       <DataAggregator />
       <RoadMap />
+      <PremiumToken/>
       <Featured />
       <ConnectionCreator />
       <ConnectionMaker />
