@@ -10,10 +10,17 @@ $size44:44px;
       box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.05);
       backdrop-filter: blur(40px);
       padding: 42px 16px 16px 16px;
-      text-align: center;
+      text-align: $center;
+      .card-img {
+        margin-bottom: 20px;
       img {
         max-height: 188px;
-      }
+        object-fit: $contain;
+        @media (min-width:1200px) {
+          min-height: 188px;
+        }
+      }     
+    }
       .card-counter {
          content: '';
         position: $absolute;
@@ -21,7 +28,7 @@ $size44:44px;
         left: 50%;
         @include transform (translateX(-50%));
         min-width: 92px;
-        min-height: 44px;
+        min-height: $size44;
         @include flexCenter;
         @include border-radius(0 20px 0 20px);
         background-color: $green-tin-color-700;
@@ -32,101 +39,12 @@ $size44:44px;
           font-style: $normal;
         }
       }
+      p {
+        font-weight: $font-bold;
+        margin-bottom: 0;
+        @include font-size(1);
+      }
     }
     
   }
 }
-
-
-// .illustrationIcon {
-//   width: 210px;
-//   height: 150px;
-//   position: relative;
-//   overflow: hidden;
-//   flex-shrink: 0;
-//   object-fit: contain;
-// }
-// .title {
-//   align-self: stretch;
-//   position: relative;
-//   line-height: 22px;
-//   font-weight: 800;
-// }
-// .content,
-// .text {
-//   align-self: stretch;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: flex-start;
-// }
-// .content {
-//   height: 192px;
-//   gap: var(--gap-xl);
-// }
-// .card,
-// .wrapperRectangle16Child {
-//   width: 100%;
-//   position: absolute;
-//   left: 0;
-// }
-// .card {
-//   top: 19px;
-//   border-radius: var(--br-6xl);
-//   background-color: var(--color-darkcyan-100);
-//   box-shadow: 0 0 35px rgba(0, 0, 0, 0.05);
-//   backdrop-filter: blur(80px);
-//   height: 302px;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: flex-start;
-//   padding: var(--padding-23xl) var(--padding-mini);
-//   box-sizing: border-box;
-//   z-index: 2;
-// }
-// .wrapperRectangle16Child {
-//   height: 100%;
-//   z-index: 3;
-//   object-fit: contain;
-//   top: 0;
-//   transform: scale(2.872);
-// }
-// .wrapperRectangle16 {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   border-radius: var(--br-3xs);
-//   width: 92px;
-//   height: 37.4px;
-//   z-index: 3;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
-// .div {
-//   position: absolute;
-//   top: 6.9px;
-//   left: 40px;
-//   font-weight: 800;
-//   display: inline-block;
-//   min-width: 12px;
-//   z-index: 4;
-// }
-// .wrapperRectangle16Parent {
-//   position: absolute;
-//   top: 0;
-//   left: 90px;
-//   width: 92px;
-//   height: 37.4px;
-//   font-size: var(--font-size-lgi);
-//   color: var(--color-white);
-// }
-// .cardParent {
-//   height: 321px;
-//   position: relative;
-//   text-align: center;
-//   font-size: var(--font-size-base);
-//   color: var(--a7d7cf);
-//   font-family: var(--h2);
-// }

@@ -16,7 +16,19 @@ import { Footer } from "./components/Footer";
 import { SocialMedia } from "./components/SocialMedia";
 import VideoSection from "./components/VideoSection";
 import { PremiumToken } from "./components/PremiumToken";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { getContent } from "../../store/actions/contentManagement";
 const Home = () => {
+  const[content, setContent] = useState({})
+  const dispatch = useDispatch()
+
+  useEffect(()=>{ 
+    dispatch(getContent({},(data)=>{
+      setContent(data)
+    }))
+  },[])
+  console.log(content,"content")
   return (
     <>
    
@@ -38,6 +50,7 @@ const Home = () => {
       <VideoSection/>
       <InformationSection />
       <WinnerSection />
+   
       <DataAggregator />
       <RoadMap />
       <PremiumToken/>

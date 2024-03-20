@@ -1,0 +1,146 @@
+@import "../../assets/scss/base";
+
+$digitHeight : 108px;
+$speed : .5s;
+$baseColor :rgba(3, 11, 11, 0.6);
+$textColor : white;
+
+
+.numCounter {
+    display: inline-block;
+    height: calc(($digitHeight)/2 - 14px);
+    line-height: $digitHeight;
+    text-shadow: 0 0 2px #FFF;
+    font-weight: $font-bold;
+    white-space: normal;
+    @include font-size(1.5);
+    @media (min-width:992px) {
+        font-size:calc($digitHeight/1.5);
+        height: $digitHeight;
+        @include font-size(4);
+    }
+    >div {
+        display: inline-block;
+        vertical-align: top;
+        height: 100%;
+
+        >span {
+            display: inline-block;
+            width: calc($digitHeight/2 - 14px);
+            height: 100%;
+            margin: 0 .1em;
+            border-radius: 8px;
+            text-align: center;
+            text-shadow: 2px 1px 3px rgba(black, .2);
+            overflow: hidden;
+            font-weight: $font-bold;
+            @include font-size(1.5);
+            @media (min-width:992px) {
+                @include font-size(4);
+                width: calc($digitHeight/2.15);
+            }
+            &::before {
+                content: ' 0 1 2 3 4 5 6 7 8 9 ';
+                display: block;
+                word-break: break-all;
+                word-break: break-word;
+                transition: $speed cubic-bezier(.75, .15, .6, 1.15),
+                    text-shadow 150ms;
+                font-weight: $font-bold;
+                @include font-size(1.5);
+                @media (min-width:992px) {
+                    @include font-size(4);
+                  
+                }
+            }
+
+            &.blur {
+                opacity: .8;
+                text-shadow: 2px 1px 3px rgba(black, .2),
+                    0 .1em 2px rgba($textColor, .6),
+                    0 .3em 3px rgba($textColor, .3),
+                    0 -.1em 2px rgba($textColor, .6),
+                    0 -.3em 3px rgba($textColor, .3);
+
+            }
+
+            @for $i from 1 through 9 {
+                &[data-value="#{$i}"]::before {
+                    margin-top: -$digitHeight * $i;
+                }
+            }
+        }
+
+        // format number (US-format)
+        &:nth-last-child(3n):not(:first-child) {
+            &::before {
+                content: ",";
+                display: inline;
+                font-size: 1.1em;
+                opacity: .6;
+                color: white;
+            }
+        }
+    }
+}
+
+
+//////////////////////////////////////// 
+// DEMO ONLY
+
+
+
+.numCounter {
+    overflow: hidden; 
+    text-align: center;    
+}
+.digit_card{
+    flex: 1;
+    @include border-radius(3.658px);
+border: 1px solid rgba(255, 255, 255, 0.11);
+background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.10) 100%), rgba(3, 11, 11, 0.60);
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 5px 5.488px ;
+        min-width: 36px;
+        margin-right: 3px;
+        position: $relative;
+        &:nth-child(2),  &:nth-child(5) {
+            margin-right:14px ;
+            @media (min-width:768px) {
+                margin-right:34px ;
+            }
+            &::before {
+                right: calc(0px - 19px/2 - 8px - 8px);
+                position: $absolute;
+                @media (min-width:768px) {
+                    right: calc(0px - 19px/2 - 8px - 8px);
+                }
+               
+            }
+        }
+        @media (min-width:768px) {
+            min-width: 62px;
+            @include border-radius(10px);
+            padding: 5px 15px ;
+            margin-right: 8px;
+        }
+}
+
+.market_counter {
+    margin:1rem $auto;
+    .currency_sign {
+        @include flexCenter;
+        svg {
+            max-width: 14px;
+            max-height: 28px;
+            @media (min-width:768px) {
+                max-width: 38px;
+                max-height: 77px;
+            }
+        }
+    }
+}

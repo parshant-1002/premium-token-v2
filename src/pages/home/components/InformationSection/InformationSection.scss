@@ -1,14 +1,22 @@
 @import "../../../../assets/scss/base";
+
 .prize_secn {
-  @media (min-width:1200px) {margin-top: 140px;}
+  margin: 50px 0;
+
+  @media (min-width:1200px) {
+    margin: 140px 0;
+  }
 }
+
 .card-slider-row {
   margin-top: 40px;
+
   @media (min-width:768px) {
-    display:grid;
-    grid-template-columns: repeat(4,1fr);
-    gap:1.25rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
     margin-top: 70px;
+
   }
 }
 

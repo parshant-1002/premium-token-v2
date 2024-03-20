@@ -1,12 +1,15 @@
 export const API = {
-    BASE_URL: 'https://www.google.com/',
+    BASE_URL: 'http://192.180.3.72:4001',
     GET_DATA: '/ttt',
     URL: "/v1",
     LOGIN: "/admin/login",
     RESET_PASSWORD: "/admin/resetpasswordpage",
     FORGOT_PASSWORD: "/admin/forgot-password",
-    UPDATE_PASSWORD: "/admin/changePassword"
-    
+    UPDATE_PASSWORD: "/admin/changePassword",
+}
+
+export const API_URLS = {
+    GET_CONTENT: API.URL + "/content",
 }
 
 export const API_METHODS = {
