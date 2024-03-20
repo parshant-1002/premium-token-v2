@@ -40,7 +40,7 @@ const Header = () => {
 								</span>
 							</button>
 							<button type="button" className="btn btn-md btn-primary"><span>View chart</span></button>
-							<button type="button" className="btn btn-md btn-secondary"><span>Buy token</span></button>
+							<button type="button" className="btn btn-md btn-secondary "><span className="text-white">Buy token</span></button>
 
 						</div>
 					</div>
