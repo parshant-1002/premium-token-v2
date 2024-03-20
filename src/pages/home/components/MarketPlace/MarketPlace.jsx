@@ -1,54 +1,36 @@
 import Card from "../Card";
-import styles from "./MarketPlace.module.css";
+import "./MarketPlace.scss";
+import arrow from '../../../../../public/rightarrow.svg';
 
 const MarketPlace = () => {
   return (
-    <section className={styles.frameParent}>
-      <div className={styles.headerParent}>
-        <div className={styles.header}>
-          <div className={styles.transformMatrix}>
-            <h1 className={styles.title}>Premium marketplace</h1>
-          </div>
-          <div className={styles.wrapperArrows}>
-            <img className={styles.arrowsIcon} alt="" src="/arrows.svg" />
-          </div>
+    <section className="marketplace">
+      <div className="container">
+        <div className="market-place-para">
+          <h2 className="h2 text-center common_title">Premium marketplace</h2>
+          <p className="text-center">In the near future we aim to launch a market place for luxury and premium cars from our partners, where our token holders can buy this cars for PremiumToken!</p>
         </div>
-        <div className={styles.pathInterpreter}>
-          <div className={styles.pathInterpreterInner}>
-            <div className={styles.card1Parent}>
-              <Card car="/car@2x.png" />
-              <button className={styles.bt}>
-                <div className={styles.btChild} />
-                <b className={styles.comingSoon}>Coming soon</b>
-                <div className={styles.dataSeparate}>
-                  <img
-                    className={styles.path9413Icon}
-                    alt=""
-                    src="/path9413.svg"
-                  />
-                </div>
-              </button>
+
+        <div className="market-row">
+          <div className="market-col">
+                <Card car="/car@2x.png" />
             </div>
-          </div>
-          <div className={styles.content}>
-            <div className={styles.loremImpumDolor}>
-              Lorem impum dolor sit amet
+          <div className="market-col">
+                <Card car="/car@2x.png" />
             </div>
-            <div className={styles.descroption}>
-              Crypto ipsum bitcoin ethereum dogecoin litecoin. Polkadot chiliz
-              kava ethereum filecoin IOTA dai BitTorrent dai kadena.
+          <div className="market-col">
+                <Card car="/car@2x.png" />
             </div>
-            <img className={styles.carIcon} alt="" src="/car-1@2x.png" />
-          </div>
+
+       
+       
         </div>
-      </div>
-      <div className={styles.card3Wrapper}>
-        <Card
-          car="/car-2@2x.png"
-          propGap="unset"
-          propDebugCommit="unset"
-          propWidth="268.8px"
-        />
+        <div className="text-center">
+        <button type="button" className="btn btn-md btn-secondary comming-soon">
+          <span>Coming soon</span>
+          <img src={arrow} alt="premium" />
+        </button>
+        </div>
       </div>
     </section>
   );

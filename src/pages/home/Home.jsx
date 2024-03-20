@@ -19,6 +19,7 @@ import { PremiumToken } from "./components/PremiumToken";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getContent } from "../../store/actions/contentManagement";
+import { DidYouWin } from "./components/DidYouWin";
 const Home = () => {
   const[content, setContent] = useState({})
   const dispatch = useDispatch()
@@ -50,6 +51,7 @@ const Home = () => {
       <VideoSection/>
       <InformationSection />
       <WinnerSection />
+      <DidYouWin/>
    
       <DataAggregator />
       <RoadMap />

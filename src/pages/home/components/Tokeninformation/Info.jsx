@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import styles from "./Info.module.css";
+import  "./Info.scss";
 
 const Info = ({ frame89, followPremiumTokenOnOur6S = "", propPadding }) => {
   const frameDivStyle = useMemo(() => {
@@ -9,15 +9,12 @@ const Info = ({ frame89, followPremiumTokenOnOur6S = "", propPadding }) => {
   }, [propPadding]);
 
   return (
-    <div className={styles.info1}>
-      <img className={styles.info1Child} loading="lazy" alt="" src={frame89} />
-      <div
-        className={styles.followPremiumtokenOnOur6SWrapper}
-        style={frameDivStyle}
-      >
-        <div className={styles.followPremiumtokenOn}>
-          {followPremiumTokenOnOur6S}
-        </div>
+    <div className="airdrop-list">
+      <div className="airdrop-image">
+      <img loading="lazy" alt="" src={frame89} />
+      </div>
+      <div className="airdrop-list-text" >
+        <p> {followPremiumTokenOnOur6S} </p>
       </div>
     </div>
   );

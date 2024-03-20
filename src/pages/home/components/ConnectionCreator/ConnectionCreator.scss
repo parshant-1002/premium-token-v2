@@ -1,0 +1,85 @@
+@import '../../../../assets/scss/base';
+
+.connection-creator {
+  padding-top: 242px;
+  .connection-creator-row {
+    display: grid;
+    grid-template-columns: 476px 1fr;
+    justify-content: space-between;
+    align-items: center;
+
+    .maker-image {
+      img {
+        max-width: 375px;
+      }
+    }
+
+    .maker-text-col {
+      max-width: 476px;
+
+
+      h2 {
+        margin-bottom: 12px;
+      }
+
+      .link-button {
+        border-radius: 10px;
+        background: #102F2B;
+        padding: 8px 32px;
+        border: 0;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        gap: 8px;
+        margin-bottom: 32px;
+        position: $relative;
+        text-align: left;
+
+        img {
+          @include position($absolute, $top: 50%, $right: 16px);
+          transform: translateY(-50%);
+        }
+
+        span {
+          color: $text-color;
+          text-overflow: ellipsis;
+          font-size: 16px;
+          overflow: hidden;
+          font-weight: 700;
+          line-height: 24px;
+          white-space: nowrap;
+          width: max-content;
+        }
+      }
+
+      .download-document {
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        padding: 10px 24px;
+        gap: 8px;
+        max-width: 230px;
+        font-size: 14px;
+
+        span {
+          color: $white-color;
+          text-transform: none;
+        }
+      }
+
+      p {
+        @include para;
+        font-weight: $font-medium;
+        margin-bottom: 24px;
+
+      }
+    }
+
+    .token-info-button {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+  }
+}

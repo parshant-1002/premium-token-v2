@@ -1,5 +1,6 @@
 import { useMemo } from "react";
-import styles from "./Card.module.css";
+import "./Card.scss";
+import lambo from '../../../../../public/lambo.png';
 
 const Card = ({ car, propGap, propDebugCommit, propWidth }) => {
   const card1Style = useMemo(() => {
@@ -16,22 +17,20 @@ const Card = ({ car, propGap, propDebugCommit, propWidth }) => {
   }, [propWidth]);
 
   return (
-    <div className={styles.card1} style={card1Style}>
+    <div className="slider-main">
+    <div className="premium-slider-col" >
       <img
-        className={styles.carIcon}
+        className=""
         loading="lazy"
         alt=""
-        src={car}
+        src={lambo}
         style={carIconStyle}
       />
-      <div className={styles.positionResolver}>
-        <div className={styles.titleParent}>
-          <div className={styles.title}>Lorem impum dolor sit amet</div>
-          <div
-            className={styles.description}
-          >{`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et `}</div>
-        </div>
+       </div>
+      <div className="slider-text">
+          <h3>Lamborghini Urus</h3>
       </div>
+     
     </div>
   );
 };

@@ -32,8 +32,7 @@ const WinnerSection = () => {
 
         <div className="subtitle">
           <span className="process">
-            X $ more in market cap until the smart contract draws the
-            next winner!
+          The smart contract will draw the next winner at $60 million market cap!
           </span>
         </div>
         {/* table secn */}

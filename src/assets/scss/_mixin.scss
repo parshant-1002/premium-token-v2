@@ -1,6 +1,6 @@
 // _mixin.scss
 
-@each $aSize, $fSize in (24), (28), (30),(64),(80),(120) {
+@each $aSize, $fSize in (24), (30),(60),(80) {
   .avtar#{$aSize} {
     max-height: #{$aSize}px;
     max-width: #{$aSize}px;
@@ -262,4 +262,10 @@
       opacity: 1;
     }
   }
+}
+
+@mixin para{
+  font-size: $font-15;
+  color: $text-color;
+  line-height: 24px;
 }
