@@ -1,10 +1,8 @@
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
-import { getContentValue } from "../../helpers/constants";
 
 const Header = ({content}) => {
   const section = "HEADER"
-  console.log(getContentValue(content, section, "TWITTER"), "getContentValue")
   return (
     <section className={styles.homeInner}>
       <div className={styles.headerParent}>
@@ -14,28 +12,28 @@ const Header = ({content}) => {
             <span className={styles.token}>Token</span>
           </h1>
           <div className={styles.btParent}>
-            <Link className={styles.bt} to={getContentValue(content, section, "TWITTER")?.url}>
+            <Link className={styles.bt} to={""}>
               <div className={styles.btChild} />
               <img
                 className={styles.socialIcons}
                 alt=""
-                src={getContentValue(content, section, "TWITTER")?.image || "/social-icons.svg"}
+                src={ "/social-icons.svg"}
               />
             </Link>
-            <Link className={styles.bt1} to={getContentValue(content, section, "DISCORD")?.url}>
+            <Link className={styles.bt1} to={""}>
               <div className={styles.btItem} />
               <img
                 className={styles.socialIcons1}
                 alt=""
-                src={getContentValue(content, section, "TWITTER")?.image || "/social-icons-1.svg"}
+                src={ "/social-icons-1.svg"}
               />
             </Link>
-            <Link className={styles.bt2} to={getContentValue(content, section, "TELEGRAM")?.url}>
+            <Link className={styles.bt2} to={""}>
               <div className={styles.btInner} />
               <img
                 className={styles.socialIcons2}
                 alt=""
-                src={getContentValue(content, section, "TWITTER")?.image || "/social-icons-2.svg"}
+                src={"/social-icons-2.svg"}
               />
             </Link>
             <div className={styles.bt3}>

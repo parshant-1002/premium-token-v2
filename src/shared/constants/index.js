@@ -1,5 +1,5 @@
 export const API = {
-    BASE_URL: 'http://192.180.3.72:4001',
+    BASE_URL: 'http://192.180.4.14:4002/',
     GET_DATA: '/ttt',
     URL: "/v1",
     LOGIN: "/admin/login",
