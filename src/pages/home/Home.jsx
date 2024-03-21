@@ -20,6 +20,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getContent } from "../../store/actions/contentManagement";
 import { DidYouWin } from "./components/DidYouWin";
+import Airdrop from "./components/Tokeninformation/Airdrop";
 const Home = () => {
   const[content, setContent] = useState({})
   const dispatch = useDispatch()
@@ -59,7 +60,7 @@ const Home = () => {
       <Featured />
       <ConnectionCreator />
       <ConnectionMaker />
-      <section className={styles.dataJoiner}>
+      {/* <section className={styles.dataJoiner}>
         <img className={styles.bgBlurIcon6} alt="" src="/bg-blur-12@2x.png" />
         <img className={styles.roadLineIcon} alt="" src="/road-line.svg" />
         <div className={styles.wrapperActiveDot}>
@@ -75,9 +76,10 @@ const Home = () => {
             src="/disabled-dots.svg"
           />
         </div>
-      </section>
+      </section> */}
       <MarketPlace />
       <Tokeninformation />
+      <Airdrop />
       <Partners/>
       < SocialMedia/>
       <Footer />

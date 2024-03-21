@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Editor, { useMonaco } from '@monaco-editor/react';
+import "./editor.scss";
+import { ICONS } from '../../../../assets';
 
 function CodeEditor() {
     const [currentFile, setCurrentFile] = useState('file1.js');
@@ -28,34 +30,34 @@ function CodeEditor() {
     });
     const monaco = useMonaco();
 
-    const defineCustomTheme = (monaco)=>{
-        if(monaco)
-        monaco.editor.defineTheme('customTheme', {
-            base: 'vs-dark', // assuming the theme in the image is a dark theme
-            inherit: true, // this will also enable VS Code's default dark theme rules to be applied
-            rules: [
-                // Custom color rules can be added here
-                // Example: (you should change the colors based on your image)
-                { token: 'comment', foreground: '66bb6a' }, // For comments
-                { token: 'string', foreground: '#ffffff' }, // For strings
-                { token: 'keyword', foreground: 'ba68c8' }, // For keywords
-                { token: 'number', foreground: 'b5cea8' }, // For numbers
-                { token: 'variable', foreground: '81d4fa' }, // Variables
-                { token: 'type.identifier', foreground: '81d4fa' }, // Class names, function names
-                { token: 'identifier', foreground: '81d4fa' }, // Identifiers
-                { token: 'property', foreground: '81d4fa' }, // Object properties
-                { token: 'import.keyword', foreground: '81d4fa' }, // Import keyword
-            ],
-            colors: {
-                'editor.background': '#10302c', // Editor background color
-                'editor.foreground': '#ffffff', // Default foreground color
-                'editor.lineHighlightBackground': '#2a2d2e', // Highlighted line background color
-                'editorLineNumber.foreground': '#858585', // Line numbers color
-                'editor.selectionBackground': '#2a2d2e', // Text selection color
-                'editor.inactiveSelectionBackground': '#3a3d41', // Inactive selection
-                // More colors can be customized as needed
-            },
-        });
+    const defineCustomTheme = (monaco) => {
+        if (monaco)
+            monaco.editor.defineTheme('customTheme', {
+                base: 'vs-dark', // assuming the theme in the image is a dark theme
+                inherit: true, // this will also enable VS Code's default dark theme rules to be applied
+                rules: [
+                    // Custom color rules can be added here
+                    // Example: (you should change the colors based on your image)
+                    { token: 'comment', foreground: '66bb6a' }, // For comments
+                    { token: 'string', foreground: '#ffffff' }, // For strings
+                    { token: 'keyword', foreground: 'ba68c8' }, // For keywords
+                    { token: 'number', foreground: 'b5cea8' }, // For numbers
+                    { token: 'variable', foreground: '81d4fa' }, // Variables
+                    { token: 'type.identifier', foreground: '81d4fa' }, // Class names, function names
+                    { token: 'identifier', foreground: '81d4fa' }, // Identifiers
+                    { token: 'property', foreground: '81d4fa' }, // Object properties
+                    { token: 'import.keyword', foreground: '81d4fa' }, // Import keyword
+                ],
+                colors: {
+                    'editor.background': '#10302c', // Editor background color
+                    'editor.foreground': '#ffffff', // Default foreground color
+                    'editor.lineHighlightBackground': '#2a2d2e', // Highlighted line background color
+                    'editorLineNumber.foreground': '#858585', // Line numbers color
+                    'editor.selectionBackground': '#2a2d2e', // Text selection color
+                    'editor.inactiveSelectionBackground': '#3a3d41', // Inactive selection
+                    // More colors can be customized as needed
+                },
+            });
     }
 
     useEffect(() => {
@@ -73,7 +75,7 @@ function CodeEditor() {
 
 
     const handleEditorChange = (value) => {
-        console.log(value,"value><><><><><")
+        console.log(value, "value><><><><><")
         setFiles({ ...files, [currentFile]: value });
     };
 
@@ -93,20 +95,29 @@ function CodeEditor() {
         <button
             key={fileName}
             onClick={() => handleFileChange(fileName)}
-            style={currentFile === fileName ? { backgroundColor: '#333', color: '#fff' } : {}}
+            style={currentFile === fileName ? { backgroundColor: '#333'} : {}}
         >
+            <em>
+                <img
+                    className="img-fluid"
+                    width={20}
+                    height={20}
+                    alt="JsIcon"
+                    src={ICONS.JsIcon}
+                />
+            </em>
             {fileName}
         </button>
     ))
 
     return (
-        <div style={{width:"100%"}}>
-            <div style={{ marginBottom: '10px', display: 'flex', cursor:"pointer" }}>
+        <div className="editor_tabs">
+            <div className="editor_tabs-item">
                 {fileTabs}
             </div>
             <Editor
                 height="90vh"
-                defaultLanguage="javascript" 
+                defaultLanguage="javascript"
                 language={currentFile.split('.').pop()}
                 value={files[currentFile]}
                 onChange={handleEditorChange}

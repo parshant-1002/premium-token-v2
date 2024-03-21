@@ -1,9 +1,11 @@
+import { Icons } from "react-toastify";
 import { InformationCard } from "../InformationCard";
 import "./InformationSection.scss";
+import { ICONS } from "../../../../assets";
 
 const InformationSection = () => {
   return (
-    <section className="prize_secn">
+    <section className="prize_secn position-relative">
       <div className="container">
         <div className="heading_title text-center">
           <h2 className="h2 common_title">
@@ -34,8 +36,8 @@ const InformationSection = () => {
           />
           
         </div>
-
       </div>
+     
     </section>
   );
 };

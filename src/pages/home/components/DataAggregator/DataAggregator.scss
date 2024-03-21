@@ -1,0 +1,16 @@
+@import "../../../../assets/scss/base";
+
+.git_hub_bg {
+  @include position($absolute, $right:0px, $bottom:0);
+  height: 100%; 
+  z-index: -1;
+  @include opacity(0.7);
+  @media (max-width:1200px) {
+       $bottom:0px;
+  }
+}
+.dataAggregator  {
+  @media (min-width:1440px) {
+    margin: 100px 0;
+  }
+}

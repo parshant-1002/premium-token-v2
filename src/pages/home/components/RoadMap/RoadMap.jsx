@@ -3,7 +3,7 @@ import styles from "./RoadMap.module.css";
 const RoadMap = () => {
   return (
     <>
-    <section className={styles.homeInner}>
+    {/* <section className={styles.homeInner}>
       <div className={styles.frameParent}>
         <div className={styles.titleWrapper}>
           <h1 className={styles.title}>PremiumToken Roadmap</h1>
@@ -93,7 +93,7 @@ const RoadMap = () => {
           </button>
         </div>
       </div>
-    </section>
+    </section> */}
     </>
   );
 };

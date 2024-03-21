@@ -3,7 +3,7 @@ import partner from '../../../../../public/partner.png';
 import auto from '../../../../../public/auto.png';
 import React, { useRef } from 'react';
 import Team from './Team';
-import styles from './Partners.module.css';
+
 import { CustomSlick } from '../../../../shared/components/CustomSlick'
 
 const cardDetails = [
@@ -55,7 +55,7 @@ const cardDetails = [
 const Partners = () => {
   const sliderRef = useRef()
   return (
-    <section className="our-teams">
+    <section className="our-teams position-relative">
       <div className="container">
         <div class="airdrop-info-para">
           <h2 class="h2 text-center">Partners</h2>

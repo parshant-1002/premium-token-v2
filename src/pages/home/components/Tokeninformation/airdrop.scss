@@ -1,0 +1,95 @@
+@import "../../../../assets/scss/base";
+
+.airdrop_secn {
+    margin-top: 80px;
+    @media (min-width:1440px) {
+        margin-top: 180px;
+    }
+}
+.airdrop-main {
+    .airdrop-info-para {
+        max-width: 681px;
+        margin: auto;
+
+        h2 {
+            margin-bottom: 8px;
+        }
+
+        p {
+            @include para
+        }
+    }
+
+    .whitelisted-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 100px;
+        max-width: 1096px;
+        margin: auto;
+        margin-top: 64px;
+        align-items: center;
+
+        .white-listed-form {
+            padding: 52px;
+            border-radius: 0px 100px 0px 100px;
+            background: rgba(56, 153, 137, 0.08);
+
+            h3 {
+                color: $white-color;
+                text-align: center;
+                font-size: 20px;
+                font-weight: $font-medium;
+                line-height: normal;
+                margin-bottom: 32px;
+            }
+
+            .input-col {
+                position: $relative;
+                margin-bottom: 8px;
+
+                img {
+                    @include position($absolute, $top: 50%, $left: 10px);
+                    transform: translateY(-50%);
+
+             
+                }
+
+                input {
+                    background: rgba(41, 101, 92, 0.25);
+                    border-radius: 10px;
+                    padding: 8px 16px 8px 40px;
+                    width: 100%;
+                    border: 0;
+                    color: $green-tin-color-700;
+                    font-size: 14px;
+                    font-weight: $font-medium;
+                    line-height: 22px;
+                    min-height: 40px;
+
+                    &::placeholder {
+                        color: $green-tin-color-700;
+
+                    }
+                }
+            }
+            .submit-drop{
+                margin-top: 32px;
+                text-align: center;
+                button{
+                    min-width: 240px;
+                    text-transform: none;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+.air_drop_bg {
+    @include position($absolute, $right:0px, $top:0);
+    height: 100%; 
+    z-index: -1;
+    @media (max-width:1200px) {
+         $top:-72px;
+    }
+  }

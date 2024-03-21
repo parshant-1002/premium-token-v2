@@ -3,7 +3,6 @@
 .video-banner {
     &-description {
         max-width: 90%;
-
         @media (min-width:1200px) {
             max-width: 778px;
             margin: 0 $auto;
@@ -13,7 +12,6 @@
 
 .wrapperVideo {
     margin-top: 30px;
-
     @media (min-width:1200px) {
         margin-top: 52px;
     }
@@ -34,5 +32,15 @@
             max-height: 88px;
             }
         }
+    }
+}
+
+.video_banner_bg {
+    @include position($absolute, $top:-104px, $right:0px);
+    height: 100%;
+    @include opacity (.7);
+    z-index: -1;
+    @media (max-width:1200px) {
+         $top:-72px;
     }
 }
