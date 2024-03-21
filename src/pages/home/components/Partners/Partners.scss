@@ -1,33 +1,72 @@
 @import '../../../../assets/scss/base';
-.partner-column{
-.partner-image{
-    position: $relative;
-    display: inline-block;
-    &::before{
-        content: "";
-        width: 270px;
-        height: 270px;
-        @include position(absolute, $top: null, $right: null, $bottom: 0, $left: 50%);
-        transform:translateX(-50%);
-        background: rgb(56 153 137 / 25%);
-        border-radius: 0 100px;
-        z-index: -1;
-        
-    }
-    .overlay-logo {
-        @include position(absolute, $top: null, $right: 0, $bottom: 0, $left:0);
-        text-align: center;
-        background: rgb(56 153 137 / 50%);
-        padding: 8px 0;
-        width: calc(100% + 22px);
+
+.our-teams {
+    padding: 50px 0;
+
+    @media (min-width:1440px) {
+        padding: 100px 0;
     }
 }
-h3{
-    color: $white-color;
-font-family: Lato;
-font-size: 18px;
-font-style: normal;
-font-weight: 800;
-line-height: normal;
+
+.partner-column {
+    .partner-image {
+        position: $relative;
+        display: inline-block;
+
+        &::before {
+            content: "";
+            width: 270px;
+            height: 270px;
+            @include position(absolute, $top: null, $right: null, $bottom: 0, $left: 50%);
+            transform: translateX(-50%);
+            background: rgb(56 153 137 / 25%);
+            border-radius: 0 100px;
+            z-index: -1;
+
+        }
+
+        .overlay-logo {
+            @include position(absolute, $top: null, $right: 0, $bottom: 0, $left: 0);
+            text-align: center;
+            padding: 8px 0;
+            left: -22px;
+            width: calc(100% + 22px);
+            opacity: 0.8;
+            background: $dark-green-color-400;
+            backdrop-filter: blur(500px);
+
+            img {
+                margin: 0 $auto;
+            }
+        }
+    }
+
+    h3 {
+        color: $white-color;
+        font-size: 18px;
+    }
 }
+
+
+.teamSliderBg {
+    @include position($absolute, $left: 0px, $bottom: 200px);
+    height: 100%;
+    z-index: -1;
+
+    @media (max-width:1200px) {
+        $top: -72px;
+    }
+}
+
+//   team slider css
+.our_team-slider {
+    .cstm-slider {
+        @media (min-width:1200px) {
+            width: calc(100vw - 1140px/3);
+        }
+
+        .slick-track {
+            @include flexbox;
+        }
+    }
 }

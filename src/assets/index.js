@@ -12,6 +12,7 @@ import TokenInforBg from './img/token-info-bg.png';
 import AuditBG from './img/External-audit-bg.png';
 import CarSliderBG from './img/car-slider-bg.png';
 import AirDropBg from './img/airdrop-bg.png';
+import PartnersSliderBg from './img/partners-slider-bg.png';
 
 export const ICONS = {
     VideoBanner: VideoBanner,
@@ -28,4 +29,5 @@ export const ICONS = {
     CarSliderBG:CarSliderBG,
     AuditBG:AuditBG,
     AirDropBg:AirDropBg,
+    PartnersSliderBg:PartnersSliderBg,
 }

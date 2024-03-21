@@ -6,9 +6,9 @@ html {
     scrollbar-width: thin;
     scrollbar-color: $green-light-color-800 $dark-green-color-1000;
 }
-#root {
-    overflow-x: $hidden !important;
-}
+// #root {
+//     overflow-x: $hidden !important;
+// }
 body {
     margin: 0;
     background: $body-color;
@@ -23,7 +23,7 @@ body {
 }
 .scroll {
     scrollbar-width: thin !important;
-    scrollbar-color: $green-light-color-800 $dark-green-color-450;
+    scrollbar-color: $green-light-color-800 $dark-green-color-400;
 }
 /* Scroll */
 ::-webkit-scrollbar {
@@ -32,7 +32,7 @@ body {
 }
 ::-webkit-scrollbar-thumb {
     @include border-radius (10px);
-    background-color: $dark-green-color-450;
+    background-color: $dark-green-color-400;
 }
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -126,7 +126,7 @@ a {
     @include transition-mixin (all, .5s, ease-in-out);
     &:hover,
     &:focus {
-        color: $dark-green-color-450;
+        color: $dark-green-color-400;
     }
 }
 p {

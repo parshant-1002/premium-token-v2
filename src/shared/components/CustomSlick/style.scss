@@ -1,4 +1,11 @@
-
+.slick {
+    &-slider {
+    margin:0 -20px;
+    }
+    &-slide  {
+        margin:0 20px;
+    }
+}
 
 .slick-slide {
     transition: transform 0.5s ease;
