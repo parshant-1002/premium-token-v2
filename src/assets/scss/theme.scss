@@ -223,7 +223,7 @@ a.btn {
         @include border-radius (10px);
         text-transform: $uppercase;
         font-weight: $font-bold;
-        padding: 0.625rem 0.875rem;
+        padding: 0.625rem 1rem;
         @include font-size(1);      
         min-height: 44px;       
     }

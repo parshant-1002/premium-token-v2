@@ -1,6 +1,7 @@
 @import "../../../../assets/scss/base";
 
 .winner_counter {
+  position: $relative;
   .heading_title {
     @include flexCenter;
     @include flex-direction(column);

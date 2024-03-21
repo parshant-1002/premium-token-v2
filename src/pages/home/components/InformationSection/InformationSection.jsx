@@ -5,6 +5,21 @@ import "./InformationSection.scss";
 import { ICONS } from "../../../../assets";
 
 const InformationSection = () => {
+  const responsiveConfig =  [
+    {
+        breakpoint: 768,
+        settings: {
+            slidesToShow: 1.25,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true
+        }
+    },
+    {
+        breakpoint: 1024000,
+        settings: "unslick"
+    }
+]
   return (
     <section className="prize_secn position-relative">
       <div className="container">
@@ -14,7 +29,7 @@ const InformationSection = () => {
           </h2>
         </div>
         <div className="card-slider-row">
-          <CustomSlick slidesToShow={1} responsive = {true}>
+          <CustomSlick slidesToShow={1} responsive={responsiveConfig}>
           <InformationCard
             illustration="/card-image-1.png"
             title="Buy premiumtoken"
