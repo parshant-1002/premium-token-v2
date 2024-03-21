@@ -1,9 +1,10 @@
+import Large_banner from '../../../../assets/img/banner-bg.svg';
+import Mobile_banner from '../../../../assets/img/banner-bg-mobile.svg';
 import "./video-banner.scss";
 
 const VideoSection = () => {
     return (
-        <section className="video-banner py-72">
-         
+        <section className="video-banner position-relative py-72">         
             <div className="container">
                 <div className="video-banner--info text-center">
                     <h1 className="h1">PlatinumCars explains about PremiumToken</h1>
@@ -31,6 +32,20 @@ const VideoSection = () => {
                    
                 </div>
             </div>
+            {/* bg banner floating */}          
+            <div className="video_banner_bg">
+                <img width={1300} height={978 }
+                        className="large-video-banner d-md-block d-none"
+                        alt="desktop-banner"
+                        src={Large_banner}
+                />
+                  <img width={510} height={385}
+                        className="mobile-video-banner d-block d-md-none"
+                        alt="desktop-banner"
+                        src={Mobile_banner}
+                    />
+            </div>
+               
         </section>
     );
 };

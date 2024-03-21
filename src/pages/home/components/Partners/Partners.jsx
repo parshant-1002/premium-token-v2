@@ -3,7 +3,7 @@ import partner from '../../../../../public/partner.png';
 import auto from '../../../../../public/auto.png';
 import React, { useRef } from 'react';
 import Team from './Team';
-import styles from './Partners.module.css';
+
 import { CustomSlick } from '../../../../shared/components/CustomSlick'
 
 const cardDetails = [

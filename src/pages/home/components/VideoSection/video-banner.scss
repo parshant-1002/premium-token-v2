@@ -36,3 +36,11 @@
         }
     }
 }
+
+.video_banner_bg {
+    @include  position($absolute, $top: -5%, $right:0%);
+    background-blend-mode: multiply;
+    @media (min-width:768px) {
+
+    }
+}
