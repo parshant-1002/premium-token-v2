@@ -4,6 +4,7 @@ import Info from '../../../../../public/infos.png';
 import Price from '../../../../../public/price.png';
 import Contacted from '../../../../../public/contacted.png';
 import { ICONS } from "../../../../assets";
+import { CustomSlick } from "../../../../shared/components/CustomSlick";
 
 
 const DidYouWin = () => {
@@ -43,6 +44,7 @@ const DidYouWin = () => {
 					</h2>
 				</div>
 				<div className="did-you-win-row">
+					<CustomSlick slidesToShow={1} responsive={true}>
 					{arr.map((item, index) =>
 						<div className="card-box-green position-relative">
 							<div className="card-img">
@@ -69,6 +71,7 @@ const DidYouWin = () => {
 
 						</div>
 					)}
+					</CustomSlick>
 				</div>
 
 			</div>
