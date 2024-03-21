@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import './style.scss'; // Import custom CSS for styling arrows
 
 const CustomSlick = ({ children, slidesToShow = 4, responsive = false }) => {
+    console.log(responsive,"responsive")
     const ref = useRef()
     const settings = {
         dots: false,
@@ -28,11 +29,22 @@ const CustomSlick = ({ children, slidesToShow = 4, responsive = false }) => {
                 }
             },
             {
-                breakpoint: 1024,
+                breakpoint: 1199,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 1000000,
                 settings: "unslick" 
             }
         ]})
     };
+
+    console.log(settings,"settings")
 
     return (
         <>
