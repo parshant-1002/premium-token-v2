@@ -1,6 +1,10 @@
 @import '../../../../assets/scss/base';
 
 .marketplace {
+    padding:70px 0 0px;
+    @media (min-width:1400px) {
+        padding:140px 0 0px;
+    }
     .market-place-para {
         max-width: 584px;
         margin: auto;
@@ -40,3 +44,13 @@
         gap: 18px;
     }
 }
+
+.car_slider_bg {
+    @include position($absolute, $left:0px, $bottom:50%);
+    height: 100%; 
+    z-index: -1;
+    @include opacity(0.7); 
+    @media (max-width:1200px) {
+         $bottom:100px;
+    }
+  }

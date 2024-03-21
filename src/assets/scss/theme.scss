@@ -60,25 +60,22 @@ h1, .h1 {
     }
 }
 h2, .h2 {
-    @include font-size(1.875);
+    @include font-size(1.75);
     @media (min-width: 1600px) {
         @include font-size(1.875);
     }
     @media (max-width: 1199.98px) {
         @include font-size(1.5);
     }
-    @media (max-width: 767px) {
-        @include font-size(1.25);
-    }
 }
 h3,
 .h3 {
-    @include font-size(2.2);
+    @include font-size(1.2);
     @media (min-width: 1600px) {
-        @include font-size(2.4);
+        @include font-size(1.25);
     }
     @media (max-width: 991px) {
-        @include font-size(1.9);
+        @include font-size(1.15);
     }
 }
 h4,
@@ -482,4 +479,30 @@ input[type="search"]::-webkit-search-results-decoration {
     @media (min-width:1400px) {
         padding: 72px 0;
     }   
+}
+
+// 
+.bg-green-600 {
+    background: $bg-green-600;
+}
+.bg-green-500 {
+    background: $bg-green-500;
+}
+.bg-green-400 {
+    background: $bg-green-400;
+}
+.bg-green-350 {
+    background: $bg-green-350;
+}
+.bg-green-300 {
+    background: $bg-green-300;
+}
+.bg-green-200 {
+    background: $bg-green-200;
+}
+.bg-green-150 {
+    background: $bg-green-150;
+}
+.bg-green-100 {
+    background: $bg-green-100;
 }

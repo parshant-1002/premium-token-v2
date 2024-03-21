@@ -28,7 +28,7 @@ const Card = ({ car, propGap, propDebugCommit, propWidth }) => {
       />
        </div>
       <div className="slider-text">
-          <h3>Lamborghini Urus</h3>
+          <h3 className="h3">Lamborghini Urus</h3>
       </div>
      
     </div>

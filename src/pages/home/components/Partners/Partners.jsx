@@ -55,7 +55,7 @@ const cardDetails = [
 const Partners = () => {
   const sliderRef = useRef()
   return (
-    <section className="our-teams">
+    <section className="our-teams position-relative">
       <div className="container">
         <div class="airdrop-info-para">
           <h2 class="h2 text-center">Partners</h2>

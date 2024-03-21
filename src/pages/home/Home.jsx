@@ -20,6 +20,7 @@ import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { getContent } from "../../store/actions/contentManagement";
 import { DidYouWin } from "./components/DidYouWin";
+import Airdrop from "./components/Tokeninformation/Airdrop";
 const Home = () => {
   const[content, setContent] = useState({})
   const dispatch = useDispatch()
@@ -78,6 +79,7 @@ const Home = () => {
       </section> */}
       <MarketPlace />
       <Tokeninformation />
+      <Airdrop />
       <Partners/>
       < SocialMedia/>
       <Footer />

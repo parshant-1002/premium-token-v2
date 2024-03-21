@@ -1,11 +1,12 @@
+import { ICONS } from "../../../../assets";
 import "./ConnectionCreator.scss";
 
 const ConnectionCreator = () => {
   return (
-    <section className="connection-creator">
+    <section className="connection-creator position-relative">
       <div className="container">
-        <div className="connection-creator-row">
-          <div className="connection-text">
+        <div className="row align-items-center">
+          <div className="col-md-6 connection-text">
             <div className="maker-text-col">
               <div className="inner-text-column">
                 <h2 className="h2 text-center common_title">Token Info</h2>
@@ -32,10 +33,20 @@ const ConnectionCreator = () => {
 
             </div>
           </div>
-          <div className="maker-image text-end">
-            <img loading="lazy" alt="" src="/img@2x.png" />
+          <div className="col-md-6">
+            <div className="maker-image text-end">
+              <img loading="lazy" alt="" src="/img@2x.png" />
+            </div>
           </div>
+
         </div>
+      </div>
+      <div className="token_info_bg">
+        <img width={1044} height={1097}
+          className="img-fluid"
+          alt="desktop-banner"
+          src={ICONS.TokenInforBg}
+        />
       </div>
     </section>
   );

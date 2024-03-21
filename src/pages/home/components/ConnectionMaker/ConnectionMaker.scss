@@ -4,10 +4,7 @@
     padding-top: 150px;
     margin-bottom: 150px;
 
-    .maker-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
+    .maker-grid {       
         .maker-text-col {
             max-width: 450px;
             margin-left: auto;
@@ -18,21 +15,20 @@
 
             .link-button {
                 border-radius: 10px;
-                background: #102F2B;
+                background: $dark-green-color-400;
                 padding: 8px 32px;
                 border: 0;
-                display: flex;
-                align-items: center;
+                @include flexbox;
+                @include align-items(center);             
                 width: 100%;
                 gap: 8px;
                 margin-bottom: 32px;
-                text-align: left;
-
+                text-align: $left;
                 a {
                     color: $text-color;
                     text-overflow: ellipsis;
                     font-size: 16px;
-                    overflow: hidden;
+                    overflow: $hidden;
                     font-weight: 700;
                     line-height: 24px;
                     white-space: nowrap;
@@ -63,5 +59,14 @@
                 line-height: 24px;
             }
         }
+    }
+}
+
+.external_audit_bg {
+    @include position($absolute, $left:0px, $bottom:160px);
+    height: 100%; 
+    z-index: -1;
+    @media (max-width:1200px) {
+         $bottom:72px;
     }
 }

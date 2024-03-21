@@ -8,6 +8,10 @@ import JsIcon from './img/js-icon.png';
 import MdIcon from './img/md-icon.png';
 import PremiumTokenBg from './img/permium-token-wallet-bg.png';
 import PartnersBg from './img/logo-partner-bg.png';
+import TokenInforBg from './img/token-info-bg.png';
+import AuditBG from './img/External-audit-bg.png';
+import CarSliderBG from './img/car-slider-bg.png';
+import AirDropBg from './img/airdrop-bg.png';
 
 export const ICONS = {
     VideoBanner: VideoBanner,
@@ -20,4 +24,8 @@ export const ICONS = {
     GitHUbBG:GitHUbBG,
     PremiumTokenBg:PremiumTokenBg,
     PartnersBg:PartnersBg,
+    TokenInforBg:TokenInforBg,
+    CarSliderBG:CarSliderBG,
+    AuditBG:AuditBG,
+    AirDropBg:AirDropBg,
 }
