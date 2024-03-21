@@ -6,6 +6,7 @@ import premiumtoken  from '../../../../../public/premium-token.png';
 import cartoken  from '../../../../../public/car-token.png';
 import "./WinnerSection.scss";
 import { ICONS } from "../../../../assets";
+import { CustomSlick } from "../../../../shared/components/CustomSlick";
 
 const WinnerSection = () => {
   const counterSettings = {
@@ -58,78 +59,152 @@ const WinnerSection = () => {
         {/* table slider */}
         <div className="table_slider my-32">
           <div className="table-responsive prize_table">
-            <table className="table table-borderless">
-              <thead>
-                <tr>
-                  <th scope="col">Prize selected</th>
-                  <th scope="col">MARKET CAP</th>
-                  <th scope="col">Date</th>
-                  <th scope="col">wallet address</th>
-                  <th scope="col">Chance of winning</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>
-                    <div className="td_img">
-                       <img src={premiumtoken} alt="premium" />
-                    </div>
-                  </td>
-                  <td>$50M</td>
-                  <td>05-01-2024</td>
-                  <td>xfsde3eedsd1e12wdsadasd</td>
-                  <td>0.001%</td>
-                </tr>
-                <tr>
-                  <td>
-                  <div className="td_img">
-                       <img src={cartoken} alt="premium" />
-                    </div>
-                </td>
-                
-                <td>$50M</td>
-                  <td>05-01-2024</td>
-                  <td>xfsde3eedsd1e12wdsadasd</td>
-                  <td>0.001%</td>
-                </tr>
-                <tr>
-                  <td>
-                  <div className="td_img">
-                       <img src={cartoken} alt="premium" />
-                    </div>
-                </td>
-                
-                <td>$50M</td>
-                  <td>05-01-2024</td>
-                  <td>xfsde3eedsd1e12wdsadasd</td>
-                  <td>0.001%</td>
-                </tr>
-                <tr>
-                  <td>
-                  <div className="td_img">
-                       <img src={cartoken} alt="premium" />
-                    </div>
-                </td>
-                
-                <td>$50M</td>
-                  <td>05-01-2024</td>
-                  <td>xfsde3eedsd1e12wdsadasd</td>
-                  <td>0.001%</td>
-                </tr>
-                <tr>
-                  <td>
-                  <div className="td_img">
-                       <img src={cartoken} alt="premium" />
-                    </div>
-                </td>
-                
-                <td>$50M</td>
-                  <td>05-01-2024</td>
-                  <td>xfsde3eedsd1e12wdsadasd</td>
-                  <td>0.001%</td>
-                </tr>
-              </tbody>
-            </table>
+              <CustomSlick slidesToShow={1}>
+                <table className="table table-borderless">
+                  <thead>
+                    <tr>
+                      <th scope="col">Prize selected</th>
+                      <th scope="col">MARKET CAP</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">wallet address</th>
+                      <th scope="col">Chance of winning</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div className="td_img">
+                          <img src={premiumtoken} alt="premium" />
+                        </div>
+                      </td>
+                      <td>$50M</td>
+                      <td>05-01-2024</td>
+                      <td>xfsde3eedsd1e12wdsadasd</td>
+                      <td>0.001%</td>
+                    </tr>
+                    <tr>
+                      <td>
+                      <div className="td_img">
+                          <img src={cartoken} alt="premium" />
+                        </div>
+                    </td>
+                    
+                    <td>$50M</td>
+                      <td>05-01-2024</td>
+                      <td>xfsde3eedsd1e12wdsadasd</td>
+                      <td>0.001%</td>
+                    </tr>
+                    <tr>
+                      <td>
+                      <div className="td_img">
+                          <img src={cartoken} alt="premium" />
+                        </div>
+                    </td>
+                    
+                    <td>$50M</td>
+                      <td>05-01-2024</td>
+                      <td>xfsde3eedsd1e12wdsadasd</td>
+                      <td>0.001%</td>
+                    </tr>
+                    <tr>
+                      <td>
+                      <div className="td_img">
+                          <img src={cartoken} alt="premium" />
+                        </div>
+                    </td>
+                    
+                    <td>$50M</td>
+                      <td>05-01-2024</td>
+                      <td>xfsde3eedsd1e12wdsadasd</td>
+                      <td>0.001%</td>
+                    </tr>
+                    <tr>
+                      <td>
+                      <div className="td_img">
+                          <img src={cartoken} alt="premium" />
+                        </div>
+                    </td>
+                    
+                    <td>$50M</td>
+                      <td>05-01-2024</td>
+                      <td>xfsde3eedsd1e12wdsadasd</td>
+                      <td>0.001%</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <table className="table table-borderless">
+                  <thead>
+                    <tr>
+                      <th scope="col">Prize selected</th>
+                      <th scope="col">MARKET CAP</th>
+                      <th scope="col">Date</th>
+                      <th scope="col">wallet address</th>
+                      <th scope="col">Chance of winning</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <div className="td_img">
+                          <img src={premiumtoken} alt="premium" />
+                        </div>
+                      </td>
+                      <td>$50M</td>
+                      <td>05-01-2024</td>
+                      <td>xfsde3eedsd1e12wdsadasd</td>
+                      <td>0.001%</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div className="td_img">
+                          <img src={cartoken} alt="premium" />
+                        </div>
+                      </td>
+
+                      <td>$50M</td>
+                      <td>05-01-2024</td>
+                      <td>xfsde3eedsd1e12wdsadasd</td>
+                      <td>0.001%</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div className="td_img">
+                          <img src={cartoken} alt="premium" />
+                        </div>
+                      </td>
+
+                      <td>$50M</td>
+                      <td>05-01-2024</td>
+                      <td>xfsde3eedsd1e12wdsadasd</td>
+                      <td>0.001%</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div className="td_img">
+                          <img src={cartoken} alt="premium" />
+                        </div>
+                      </td>
+
+                      <td>$50M</td>
+                      <td>05-01-2024</td>
+                      <td>xfsde3eedsd1e12wdsadasd</td>
+                      <td>0.001%</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div className="td_img">
+                          <img src={cartoken} alt="premium" />
+                        </div>
+                      </td>
+
+                      <td>$50M</td>
+                      <td>05-01-2024</td>
+                      <td>xfsde3eedsd1e12wdsadasd</td>
+                      <td>0.001%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </CustomSlick>
           </div>
         </div>
         </div>
