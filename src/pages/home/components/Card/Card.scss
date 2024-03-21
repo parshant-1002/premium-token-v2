@@ -1,0 +1,33 @@
+@import '../../../../assets/scss/base';
+.slider-main{
+.premium-slider-col {
+    position: $relative;
+
+    &::before {
+        position: $absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        width: 297px;
+        height: 243px;
+        background: rgb(56 153 137 / 25%);
+        border-radius: 0px 100px 0px 100px;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+}
+h3 {
+    color: $white-color;
+    font-size: 18px;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 56px;
+    margin-bottom: 0;
+}
+}

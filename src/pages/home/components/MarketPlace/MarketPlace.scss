@@ -1,0 +1,42 @@
+@import '../../../../assets/scss/base';
+
+.marketplace {
+    .market-place-para {
+        max-width: 584px;
+        margin: auto;
+
+        h2 {
+            margin-bottom: 8px;
+        }
+
+        p {
+            color: $text-color;
+            font-size: $font-15;
+            font-weight: 500;
+            line-height: 24px;
+        }
+    }
+
+    .comming-soon {
+        text-transform: none;
+        font-size: 14px;
+        min-width: 240px;
+        display: flex;
+        gap: 40px;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+
+        span {
+            color: $white-color;
+            line-height: 1;
+        }
+    }
+
+    .market-row {
+        padding: 74px 0 40px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+}

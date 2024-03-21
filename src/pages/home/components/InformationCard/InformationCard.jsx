@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import styles from "./InformationCard.module.css";
+import "./InformationCard.scss";
 
 const InformationCard = ({
   illustration,
@@ -32,31 +32,25 @@ const InformationCard = ({
   }, [propWidth, propOverflow]);
 
   return (
-    <div className={styles.cardParent}>
-      <div className={styles.card} style={cardStyle}>
-        <div className={styles.content} style={contentStyle}>
-          <img
-            className={styles.illustrationIcon}
-            loading="lazy"
-            alt=""
-            src={illustration}
-            style={illustrationIconStyle}
-          />
-          <div className={styles.text}>
-            <div className={styles.title}>{title}</div>
-          </div>
-        </div>
+    <div className="card-box-green position-relative">
+      <div className="card-img">
+        <img
+          className=""
+          width={225}
+          height={188}
+          loading="lazy"
+          alt="CoinImage"
+          src={illustration}
+        />
+
       </div>
-      <div className={styles.wrapperRectangle16Parent}>
-        <div className={styles.wrapperRectangle16}>
-          <img
-            className={styles.wrapperRectangle16Child}
-            alt=""
-            src="/rectangle-16.svg"
-          />
-        </div>
-        <div className={styles.div}>{prop}</div>
+      <p className="">{title}</p>
+      <div className="card-counter">
+        <span className="card-counter-no">
+          {prop}
+        </span>
       </div>
+
     </div>
   );
 };

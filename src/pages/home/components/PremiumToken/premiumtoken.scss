@@ -1,0 +1,63 @@
+@import '../../../../assets/scss/base';
+
+.premium-token-inner {
+    display: grid;
+    grid-template-columns: 468px 1fr;
+    justify-content: space-between;
+    align-items: center;
+
+    .token-text {
+
+
+        h2 {
+            margin-bottom: 12px;
+        }
+
+       .comming-soon {
+            text-transform: none;
+            font-size: 14px;
+            min-width: 240px;
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+
+            span {
+                color: #fff;
+                line-height: 1;
+            }
+        }
+
+        P {
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 40px;
+            line-height: 24px;
+        }
+    }
+
+    .premium-image {
+        z-index: 1;
+        position: relative;
+        text-align: right;
+        margin-inline: -17px;
+
+        &::before {
+            content: "";
+            width: 485px;
+            height: 485px;
+            position: absolute;
+            top: 50%;
+            right: -67px;
+            background-color: rgb(56 153 137 / 25%);
+            transform: translateY(-50%);
+            @include border-radius(0 200px 0 200px);
+            filter: drop-shadow(0px 0px 35px rgba(0, 0, 0, 0.05));
+            backdrop-filter: blur(40px);
+            z-index: -1;
+        }
+    }
+}
+
+

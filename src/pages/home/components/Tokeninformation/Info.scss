@@ -1,0 +1,23 @@
+@import '../../../../assets/scss/base';
+
+.airdrop-list {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 156px 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+
+    img {
+        max-width: 100%;
+    }
+
+    .airdrop-list-text {
+        padding-right: 16px;
+        p {
+            color: $white-color;
+            font-weight: 400;
+            line-height: normal;
+            max-width: 291px;
+        }
+    }
+}

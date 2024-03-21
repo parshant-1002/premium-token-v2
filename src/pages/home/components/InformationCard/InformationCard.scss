@@ -1,0 +1,50 @@
+@import "../../../../assets/scss/base";
+
+$size44:44px;
+
+.card {
+  &-box {
+    &-green {
+      @include border-radius(25px);
+      background: $dark-green-color-500;
+      box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.05);
+      backdrop-filter: blur(40px);
+      padding: 42px 16px 16px 16px;
+      text-align: $center;
+      .card-img {
+        margin-bottom: 20px;
+      img {
+        max-height: 188px;
+        object-fit: $contain;
+        @media (min-width:1200px) {
+          min-height: 188px;
+        }
+      }     
+    }
+      .card-counter {
+         content: '';
+        position: $absolute;
+        top: calc((0px - $size44)/2);
+        left: 50%;
+        @include transform (translateX(-50%));
+        min-width: 92px;
+        min-height: $size44;
+        @include flexCenter;
+        @include border-radius(0 20px 0 20px);
+        background-color: $green-tin-color-700;
+        span {
+          @include font-size(1.188);
+          color: $white-color;
+          line-height: $normal;
+          font-style: $normal;
+        }
+      }
+      p {
+        font-weight: $font-bold;
+        margin-bottom: 0;
+        @include font-size(1);
+      }
+    }
+    
+  }
+}

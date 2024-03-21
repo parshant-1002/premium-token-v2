@@ -1,3 +1,6 @@
+import "./Partners.scss";
+import partner from '../../../../../public/partner.png';
+import auto from '../../../../../public/auto.png';
 import React, { useRef } from 'react';
 import Team from './Team';
 import styles from './Partners.module.css';
@@ -52,27 +55,25 @@ const cardDetails = [
 const Partners = () => {
   const sliderRef = useRef()
   return (
-    <section className={styles.shapeTransformer}>
-      <div className={styles.pathCombiner}>
-        <h1 className={styles.title}>Partners</h1>
-        <div className={styles.wrapperArrows}>
-          <img className={styles.arrowsIcon} onClick={()=>{
-            console.log(sliderRef,"sliderREf<><><><>")
-          }} alt="" src="/arrows.svg" />
+    <section className="our-teams">
+      <div className="container">
+        <div class="airdrop-info-para">
+          <h2 class="h2 text-center">Partners</h2>
         </div>
-      </div>
-      <CustomSlick ref = {sliderRef}>
-        {cardDetails.map((card, index) => (
-          <div key={index} className={styles.cards}>
-            <Team
-              maskGroup={card.maskGroup}
-              image39={card.image39}
-              name={card.name}
-              position={card.position}
-            />
+        <div className="partner-slider">
+          <div className="partner-column">
+            <div className="partner-image">
+              <img src={partner} />
+              <div className="overlay-logo">
+                <img src={auto} />
+              </div>
+            </div>
+            <h3 className="text-center">Mike Stoneberg</h3>
+            <p>CEO & Product Manager</p>
           </div>
-        ))}
-      </CustomSlick>
+        </div>
+
+      </div>
     </section>
   );
 };
