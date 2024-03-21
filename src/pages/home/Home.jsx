@@ -59,7 +59,7 @@ const Home = () => {
       <Featured />
       <ConnectionCreator />
       <ConnectionMaker />
-      <section className={styles.dataJoiner}>
+      {/* <section className={styles.dataJoiner}>
         <img className={styles.bgBlurIcon6} alt="" src="/bg-blur-12@2x.png" />
         <img className={styles.roadLineIcon} alt="" src="/road-line.svg" />
         <div className={styles.wrapperActiveDot}>
@@ -75,7 +75,7 @@ const Home = () => {
             src="/disabled-dots.svg"
           />
         </div>
-      </section>
+      </section> */}
       <MarketPlace />
       <Tokeninformation />
       <Partners/>

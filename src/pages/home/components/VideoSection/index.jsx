@@ -1,6 +1,7 @@
-import Large_banner from '../../../../assets/img/banner-bg.svg';
-import Mobile_banner from '../../../../assets/img/banner-bg-mobile.svg';
+
+
 import "./video-banner.scss";
+import { ICONS } from '../../../../assets';
 
 const VideoSection = () => {
     return (
@@ -37,12 +38,12 @@ const VideoSection = () => {
                 <img width={1300} height={978 }
                         className="large-video-banner d-md-block d-none"
                         alt="desktop-banner"
-                        src={Large_banner}
+                        src={ICONS.VideoBanner}
                 />
                   <img width={510} height={385}
                         className="mobile-video-banner d-block d-md-none"
-                        alt="desktop-banner"
-                        src={Mobile_banner}
+                        alt="Mobile-banner"
+                        src={ICONS.Mobile_banner}
                     />
             </div>
                

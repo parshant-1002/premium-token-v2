@@ -1,0 +1,20 @@
+@import "../../../../assets/scss/base";
+
+.editor_tabs {
+    &-item {
+        @include flexbox;
+        @include align-items(center);
+        cursor: $pointer;
+        button {
+            padding:6px 16px;
+            min-width: 140px;
+            @include flexCenter;
+            background: transparent;
+            gap:5px;
+            border:$none;
+            @include transition(all ,0.3s, ease-in-out);
+            color: rgba($color: $white-color, $alpha: 0.8);
+            @include font-size(0.875);
+        }
+    }
+}

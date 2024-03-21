@@ -32,6 +32,7 @@ $size44:44px;
         @include flexCenter;
         @include border-radius(0 20px 0 20px);
         background-color: $green-tin-color-700;
+        border: 1px solid rgba($color: $white-color, $alpha: 0.15);
         span {
           @include font-size(1.188);
           color: $white-color;

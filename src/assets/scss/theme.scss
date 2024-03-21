@@ -226,7 +226,7 @@ a.btn {
         @include border-radius (10px);
         text-transform: $uppercase;
         font-weight: $font-bold;
-        padding: 0.625rem 1rem;
+        padding: 0.625rem 0.875rem;
         @include font-size(1);      
         min-height: 44px;       
     }
@@ -266,7 +266,16 @@ a.btn {
         @include button($green-tin-color-700, $transparent, $white-color);
         overflow: $hidden;
         position: $relative;
-        z-index: 1; 
+        z-index: 1;  
+        span {
+            @include flexCenter;
+            @include font-size (.875);
+            font-weight: $font-regular;
+            color: $white-color;
+            svg {
+                margin-right:0.5rem ;
+            }
+        }
     }
     &-transparent {
         @include button($transparent, $transparent, $white-color);
@@ -456,6 +465,15 @@ input[type="search"]::-webkit-search-results-decoration {
 .gap {
     &-12 {
         gap:0.75rem;
+    }
+    &-20 {
+        gap:20px;
+    }
+    &-32 {
+        gap:32px;
+    }
+    &-54 {
+        gap:54px;
     }
 }
 

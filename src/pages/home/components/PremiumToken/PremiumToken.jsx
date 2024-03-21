@@ -1,9 +1,10 @@
 import "./premiumtoken.scss";
 import premium from '../../../../../public/premium.png';
 import arrow from '../../../../../public/rightarrow.svg';
+import { ICONS } from "../../../../assets";
 const PremiumToken = () => {
     return (
-        <section className="premium-token-row">
+        <section className="premium-token-row position-relative">
             <div className="container">
                 <div className="premium-token-inner">
                     <div className="token-text text-center">
@@ -19,6 +20,13 @@ const PremiumToken = () => {
                     </div>
                 </div>
             </div>
+            <div className="premium_token_bg">
+                <img width={1162} height={835}
+                    className="img-fluid"
+                    alt="Premium"
+                    src={ICONS.PremiumTokenBg}
+                    />
+      </div>	
      
         </section>
     )

@@ -1,31 +1,48 @@
 @import '../../../../assets/scss/base';
 
 .featured-on {
-  padding-top: 200px;
+
+  padding: 200px 0;
 
   h2 {
     margin-bottom: 40px;
   }
 
   .featured-row {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 40px;
+    @include flexbox;
+    gap: 12px;
     background-color: rgba(56, 153, 137, 0.2470588235);
     border-top-right-radius: 60px;
     border-bottom-left-radius: 60px;
-    padding-bottom: 2.5rem;
-    padding-top: 2.5rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding:2.5rem 2rem;
     box-shadow: 0px 0px 35px rgb(0 0 0 / 25%);
     border: 1px solid rgb(255 255 255 / 11%);
-
-    .fetured-image {
+    @media (max-width:991px) {
+      flex-wrap: wrap;
+     padding:18px 5px;
+     @include border-radius(0 30px);
+    }
+    @media (min-width:1440px) {
+      gap:40px;
+    }
+    .fetured-image {     
       img {
         max-width: 100%;
-
+      }
+      &:not(:nth-child(3)) {
+        @media (max-width:991px) {
+          flex:0 0 calc(50% - 12px);
+        }
       }
     }
+  }
+}
+
+.partners_bg {
+  @include position($absolute, $left:0px, $bottom:200px);
+  height: 100%; 
+  z-index: -1;
+  @media (max-width:1200px) {
+       bottom:-72px;
   }
 }
