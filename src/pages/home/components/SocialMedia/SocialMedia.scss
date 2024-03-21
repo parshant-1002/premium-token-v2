@@ -1,0 +1,14 @@
+@import '../../../../assets/scss/base';
+
+.footer-row {
+    .footer-together {
+        max-width: 463px;
+
+        .comon-heade-title {
+            p {
+                @include para;
+                margin-bottom: 52px;
+            }
+        }
+    }
+}
