@@ -1,8 +1,59 @@
 import "./Partners.scss";
 import partner from '../../../../../public/partner.png';
 import auto from '../../../../../public/auto.png';
+import React, { useRef } from 'react';
+import Team from './Team';
+import styles from './Partners.module.css';
+import { CustomSlick } from '../../../../shared/components/CustomSlick'
+
+const cardDetails = [
+  {
+    maskGroup: '/mask-group-5@2x.png',
+    image39: '/image-39@2x.png',
+    name: 'Mike Stoneberg',
+    position: 'CEO & Product Manager',
+  },
+  {
+    maskGroup: '/mask-group-5@2x.png',
+    image39: '/image-39@2x.png',
+    name: 'Mike Stoneberg',
+    position: 'CEO & Product Manager',
+  },
+  {
+    maskGroup: '/mask-group-5@2x.png',
+    image39: '/image-39@2x.png',
+    name: 'Mike Stoneberg',
+    position: 'CEO & Product Manager',
+  },
+  {
+    maskGroup: '/mask-group-5@2x.png',
+    image39: '/image-39@2x.png',
+    name: 'Mike Stoneberg',
+    position: 'CEO & Product Manager',
+  },
+  {
+    maskGroup: '/mask-group-5@2x.png',
+    image39: '/image-39@2x.png',
+    name: 'Mike Stoneberg',
+    position: 'CEO & Product Manager',
+  },
+  {
+    maskGroup: '/mask-group-5@2x.png',
+    image39: '/image-39@2x.png',
+    name: 'Mike Stoneberg',
+    position: 'CEO & Product Manager',
+  },
+    {
+    maskGroup: '/mask-group-5@2x.png',
+    image39: '/image-39@2x.png',
+    name: 'Mike Stoneberg',
+    position: 'CEO & Product Manager',
+  },
+  // Add more objects for additional cards
+];
 
 const Partners = () => {
+  const sliderRef = useRef()
   return (
     <section className="our-teams">
       <div className="container">

@@ -9,9 +9,23 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.scss';
 import RootRouter from './routes/RootRouter';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Web3ModalProvider } from './shared/HOC/Web3ModalProvider';
+import { PhantomWalletAdapter } from "@solana/wallet-adapter-phantom";
+import {
+    ConnectionProvider,
+    WalletProvider,
+} from "@solana/wallet-adapter-react";
+import { WalletModalProvider } from "@solana/wallet-adapter-react-ui";
+import "@solana/wallet-adapter-react-ui/styles.css";
+import { endpoint } from './blockChain/constants';
 
 function App() {
+    const phantomWallet = new PhantomWalletAdapter();
     return (
+        <ConnectionProvider endpoint={endpoint}>
+            <WalletProvider wallets={[phantomWallet]}>
+                <WalletModalProvider>
+        <Web3ModalProvider>
         <Provider store={store}>
             <PersistGate loading={null} persistor={persistor}>
                 <HelmetProvider>
@@ -23,6 +37,10 @@ function App() {
                 </HelmetProvider>
             </PersistGate>
         </Provider>
+        </Web3ModalProvider>
+                </WalletModalProvider>
+            </WalletProvider>
+        </ConnectionProvider>
     );
 }
 

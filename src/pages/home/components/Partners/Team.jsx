@@ -20,15 +20,6 @@ const Team = ({ maskGroup, image39, propWidth }) => {
         src="/pinpng-2@2x.png"
       />
       <div className={styles.component1Parent}>
-        <button className={styles.component1}>
-          <div className={styles.component1Child} />
-          <img
-            className={styles.image39Icon}
-            alt=""
-            src={image39}
-            style={image39IconStyle}
-          />
-        </button>
         <div className={styles.shapeCombinerX}>
           <div className={styles.mikeStoneberg}>Mike Stoneberg</div>
           <div className={styles.ceoProduct}>{`CEO & Product Manager`}</div>
