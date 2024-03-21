@@ -4,7 +4,7 @@ import auto from '../../../../../public/auto.png';
 import React, { useRef } from 'react';
 import Team from './Team';
 
-import { CustomSlick } from '../../../../shared/components/CustomSlick'
+// import { CustomSlick } from '../../../../shared/components/CustomSlick'
 
 const cardDetails = [
   {

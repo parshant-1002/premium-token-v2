@@ -457,6 +457,11 @@ input[type="search"]::-webkit-search-results-decoration {
         @include flexCenter;
         @include border-radius (9px);
     }
+    &:hover{
+        path{
+            fill: #A7D7CF;
+        }
+    }
 }
  
 .gap {

@@ -1,20 +1,137 @@
 @import '../../../../assets/scss/base';
 
+.transform-none {
+  text-transform: $transform;
+}
+
+
 .header {
+
+
   padding: 15px 0;
+  position: $relative;
 
-  @media (min-width:1200px) {
-    padding: 30px 0;
-  }
+  &.togglebar {
+    .navbar-brand {
+      position: relative;
+      z-index: 12;
+      padding:0;
+    }
 
-  .dark-green-gradient {
-    &:hover {
-      path {
-        fill: #A7D7CF;
+    .navbar-toggler {
+top: 0;
+      z-index: 12;
+    }
+
+    .navbar-toggler-icons {
+      transition:all 0.3s;
+       span {
+        &:nth-child(1) {
+          transform: rotate(45deg) translate(10px, 10px);
+          background: #fff;
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          transform: rotate(-45deg);
+        width: 25px;
+        }
       }
     }
+
+
   }
-  .transform-none{
-    text-transform: none;
+
+  .navbar-brand {
+    @media(max-width: 991px) {
+      svg {
+        max-width: 147px;
+      }
+    }
+
   }
+
+  .navbar-toggler {
+    &:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
+    @media(max-width:991px) {
+      @include position (absolute, $top: null, $right: 25px, $bottom: null, $left: null);
+      padding: 0;
+    }
+  }
+
+  .main-navigation {
+    @media(max-width:991px) {
+      height: 100%;
+      padding: 0 16px;
+      @include position (fixed, $top: 0, $right: 0, $bottom: null, $left: 0);
+      z-index: 11;
+      background-color: #020C0C;
+    }
+
+    .social-icon {
+      @media(max-width:991px) {
+        @include position (absolute, $top: null, $right: null, $bottom: 24px, $left: 50%);
+        transform: translateX(-50%);
+      }
+
+    }
+  }
+
+  .navbar-toggler-icons {
+    display: grid;
+    gap: 4px;
+
+    span {
+      &:nth-child(1) {
+        width: 25px;
+        height: 3px;
+        display: block;
+        background: $green-tin-color-700;
+        @include border-radius(3px)
+      }
+
+      &:nth-child(2) {
+        width: 21px;
+        height: 3px;
+        margin: auto;
+        display: block;
+        background: #A7D7CF;
+        @include border-radius(3px)
+      }
+
+      &:nth-child(3) {
+        width: 17px;
+        height: 3px;
+        margin: auto;
+        display: block;
+        background: #fff;
+        @include border-radius(3px)
+      }
+
+    }
+
+
+    @media (min-width:1200px) {
+      padding: 30px 0;
+    }
+
+    .dark-green-gradient {
+      &:hover {
+        path {
+          fill: #A7D7CF;
+        }
+      }
+    }
+
+    .transform-none {
+      text-transform: none;
+    }
+  }
+
+
 }
