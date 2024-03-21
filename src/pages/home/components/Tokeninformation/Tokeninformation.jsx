@@ -145,22 +145,6 @@ const Tokeninformation = () => {
         <Airdrop />
 
 
-        <div className="">
-          <img className="" alt="" src="/bg-blur-13@2x.png" />
-        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
       </div>
     </section>
   );

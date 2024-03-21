@@ -3,6 +3,7 @@ import "./video-banner.scss";
 const VideoSection = () => {
     return (
         <section className="video-banner py-72">
+         
             <div className="container">
                 <div className="video-banner--info text-center">
                     <h1 className="h1">PlatinumCars explains about PremiumToken</h1>
