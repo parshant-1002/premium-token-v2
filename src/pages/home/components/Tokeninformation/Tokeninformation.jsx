@@ -1,8 +1,8 @@
+import { options, series } from "../../helpers/constants";
 import { DoughnutChart } from "../DoughnutChart";
 import Airdrop from "./Airdrop";
 import Info from "./Info";
 import "./Tokeninformation.scss";
-import { data, options } from "./config";
 
 const Tokeninformation = () => {
 	return (
@@ -15,7 +15,7 @@ const Tokeninformation = () => {
 				</div>
 				<div className="text-center pie-chart">
 					<div style={{ width: '400px', height: '400px', margin: 'auto' }}>
-						<DoughnutChart data={data} options={options} />
+						<DoughnutChart series={series} options={options} />
 					</div>
 				</div>
 

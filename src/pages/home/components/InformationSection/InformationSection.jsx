@@ -1,4 +1,5 @@
 import { Icons } from "react-toastify";
+import { CustomSlick } from "../../../../shared/components/CustomSlick";
 import { InformationCard } from "../InformationCard";
 import "./InformationSection.scss";
 import { ICONS } from "../../../../assets";
@@ -13,6 +14,7 @@ const InformationSection = () => {
           </h2>
         </div>
         <div className="card-slider-row">
+          <CustomSlick slidesToShow={1} responsive = {true}>
           <InformationCard
             illustration="/card-image-1.png"
             title="Buy premiumtoken"
@@ -34,6 +36,7 @@ const InformationSection = () => {
                title="The longer you hold PremiumToken, and the more PremiumTokens you have, the bigger chance of winning."
                prop="4"
           />
+          </CustomSlick>
           
         </div>
       </div>

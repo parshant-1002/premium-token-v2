@@ -1,12 +1,8 @@
 import React from 'react';
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Doughnut } from 'react-chartjs-2';
-import ChartDataLabels from 'chartjs-plugin-datalabels';
+import Chart from "react-apexcharts";
 
-ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
-
-const DoughnutChart = ({ data, options }) => {
-    return <Doughnut data={data} options={options} />;
+const DoughnutChart = ({ series, options }) => {
+    return <Chart width={500} height={500} options={options} series={series} type="donut" />    
 };
 
 export default DoughnutChart;
