@@ -1,7 +1,7 @@
 @import "../../../../assets/scss/base";
 
 .prize_secn {
-  margin: 50px 0;
+  margin: 50px 0 100px;
 
   @media (min-width:1200px) {
     margin: 140px 0;
@@ -10,6 +10,7 @@
 
 .card-slider-row {
   margin-top: 40px;
+
   .cstm-slider {
     .regular {
       @media (min-width:1200px) {
@@ -17,7 +18,54 @@
         grid-template-columns: repeat(4, 1fr);
         gap: 1.25rem;
         margin-top: 70px;
-    
+
+      }
+    }
+
+    .slick {
+      &-slider {
+        .slick {
+          &-list {
+            overflow: visible;
+          }
+
+          &-track {
+            @media (max-width:1199.98px) {
+              display: flex !important;
+              gap: 20px;
+            }
+
+            .slick-slide {
+              flex: 1;
+              height: inherit !important;
+            }
+          }
+        }
+      }
+
+      &-arrow {
+        bottom: 0;
+        top: calc(100% + 52px);
+
+        @media (min-width:1200px) {
+          top: calc(100% + 32px);
+        }
+      }
+
+      &-prev {
+        right: 0; 
+        @media (max-width:1199.98px) {
+          left: calc(50% - calc(100px/2));
+        }
+      }
+
+      &-next {
+        right: 0;
+
+        @media (max-width:1199.98px) {
+          right: calc(50% - calc(100px/2));
+        }
+
       }
     }
   }

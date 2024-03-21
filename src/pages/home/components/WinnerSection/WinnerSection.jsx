@@ -58,7 +58,7 @@ const WinnerSection = () => {
         </div>
         {/* table slider */}
         <div className="table_slider my-32">
-          <div className="table-responsive prize_table">
+          <div className="prize_table">
               <CustomSlick slidesToShow={1}>
                 <table className="table table-borderless">
                   <thead>

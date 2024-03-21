@@ -54,9 +54,12 @@ h6, .h6 {
     font-weight: $font-bold;
 }
 h1, .h1 {
-    @include font-size(3);
+    @include font-size(2.5);
     @media (min-width: 1600px) {
         @include font-size(3.125);
+    }
+    @media (max-width:991.98px) {
+        @include font-size(1.5);
     }
 }
 h2, .h2 {
@@ -225,7 +228,10 @@ a.btn {
         font-weight: $font-bold;
         padding: 0.625rem 1rem;
         @include font-size(1);      
-        min-height: 44px;       
+        min-height: 44px; 
+        @media (min-width:1200px) {
+            min-width: 150px;
+        }      
     }
     &-sm {
         line-height: 1;

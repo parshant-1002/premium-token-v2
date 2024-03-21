@@ -4,27 +4,25 @@ $size400: 400px;
 
 .premium-token-inner {
     display: grid;
-    grid-template-columns: 468px 1fr;
+    grid-template-columns: 1fr;
     justify-content: space-between;
-    align-items: center;
-
+    align-items: $center;
+    @media (min-width:992px) {
+        grid-template-columns: 468px 1fr;
+    }
     .token-text {
         h2 {
             margin-bottom: 12px;
         }
-
         .comming-soon {
             text-transform: none;
-            font-size: 14px;
+            @include font-size(0.875);
             min-width: 240px;
-            display: flex;
             gap: 40px;
-            justify-content: center;
-            align-items: center;
-            margin: auto;
-
+            @include flexCenter;
+            margin: $auto;
             span {
-                color: #fff;
+                color: $white-color;
                 line-height: 1;
             }
         }

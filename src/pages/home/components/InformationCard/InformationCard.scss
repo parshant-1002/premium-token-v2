@@ -1,6 +1,6 @@
 @import "../../../../assets/scss/base";
 
-$size44:44px;
+$size44: 44px;
 
 .card {
   &-box {
@@ -11,18 +11,26 @@ $size44:44px;
       backdrop-filter: blur(40px);
       padding: 42px 16px 16px 16px;
       text-align: $center;
+
       .card-img {
         margin-bottom: 20px;
-      img {
-        max-height: 188px;
-        object-fit: $contain;
-        @media (min-width:1200px) {
-          min-height: 188px;
+
+        img {
+          object-fit: $contain;
+          margin: 0 $auto;
+          @media (max-width:1199.98px) {
+            min-height: 206px;
+            max-height: 206px;
+          }
+          @media (min-width:1200px) {
+            min-height: 188px;
+            max-height: 188px;
+          }
         }
-      }     
-    }
+      }
+
       .card-counter {
-         content: '';
+        content: '';
         position: $absolute;
         top: calc((0px - $size44)/2);
         left: 50%;
@@ -33,6 +41,7 @@ $size44:44px;
         @include border-radius(0 20px 0 20px);
         background-color: $green-tin-color-700;
         border: 1px solid rgba($color: $white-color, $alpha: 0.15);
+
         span {
           @include font-size(1.188);
           color: $white-color;
@@ -40,12 +49,13 @@ $size44:44px;
           font-style: $normal;
         }
       }
+
       p {
         font-weight: $font-bold;
         margin-bottom: 0;
         @include font-size(1);
       }
     }
-    
+
   }
 }

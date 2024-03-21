@@ -2,12 +2,52 @@
 
 .footer-row {
     .footer-together {
-        max-width: 463px;
+        @include flexbox;
+        @include flex-direction(column);
+        gap: 30px;
 
-        .comon-heade-title {
-            p {
-                @include para;
-                margin-bottom: 52px;
+        @media (min-width:1200px) {
+            gap: 52px;
+        }
+
+        p {
+            @include font-size(0.938);
+            line-height: 1.5;
+        }
+    }
+
+    .sprialshape {
+        @include position($absolute, $right: 0px, $top: 0);
+        z-index: -1;
+
+        @media (max-width:1200px) {
+            $top: -72px;
+        }
+    }
+}
+.footer_social_media  {
+    ul {
+        li {
+            span {
+                @include border-radius (25px 0);
+                background: #389989;
+                border: 1px solid rgba($color: $white-color ,$alpha: 0.5);
+                
+                    
+                    width: 70px;
+                    height: 63px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  
+                    font-size: 24px;
+                    -webkit-transition: all 400ms ease-in-out 0s;
+                    -moz-transition: all 400ms ease-in-out 0s;
+                    -ms-transition: all 400ms ease-in-out 0s;
+                    -o-transition: all 400ms ease-in-out 0s;
+                    transition: all 400ms ease-in-out 0s;
+                    margin: 0 auto;
+                
             }
         }
     }

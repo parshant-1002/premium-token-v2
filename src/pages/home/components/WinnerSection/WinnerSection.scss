@@ -63,6 +63,10 @@
     table {
       border-collapse: separate;
      border-spacing: 0 1rem;
+     @media (min-width:1200px) {
+       display: table !important;
+
+     }
       thead {
         th {
           background: transparent;
@@ -103,6 +107,23 @@
       }
     }
   }
+  .slick {
+    &-arrow {
+            bottom:0;            
+            @media (min-width:1200px) {
+              top:calc(100% + 32px);
+            }
+    }
+    &-prev {
+        left: calc(100% - 90px);
+        right: 0;
+       
+    }
+    &-next {
+        right: 0;
+        
+    }
+}
 }
 .loopControl {
   .text-value {

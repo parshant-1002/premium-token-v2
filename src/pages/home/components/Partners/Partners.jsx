@@ -112,8 +112,8 @@ const Partners = () => {
         </div>
       </div>
       <div className="teamSliderBg">
-        <img width={542} height={700}
-          className="img-fluid"
+        <img width={542} height={900}
+          className="img-fluid d-md-block d-none"
           alt="desktop-banner"
           src={ICONS.PartnersSliderBg}
         />

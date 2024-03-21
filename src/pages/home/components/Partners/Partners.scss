@@ -58,7 +58,7 @@
 
 
 .teamSliderBg {
-    @include position($absolute, $left: 0px, $bottom: 200px);
+    @include position($absolute, $left: 0px, $bottom: 100px);
     height: 100%;
     z-index: -1;
 
@@ -67,6 +67,9 @@
     }
     @media (max-width:991px) {
         display: none;
+    }
+    img {
+        max-height: 900px;
     }
 }
 

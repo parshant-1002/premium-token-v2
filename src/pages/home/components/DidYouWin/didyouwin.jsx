@@ -8,6 +8,22 @@ import { CustomSlick } from "../../../../shared/components/CustomSlick";
 
 
 const DidYouWin = () => {
+
+	const responsiveConfig =  [
+		{
+			breakpoint: 768,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				infinite: true,
+				dots: true
+			}
+		},
+		{
+			breakpoint: 1024000,
+			settings: "unslick"
+		}
+	]
 	const arr = [
 		{
 			image: Illustration,
@@ -44,7 +60,7 @@ const DidYouWin = () => {
 					</h2>
 				</div>
 				<div className="did-you-win-row">
-					<CustomSlick slidesToShow={1} responsive={true}>
+					<CustomSlick slidesToShow={1} responsive= {responsiveConfig}>
 					{arr.map((item, index) =>
 						<div className="card-box-green position-relative">
 							<div className="card-img">
