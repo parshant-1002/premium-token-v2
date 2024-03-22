@@ -21,9 +21,11 @@ const InformationCard = ({
           <RenderIconWithHover iconUrl={illustration} />
         </div>
         <SafeHTML html={title} />
-        <button type="button" className="btn btn-md btn-secondary">
-          <span>Connect Wallet</span>
-        </button>
+        <div className="w-100 text-center btn_contain">
+          <button type="button" className="btn btn-md btn-secondary">
+            <span className="transform-none">Connect Wallet</span>
+          </button>
+        </div>
       </div>
     </div>
   );

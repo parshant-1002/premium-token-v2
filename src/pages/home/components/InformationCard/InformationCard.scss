@@ -1,6 +1,7 @@
 @import "../../../../assets/scss/base";
 
 $size44: 44px;
+
 .card {
   &-box {
     &-green {
@@ -10,7 +11,7 @@ $size44: 44px;
       backdrop-filter: blur(40px);
       padding: 42px 22px 16px 22px;
       text-align: $center;
-      @media (min-width:1200px){
+      @media (min-width:1200px) {
         height: 100%;
         padding-bottom: 70px;
       }
@@ -31,7 +32,6 @@ $size44: 44px;
         }
       }
       .card-counter {
-        content: '';
         position: $absolute;
         top: calc((0px - $size44)/2);
         left: 50%;
@@ -40,13 +40,18 @@ $size44: 44px;
         min-height: $size44;
         @include flexCenter;
         @include border-radius(0 20px 0 20px);
-        background-color: $green-tin-color-700;
-        border: 1px solid rgba($color: $white-color, $alpha: 0.15);
-        span {
-          @include font-size(1.188);
-          color: $white-color;
-          line-height: $normal;
-          font-style: $normal;
+        padding: 1px;
+        background: linear-gradient(91.03deg, rgb(50 171 151) 1.7248211429%, rgb(255, 255, 255, .8) 51.5625%, rgb(50 171 151) 100%); 
+        .card-counter-no {
+          @include flexCenter;
+          padding: 0.625rem 1rem;
+          @include button($green-tin-color-700, $transparent, $white-color);
+          @include border-radius(0 20px 0 20px);
+          width: 100%;
+          height: 100%;
+          min-height: 44px;
+          @include font-size (1);
+          line-height: 1; 
         }
       }
       p {
@@ -55,4 +60,9 @@ $size44: 44px;
       }
     }
   }
+}
+
+.btn_contain {
+  margin-top: 10px;
+  @include position($absolute, $bottom:16px, $left:0);
 }
