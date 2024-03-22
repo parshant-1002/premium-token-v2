@@ -227,11 +227,11 @@ a.btn {
         text-transform: $uppercase;
         font-weight: $font-bold;
         padding: 0.625rem 1rem;
-        @include font-size(1);      
-        min-height: 44px; 
+        @include font-size(1);
+        min-height: 44px;
         @media (min-width:1200px) {
             min-width: 150px;
-        }      
+        }
     }
     &-sm {
         line-height: 1;
@@ -248,9 +248,9 @@ a.btn {
         @media (max-width:359px) {
             @include font-size(.800);
         }
-    } 
+    }
     &-primary {
-        @include button(rgba($green-tin-color-700, 0.25), $transparent, $white-color); 
+        @include button(rgba($green-tin-color-700, 0.25), $transparent, $white-color);
         span {
             @include flexCenter;
             @include font-size (.875);
@@ -269,7 +269,7 @@ a.btn {
         @include button($green-tin-color-700, $transparent, $white-color);
         overflow: $hidden;
         position: $relative;
-        z-index: 1;  
+        z-index: 1;
         span {
             @include flexCenter;
             @include font-size (.875);
@@ -302,7 +302,7 @@ a.btn {
                 color: $white-color!important;
             }
         }
-    } 
+    }
     &-grey {
         background-color: $text-color;
         color: $base-color;
@@ -316,7 +316,7 @@ a.btn {
         border: 0;
     }
 }
- 
+
 // Input Controls
 label {
     line-height: 1.1;
@@ -393,7 +393,7 @@ select {
     &-txt {
         @extend .error;
     }
-} 
+}
 
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
@@ -450,14 +450,24 @@ input[type="search"]::-webkit-search-results-decoration {
         object-position: $center;
         z-index: 1;
     }
-} 
+}
 
 .btn_icon {
-    padding: 1px; 
+    // padding: 1px;
     @include border-radius (10px);
-    background: radial-gradient(#fff 9.07%,#054625 90.05%,);
+    // background: radial-gradient(#fff 9.07%,#054625 90.05%,);
+    background-clip: padding-box;
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(
+      91.03deg,
+      rgba(255, 255, 255, 0.11) 1.7248211428523064%,
+      rgba(255, 255, 255, 1) 51.5625%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    border-image-slice: 1;
     span {
-        background:$dark-green-color-500;        
+        background:$dark-green-color-500;
         height: 100%;
         width: 100%;
         @include flexCenter;
@@ -469,7 +479,7 @@ input[type="search"]::-webkit-search-results-decoration {
         }
     }
 }
- 
+
 .gap {
     &-12 {
         gap:0.75rem;
@@ -489,10 +499,10 @@ input[type="search"]::-webkit-search-results-decoration {
     padding: 36px 0;
     @media (min-width:1400px) {
         padding: 72px 0;
-    }   
+    }
 }
 
-// 
+//
 .bg-green-600 {
     background: $bg-green-600;
 }
