@@ -11,9 +11,13 @@ $size44: 44px;
       backdrop-filter: blur(40px);
       padding: 42px 22px 16px 22px;
       text-align: $center;
-      @media (min-width:1200px) {
+      padding-bottom: 70px;
+      @media (min-width:574.99px) {
         height: 100%;
-        padding-bottom: 70px;
+      }
+      @media (max-width:991px) {
+        margin-top: 22px;
+        padding-bottom: 100px;
       }
       .card-img {
         margin-bottom: 20px;
@@ -63,6 +67,5 @@ $size44: 44px;
 }
 
 .btn_contain {
-  margin-top: 10px;
   @include position($absolute, $bottom:16px, $left:0);
 }

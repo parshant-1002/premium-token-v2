@@ -53,17 +53,14 @@
             .input-col {
                 position: $relative;
                 margin-bottom: 8px;
-
                 img {
                     @include position($absolute, $top: 50%, $left: 10px);
                     transform: translateY(-50%);
-
-             
+                    width: 24px;             
                 }
-
                 input {
                     background: rgba(41, 101, 92, 0.25);
-                    border-radius: 10px;
+                    @include border-radius (10px);
                     padding: 8px 16px 8px 40px;
                     width: 100%;
                     border: 0;
@@ -72,10 +69,8 @@
                     font-weight: $font-medium;
                     line-height: 22px;
                     min-height: 40px;
-
                     &::placeholder {
                         color: $green-tin-color-700;
-
                     }
                 }
             }

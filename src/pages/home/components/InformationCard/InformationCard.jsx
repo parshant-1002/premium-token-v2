@@ -10,7 +10,7 @@ const InformationCard = ({
 }) => {
   console.log(item, "item<><><><><")
   return (
-    <div className="col-md-3">
+    <div className="col-lg-3">
       <div className="card-box-green position-relative">
         <div className="card-counter">
           <span className="card-counter-no">

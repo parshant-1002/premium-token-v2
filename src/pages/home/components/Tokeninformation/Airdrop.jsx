@@ -22,18 +22,14 @@ const Airdrop = () => {
                 <h3 className="h4">
                   Get whitelisted for AirDrop
                 </h3>
-
                 <div className="main-form">
-
                   <div className="input-col">
                     <img className="" alt="" src="/heroiconssolid.svg" />
-
                     <input
                       className=""
                       placeholder="Enter your PremiumToken wallet address"
                       type="text"
                     />
-
                   </div>
 
                   <div className="input-col">
@@ -83,7 +79,6 @@ const Airdrop = () => {
                       placeholder="  Enter URL to your Facebook profile"
                       type="text"
                     />
-
                   </div>
                   <div className="input-col">
                     <img
@@ -96,7 +91,6 @@ const Airdrop = () => {
                       placeholder="Enter your username on Discord"
                       type="text"
                     />
-
                   </div>
                   <div className="input-col">
                     <img
@@ -109,12 +103,11 @@ const Airdrop = () => {
                       placeholder=" Enter URL to your TikTok profile"
                       type="text"
                     />
-
                   </div>
                 </div>
                 <div className="submit-drop">
                   <button className="btn btn-md btn-secondary">
-                    Submit airdrop
+                      <span className="transform-none">Submit airdrop</span>
                   </button>
                 </div>
               </form>

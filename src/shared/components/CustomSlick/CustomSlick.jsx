@@ -25,13 +25,11 @@ const CustomSlick = ({ children, slidesToShow = 4, responsive = [] }) => {
     console.log(settings,"settings")
 
     return (
-        <>
-            <div className='cstm-slider' style={{ zIndex: "99999" }}>
+            <div className='custom-slider' style={{ zIndex: "99999" }}>
                 <Slider ref={ref} {...settings} >
                     {children}
                 </Slider>
             </div>
-        </>
     );
 };
 

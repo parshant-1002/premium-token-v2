@@ -11,9 +11,9 @@ const PremiumToken = () => {
                         <h2 className="h2 common_title">PremiumToken Wallet</h2>
                         <p>We have plans to develop our own wallet for PremiumToken, where we want to add so all our holders can have their own debit card to use and spend PremiumTokens with if they want to. We are currently looking in to potential whitelabel partners that can help us with getting virtual debit cards and potentially real debit cards as well, stay tuned!</p>
                         <button type="button" className="btn btn-md btn-secondary comming-soon">
-                            <span>Coming soon</span>
+                            <span className="transform-none">Coming soon</span>
                             <img src={arrow} alt="premium" />
-                            </button>
+                        </button>
                     </div>
                     <div className="premium-image">
                         <img src={premium} alt="premium" />

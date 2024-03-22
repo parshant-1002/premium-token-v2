@@ -8,21 +8,30 @@ import { ICONS } from "../../../../assets";
 
 const InformationSection = ({ content = {} }) => {
   const { rulesToWin, title } = content;
-    const responsiveConfig = [
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          infinite: true,
-          dots: true
-        }
-      },
-      {
-        breakpoint: 1024000,
-        settings: "unslick"
+  const responsiveConfig = [
+    {
+      breakpoint: 575,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true
       }
-    ]
+    },
+    {
+      breakpoint: 991,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        infinite: false,
+        dots: true
+      }
+    },
+    {
+      breakpoint: 120000000,
+      settings: "unslick"
+    }
+  ]
     return (
       <section className="prize_secn position-relative">
         <div className="container">
@@ -32,15 +41,13 @@ const InformationSection = ({ content = {} }) => {
             </h2>
           </div>
           <div className="card-slider-row">
-            <CustomSlick slidesToShow={1} responsive={responsiveConfig}>
-              <Each of={rulesToWin} render={(item, index) =>
-                <InformationCard
+            <CustomSlick responsive={responsiveConfig}>
+              {rulesToWin?.map((item, index)=><InformationCard
                   illustration={addBaseUrlToUrls(item.imageUrl)}
                   title={item.description}
                   prop={index}
                   item={item}
-                />
-              } />
+                />)}
             </CustomSlick>
 
           </div>

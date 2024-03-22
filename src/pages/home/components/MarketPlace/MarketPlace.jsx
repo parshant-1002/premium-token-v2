@@ -29,7 +29,7 @@ const MarketPlace = () => {
         </div>
         <div className="text-center">
           <button type="button" className="btn btn-md btn-secondary comming-soon">
-            <span>Coming soon</span>
+            <span className="transform-none">Coming soon</span>
             <img src={arrow} alt="premium" />
           </button>
         </div>

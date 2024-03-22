@@ -8,31 +8,31 @@
 }
 
 .card-slider-row {
-  margin-top: 40px;
-  .cstm-slider {
+  margin-top: 40px;  
+  .slick-slide>div{
+    [class*=col-] {
+      padding-inline: 10px ;
+    }
+  }
+  
+  .custom-slider {
     .regular {
       margin-inline: -10px;
-      @media (min-width:1200px) {
-        @include flexbox;
+      @include flexbox;
+      @media (min-width:990.99px) {
         margin-top: 70px;
       }
       [class*=col-] {
         padding-inline: 10px;
       }
     }
-
     .slick {
       &-slider {
         .slick {
           &-list {
             overflow: $absolute;
           }
-          &-track {
-            @media (max-width:1199.98px) {
-              display: flex !important;
-              gap: 20px;
-            }
-
+          &-track { 
             .slick-slide {
               flex: 1;
               height: inherit !important;
@@ -40,30 +40,24 @@
           }
         }
       }
-
       &-arrow {
         bottom: 0;
         top: calc(100% + 52px);
-
         @media (min-width:1200px) {
           top: calc(100% + 32px);
         }
       }
-
       &-prev {
         right: 0;
         @media (max-width:1199.98px) {
           left: calc(50% - calc(100px/2));
         }
       }
-
       &-next {
         right: 0;
-
         @media (max-width:1199.98px) {
           right: calc(50% - calc(100px/2));
         }
-
       }
     }
   }
