@@ -453,19 +453,9 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .btn_icon {
-    // padding: 1px;
+    padding: 1px;
+    background: linear-gradient(91.03deg, rgb(23 56 51) 1.7248211429%, rgb(255 255 255 / 25%) 51.5625%, rgb(23 56 51) 100%);
     @include border-radius (10px);
-    // background: radial-gradient(#fff 9.07%,#054625 90.05%,);
-    background-clip: padding-box;
-    border-width: 1px;
-    border-style: solid;
-    border-image: linear-gradient(
-      91.03deg,
-      rgba(255, 255, 255, 0.11) 1.7248211428523064%,
-      rgba(255, 255, 255, 1) 51.5625%,
-      rgba(255, 255, 255, 0) 100%
-    );
-    border-image-slice: 1;
     span {
         background:$dark-green-color-500;
         height: 100%;

@@ -4,12 +4,29 @@ import { addBaseUrlToUrls } from "../../../../shared/utilities";
 import { RenderIconWithHover } from "../../../../shared/components/RenderIconWithHover";
 import { ICONS } from "../../../../assets";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
+import { useEffect, useState } from "react";
 
 const Header = ({ content = {} }) => {
 	const { twitter, discord, telegram, viewChartButton, airdropButton, buyTokenButton, premiumTokenTitle } = content
+	const [isSticky, setIsSticky] = useState(false);
+
+	const handleScroll = () => {
+		const scrollTop = window.scrollY;
+		const stickyClassThreshold = 0; // Change this to the desired scroll position
+		setIsSticky(scrollTop > stickyClassThreshold);
+	};
+
+	useEffect(() => {
+		window.addEventListener('scroll', handleScroll);
+
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+		};
+	}, []);
+
 	return (
 
-		<header className="header">
+		<header className={isSticky ? 'header sticky-header' : 'header'}>
 
 			<nav className="navbar navbar-expand-lg bg-transparent py-0">
 				<div className="container justify-content-center justify-content-lg-between">
@@ -26,20 +43,17 @@ const Header = ({ content = {} }) => {
 					<div className="collapse navbar-collapse" id="navbarSupportedContent">
 						<div className="main-navigation d-flex justify-content-center justify-content-md-between flex-column flex-md-row align-items-center gap-12 ms-auto">
 							<div className="social-icon  d-flex justify-content-between align-items-center gap-12 ms-md-auto">
-								<a className="btn_icon btn44 dark-green-gradient" href="#" rel="noreferrer">
-									<span>
-										<svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.3263 0.903809H20.6998L13.3297 9.3273L22 20.7898H15.2112L9.89404 13.8378L3.80995 20.7898H0.434432L8.31743 11.7799L0 0.903809H6.96111L11.7674 7.25814L17.3263 0.903809ZM16.1423 18.7706H18.0116L5.94539 2.81694H3.93946L16.1423 18.7706Z" fill="white"></path></svg>
-									</span>
-
-								</a>
-								<a className="btn_icon btn44 dark-green-gradient" href="#" rel="noreferrer">
+								<Link className="btn_icon btn44 dark-green-gradient" rel="noreferrer">
 									<span><RenderIconWithHover iconUrl={addBaseUrlToUrls(twitter?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Twitter} /></span>
-								</a>
-								<a className="btn_icon btn44 dark-green-gradient" href="#" rel="noreferrer">
+								</Link>
+								<Link className="btn_icon btn44 dark-green-gradient" rel="noreferrer">
+									<span><RenderIconWithHover iconUrl={addBaseUrlToUrls(discord?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Discord} /></span>
+								</Link>
+								<Link className="btn_icon btn44 dark-green-gradient" rel="noreferrer">
 									<span>
 										<RenderIconWithHover iconUrl={addBaseUrlToUrls(discord?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Discord} />
 									</span>
-								</a>
+								</Link>
 							</div>
 
 							<div className="w-100 header-button d-flex justify-content-between flex-column-reverse flex-md-row align-items-center gap-12 ms-md-auto">
