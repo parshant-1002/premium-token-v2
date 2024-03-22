@@ -4,28 +4,25 @@
   text-transform: $transform;
 }
 
-
 .header {
-
-
   padding: 15px 0;
   position: $relative;
-
+  @media (min-width:1200px) {
+    padding: 30px 0;
+  }
   &.togglebar {
     .navbar-brand {
       position: relative;
       z-index: 12;
-      padding:0;
+      padding: 0;
     }
-
     .navbar-toggler {
-top: 0;
+      top: 0;
       z-index: 12;
     }
-
     .navbar-toggler-icons {
-      transition:all 0.3s;
-       span {
+      transition: all 0.3s;
+      span {
         &:nth-child(1) {
           transform: rotate(45deg) translate(10px, 10px);
           background: #fff;
@@ -35,7 +32,7 @@ top: 0;
         }
         &:nth-child(3) {
           transform: rotate(-45deg);
-        width: 25px;
+          width: 25px;
         }
       }
     }
@@ -132,6 +129,4 @@ top: 0;
       text-transform: none;
     }
   }
-
-
 }

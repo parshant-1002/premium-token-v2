@@ -1,52 +1,66 @@
 
 
+// import SafeHTML from "../../../../shared/components/SanitizeHtml";
+import { ICONS } from "../../../../assets";
 import "./video-banner.scss";
-import { ICONS } from '../../../../assets';
 
-const VideoSection = () => {
+const VideoSection = ({ content = {} }) => {
+    const { title, description, videoUrl } = content;
+
+    const handlePlay = () => {
+        const video = document.querySelector("video");
+        if (video.paused) {
+            video.play();
+        }
+        else {
+            video.pause()
+        }
+    }
     return (
-        <section className="video-banner position-relative py-72">         
+        <section className="video-banner position-relative py-72">
             <div className="container">
                 <div className="video-banner--info text-center">
-                    <h1 className="h1">PlatinumCars explains about PremiumToken</h1>
+                    {/* <h1 className="h1"><SafeHTML html={title}/></h1> */}
                     <div className="video-banner-description">
-                        <p>
-                            Watch our partner PlatinumCars, one of the biggest premium car dealerships in Sweden, talk and explain about how PremiumToken works and how you can win a $350,000 premium car from them.
-                            </p>
+                        {/* <p>
+                            <SafeHTML html={description}/>
+                        </p> */}
                     </div>
                 </div>
-                {/* <div class="ratio ratio-16x9 videoSecn">
-                    <iframe src="https://www.youtube.com/embed/zpOULjyy-n8?rel=0" controls title="YouTube video" allowfullscreen></iframe>
-                </div> */}
                 <div className="videoSecn position-relative">
                     <div className="wrapperVideo">
-                        <img className="videoIcon img-fluid" alt="BannerVideo" src="/banner-video.png" />
-                        <span className="play_icon">
-                    <img
-                        className="playButtonIcon"
-                        alt=""
-                        src="/play-button.svg"
-                    />
-                    </span>
+                        <div className="video_home ratio ratio-16x9">
+                            <video src="https://www.w3schools.com/html/mov_bbb.mp4" key={videoUrl} />
+                        </div>
+                        <button className="play_btn" onClick={handlePlay}>
+                            <svg width="88" height="88" viewBox="0 0 88 88" fill="none">
+                                <g clipPath="url(#clip0_64_31706)">
+                                    <path d="M3.84961 43.9998V15.4169C3.84961 3.57475 16.6715 -3.83306 26.9152 2.09663L51.6824 16.3966L76.4496 30.6966C86.7105 36.6091 86.7105 51.4248 76.4496 57.3373L51.6824 71.6373L26.9152 85.9373C16.6715 91.8326 3.84961 84.4419 3.84961 72.5998V43.9998Z" fill="#A7D7CF" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_64_31706">
+                                        <rect width="88" height="88" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
                     </div>
-                  
-                   
                 </div>
             </div>
-            {/* bg banner floating */}          
+
             <div className="video_banner_bg">
-                <img width={1300} height={978 }
-                        className="large-video-banner d-md-block d-none"
-                        alt="desktop-banner"
-                        src={ICONS.VideoBanner}
+                <img width={1300} height={978}
+                    className="large-video-banner d-md-block d-none"
+                    alt="desktop-banner"
+                    src={ICONS.VideoBanner}
                 />
-                  <img width={510} height={385}
-                        className="mobile-video-banner d-block d-md-none"
-                        alt="Mobile-banner"
-                        src={ICONS.Mobile_banner}
-                    />
+                <img width={510} height={385}
+                    className="mobile-video-banner d-block d-md-none"
+                    alt="Mobile-banner"
+                    src={ICONS.Mobile_banner}
+                />
             </div>
-               
+
         </section>
     );
 };
