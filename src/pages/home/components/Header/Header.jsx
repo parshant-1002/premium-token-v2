@@ -29,7 +29,7 @@ const Header = ({ content = {} }) => {
 		<header className={isSticky ? 'header sticky-header' : 'header'}>
 
 			<nav className="navbar navbar-expand-lg bg-transparent py-0">
-				<div className="container justify-content-center justify-content-lg-between">
+				<div className="container">
 					<Link className="navbar-brand" to={"/"}>
 						<RenderIconWithHover iconUrl={addBaseUrlToUrls(premiumTokenTitle)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Logo} />
 					</Link>

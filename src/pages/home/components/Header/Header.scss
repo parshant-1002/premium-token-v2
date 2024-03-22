@@ -13,7 +13,8 @@
 }
 .header {
   width:100%;
-  @include position ($absolute, $top:0,$left:0, $right:0);
+  @include position ($fixed, $top:0,$left:0, $right:0);
+  @include transition-mixin (all, .5s, ease-in-out);
   z-index: 11;
   @media (min-width:1200px) {
     padding: 30px 0;
@@ -23,7 +24,6 @@
   }
   &.sticky-header {
     background-color: $body-color;
-    position: $fixed;
   }
   // Toggle Header
   &.togglebar {
