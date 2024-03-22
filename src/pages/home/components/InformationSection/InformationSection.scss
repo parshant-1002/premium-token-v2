@@ -11,13 +11,13 @@
   margin-top: 40px;
   .cstm-slider {
     .regular {
+      margin-inline: -10px;
       @media (min-width:1200px) {
         @include flexbox;
-        margin-inline: -10px;
         margin-top: 70px;
-        [class*=col-] {
-          padding-inline: 10px;
-        }
+      }
+      [class*=col-] {
+        padding-inline: 10px;
       }
     }
 

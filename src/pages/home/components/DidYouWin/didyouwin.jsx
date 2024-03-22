@@ -63,6 +63,9 @@ const DidYouWin = () => {
 					<CustomSlick slidesToShow={1} responsive= {responsiveConfig}>
 					{arr.map((item, index) =>
 						<div className="card-box-green position-relative">
+							<div className="card-counter">
+								<span className="card-counter-no">  {item.prop} </span>
+							</div>
 							<div className="card-img">
 								<img
 									className=""
@@ -79,10 +82,6 @@ const DidYouWin = () => {
 							<button type="button" ClassName="btn btn-md btn-secondary">
 								<span>Connect Wallet</span>
 							</button>
-							<div className="card-counter">
-								<span className="card-counter-no">  {item.prop} </span>
-							</div>
-
 						</div>
 					)}
 					</CustomSlick>

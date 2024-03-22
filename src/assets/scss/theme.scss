@@ -271,7 +271,8 @@ a.btn {
     &-secondary {
         border:0;
         padding: 1px;
-        background: linear-gradient(91.03deg, rgba(#fff, 0.4) 1.7248211428523064%, rgba(255, 255, 255, 1) 51.5625%, rgba(255, 255, 255, .4) 100%);
+
+        background: linear-gradient(91.03deg, rgb(50 171 151) 1.7248211429%, rgb(255, 255, 255, .8) 51.5625%, rgb(50 171 151) 100%);
         @include border-radius (10px);
         span {
             @include flexCenter;

@@ -11,7 +11,12 @@ const InformationCard = ({
   console.log(item, "item<><><><><")
   return (
     <div className="col-md-3">
-      <div className=" card-box-green position-relative">
+      <div className="card-box-green position-relative">
+        <div className="card-counter">
+          <span className="card-counter-no">
+            {prop}
+          </span>
+        </div>
         <div className="card-img">
           <RenderIconWithHover iconUrl={illustration} />
         </div>
@@ -19,11 +24,6 @@ const InformationCard = ({
         <button type="button" className="btn btn-md btn-secondary">
           <span>Connect Wallet</span>
         </button>
-        <div className="card-counter">
-          <span className="card-counter-no">
-            {prop}
-          </span>
-        </div>
       </div>
     </div>
   );
