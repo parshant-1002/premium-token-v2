@@ -1,61 +1,52 @@
 import { CustomSlick } from "../../../../shared/components/CustomSlick";
 import { InformationCard } from "../InformationCard";
 import "./InformationSection.scss";
+import SafeHTML from "../../../../shared/components/SanitizeHtml";
+import { Each } from "../../../../shared/components/Each";
+import { addBaseUrlToUrls } from "../../../../shared/utilities";
 
-const InformationSection = () => {
-  const responsiveConfig =  [
-    {
+const InformationSection = ({ content = {} }) => {
+  const { rulesToWin, title } = content;
+    const responsiveConfig = [
+      {
         breakpoint: 768,
         settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            infinite: true,
-            dots: true
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true
         }
-    },
-    {
+      },
+      {
         breakpoint: 1024000,
         settings: "unslick"
-    }
-]
-  return (
-    <section className="prize_secn position-relative">
-      <div className="container">
-        <div className="heading_title text-center">
-          <h2 className="h2 common_title">
-            How to win a 350,000€ prize
-          </h2>
+      }
+    ]
+    return (
+      <section className="prize_secn position-relative">
+        <div className="container">
+          <div className="heading_title text-center">
+            <h2 className="h2 common_title">
+              <SafeHTML html={title} />
+            </h2>
+          </div>
+          <div className="card-slider-row">
+            <CustomSlick slidesToShow={1} responsive={responsiveConfig}>
+              <Each of={rulesToWin} render={(item, index) =>
+                <InformationCard
+                  illustration={addBaseUrlToUrls(item.imageUrl)}
+                  title={item.description}
+                  prop={index}
+                  item={item}
+                />
+              } />
+            </CustomSlick>
+
+          </div>
         </div>
-        <div className="card-slider-row">
-          <CustomSlick slidesToShow={1} responsive={responsiveConfig}>
-          <InformationCard
-            illustration="/card-image-1.png"
-            title="Buy premiumtoken"
-            prop="1"
-          />
-          <InformationCard
-             illustration="/card-image-2.png"
-             title="Hold minimum of 1000 tokens in you wallet and get a chance to win a $350,000 prize"
-             prop="2"
-          />
-          <InformationCard
 
-            illustration="/Investment.png"
-               title="The smart contract draws a new winners automatic at each $10 million market cap"
-               prop="3"
-          />
-           <InformationCard
-                illustration="/time-interval.png"
-               title="The longer you hold PremiumToken, and the more PremiumTokens you have, the bigger chance of winning."
-               prop="4"
-          />
-          </CustomSlick>
+      </section>
+    );
+  };
 
-        </div>
-      </div>
-
-    </section>
-  );
-};
-
-export default InformationSection;
+  export default InformationSection;

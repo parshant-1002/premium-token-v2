@@ -1,7 +1,4 @@
 import SmoothFlipCounter from "../../FlipNumbers";
-import { ConnectButton } from "../ConnectButton";
-import { InformationCard } from "../InformationCard";
-import Row from "./Row";
 import premiumtoken  from '../../../../../public/premium-token.png';
 import cartoken  from '../../../../../public/car-token.png';
 import "./WinnerSection.scss";
