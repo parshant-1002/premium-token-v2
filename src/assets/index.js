@@ -1,6 +1,6 @@
 import VideoBanner from "./img/banner-bg.png"
 import Mobile_banner from './img/banner-bg-mobile.png';
-import PrizeBannerBg from './img/bg-blur.png';
+import PrizeBannerBg from './img/table_bg.png';
 import DidUwinBG from './img/did-u-win-bg.png';
 import GitHUb from './img/GitHub.png';
 import GitHUbBG from './img/git-hub-bg.png';

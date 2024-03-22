@@ -22,13 +22,17 @@ const ConnectionCreator = () => {
                   xfsde3eedsd1e12wdsadasd
                 </span>
               </button>
-              <div className="token-info-button">
-                <button className="download-document btn btn-md btn-secondary">
-                  <span>PremiumToken on Solscan.io</span>
-                </button>
-                <button className="download-document btn btn-md btn-secondary">
-                  <span>View the External Audit</span>
-                </button>
+              <div className="row gx-3">
+                <div className="col-md-6 mb-2">
+                  <button className="btn btn-md btn-secondary w-100">
+                    <span className="transform-none">PremiumToken on Solscan.io</span>
+                  </button>
+                </div>
+                <div className="col-md-6 mb-2">
+                  <button className="btn btn-md btn-secondary w-100">
+                    <span className="transform-none">View the External Audit</span>
+                  </button>
+                </div>
               </div>
 
             </div>

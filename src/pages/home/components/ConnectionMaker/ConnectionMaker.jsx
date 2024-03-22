@@ -34,7 +34,7 @@ const 	ConnectionMaker = () => {
 								</a>
 							</button>
 
-							<button className="download-document btn btn-md btn-secondary">
+							<button className="btn btn-md btn-secondary">
 								<img
 									className=""
 									alt=""
