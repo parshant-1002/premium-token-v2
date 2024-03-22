@@ -27,7 +27,7 @@ const VideoSection = ({ content = {} }) => {
                         </p>
                     </div>
                 </div>
-                <div className="videoSecn position-relative">
+                <div className="position-relative">
                     <div className="wrapperVideo">
                         <div className="video_home ratio ratio-16x9">
                             <video src={videoUrl} key={videoUrl} width={1140} height={400} />

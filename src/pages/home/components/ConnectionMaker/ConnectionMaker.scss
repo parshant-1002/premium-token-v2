@@ -34,23 +34,7 @@
                     white-space: nowrap;
                     width: max-content;
                 }
-            }
-
-            .download-document {
-                display: flex;
-                align-items: center;
-                border-radius: 10px;
-                padding: 10px 24px;
-                gap: 8px;
-                max-width: max-content;
-                margin: auto;
-
-                span {
-                    color: $white-color;
-                    text-transform: none;
-                }
-            }
-
+            } 
             p {
                 color: $text-color;
                 font-size: $font-15;

@@ -23,17 +23,16 @@
 }
 
 .subtitle {
-  @include border-radius(12px);
   background: $dark-green-color-600;
-  @include flexCenter;
+  @include border-radius(12px);
+  @include font-size(1.06);
+  margin: 1rem $auto;
   padding: 8px 16px;
-  @include font-size(1.063);
-  margin: 1rem auto;
+  margin-top: 32px;
   max-width: 570px;
-
   span {
-    font-size: inherit;
-    text-align: center;
+    font-size: $inherit;
+    text-align: $center;
     color: $white-color;
   }
 }
@@ -56,22 +55,28 @@
     margin:48px $auto;
   }
 }
+
+.output {
+  span {
+    @include font-size (1);
+  }
+}
+
 .table_slider {
   margin: 32px 0;
-
   .prize_table {
     table {
       border-collapse: separate;
-     border-spacing: 0 1rem;
-     @media (min-width:1200px) {
+      border-spacing: 0 1rem;
+      margin-bottom: 0;
+      @media (min-width:1200px) {
        display: table !important;
-
-     }
+      }
       thead {
         th {
           background: transparent;
           color: $green-tin-color-600;
-          @include font-size(0.875);
+          @include font-size(0.725);
           font-style: $normal;
           font-weight: $font-mediumbold;
           line-height: 14px; 
@@ -109,21 +114,19 @@
   }
   .slick {
     &-arrow {
-            bottom:0;            
-            @media (min-width:1200px) {
-              top:calc(100% + 32px);
-            }
+      bottom:0;            
+      @media (min-width:1200px) {
+        top:calc(100% + 32px);
+      }
     }
     &-prev {
         left: calc(100% - 90px);
         right: 0;
-       
     }
     &-next {
         right: 0;
-        
     }
-}
+  }
 }
 .loopControl {
   .text-value {
@@ -131,10 +134,20 @@
   }
 }
 .prize_secn_bg {
-  @include position($absolute, $left:0px, $top:0);
-  height: 100%; 
+  @include position($absolute, $left:0px, $bottom:0);
+  height: 100%; width: 100%;
   z-index: -1;
   @media (max-width:1200px) {
-       $top:-72px;
+    $top:-72px;
   }
+  img {
+    object-fit: $contain;
+    object-position: bottom; 
+  }
+}
+
+.market-cap {
+  font-weight: $font-mediumbold;
+  text-transform: $uppercase;
+  @include font-size (.725);
 }

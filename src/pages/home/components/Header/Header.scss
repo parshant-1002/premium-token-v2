@@ -54,12 +54,8 @@
         }
       }
     }
-
-
   }
-  .btn-primary, .btn-secondary{
-    @include font-size (.875)
-  }
+ 
   .navbar-brand {
     @media(max-width: 991px) {
       svg {

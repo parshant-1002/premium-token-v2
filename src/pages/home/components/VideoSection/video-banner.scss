@@ -32,12 +32,18 @@
             background-color: $transparent;
             @include position($absolute, $top: 50%, $left: 50%);
             @include transform(translate(-50%, -50%));
-            img {
-                width: 50px;
-                height: 50px;
+            img, svg { 
                 @media (min-width:1200px) {
                     width: 88px;
                     height: 88px;
+                }
+                @media (max-width:1199.99px) {
+                    width: 44px;
+                    height: 44px;
+                }
+                @media (max-width:767px) {
+                    width: 32px;
+                    height: 32px;
                 }
             }
         }
