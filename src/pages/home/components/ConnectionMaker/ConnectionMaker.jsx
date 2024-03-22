@@ -5,7 +5,6 @@ const 	ConnectionMaker = () => {
 	return (
 		<section className="connectionMaker position-relative">
 			<div className="container">
-
 				<div className="maker-grid row">
 					<div className="col-md-6">
 						<div className="maker-image">
@@ -33,15 +32,22 @@ const 	ConnectionMaker = () => {
 									https://moralis.io/solana-smart-contract-examples-for-developers/
 								</a>
 							</button>
-
+							<div className="text-center">
 							<button className="btn btn-md btn-secondary">
-								<img
-									className=""
+							<span className="text-white transform-none">
+								<span className="render_html_safely"><img
+									className="me-2"
 									alt=""
 									src="/heroiconsoutlinedocumentarrowdown.svg"
 								/>
-								<span className="">Download document</span>
+								Download document
+								</span>
+								</span>
+
+
 							</button>
+							</div>
+
 						</div>
 					</div>
 				</div>

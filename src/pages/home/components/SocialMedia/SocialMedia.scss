@@ -1,54 +1,123 @@
 @import '../../../../assets/scss/base';
 
 .footer-row {
+    padding:100px 0 40px 0;
+    @media (min-width:1200px) {
+        padding:177px 0 92px 0;
+    }
+    @media (max-width:767.98px) {
+        padding:100px 0 40px 0;
+    }
     .footer-together {
         @include flexbox;
         @include flex-direction(column);
-        gap: 30px;
-
+        @include align-items(center);
+        text-align: $center;
+        gap: 24px;
         @media (min-width:1200px) {
             gap: 52px;
         }
-
         p {
             @include font-size(0.938);
             line-height: 1.5;
+            @media (max-width:767px) {
+                @include font-size(0.875);
+            }
         }
     }
 
-    .sprialshape {
-        @include position($absolute, $right: 0px, $top: 0);
+    .footer_left_shape {
+        @include position($absolute, $left: 0px, $bottom: calc(0px - 109px));
         z-index: -1;
 
-        @media (max-width:1200px) {
-            $top: -72px;
+        @media (max-width:768px) {
+           display: none;
         }
     }
-}
-.footer_social_media  {
-    ul {
-        li {
-            span {
-                @include border-radius (25px 0);
-                background: #389989;
-                border: 1px solid rgba($color: $white-color ,$alpha: 0.5);
-                
-                    
-                    width: 70px;
-                    height: 63px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                  
-                    font-size: 24px;
-                    -webkit-transition: all 400ms ease-in-out 0s;
-                    -moz-transition: all 400ms ease-in-out 0s;
-                    -ms-transition: all 400ms ease-in-out 0s;
-                    -o-transition: all 400ms ease-in-out 0s;
-                    transition: all 400ms ease-in-out 0s;
-                    margin: 0 auto;
-                
+    .footer_right_shape {
+        @include position($absolute, $right: 0px,$bottom: calc(0px - 109px));
+        z-index: -1;
+
+        @media (max-width:768px) {
+            display: none;
+         }
+    }
+    .footer-button {
+        @media (max-width:768px) {
+            gap:12px;
+        }
+        button {
+            &:not(:last-child) {
+                @media (max-width:991px) {
+                    width: 44px;
+                    height: 44px;
+                    min-height: 44px;
+                }
+                @media (max-width:360px) {
+                    width: 40px !important;
+                    height: 40px;
+                    min-height: 40px;
+                }
+               .transform-none {
+                    .image_renderer {
+                        @media (max-width:768px) {
+                           margin-right: 0;
+                        }
+                    }
+                    .render_html_safely {
+                        @media (max-width:991px) {
+                            display: $none;
+                        }
+                    }
+                    @media (max-width:360px) {
+                        min-height: 38px;
+                        min-width: 38px;
+                        padding:5px
+                    }
+                }
+            }
+            @media (max-width:360px) {
+                min-height: 40px;
+                .transform-none {
+                  min-height: 38px;
+                  img {
+                    width: 20px;
+                  }
+                }
             }
         }
     }
 }
+.footer_column_box {
+    max-width: 600px;
+    @media (min-width:1200px) {
+        max-width: 712px;
+    }
+}
+// .footer_social_media  {
+//     ul {
+//         li {
+//             span {
+//                 @include border-radius (25px 0);
+//                 background: #389989;
+//                 border: 1px solid rgba($color: $white-color ,$alpha: 0.5);
+
+
+//                     width: 70px;
+//                     height: 63px;
+//                     display: flex;
+//                     align-items: center;
+//                     justify-content: center;
+
+//                     font-size: 24px;
+//                     -webkit-transition: all 400ms ease-in-out 0s;
+//                     -moz-transition: all 400ms ease-in-out 0s;
+//                     -ms-transition: all 400ms ease-in-out 0s;
+//                     -o-transition: all 400ms ease-in-out 0s;
+//                     transition: all 400ms ease-in-out 0s;
+//                     margin: 0 auto;
+
+//             }
+//         }
+//     }
+// }

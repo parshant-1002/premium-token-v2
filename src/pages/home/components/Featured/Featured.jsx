@@ -28,10 +28,15 @@ const Featured = () => {
 			</div>
 			<div className="partners_bg">
 				<img width={750} height={941}
-					className="prize-banner"
+					className="img-fluid d-none d-lg-block"
 					alt="Partner_banner"
 					src={ICONS.PartnersBg}
 				/>
+				 <img width={530} height={400}
+                className="d-block d-md-none img-fluid"
+                alt="desktop-banner"
+                src={ICONS.ConnectionCreatorMobileBg}
+              />
 			</div>
 		</section>
 	);

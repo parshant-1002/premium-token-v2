@@ -262,7 +262,7 @@ a.btn {
             line-height: 1;
         }
         .image_renderer {
-            margin-right: 8px; 
+            margin-right: 8px;
         }
         &[disabled] {
             background-color: $grey-color-800;
@@ -485,8 +485,11 @@ input[type="search"]::-webkit-search-results-decoration {
     &-20 {
         gap:20px;
     }
+    &-24 {
+        gap:20px;
+    }
     &-32 {
-        gap:32px;
+        gap:24px;
     }
     &-54 {
         gap:54px;

@@ -3,6 +3,9 @@
 .featured-on {
 
   padding: 200px 0;
+  @media (max-width:767.98px) {
+    padding: 100px 0;
+  }
 
   h2 {
     margin-bottom: 40px;
@@ -25,7 +28,7 @@
     @media (min-width:1440px) {
       gap:40px;
     }
-    .fetured-image {     
+    .fetured-image {
       img {
         max-width: 100%;
       }
@@ -40,9 +43,12 @@
 
 .partners_bg {
   @include position($absolute, $left:0px, $bottom:200px);
-  height: 100%; 
+  height: 100%;
   z-index: -1;
   @media (max-width:1200px) {
-       bottom:-72px;
+      bottom:200px;
   }
+  @media (max-width:767px) {
+    top:0;
+}
 }
