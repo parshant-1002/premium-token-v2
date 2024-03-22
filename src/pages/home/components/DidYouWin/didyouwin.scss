@@ -9,14 +9,11 @@
     .cstm-slider {
       .regular {
         @media (min-width:1200px) {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 1.25rem;
+          @include flexbox;
           margin-top: 70px;
-      
         }
       }
-   
+
     }
     .card-img {
       img {
@@ -45,17 +42,6 @@
     P {
       @include para;
       font-weight: $font-medium;
-    }
-
-    .win-wallet {
-      margin-top: 44px;
-      min-width: 170px;
-
-      span {
-        color: $white-color;
-        text-transform: none;
-
-      }
     }
   }
 

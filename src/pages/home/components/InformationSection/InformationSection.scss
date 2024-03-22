@@ -2,7 +2,6 @@
 
 .prize_secn {
   margin: 50px 0 100px;
-
   @media (min-width:1200px) {
     margin: 140px 0;
   }
@@ -10,15 +9,15 @@
 
 .card-slider-row {
   margin-top: 40px;
-
   .cstm-slider {
     .regular {
       @media (min-width:1200px) {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1.25rem;
+        @include flexbox;
+        margin-inline: -10px;
         margin-top: 70px;
-
+        [class*=col-] {
+          padding-inline: 10px;
+        }
       }
     }
 
@@ -26,9 +25,8 @@
       &-slider {
         .slick {
           &-list {
-            overflow: visible;
+            overflow: $absolute;
           }
-
           &-track {
             @media (max-width:1199.98px) {
               display: flex !important;
@@ -53,7 +51,7 @@
       }
 
       &-prev {
-        right: 0; 
+        right: 0;
         @media (max-width:1199.98px) {
           left: calc(50% - calc(100px/2));
         }
@@ -69,6 +67,14 @@
       }
     }
   }
+}
 
-
+.win_bg {
+  @include position($absolute, $top:20%,);
+  z-index: -1;
+  width:100%; height:100%;
+  @include transform(translateY(-50%));
+  img {
+    width: 100%;
+  }
 }

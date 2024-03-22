@@ -4,6 +4,7 @@ import "./InformationSection.scss";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import { Each } from "../../../../shared/components/Each";
 import { addBaseUrlToUrls } from "../../../../shared/utilities";
+import { ICONS } from "../../../../assets";
 
 const InformationSection = ({ content = {} }) => {
   const { rulesToWin, title } = content;
@@ -44,7 +45,9 @@ const InformationSection = ({ content = {} }) => {
 
           </div>
         </div>
-
+        <div className="win_bg">
+          <img src={ICONS.WinBg} width={500} height={400} alt="" />
+        </div>
       </section>
     );
   };

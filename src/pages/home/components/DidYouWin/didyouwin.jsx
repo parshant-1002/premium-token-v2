@@ -75,10 +75,8 @@ const DidYouWin = () => {
 
 							</div>
 							<h4>{item.title}</h4>
-							<p >{item.data}</p>
-
-
-							<button type="button" class="btn btn-md btn-secondary win-wallet">
+							<p>{item.data}</p>
+							<button type="button" ClassName="btn btn-md btn-secondary">
 								<span>Connect Wallet</span>
 							</button>
 							<div className="card-counter">

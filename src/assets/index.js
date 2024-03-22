@@ -20,6 +20,7 @@ import Twitter from "./icons/Twitter.svg";
 import Discord from "./icons/Discord.svg";
 import Telegram from "./icons/Telegram.svg";
 import Airdrop from "./icons/Airdrop.svg";
+import WinBg from "./img/win_bg.png";
 
 
 export const ICONS = {
@@ -46,5 +47,6 @@ export const ICONS = {
     Twitter:Twitter,
     Discord:Discord,
     Telegram:Telegram,
-    Airdrop:Airdrop
+    Airdrop:Airdrop,
+    WinBg:WinBg
 }

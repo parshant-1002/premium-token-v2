@@ -4,7 +4,7 @@ const RenderIcon = ({iconUrl, hoverIconUrl, defaultIcon,defaultIconHover, iconAl
   return (
       <div class="image_renderer">
         <img src={iconUrl || defaultIcon} alt={iconAlt}/>
-        <img src={hoverIconUrl || defaultIconHover} class="img-top" alt={iconAlt}/>
+        {/* <img src={hoverIconUrl || defaultIconHover} class="img-top" alt={iconAlt}/> */}
     </div>
   )
 }

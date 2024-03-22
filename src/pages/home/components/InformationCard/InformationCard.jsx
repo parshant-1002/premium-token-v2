@@ -8,28 +8,23 @@ const InformationCard = ({
   prop,
   item
 }) => {
-console.log(item,"item<><><><><")
+  console.log(item, "item<><><><><")
   return (
-    <div className="card-box-green position-relative">
-      <div className="card-img">
-        <RenderIconWithHover iconUrl={illustration}/>
-        {/* <img
-          className=""
-          width={225}
-          height={188}
-          loading="lazy"
-          alt="CoinImage"
-          src={illustration}
-        /> */}
-
+    <div className="col-md-3">
+      <div className=" card-box-green position-relative">
+        <div className="card-img">
+          <RenderIconWithHover iconUrl={illustration} />
+        </div>
+        <SafeHTML html={title} />
+        <button type="button" className="btn btn-md btn-secondary">
+          <span>Connect Wallet</span>
+        </button>
+        <div className="card-counter">
+          <span className="card-counter-no">
+            {prop}
+          </span>
+        </div>
       </div>
-      <p className=""><SafeHTML html={title} /></p>
-      <div className="card-counter">
-        <span className="card-counter-no">
-          {prop}
-        </span>
-      </div>
-
     </div>
   );
 };
