@@ -24,6 +24,7 @@ import WinBg from "./img/win_bg.png";
 import FooterLeftBg from "./img/footer-left-bg.png";
 import FooterRightBg from "./img/footer-right-bg.png";
 import XIcon from "./img/Social-icons.png";
+import ConnectionCreatorMobileBg from "./img/connection_creator_mobilebg.png";
 
 
 export const ICONS = {
@@ -47,6 +48,7 @@ export const ICONS = {
     FooterRighttBg:FooterRightBg,
     FooterLeftBg:FooterLeftBg,
     XIcon:XIcon,
+    ConnectionCreatorMobileBg:ConnectionCreatorMobileBg,
    // header
     Logo: Logo,
     Twitter:Twitter,
