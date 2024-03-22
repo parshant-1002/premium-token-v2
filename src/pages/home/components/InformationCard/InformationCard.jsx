@@ -12,15 +12,7 @@ console.log(item,"item<><><><><")
   return (
     <div className="card-box-green position-relative">
       <div className="card-img">
-        <RenderIconWithHover iconUrl={illustration}/>
-        {/* <img
-          className=""
-          width={225}
-          height={188}
-          loading="lazy"
-          alt="CoinImage"
-          src={illustration}
-        /> */}
+        <RenderIconWithHover iconUrl={illustration} width = {225} height = {188}/>
 
       </div>
       <p className=""><SafeHTML html={title} /></p>

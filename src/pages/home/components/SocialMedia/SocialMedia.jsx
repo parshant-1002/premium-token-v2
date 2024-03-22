@@ -1,8 +1,11 @@
 import { Link } from "react-router-dom";
 import { ICONS } from "../../../../assets";
 import "./SocialMedia.scss";
+import SafeHTML from "../../../../shared/components/SanitizeHtml";
 
-const SocialMedia = () => {
+const SocialMedia = ({content = {}}) => {
+	const { twitter, telegram, premiumTokenTitle, followUsTitle, followUsDescription, email, discord, airdrop} = content
+	console.log(content,"socialMediaContent<><>>")
 	return (
 		<section className="footer-row pb-md-5 pb-3 footer position-relative">
 			<div className="container">
@@ -10,8 +13,8 @@ const SocialMedia = () => {
 					<div className="col-lg-5">
 						<div className="footer-together">
 							<div className="comon-heade-title">
-								<h2 className="h2 common_title  d-inline-block">Lets grow together!</h2>
-								<p>Follow PremiumToken on as many social media networks as possible and spread the word to your friends, family and followers, so will our community and the value of PremiumToken grow faster and faster!</p>
+								<h2 className="h2 common_title  d-inline-block"><SafeHTML html={followUsTitle} /></h2>
+								<p><SafeHTML html={followUsDescription}/></p>
 							</div>
 							<div className="d-flex gap-12">
 								<div className="social-icon  d-flex align-items-center gap-12 ms-md-auto">

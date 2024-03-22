@@ -1,6 +1,7 @@
 import "./footer.scss";
 
-const Footer = () => {
+const Footer = ({content = {}}) => {
+  const{premiumTokenTitle, email} = content
   return (
     <footer className="footer bottom_footer">
       <div className="container">
@@ -15,15 +16,7 @@ const Footer = () => {
           </div>
           <div className="col-md-6">
             <div className="d-flex gap-2 justify-content-end align-items-center email_group">
-              <em>
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18.8679 8.71447L14.3187 13L18.8679 17.2855C18.9501 17.1226 19 16.9424 19 16.75V9.25C19 9.05758 18.9501 8.87744 18.8679 8.71447Z" fill="#389989"/>
-                <path d="M17.6816 8H5.31836C5.11542 8 4.92543 8.04731 4.75354 8.12528L10.5679 13.6104C11.082 14.0978 11.918 14.0978 12.4321 13.6104L18.2465 8.12528C18.0746 8.04731 17.8846 8 17.6816 8Z" fill="#389989"/>
-                <path d="M4.13213 8.71447C4.04989 8.87744 4 9.05758 4 9.25V16.75C4 16.9424 4.04989 17.1226 4.13213 17.2855L8.68132 13L4.13213 8.71447Z" fill="#389989"/>
-                <path d="M13.6973 13.5892L13.0535 14.1996C12.1969 15.0117 10.8031 15.0117 9.94645 14.1996L9.30273 13.5892L4.75354 17.8747C4.92543 17.9527 5.11542 18 5.31836 18H17.6816C17.8846 18 18.0746 17.9527 18.2465 17.8747L13.6973 13.5892Z" fill="#389989"/>
-                </svg>
-
-              </em>
+             
               <span>
               support@beaverswap.com
               </span>

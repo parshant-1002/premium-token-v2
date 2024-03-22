@@ -1,28 +1,22 @@
 import { ICONS } from "../../../../assets";
+import { Each } from "../../../../shared/components/Each";
+import { RenderIconWithHover } from "../../../../shared/components/RenderIconWithHover";
+import { addBaseUrlToUrls } from "../../../../shared/utilities";
 import "./Featured.scss";
 
-const Featured = () => {
+const Featured = ({content = {}}) => {
+	console.log(content,"featured")
 	return (
 		<section className="featured-on position-relative">
 			<div className="container">
 				<h2 class="h2 text-center common_title">Featured on</h2>
 
 				<div className="featured-row">
-					<div className="fetured-image">
-						<img className="" loading="lazy" alt="" src="/mask-group@2x.png" />
-					</div>
-					<div className="fetured-image">
-						<img className="" alt="" src="/mask-group-1@2x.png" />
-					</div>
-					<div className="fetured-image">
-						<img className="" alt="" src="/mask-group-2@2x.png" />
-					</div>
-					<div className="fetured-image">
-						<img className="" alt="" src="/mask-group-3@2x.png" />
-					</div>
-					<div className="fetured-image">
-						<img className="" alt="" src="/mask-group-4@2x.png" />
-					</div>
+					<Each of={content} render={(item, index) => (
+						<div className="fetured-image" key={index}>
+							<RenderIconWithHover iconUrl={addBaseUrlToUrls(item)}/>
+						</div>
+					)}/>
 
 				</div>
 			</div>

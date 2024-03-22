@@ -2,8 +2,9 @@ import React, { useEffect, useState } from 'react';
 import "./flipnumber.scss"
 
 const SmoothFlipCounter = ({ initialValue, settings }) => {
+    console.log(initialValue,"intialvalue")
     const [value, setValue] = useState(initialValue);
-    const [counterSettings, setCounterSettings] = useState({
+    const [counterSettings,     ] = useState({
         digits: settings.digits || 5,
         delay: settings.delay || 250,
         direction: settings.direction || '',
@@ -19,7 +20,7 @@ const SmoothFlipCounter = ({ initialValue, settings }) => {
     }, []);
 
     const renderDigits = () => {
-        const digits = value.toString().padStart(counterSettings.digits, '0').split('');
+        const digits = value.toString().split('');
         return digits.map((digit, index) => (
             <div className="digit_card" key={index}>
                 <span data-value={digit}>{digit}</span>

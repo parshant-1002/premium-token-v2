@@ -4,8 +4,11 @@ import cartoken  from '../../../../../public/car-token.png';
 import "./WinnerSection.scss";
 import { ICONS } from "../../../../assets";
 import { CustomSlick } from "../../../../shared/components/CustomSlick";
+import SafeHTML from "../../../../shared/components/SanitizeHtml";
 
-const WinnerSection = () => {
+const WinnerSection = ({content = {}}) => {
+  const { marketCap, latestWinnerDetails, connectWalletButtonText, prizeDescription, tokenHolderText }  = content;
+  console.log(marketCap, latestWinnerDetails,"latestwinnerdetails")
   const counterSettings = {
     digits: 7,
     delay: 200,
@@ -17,21 +20,21 @@ const WinnerSection = () => {
       <div className="container">
         <div className="heading_title text-center">
           <h2 className="h2 common_title">
-            Latest winners
+            <SafeHTML html={latestWinnerDetails?.title}/>
           </h2>
           <div className="winner_counter_content">
             <p className="">
-              In the list below can you see all latest winners that the smart contract has drawn for each increase of $10 million market cap. The contract draws the winners automatic and all holders that hold minimum 1000 tokens have a chance of winning, the winners can choose a prize between $350,000 worth of PremiumToken or a premium car from our partners worth $350,000.
+              <SafeHTML html={latestWinnerDetails?.description}/>
             </p>
           </div>
-          <div className="market-cap text-success text-center">MARKET CAP</div>
+          <div className="market-cap text-success text-center"><SafeHTML html={marketCap?.title} /></div>
         </div>
 
-        <SmoothFlipCounter initialValue={123456} settings={counterSettings} />
+        <SmoothFlipCounter initialValue={marketCap?.marketCapValue || 0} settings={counterSettings} />
 
         <div className="subtitle">
           <span className="process">
-          The smart contract will draw the next winner at $60 million market cap!
+            <SafeHTML html={latestWinnerDetails?.description}/>
           </span>
         </div>
         {/* table secn */}
@@ -41,15 +44,15 @@ const WinnerSection = () => {
         <div className="tableHeaderinfo d-flex flex-md-row flex-column justify-content-md-between align-items-md-center">
           <div className="loopControl">
             <div className="d-flex gap-1">
-              <span className="text-white">{`Token holders that joined automatic: `}</span>
+              <span className="text-white"><SafeHTML html={tokenHolderText} /></span>
               <span className="text-success text-value">4859</span>
             </div>
           </div>
           <div className="wallet-link align-items-center d-flex gap-3">
             <div className="output">
-              <span className="text-white">Did you win a prize?</span>
+              <span className="text-white">{prizeDescription}</span>
             </div>
-            <button type="button" className="btn btn-md btn-secondary"><span>Connect Wallet</span></button>
+            <button type="button" className="btn btn-md btn-secondary"><SafeHTML html={connectWalletButtonText}/></button>
             {/* <ConnectButton/> */}
           </div>
         </div>

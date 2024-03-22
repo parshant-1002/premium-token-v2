@@ -148,7 +148,7 @@ const FeaturesEnum = {
 
 
 
-export const options = {
+export const options = (innerTitle) =>  ({
     colors: ["#389989", "#175F53", "#083029", "#031815", "#031815", "#031815", "#175F53"],
     chart: {
         fontFamily: "Sora",
@@ -186,7 +186,7 @@ export const options = {
                         fontWeight: 800,
                         color: "#A7D7CF",
                         formatter: function (w) {
-                            return "888,888,888,888,888"
+                            return innerTitle
                         }
                     }
                 },
@@ -214,5 +214,5 @@ export const options = {
     legend: {
         show: false,
     },
-};
+});
 export const series = [65, 10, 10, 5, 4.5, 4.5, 1];

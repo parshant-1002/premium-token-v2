@@ -1,21 +1,11 @@
 import { useMemo } from "react";
 import "./Card.scss";
 import lambo from '../../../../../public/lambo.png';
+import { addBaseUrlToUrls } from "../../../../shared/utilities";
+import SafeHTML from "../../../../shared/components/SanitizeHtml";
 
-const Card = ({ car, propGap, propDebugCommit, propWidth }) => {
-  const card1Style = useMemo(() => {
-    return {
-      gap: propGap,
-      debugCommit: propDebugCommit,
-    };
-  }, [propGap, propDebugCommit]);
-
-  const carIconStyle = useMemo(() => {
-    return {
-      width: propWidth,
-    };
-  }, [propWidth]);
-
+const Card = ({ car }) => {
+  const{imageUrl, title} = car
   return (
     <div className="slider-main">
     <div className="premium-slider-col" >
@@ -23,12 +13,11 @@ const Card = ({ car, propGap, propDebugCommit, propWidth }) => {
         className=""
         loading="lazy"
         alt=""
-        src={lambo}
-        style={carIconStyle}
+        src={addBaseUrlToUrls(imageUrl)}
       />
        </div>
       <div className="slider-text">
-          <h3 className="h3">Lamborghini Urus</h3>
+          <h3 className="h3"><SafeHTML html={title}/></h3>
       </div>
      
     </div>

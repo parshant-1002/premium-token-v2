@@ -2,29 +2,27 @@ import Card from "../Card";
 import "./MarketPlace.scss";
 import arrow from '../../../../../public/rightarrow.svg';
 import { ICONS } from "../../../../assets";
+import SafeHTML from "../../../../shared/components/SanitizeHtml";
+import { Each } from "../../../../shared/components/Each";
 
-const MarketPlace = () => {
+const MarketPlace = ({content = {}}) => {
+  const{cars, description, title} = content
+  console.log(content,"marketplace")
   return (
     <section className="marketplace position-relative">
       <div className="container">
         <div class="heading_title market-place-para text-center">
-          <h2 className="h2 common_title">Premium marketplace</h2>
+          <h2 className="h2 common_title"><SafeHTML html={title}/></h2>
           <div class="description">
-            <p class="mb-0">In the near future we aim to launch a market place for luxury and premium cars from our partners, where our token holders can buy this cars for PremiumToken!</p>
+            <p class="mb-0"><SafeHTML html={description} /></p>
           </div>
         </div>        
         <div className="market-row">
-          <div className="market-col">
-            <Card car="/car@2x.png" />
-          </div>
-          <div className="market-col">
-            <Card car="/car@2x.png" />
-          </div>
-          <div className="market-col">
-            <Card car="/car@2x.png" />
-          </div>
- 
-
+          <Each of={cars} render={(item, index) => (
+            <div className="market-col">
+              <Card car={item} />
+            </div>
+          )}/>
 
         </div>
         <div className="text-center">

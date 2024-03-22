@@ -5,6 +5,9 @@ import React, { useRef } from 'react';
 import Team from './Team';
 import { CustomSlick } from '../../../../shared/components/CustomSlick'
 import { ICONS } from "../../../../assets";
+import SafeHTML from "../../../../shared/components/SanitizeHtml";
+import { RenderIconWithHover } from "../../../../shared/components/RenderIconWithHover";
+import { addBaseUrlToUrls } from "../../../../shared/utilities";
 
 const cardDetails = [
   {
@@ -52,61 +55,53 @@ const cardDetails = [
   // Add more objects for additional cards
 ];
 
-const Partners = () => {
+const Partners = ({content = {}}) => {
+  const{title, personData} = content
+  console.log(content,"content<><><><><")
   const responsiveConfig = [
     {
       breakpoint: 767,
       settings: {
-        slidesToShow: 1.2,
+        slidesToShow: 1,
         slidesToScroll: 1,
         infinite: true,
         dots: true
       }
     },
     {
-      breakpoint: 991,
-      settings: {
-        slidesToShow: 2.2,
-        slidesToScroll: 1,
-        infinite: false,
-        dots: true
-      }
-    },
-    {
-      breakpoint: 1200,
-      settings: {
-        slidesToShow: 3.2,
-        slidesToScroll: 1,
-        infinite: false,
-        dots: true
-      }
+      breakpoint: 10000000,
+      settings: "unslick"
     }
   ]
+
+  const renderPartner = (data = {})=>{
+    const{name, position, companyLogo} = data
+    return <div className="partner-slider">
+      <div className="partner-column">
+        <div className="partner-image">
+          <div className="overlay-logo">
+            <RenderIconWithHover iconUrl={addBaseUrlToUrls(companyLogo)}/>
+          </div>
+        </div>
+        <h3 className="text-center"><SafeHTML html={name}/></h3>
+        <p><SafeHTML html={position}/></p>
+      </div>
+    </div>
+  }
   return (
 
     <section className="our-teams position-relative">
       <div className="container">
         <div className="heading_title text-left">
           <h2 className="h2 common_title d-inline-block">
-            Partners
+            <SafeHTML html={title}/>
           </h2>
 
         </div>
         <div className="our_team-slider mt-5">
-          <CustomSlick slidesToShow={5.2} responsive={responsiveConfig}>
-            {cardDetails?.map((item) =>
-              <div className="partner-slider">
-                <div className="partner-column">
-                  <div className="partner-image">
-                    <img src={partner} />
-                    <div className="overlay-logo">
-                      <img src={auto} />
-                    </div>
-                  </div>
-                  <h3 className="text-center">Mike Stoneberg</h3>
-                  <p>CEO & Product Manager</p>
-                </div>
-              </div>
+          <CustomSlick responsive={responsiveConfig}>
+            {personData?.map((item) =>
+              renderPartner(item)
             )}
           </CustomSlick>
         </div>

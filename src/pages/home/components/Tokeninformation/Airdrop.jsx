@@ -2,17 +2,22 @@ import React from 'react'
 import Info from './Info'
 import "./airdrop.scss";
 import { ICONS } from '../../../../assets';
+import SafeHTML from '../../../../shared/components/SanitizeHtml';
+import { Each } from '../../../../shared/components/Each';
+import { addBaseUrlToUrls } from '../../../../shared/utilities';
 
-const Airdrop = () => {
+const Airdrop = ({content = {}}) => {
+  const{description, section1, section2, title} = content
+  console.log(content, "airdripcontent")
   return (
     <section className="position-relative airdrop_secn">
       <div className="container">
         <div className="airdrop-main">       
          
               <div class="heading_title airdrop-info-para">
-                <h2 class="h2 common_title text-center">How to join the AirDrop</h2>
+                <h2 class="h2 common_title text-center"><SafeHTML html={title}/></h2>
                 <div class="description">
-                <p class="text-center">You can get whitelisted for the PremiumToken AirDrop by following us on minimum 4 of the 6 social media platforms. Be sure to double check your wallet address is correct before you submit, otherwise you wont receive your tokens. A total of 10 AirDrops will be held and the first one will be on 1st of May.</p>
+                <p class="text-center"><SafeHTML html={description} /></p>
                 </div>
                 </div>
           
@@ -119,21 +124,12 @@ const Airdrop = () => {
                 </div>
               </form>
               <div className="airdrop-info">
-                <Info
-                  frame89="/frame-89@2x.png"
-                  followPremiumTokenOnOur6S="Follow PremiumToken on minimum 4 of 6 of our social media channels."
-                />
-                <Info
-                  frame89="/Frame.png"
-                  followPremiumTokenOnOur6S="Fill out the information in the fields to the right, make sure your wallet address is correct and click on Submit."
-
-                />
-                <Info
-                  frame89="/frame-89-2@2x.png"
-                  followPremiumTokenOnOur6S="The first AirDrop will be held on the 1st of May, be sure you join in before that to get your tokens!"
-
-                />
-
+                <Each of={section2} render={(item, index) => (
+                  <Info
+                    image={addBaseUrlToUrls(item.imageUrl)}
+                    title= {item.title}
+                  />
+                )}/>
               </div>
             </div>
          
