@@ -4,7 +4,7 @@ import { InformationCard } from "../InformationCard";
 import "./InformationSection.scss";
 import { ICONS } from "../../../../assets";
 
-const InformationSection = () => {
+const InformationSection = ({content = {}}) => {
   return (
     <section className="prize_secn position-relative">
       <div className="container">
@@ -23,7 +23,7 @@ const InformationSection = () => {
           <InformationCard
              illustration="/card-image-2.png"
              title="Hold minimum of 1000 tokens in you wallet and get a chance to win a $350,000 prize"
-             prop="2"
+             prop="2" 
           />
           <InformationCard
           

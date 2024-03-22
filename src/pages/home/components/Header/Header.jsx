@@ -3,6 +3,7 @@ import "./Header.scss";
 import { addBaseUrlToUrls } from "../../../../shared/utilities";
 import { RenderIconWithHover } from "../../../../shared/components/RenderIconWithHover";
 import { ICONS } from "../../../../assets";
+import SafeHTML from "../../../../shared/components/SanitizeHtml";
 
 const Header = ({content = {}}) => {
 	const {twitter,discord,telegram,viewChartButton,airdropButton,buyTokenButton,premiumTokenTitle } = content
@@ -14,7 +15,7 @@ const Header = ({content = {}}) => {
 				<div className="container">
 
 					<Link className="navbar-brand" to={"/"}>
-						<RenderIconWithHover iconUrl={addBaseUrlToUrls(premiumTokenTitle)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.AirDropBg}/>
+						<RenderIconWithHover iconUrl={addBaseUrlToUrls(premiumTokenTitle)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Logo}/>
 					</Link>	
 					<button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span className="navbar-toggler-icon"></span>
@@ -22,29 +23,27 @@ const Header = ({content = {}}) => {
 					<div className="collapse navbar-collapse" id="navbarSupportedContent">
 						<div className="d-flex justify-content-between align-items-center gap-12 ms-auto">
 
-							<Link className="btn_icon btn44 dark-green-gradient" to="#" rel="noreferrer">
+							<Link className="btn_icon btn44 dark-green-gradient" to={twitter?.url} rel="noreferrer">
 								<span>
-									<svg width="22" height="21" viewBox="0 0 22 21" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17.3263 0.903809H20.6998L13.3297 9.3273L22 20.7898H15.2112L9.89404 13.8378L3.80995 20.7898H0.434432L8.31743 11.7799L0 0.903809H6.96111L11.7674 7.25814L17.3263 0.903809ZM16.1423 18.7706H18.0116L5.94539 2.81694H3.93946L16.1423 18.7706Z" fill="white"></path></svg>
+									<RenderIconWithHover iconUrl={addBaseUrlToUrls(twitter?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Twitter} />
 								</span>
 
 							</Link>
-							<Link className="btn_icon btn44 dark-green-gradient" to="#" rel="noreferrer">
+							<Link className="btn_icon btn44 dark-green-gradient" to={discord?.url} rel="noreferrer">
 								<span>
-									<svg width="24" height="19" viewBox="0 0 24 19" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.317 2.15557C18.7873 1.45369 17.147 0.936576 15.4319 0.640403C15.4007 0.634687 15.3695 0.648971 15.3534 0.677541C15.1424 1.05276 14.9087 1.54226 14.7451 1.927C12.9004 1.65083 11.0652 1.65083 9.25832 1.927C9.09465 1.5337 8.85248 1.05276 8.64057 0.677541C8.62448 0.649924 8.59328 0.63564 8.56205 0.640403C6.84791 0.93563 5.20756 1.45275 3.67694 2.15557C3.66368 2.16129 3.65233 2.17082 3.64479 2.18319C0.533392 6.83155 -0.31895 11.3657 0.0991801 15.8436C0.101072 15.8655 0.11337 15.8864 0.130398 15.8997C2.18321 17.4073 4.17171 18.3225 6.12328 18.9291C6.15451 18.9386 6.18761 18.9272 6.20748 18.9015C6.66913 18.2711 7.08064 17.6063 7.43348 16.9073C7.4543 16.8664 7.43442 16.8178 7.39186 16.8016C6.73913 16.554 6.1176 16.2521 5.51973 15.9093C5.47244 15.8816 5.46865 15.814 5.51216 15.7816C5.63797 15.6873 5.76382 15.5893 5.88395 15.4902C5.90569 15.4721 5.93598 15.4683 5.96153 15.4797C9.88928 17.273 14.1415 17.273 18.023 15.4797C18.0485 15.4674 18.0788 15.4712 18.1015 15.4893C18.2216 15.5883 18.3475 15.6873 18.4742 15.7816C18.5177 15.814 18.5149 15.8816 18.4676 15.9093C17.8697 16.2588 17.2482 16.554 16.5945 16.8006C16.552 16.8168 16.533 16.8664 16.5538 16.9073C16.9143 17.6054 17.3258 18.2701 17.7789 18.9005C17.7978 18.9272 17.8319 18.9386 17.8631 18.9291C19.8241 18.3225 21.8126 17.4073 23.8654 15.8997C23.8834 15.8864 23.8948 15.8664 23.8967 15.8445C24.3971 10.6676 23.0585 6.17064 20.3482 2.18414C20.3416 2.17082 20.3303 2.16129 20.317 2.15557ZM8.02002 13.117C6.8375 13.117 5.86313 12.0313 5.86313 10.6981C5.86313 9.36477 6.8186 8.27912 8.02002 8.27912C9.23087 8.27912 10.1958 9.3743 10.1769 10.6981C10.1769 12.0313 9.22141 13.117 8.02002 13.117ZM15.9947 13.117C14.8123 13.117 13.8379 12.0313 13.8379 10.6981C13.8379 9.36477 14.7933 8.27912 15.9947 8.27912C17.2056 8.27912 18.1705 9.3743 18.1516 10.6981C18.1516 12.0313 17.2056 13.117 15.9947 13.117Z" fill="white"></path></svg>
+									<RenderIconWithHover iconUrl={addBaseUrlToUrls(discord?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Discord} />
 								</span>
 							</Link>
-							<Link className="btn_icon btn44 dark-green-gradient" to="#" rel="noreferrer">
+							<Link className="btn_icon btn44 dark-green-gradient" to={discord?.url} rel="noreferrer">
 								<span>
-									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M24 12C24 18.6274 18.6274 24 12 24C5.37258 24 0 18.6274 0 12C0 5.37258 5.37258 0 12 0C18.6274 0 24 5.37258 24 12ZM12.43 8.85893C11.2628 9.3444 8.93014 10.3492 5.43189 11.8733C4.86383 12.0992 4.56626 12.3202 4.53917 12.5363C4.49339 12.9015 4.95071 13.0453 5.57347 13.2411C5.65818 13.2678 5.74595 13.2954 5.83594 13.3246C6.44864 13.5238 7.27283 13.7568 7.70129 13.766C8.08994 13.7744 8.52373 13.6142 9.00264 13.2853C12.2712 11.079 13.9584 9.96381 14.0643 9.93977C14.139 9.92281 14.2426 9.90148 14.3128 9.96385C14.3829 10.0262 14.376 10.1443 14.3686 10.176C14.3233 10.3691 12.5281 12.0381 11.5991 12.9018C11.3095 13.171 11.1041 13.362 11.0621 13.4056C10.968 13.5033 10.8721 13.5958 10.78 13.6846C10.2108 14.2333 9.78391 14.6448 10.8036 15.3168C11.2936 15.6397 11.6858 15.9067 12.077 16.1731C12.5042 16.4641 12.9303 16.7543 13.4816 17.1157C13.6221 17.2077 13.7562 17.3034 13.8869 17.3965C14.3841 17.751 14.8307 18.0694 15.3826 18.0186C15.7032 17.9891 16.0345 17.6876 16.2027 16.7884C16.6002 14.6631 17.3816 10.0585 17.5622 8.16097C17.578 7.99473 17.5581 7.78197 17.5422 7.68857C17.5262 7.59518 17.4928 7.46211 17.3714 7.3636C17.2276 7.24694 17.0056 7.22234 16.9064 7.22408C16.455 7.23203 15.7626 7.47282 12.43 8.85893Z" fill="white"></path></svg>
+									<RenderIconWithHover iconUrl={addBaseUrlToUrls(telegram?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Telegram} />
 								</span>
 							</Link>
 							<button type="button" className="btn btn-md btn-primary">
-								<span className="transform-none">
-									<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#clip0_756_4836)"><path d="M12 0.609375C5.38311 0.609375 0 5.99248 0 12.6094C0 17.0757 2.46203 21.1468 6.42516 23.2342C6.76885 23.4151 7.19402 23.2833 7.37511 22.9398C7.55602 22.5961 7.42418 22.1709 7.08049 21.99C3.58044 20.1465 1.40625 16.5522 1.40625 12.6094C1.40625 6.76793 6.15856 2.01562 12 2.01562C17.8414 2.01562 22.5937 6.76793 22.5937 12.6094C22.5937 16.6164 20.3679 20.2375 16.7849 22.0596C16.4388 22.2356 16.3009 22.6589 16.4769 23.005C16.601 23.249 16.848 23.3895 17.1042 23.3895C17.2115 23.3895 17.3203 23.3649 17.4225 23.3129C19.3681 22.3236 21.0109 20.8214 22.1729 18.969C23.3682 17.0632 24 14.8643 24 12.6094C24 5.99248 18.6168 0.609375 12 0.609375Z" fill="white"></path><path d="M19.0567 17.0465C19.8947 15.7181 20.3377 14.1837 20.3377 12.6094C20.3377 8.01196 16.5974 4.27148 12 4.27148C7.4024 4.27148 3.66211 8.01196 3.66211 12.6094C3.66211 14.1837 4.10504 15.7179 4.94311 17.0465C5.75793 18.3378 6.90838 19.3819 8.27032 20.0658C8.61748 20.2399 9.04009 20.0998 9.21422 19.7528C9.38836 19.4057 9.24846 18.9831 8.9013 18.8089C6.53704 17.6219 5.06836 15.2464 5.06836 12.6094C5.06836 8.78722 8.17785 5.67773 12 5.67773C15.8219 5.67773 18.9314 8.78722 18.9314 12.6094C18.9314 15.2464 17.4627 17.622 15.0985 18.8089C14.7513 18.9832 14.6112 19.4057 14.7856 19.7528C14.909 19.9986 15.1569 20.1407 15.4145 20.1407C15.5205 20.1407 15.6282 20.1165 15.7295 20.0658C17.0914 19.3819 18.242 18.338 19.0567 17.0465Z" fill="white"></path><path d="M16.6754 12.6092C16.6754 10.0311 14.5779 7.93359 11.9998 7.93359C9.42169 7.93359 7.32422 10.0311 7.32422 12.6092C7.32422 14.3882 8.31445 15.9906 9.90838 16.7906C10.0095 16.8413 10.1171 16.8655 10.2231 16.8655C10.4808 16.8655 10.7287 16.7234 10.8521 16.4776C11.0262 16.1305 10.8862 15.7081 10.5392 15.5337C9.42352 14.9738 8.73047 13.8532 8.73047 12.6092C8.73047 10.8065 10.1971 9.33984 11.9998 9.33984C13.8025 9.33984 15.2691 10.8065 15.2691 12.6092C15.2691 13.853 14.5763 14.9736 13.4606 15.5336C13.1136 15.7079 12.9736 16.1303 13.1477 16.4775C13.322 16.8244 13.7446 16.9645 14.0916 16.7904C15.6853 15.9902 16.6754 14.388 16.6754 12.6092Z" fill="white"></path></g><defs><clipPath id="clip0_756_4836"><rect width="24" height="24" fill="white"></rect></clipPath></defs></svg>Join Airdrop
-								</span>
+								<span className="transform-none"><RenderIconWithHover iconUrl={addBaseUrlToUrls(telegram?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Airdrop} /><SafeHTML html={airdropButton?.text}/></span>	
 							</button>
-							<button type="button" className="btn btn-md btn-primary transform-none"><span>View chart</span></button>
-							<button type="button" className="btn btn-md btn-secondary transform-none"><span className="text-white">Buy token</span></button>
+							<button type="button" className="btn btn-md btn-primary transform-none"><SafeHTML html={viewChartButton?.text}/></button>
+							<button type="button" className="btn btn-md btn-secondary transform-none"><SafeHTML html={buyTokenButton?.text}/></button>
 
 						</div>
 					</div>
