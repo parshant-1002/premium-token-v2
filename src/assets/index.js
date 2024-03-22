@@ -12,6 +12,9 @@ import TokenInforBg from './img/token-info-bg.png';
 import AuditBG from './img/External-audit-bg.png';
 import CarSliderBG from './img/car-slider-bg.png';
 import AirDropBg from './img/airdrop-bg.png';
+import PartnersSliderBg from './img/partners-slider-bg.png';
+import FooterBlurGrp from './img/footer-blur-grp.png';
+import SpiralShape from './img/footer-spiral-shape.png';
 import Logo from "./icons/Logo.svg";
 import Twitter from "./icons/Twitter.svg";
 import Discord from "./icons/Discord.svg";
@@ -34,7 +37,9 @@ export const ICONS = {
     CarSliderBG:CarSliderBG,
     AuditBG:AuditBG,
     AirDropBg:AirDropBg,
-
+    PartnersSliderBg:PartnersSliderBg,
+    FooterBlurGrp:FooterBlurGrp,
+    SpiralShape:SpiralShape,
 
    // header
     Logo: Logo,
@@ -42,7 +47,4 @@ export const ICONS = {
     Discord:Discord,
     Telegram:Telegram,
     Airdrop:Airdrop
-    
 }
-
-

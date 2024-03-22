@@ -116,7 +116,7 @@ function CodeEditor() {
                 {fileTabs}
             </div>
             <Editor
-                height="90vh"
+                height="60vh"
                 defaultLanguage="javascript"
                 language={currentFile.split('.').pop()}
                 value={files[currentFile]}

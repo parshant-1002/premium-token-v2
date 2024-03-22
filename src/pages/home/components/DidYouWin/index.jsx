@@ -1,1 +1,1 @@
-export { default as DidYouWin } from "./Didyouwin";
+export { default as DidYouWin } from "./didyouwin";

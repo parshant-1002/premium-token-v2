@@ -2,8 +2,10 @@
 
 .airdrop_secn {
     margin-top: 80px;
+    margin-bottom: 80px;
     @media (min-width:1440px) {
         margin-top: 180px;
+        margin-bottom:100px ;
     }
 }
 .airdrop-main {
@@ -22,18 +24,23 @@
 
     .whitelisted-row {
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
         gap: 100px;
         max-width: 1096px;
         margin: auto;
         margin-top: 64px;
         align-items: center;
-
+        @media (min-width:992px) {
+            grid-template-columns: 1fr 1fr;
+        }
         .white-listed-form {
             padding: 52px;
             border-radius: 0px 100px 0px 100px;
             background: rgba(56, 153, 137, 0.08);
-
+            @media (max-width:767px) {
+                border-radius: 0 40px;
+                padding: 52px 12px;
+            }
             h3 {
                 color: $white-color;
                 text-align: center;
@@ -79,6 +86,9 @@
                     min-width: 240px;
                     text-transform: none;
                     font-size: 14px;
+                    @media (max-width:767px) {
+                        min-width: 100%;
+                    }
                 }
             }
         }

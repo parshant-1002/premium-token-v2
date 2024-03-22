@@ -5,11 +5,19 @@
   padding-bottom: 105px;
 
   .did-you-win-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-top: 70px;
-
+     margin-top: 70px;
+    .cstm-slider {
+      .regular {
+        @media (min-width:1200px) {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 1.25rem;
+          margin-top: 70px;
+      
+        }
+      }
+   
+    }
     .card-img {
       img {
         max-height: 128px;
