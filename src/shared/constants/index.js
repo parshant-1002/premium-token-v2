@@ -1,5 +1,5 @@
 export const API = {
-    BASE_URL: 'http://192.180.4.14:4002/',
+    BASE_URL: 'https://dev.premiumtoken.io/',
     GET_DATA: '/ttt',
     URL: "/v1",
     LOGIN: "/admin/login",

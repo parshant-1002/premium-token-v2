@@ -1,7 +1,7 @@
 import { ICONS } from "../../../../assets";
 import "./ConnectionMaker.scss";
 
-const ConnectionMaker = () => {
+const 	ConnectionMaker = () => {
 	return (
 		<section className="connectionMaker position-relative">
 			<div className="container">

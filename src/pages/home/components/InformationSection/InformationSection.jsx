@@ -1,8 +1,6 @@
-import { Icons } from "react-toastify";
 import { CustomSlick } from "../../../../shared/components/CustomSlick";
 import { InformationCard } from "../InformationCard";
 import "./InformationSection.scss";
-import { ICONS } from "../../../../assets";
 
 const InformationSection = () => {
   const responsiveConfig =  [
@@ -41,7 +39,7 @@ const InformationSection = () => {
              prop="2"
           />
           <InformationCard
-          
+
             illustration="/Investment.png"
                title="The smart contract draws a new winners automatic at each $10 million market cap"
                prop="3"
@@ -52,10 +50,10 @@ const InformationSection = () => {
                prop="4"
           />
           </CustomSlick>
-          
+
         </div>
       </div>
-     
+
     </section>
   );
 };

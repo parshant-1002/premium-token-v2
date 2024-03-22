@@ -15,6 +15,12 @@ import AirDropBg from './img/airdrop-bg.png';
 import PartnersSliderBg from './img/partners-slider-bg.png';
 import FooterBlurGrp from './img/footer-blur-grp.png';
 import SpiralShape from './img/footer-spiral-shape.png';
+import Logo from "./icons/Logo.svg";
+import Twitter from "./icons/Twitter.svg";
+import Discord from "./icons/Discord.svg";
+import Telegram from "./icons/Telegram.svg";
+import Airdrop from "./icons/Airdrop.svg";
+
 
 export const ICONS = {
     VideoBanner: VideoBanner,
@@ -34,4 +40,11 @@ export const ICONS = {
     PartnersSliderBg:PartnersSliderBg,
     FooterBlurGrp:FooterBlurGrp,
     SpiralShape:SpiralShape,
+
+   // header
+    Logo: Logo,
+    Twitter:Twitter,
+    Discord:Discord,
+    Telegram:Telegram,
+    Airdrop:Airdrop
 }
