@@ -2,6 +2,7 @@
 
 import { ICONS } from "../../../../assets";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
+import { addBaseUrlToUrls } from "../../../../shared/utilities";
 import "./video-banner.scss";
 
 const VideoSection = ({ content = {} }) => {
@@ -30,7 +31,7 @@ const VideoSection = ({ content = {} }) => {
                 <div className="videoSecn position-relative">
                     <div className="wrapperVideo">
                         <div className="video_home ratio ratio-16x9">
-                            <video src={videoUrl} key={videoUrl} width={1140} height={400} />
+                            <video src={addBaseUrlToUrls(videoUrl)} key={videoUrl} width={1140} height={400} />
                         </div>
                         <button className="play_btn" onClick={handlePlay}>
                             <svg width="88" height="88" viewBox="0 0 88 88" fill="none">
