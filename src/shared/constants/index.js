@@ -1,5 +1,6 @@
+const VERSION = import.meta.env.VITE_API_VERSION || 'v1';
 export const API = {
-    BASE_URL: 'https://dev.premiumtoken.io/',
+    BASE_URL: import.meta.env.VITE_API_BASE_URL,
     GET_DATA: '/ttt',
     URL: "/v1",
     LOGIN: "/admin/login",
@@ -9,7 +10,7 @@ export const API = {
 }
 
 export const API_URLS = {
-    GET_CONTENT: API.URL + "/content",
+    GET_CONTENT: VERSION + "/content",
 }
 
 export const API_METHODS = {
