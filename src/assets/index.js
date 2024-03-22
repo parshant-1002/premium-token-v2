@@ -20,7 +20,7 @@ import Twitter from "./icons/Twitter.svg";
 import Discord from "./icons/Discord.svg";
 import Telegram from "./icons/Telegram.svg";
 import Airdrop from "./icons/Airdrop.svg";
-
+import premiumtoken from "./img/premium-token.png"
 
 export const ICONS = {
     VideoBanner: VideoBanner,
@@ -40,7 +40,7 @@ export const ICONS = {
     PartnersSliderBg:PartnersSliderBg,
     FooterBlurGrp:FooterBlurGrp,
     SpiralShape:SpiralShape,
-
+    premiumtoken,
    // header
     Logo: Logo,
     Twitter:Twitter,

@@ -43,6 +43,7 @@ export const INPUT_TYPES = {
     PASSWORD: 'password',
     SELECT: 'select',
     RICH_TEXT: 'rich-text',
+    RADIO: "radio"
 };
   
 export const VALIDATION_REGEX = {
@@ -54,3 +55,7 @@ export const VALIDATION_REGEX = {
     VALID_LINK: /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$/,
     USERNAME: /^[a-z0-9]+$/,
 };
+
+export const VALIDATION_MESSAGES = {
+    REQUIRED: "Required"
+}

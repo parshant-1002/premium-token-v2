@@ -5,11 +5,12 @@ import { RenderIconWithHover } from "../../../../shared/components/RenderIconWit
 import { ICONS } from "../../../../assets";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import { useEffect, useState } from "react";
+import WinnerPopup from "./WinnerPopup/WinnerPopup";
 
-const Header = ({ content = {} }) => {
+const Header = ({ content = {}, partnersContent }) => {
 	const { twitter, discord, telegram, viewChartButton, airdropButton, buyTokenButton, premiumTokenTitle } = content
 	const [isSticky, setIsSticky] = useState(false);
-
+	const [popup, setPopup] = useState(false);
 	const handleScroll = () => {
 		const scrollTop = window.scrollY;
 		const stickyClassThreshold = 0; // Change this to the desired scroll position
@@ -23,11 +24,16 @@ const Header = ({ content = {} }) => {
 			window.removeEventListener('scroll', handleScroll);
 		};
 	}, []);
-
+	const handleClose = () => {
+		setPopup(false)
+	}
+	const handleOpenWinnerModal = () => {
+		setPopup(true)
+	}
 	return (
 
 		<header className={isSticky ? 'header sticky-header' : 'header'}>
-
+			<WinnerPopup show={popup} onClose={handleClose} partners={partnersContent}/>
 			<nav className="navbar navbar-expand-lg bg-transparent py-0">
 				<div className="container justify-content-center justify-content-lg-between">
 					<Link className="navbar-brand" to={"/"}>
@@ -61,7 +67,7 @@ const Header = ({ content = {} }) => {
 									<span className="transform-none"><RenderIconWithHover iconUrl={addBaseUrlToUrls(telegram?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Airdrop} /><SafeHTML html={airdropButton?.text} /></span>
 								</button>
 								<button type="button" className="btn btn-md btn-primary w-100"><span className="transform-none"><SafeHTML html={viewChartButton?.text} /></span></button>
-								<button type="button" className="btn btn-md btn-secondary w-100"><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
+								<button type="button" onClick={handleOpenWinnerModal} className="btn btn-md btn-secondary w-100"><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
 							</div>
 						</div>
 					</div>

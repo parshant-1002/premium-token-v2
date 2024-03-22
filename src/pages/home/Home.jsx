@@ -36,7 +36,7 @@ const Home = () => {
   })
   return (
     <>
-      <Header content={getContentData(SectionTypes.HEADERS)}/>
+      <Header content={getContentData(SectionTypes.HEADERS)} partnersContent={getContentData(SectionTypes.PARTNERS)}/>
       <VideoSection content={getContentData(SectionTypes.VIDEO_SECTION)} />
       <InformationSection content={getContentData(SectionTypes.PRIZE_SECTION)} />
       <WinnerSection content={getContentData(SectionTypes.WINNER_LIST_SECTION)} />
