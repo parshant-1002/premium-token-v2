@@ -254,11 +254,12 @@ a.btn {
         span {
             @include flexCenter;
             @include font-size (.875);
-            font-weight: $font-regular;
+            font-weight: $font-bold;
             color: $white-color;
-            svg {
-                margin-right:0.5rem ;
-            }
+            line-height: 1;
+        }
+        .image_renderer {
+            margin-right: 8px;
         }
         &[disabled] {
             background-color: $grey-color-800;
@@ -273,11 +274,9 @@ a.btn {
         span {
             @include flexCenter;
             @include font-size (.875);
-            font-weight: $font-regular;
+            font-weight: $font-bold;
             color: $white-color;
-            svg {
-                margin-right:0.5rem ;
-            }
+            line-height: 1;
         }
     }
     &-transparent {

@@ -51,7 +51,7 @@ const Header = ({ content = {} }) => {
 								</Link>
 								<Link className="btn_icon btn44 dark-green-gradient" rel="noreferrer">
 									<span>
-										<RenderIconWithHover iconUrl={addBaseUrlToUrls(discord?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Discord} />
+										<RenderIconWithHover iconUrl={addBaseUrlToUrls(telegram?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Telegram} />
 									</span>
 								</Link>
 							</div>
