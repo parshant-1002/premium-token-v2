@@ -90,11 +90,11 @@ const DidYouWin = () => {
 					</CustomSlick>
 				</div>
 			</div>
-			<div className="didyouwin_bg">
-				<img width={2264} height={819}
-					className="img-fluid"
-					alt="Diduwin-banner"
+			<div className="didyouwin_bg d-none d-lg-block">
+				<img width={2264} height={819}					
+					alt="Diduwin"
 					src={ICONS.DidUwinBG}
+					className="img-fluid"
 				/>
 			</div>
 		</section>)

@@ -23,6 +23,7 @@
   text-align: $center;
   @media (max-width:767px){
     @include font-size (.875);
+    margin-bottom: 32px;
   }
   span {
     font-size: $inherit;

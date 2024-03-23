@@ -22,12 +22,13 @@
 }
 
 .wrapperVideo {
+    padding: 1px;
     margin-top: 30px;
     position: $relative;
     background: $white-color;
     background: linear-gradient(to bottom left, rgba($color: $white-color, $alpha: .6) 0%, rgba($color: $white-color, $alpha: 0.2) 25%, $body-color 50%, rgba($color: $white-color, $alpha: 0.04) 75%, rgba($color: $white-color, $alpha: .7) 100%);
-    padding: 1px;
     @include border-radius(25px);
+    backdrop-filter: blur(500px);
     @media (min-width:1200px) {
         margin-top: 52px;
     }

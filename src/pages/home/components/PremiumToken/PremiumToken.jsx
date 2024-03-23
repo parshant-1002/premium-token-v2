@@ -30,6 +30,7 @@ const PremiumToken = () => {
 
             <div className="premium_token_bg">
                 <img width={1162} height={835} className="img-fluid" alt="Premium" src={ICONS.PremiumTokenBg} />
+                <img width={1162} height={835} className="img-fluid" alt="Premium" src={ICONS.PremiumTokenBg} />
             </div>
 
         </section>

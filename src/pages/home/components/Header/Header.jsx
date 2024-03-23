@@ -78,7 +78,6 @@ const Header = ({ content = {} }) => {
 					</div>
 				</div>
 
-
 				{/* Responsive Menu */}
 				<div className="mobileMenuList d-xl-none justify-content-between flex-column flex-xl-row align-items-center gap-12">
 

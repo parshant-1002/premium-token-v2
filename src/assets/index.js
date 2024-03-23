@@ -8,6 +8,7 @@ import GitHUbBG from './img/git-hub-bg.png';
 import JsIcon from './img/js-icon.png';
 import MdIcon from './img/md-icon.png';
 import PremiumTokenBg from './img/permium-token-wallet-bg.png';
+import PremiumTokenMobileBg from './img/premium_mobile_bg.png';
 import PartnersBg from './img/logo-partner-bg.png';
 import TokenInforBg from './img/token-info-bg.png';
 import AuditBG from './img/External-audit-bg.png';
@@ -45,6 +46,7 @@ export const ICONS = {
     JsIcon:JsIcon,
     GitHUbBG:GitHUbBG,
     PremiumTokenBg:PremiumTokenBg,
+    PremiumTokenMobileBg:PremiumTokenMobileBg,
     PartnersBg:PartnersBg,
     TokenInforBg:TokenInforBg,
     CarSliderBG:CarSliderBG,
