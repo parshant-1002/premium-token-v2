@@ -23,7 +23,7 @@
 .slick-dots {
     bottom: -45px;
     li {
-        margin: 0 5px;
+        margin: 0 4px;
         @include opacity (.25);
         height: $auto;
         &.slick-active {
@@ -35,8 +35,8 @@
             display: $inline-block; 
             @include button($green-tin-color-700, $transparent, $white-color);
             @include border-radius (50%); 
-            width: 16px;
-            height: 16px;            
+            width: 12px;
+            height: 12px;            
             &::before {
                 content: '';
                 padding: 1px;
