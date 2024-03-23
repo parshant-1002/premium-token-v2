@@ -25,7 +25,7 @@
   }
   .navbar-brand { 
     margin-right: 0;
-    @media (max-width:991px){      
+    @media (max-width:1199.98px){      
       margin: 0 $auto;
       max-width: 147px;
       img {
@@ -42,7 +42,7 @@
   // Toggle Header
   &.togglebar {
     .navbar-brand {
-      position: relative;
+      position: $relative;
       z-index: 12;
       padding: 0;
     }
@@ -69,7 +69,7 @@
   }
  
   .navbar-brand {
-    @media(max-width: 991px) {
+    @media(max-width: 1199.98px) {
       svg {
         max-width: 147px;
       }
@@ -81,27 +81,31 @@
       outline: none;
       box-shadow: none;
     }
-    @media(max-width:991px) {
+    @media(max-width:1199.98px) {
       @include position (absolute, $top: null, $right: 25px, $bottom: null, $left: null);
       padding: 0;
     }
   }
 
   .main-navigation {
-    @media(max-width:991px) {
+    @media(max-width:1199.98px) {
       height: 100%;
-      padding: 0 16px;
+      padding: 24px 16px;
       @include position (fixed, $top: 0, $right: 0, $bottom: null, $left: 0);
       z-index: 11;
-      background-color: #020C0C;
+      background-color: $body-color;
+      @include transition-mixin (all, .5s, ease-in-out);
     }
-    .social-icon {
-      @media(max-width:991px) {
-        @include position (absolute, $top: null, $right: null, $bottom: 24px, $left: 50%);
-        transform: translateX(-50%);
+   
+    .CloseMenu {
+      @include position (absolute, $top: calc(50% - 40px/2), $right: 0);
       }
-
-    }
+      
+      .brand_banner {
+        img {
+          @include opacity(0.4);
+        }
+      }
   }
 
   .navbar-toggler-icons {
@@ -144,4 +148,18 @@
       }
     }
   }
+}
+
+// mobile banner mobile version
+.toogleBg {  
+    @include position($absolute, $top: 0px, $left: 0px);
+    height: 100%;
+    @include opacity (.9);
+    z-index: -1;
+    @media (max-width:1200px) {
+        $top: 0;
+    }
+    img {
+      max-height: 423px;
+    }
 }
