@@ -101,7 +101,7 @@ h5,
 }
 h6,
 .h6 {
-    @include font-size(1.1);
+    @include font-size(1.125);
     @media (min-width: 1600px) {
         @include font-size(1.125);
     }
@@ -250,9 +250,9 @@ a.btn {
         }
     }
     &-primary {
-        border:0;
+        border:0; 
         padding: 1px;
-        background: linear-gradient(91.03deg, rgba(#fff, 0.22) 1.7248211428523064%, rgba(255, 255, 255, .5) 51.5625%, rgba(255, 255, 255, .22) 100%);
+        background: linear-gradient(91.03deg, rgba($white-color, 0.22) 1.7248211428523064%, rgba(255, 255, 255, .3) 51.5625%, rgba(255, 255, 255, .22) 100%);
         @include border-radius (10px);
         min-width: 170px;
         .transform-none {
@@ -267,6 +267,9 @@ a.btn {
         }
         .image_renderer {
             margin-right: 8px;
+        }
+        &:hover {
+            border-color: $transparent;
         }
         &[disabled] {
             background-color: $grey-color-800;

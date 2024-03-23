@@ -1,13 +1,7 @@
 @import "../../../../assets/scss/base";
 
 .winner_counter {
-  position: $relative;
-  .heading_title {
-    @include flexCenter;
-    @include flex-direction(column);
-    margin: 0 $auto;
-    gap: 1rem;    
-  }
+  position: $relative;  
   &_content {
     @media (min-width:992px) {
       max-width: 761px;

@@ -1,12 +1,14 @@
 @import '../../../../assets/scss/base';
 
 .footer-row {
-    padding:100px 0 40px 0;
-    @media (min-width:1200px) {
-        padding:177px 0 92px 0;
+    @media (min-width:1200.99px) {
+        padding:100px 0 92px 0;
     }
-    @media (max-width:767.98px) {
+    @media (max-width:1200px) {
         padding:100px 0 40px 0;
+    }
+    @media (max-width:767px) {
+        padding:60px 0 40px 0;
     }
     .footer-together {
         @include flexbox;
@@ -27,19 +29,17 @@
     }
 
     .footer_left_shape {
-        @include position($absolute, $left: 0px, $bottom: calc(0px - 109px));
+        @include position($absolute, $left: 0px, $bottom: 0);
         z-index: -1;
-
         @media (max-width:768px) {
-           display: none;
+           display: $none;
         }
     }
     .footer_right_shape {
         @include position($absolute, $right: 0px,$bottom: calc(0px - 109px));
         z-index: -1;
-
         @media (max-width:768px) {
-            display: none;
+            display: $none;
          }
     }
     .footer-button {

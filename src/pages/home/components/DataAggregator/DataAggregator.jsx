@@ -32,22 +32,18 @@ const DataAggregator = () => {
           </div>
 
           <div className="col-lg-8 order-lg-2 order-1">
-            <div className="d-flex flex-column">
-              <div className="heading_title text-lg-center">
-                <h2 className="h2">
-                  Transparency
-                </h2>
-                <div className="description">
-                  <p className="mb-0">
-                    To show all our holders that PremiumToken is fair, honest and transparent so have we added our code of the smart contract on our website for all visitors and holders to review it. You can also watch the full source code on GitHub.
-                  </p>
-                </div>
-              </div>
-              <CodeEditor />
+           
+            <div className="heading_title text-center mb-0">
+              <h2 className="h2">Transparency</h2>
+                <p>To show all our holders that PremiumToken is fair, honest and transparent so have we added our code of the smart contract on our website for all visitors and holders to review it. You can also watch the full source code on GitHub.</p>                
             </div>
+
+            <CodeEditor />
+        
           </div>
         </div>
       </div>
+      
       <div className="git_hub_bg">
         <img width={831} height={1203}
           className="img-fluid"

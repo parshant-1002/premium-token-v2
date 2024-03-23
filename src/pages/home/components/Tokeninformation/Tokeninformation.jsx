@@ -6,16 +6,18 @@ import "./Tokeninformation.scss";
 
 const Tokeninformation = () => {
 	return (
-
 		<section className="token-sec">
 			<div className="container">
-				<div className="token-info-para text-center">
+
+				<div className="heading_title text-center mb-0">
 					<h2 className="h2">Token supply</h2>
 					<p>Here you can see how the full token supply is divided, you can also see the wallet addresses, to see that they will never be used for anything other then what they are intended for and that they can not be drawn as a winner by the smart contract.</p>
 				</div>
+
 				<div className="pie-chart text-center">
 					<div className="d-inline-block">
-						<DoughnutChart series={series} options={options} className="chart" /></div>
+						<DoughnutChart series={series} options={options} className="chart" />
+					</div>
 				</div>
 
 				<div className="token-grid-main">
@@ -85,7 +87,7 @@ const Tokeninformation = () => {
 						</div>
 						<div className="token-column-iner">
 							<div className="token-column-button">
-							<button className="bg-green-200">10%</button>
+								<button className="bg-green-200">10%</button>
 							</div>
 							<div className="token-column-text">
 								<h4 className="h5"> Marketing</h4>
@@ -97,7 +99,7 @@ const Tokeninformation = () => {
 						</div>
 						<div className="token-column-iner">
 							<div className="token-column-button">
-							<button className="bg-green-150">12.5%</button>
+								<button className="bg-green-150">12.5%</button>
 							</div>
 							<div className="token-column-text">
 								<h4 className="h5"> Burning</h4>
@@ -109,7 +111,7 @@ const Tokeninformation = () => {
 						</div>
 						<div className="token-column-iner">
 							<div className="token-column-button">
-							<button className="bg-green-100">65%</button>
+								<button className="bg-green-100">65%</button>
 							</div>
 							<div className="token-column-text">
 								<h4 className="h5"> To excanges and token holders</h4>
@@ -124,7 +126,7 @@ const Tokeninformation = () => {
 				</div>
 
 
-				
+
 
 
 			</div>

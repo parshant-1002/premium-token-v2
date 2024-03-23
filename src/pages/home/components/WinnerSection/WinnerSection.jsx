@@ -29,15 +29,11 @@ const WinnerSection = () => {
     <section className="winner_counter">
       <div className="container">
         <div className="heading_title text-center">
-          <h2 className="h2 mb-0">
+          <h2 className="h2">
             Latest winners
-          </h2>
-          <div className="winner_counter_content">
-            <p className="">
-              In the list below can you see all latest winners that the smart contract has drawn for each increase of $10 million market cap. The contract draws the winners automatic and all holders that hold minimum 1000 tokens have a chance of winning, the winners can choose a prize between $350,000 worth of PremiumToken or a premium car from our partners worth $350,000.
-            </p>
-          </div>
-          <span className="market-cap text-success text-center">MARKET CAP</span>
+          </h2> 
+          <p>In the list below can you see all latest winners that the smart contract has drawn for each increase of $10 million market cap. The contract draws the winners automatic and all holders that hold minimum 1000 tokens have a chance of winning, the winners can choose a prize between $350,000 worth of PremiumToken or a premium car from our partners worth $350,000.</p>
+          <span className="market-cap text-success">MARKET CAP</span>
         </div>
 
         <SmoothFlipCounter initialValue={123456} settings={counterSettings} />

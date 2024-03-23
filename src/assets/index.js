@@ -14,7 +14,6 @@ import AuditBG from './img/External-audit-bg.png';
 import CarSliderBG from './img/car-slider-bg.png';
 import AirDropBg from './img/airdrop-bg.png';
 import PartnersSliderBg from './img/partners-slider-bg.png';
-import FooterBlurGrp from './img/footer-blur-grp.png';
 import SpiralShape from './img/footer-spiral-shape.png';
 import Logo from "./icons/Logo.svg";
 import Twitter from "./icons/Twitter.svg";
@@ -48,7 +47,6 @@ export const ICONS = {
     AuditBG:AuditBG,
     AirDropBg:AirDropBg,
     PartnersSliderBg:PartnersSliderBg,
-    FooterBlurGrp:FooterBlurGrp,
     SpiralShape:SpiralShape,
     FooterRighttBg:FooterRightBg,
     FooterLeftBg:FooterLeftBg,

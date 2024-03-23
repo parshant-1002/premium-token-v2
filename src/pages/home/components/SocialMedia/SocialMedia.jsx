@@ -14,56 +14,51 @@ const SocialMedia = () => {
 						</div>
 
 
-							<div className="w-100 footer-button d-flex justify-content-between align-items-center gap-24">
-								<button type="button" className="btn btn-md btn-primary w-100">
-									<span className="transform-none">
-										<div className="image_renderer">
-											<img src={ICONS.XIcon}/>
-										</div>
-										<span class="render_html_safely">Join X</span>
-									</span>
-								</button>
-								<button type="button" className="btn btn-md btn-primary w-100">
-									<span className="transform-none">
-										<div className="image_renderer">
-											<img src={ICONS.XIcon}/>
-										</div>
-										<span class="render_html_safely">Join X</span>
-									</span>
-								</button>
-								<button type="button" className="btn btn-md btn-primary w-100">
-									<span className="transform-none">
-										<div className="image_renderer">
-											<img src={ICONS.XIcon}/>
-										</div>
-										<span class="render_html_safely">Join X</span>
-									</span>
-								</button>
-								<button type="button" className="btn btn-md btn-primary w-100">
-									<span className="transform-none">
-										<div className="image_renderer">
-											<img src={ICONS.XIcon}/>
-										</div>
-										<span class="render_html_safely">Join X</span>
-									</span>
-								</button>
-
-							</div>
-
-
-
+						<div className="w-100 footer-button d-flex justify-content-between align-items-center gap-24">
+							<button type="button" className="btn btn-md btn-primary w-100">
+								<span className="transform-none">
+									<div className="image_renderer">
+										<img src={ICONS.XIcon} />
+									</div>
+									<span class="render_html_safely">Join X</span>
+								</span>
+							</button>
+							<button type="button" className="btn btn-md btn-primary w-100">
+								<span className="transform-none">
+									<div className="image_renderer">
+										<img src={ICONS.XIcon} />
+									</div>
+									<span class="render_html_safely">Join X</span>
+								</span>
+							</button>
+							<button type="button" className="btn btn-md btn-primary w-100">
+								<span className="transform-none">
+									<div className="image_renderer">
+										<img src={ICONS.XIcon} />
+									</div>
+									<span class="render_html_safely">Join X</span>
+								</span>
+							</button>
+							<button type="button" className="btn btn-md btn-primary w-100">
+								<span className="transform-none">
+									<div className="image_renderer">
+										<img src={ICONS.XIcon} />
+									</div>
+									<span class="render_html_safely">Join X</span>
+								</span>
+							</button>
+						</div>
 					</div>
 				</div>
-
-
-
 			</div>
+
 			<div className="footer_left_shape">
 				<img width={633} height="800" src={ICONS.FooterLeftBg} className="img-fluid" />
 			</div>
 			<div className="footer_right_shape">
 				<img width={756} height="955" src={ICONS.FooterRighttBg} className="img-fluid" />
 			</div>
+			
 		</section>
 	);
 };

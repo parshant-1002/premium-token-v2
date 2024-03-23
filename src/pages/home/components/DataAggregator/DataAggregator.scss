@@ -9,6 +9,7 @@
        $bottom:0px;
   }
 }
+
 .dataAggregator  {
   @media (min-width:1199.99px) {
     margin: 100px 0;
@@ -16,13 +17,14 @@
   @media (max-width:1200px) {
     margin: 50px 0;
   }
-  .description {
-    @media (min-width:1199.99px){
-      margin-bottom: 54px;      
-    }
-    @media (max-width:1200px){
-      margin-bottom: 40px;      
-    }
+}
+
+.editor_tabs {
+  @media (min-width:1199.99px){
+    margin-top: 54px;      
+  }
+  @media (max-width:1200px){
+    margin-bottom: 40px;      
   }
 }
 
