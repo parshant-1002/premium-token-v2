@@ -1,56 +1,40 @@
 @import '../../../../assets/scss/base';
 
-.marketplace {
+.mw-240 { 
+    min-width: 240px!important;
+    @media (max-width:575px){
+        min-width: 100%!important;
+    }
+}
+.marketplace_sec {
     padding:70px 0 0px;
-    @media (min-width:1400px) {
+    @media (min-width:1200px) {
         padding:140px 0 0px;
     }
-    .market-place-para {
-        max-width: 584px;
-        margin: auto;
-
+    @media (max-width:575px) {
+        padding:0;
+    }
+    .heading_title {
+        max-width: 550px;
+        margin:0 $auto;
         h2 {
             margin-bottom: 8px;
         }
-
         p {
+            line-height: 24px;
             color: $text-color;
             font-size: $font-15;
-            font-weight: 500;
-            line-height: 24px;
+            font-weight: $font-medium;
         }
-    }
-
-    .comming-soon {
-        text-transform: none;
-        font-size: 14px;
-        min-width: 240px;
-        display: flex;
-        gap: 40px;
-        justify-content: center;
-        align-items: center;
-        margin: auto;
-
-        span {
-            color: $white-color;
-            line-height: 1;
-        }
-    }
-
-    .market-row {
-        padding: 74px 0 40px;
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-    }
+    }  
 }
 
 .car_slider_bg {
-    @include position($absolute, $left:0px, $bottom:50%);
+    @include position($absolute, $left:0px, $top:-70%);
     height: 100%; 
     z-index: -1;
     @include opacity(0.7); 
     @media (max-width:1200px) {
-         $bottom:100px;
+        bottom:100px;
     }
-  }
+}

@@ -8,31 +8,11 @@ import { CustomSlick } from "../../../../shared/components/CustomSlick";
 
 
 const DidYouWin = () => {
-	const responsiveConfig = [
-		{
-			breakpoint: 575,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				infinite: true,
-				arrows: false,
-				dots: true,
-			}
-		},
-		{
-			breakpoint: 820,
-			settings: {
-				slidesToShow: 1,
-				slidesToScroll: 1,
-				infinite: true,
-				arrows: false,
-				dots: true,
-			}
-		},
+	const responsiveConfig = [ 
 		{
 			breakpoint: 991,
 			settings: {
-				slidesToShow: 3,
+				slidesToShow: 1,
 				slidesToScroll: 1,
 				infinite: false,
 				arrows: false,
@@ -85,7 +65,7 @@ const DidYouWin = () => {
 							<div className="col-lg-3">
 								<div className="card-box-green position-relative">
 									<div className="card-counter">
-										<span className="card-counter-no">  {item.prop} </span>
+										<span className="card-counter-no">{item.prop} </span>
 									</div>
 									<div className="card-img">
 										<img

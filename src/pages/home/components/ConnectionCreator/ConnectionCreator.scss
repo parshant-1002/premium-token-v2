@@ -2,12 +2,18 @@
 
 .connection-creator {
   padding-top: 42px;
+  @media (max-width:575px){
+    padding-top: 0;
+  }
   .maker-banner {
     @media (min-width:1200px) {
       margin-right: -70px;
     }
     img {
       max-width: 375px;
+      @media (max-width:575px){
+        max-width:253px;
+      }
     }
   }
   .maker-text-col {
@@ -24,12 +30,13 @@
       font-weight: $font-medium;
     }
     .link-button {
-      border-radius: 10px;
-      background: $dark-green-color-400;
-      padding: 8px 32px;
       border: 0;
+      width: 100%;
+      min-height: 44px;
+      @include border-radius (10px);
+      background: $dark-green-color-400;
       @include flexCenter;
-      width: 100%; 
+      padding: 8px 32px;
       margin:24px 0 32px;
       position: $relative;
       text-align: $center;
@@ -41,20 +48,15 @@
       span {
         color: $text-color;
         text-overflow: ellipsis;
-        font-size: 16px;
-        overflow: hidden;
-        font-weight: 700;
-        line-height: 24px;
+        font-weight: $font-bold;
+        @include font-size (1);
+        overflow: $hidden;
+        line-height: 1.6;
         white-space: nowrap;
         width: max-content;
       }
     } 
-  }
-  .token-info-button {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-  }  
+  } 
 }
 
 .token_info_bg {

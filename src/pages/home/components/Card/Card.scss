@@ -1,33 +1,37 @@
 @import '../../../../assets/scss/base';
-.slider-main{
-.premium-slider-col {
-    position: $relative;
 
+.slider_thumb {
+    position: $relative;
+    height: 244px;
+    @include flexCenter;
     &::before {
-        position: $absolute;
         content: "";
-        top: 50%;
-        left: 50%;
-        width: 297px;
+        @include position($absolute, $top: 50%, $left: 50%);
+        width: 280px;
         height: 243px;
         background: rgb(56 153 137 / 25%);
-        border-radius: 0px 100px 0px 100px;
-        transform: translate(-50%, -50%);
+        @include transform (translate(-50%, -50%));
+        @include border-radius (0px 100px 0px 100px);
+        backdrop-filter: blur(500px);
         z-index: -1;
-
     }
-
     img {
         max-width: 100%;
     }
-
 }
-h3 {
-    color: $white-color;
-    font-size: 18px;
-    font-weight: 800;
-    text-align: center;
-    margin-top: 56px;
-    margin-bottom: 0;
-}
+.market-row {
+    padding: 40px 0;
+    position: $relative;
+    z-index: 1;
+    .h3 {
+        @include font-size (1.125);
+        font-weight: $font-mediumbold;
+        color: $white-color;
+        text-align: $center;
+        margin-top: 20px;
+        margin-bottom: 0;
+    }
+    .slider {
+        @include flexbox;
+    }   
 }

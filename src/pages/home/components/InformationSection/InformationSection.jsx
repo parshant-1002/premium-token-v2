@@ -8,31 +8,11 @@ import { ICONS } from "../../../../assets";
 
 const InformationSection = ({ content = {} }) => {
   const { rulesToWin, title } = content;
-  const responsiveConfig = [
-    {
-      breakpoint: 575,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        arrows: false,
-				dots: true,
-      }
-    },
-    {
-      breakpoint: 820,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        arrows: false,
-				dots: true,
-      }
-    },
+  const responsiveConfig = [ 
     {
       breakpoint: 991,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 1,
         slidesToScroll: 1,
         infinite: false,
         arrows: false,

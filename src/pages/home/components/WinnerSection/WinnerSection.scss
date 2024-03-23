@@ -62,7 +62,7 @@
 }
 
 .table_slider {
-  margin: 32px 0;
+  margin: 32px 0 15px;
   @at-root {
     .prize_table {
       table {
@@ -100,7 +100,11 @@
               display: $block;
               margin-bottom: 20px;
               @include border-radius (12px);
+              padding: 10px 0;
               background: $dark-green-color-600;
+              &:last-child {
+                margin-bottom: 0;
+              }
               // &:first-child {
               //   .td_img { 
               //     margin-top: -20px;

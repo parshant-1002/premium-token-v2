@@ -17,21 +17,18 @@ const Card = ({ car, propGap, propDebugCommit, propWidth }) => {
   }, [propWidth]);
 
   return (
-    <div className="slider-main">
-    <div className="premium-slider-col" >
-      <img
-        className=""
-        loading="lazy"
-        alt=""
-        src={lambo}
-        style={carIconStyle}
-      />
-       </div>
-      <div className="slider-text">
-          <h3 className="h3">Lamborghini Urus</h3>
-      </div>
-     
-    </div>
+    <>
+      <figure className="slider_thumb mb-0">
+        <img
+          className=""
+          loading="lazy"
+          alt=""
+          src={lambo}
+          style={carIconStyle}
+        />
+      </figure>
+      <h4 className="h3">Lamborghini Urus</h4>      
+    </>
   );
 };
 

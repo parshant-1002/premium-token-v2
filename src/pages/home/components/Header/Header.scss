@@ -21,6 +21,17 @@
   }
   &.sticky-header {
     background-color: $body-color;
+    box-shadow: 0 0 15px rgba($black-color, .4);
+  }
+  .navbar-brand { 
+    margin-right: 0;
+    @media (max-width:991px){      
+      margin: 0 $auto;
+      max-width: 147px;
+      img {
+        max-width: 100%;
+      }
+    }
   }
   .btn {
     min-width: 150px;
