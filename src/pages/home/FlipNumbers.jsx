@@ -31,8 +31,10 @@ const SmoothFlipCounter = ({ initialValue, socket }) => {
     const renderDigits = () => {
         const digits = formatNumber(value).toString().split('');
         return digits.map((digit, index) => (
-            <div className="digit_card" key={index}>
-                <span data-value={digit}>{digit}</span>
+             digit != "," &&
+            <div className={`digit_card ${digits[index+1] == "," ? "add_separator" : ""}`}  key={index}>
+                {console.log(digit == "","digit><><><><<")}
+              <span data-value={digit}>{digit}</span>
             </div>
         ));
     };

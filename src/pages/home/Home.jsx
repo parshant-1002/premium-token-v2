@@ -36,6 +36,7 @@ const Home = () => {
   const getContentData = ((sectionType)=>{
     return content?.[sectionType]
   })
+  
   return (
     <>
       <Header content={getContentData(SectionTypes.HEADERS)}/>
