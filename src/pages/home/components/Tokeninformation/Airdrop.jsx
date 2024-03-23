@@ -19,6 +19,7 @@ const Airdrop = ({content = {}}) => {
   const dispatch = useDispatch()
   const onSubmit = (data) => {
     if (!hasAtLeastFourValues(data)) {
+      toast.error("Please complete at least four fields to qualify for the airdrop whitelist.");
       return
     }
     dispatch(

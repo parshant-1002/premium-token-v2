@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import "./flipnumber.scss"
+import { formatNumber } from '../../shared/constants/utils';
 
 const SmoothFlipCounter = ({ initialValue, socket }) => {
     console.log(initialValue,"intialvalue")
@@ -22,14 +23,13 @@ const SmoothFlipCounter = ({ initialValue, socket }) => {
     useEffect(() => {
         if (socket) {
             socket.on('blockChainData', (data) => {
-                console.log(data,"blockChainData<><><><><")
                 setValue(data?.marketCap)
             });
         }
     }, [socket]);
 
     const renderDigits = () => {
-        const digits = value.toString().split('');
+        const digits = formatNumber(value).toString().split('');
         return digits.map((digit, index) => (
             <div className="digit_card" key={index}>
                 <span data-value={digit}>{digit}</span>

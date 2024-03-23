@@ -28,3 +28,10 @@ export function isValidSolanaAddress(address) {
         return "Please Enter a valid wallet address";
     }
 }
+
+export function formatNumber(num) {
+    // International numbering system
+    var internationalFormatted = num.toLocaleString('en-US');
+
+    return internationalFormatted
+}
