@@ -12,12 +12,12 @@ import { createAirDrop } from '../../../../store/actions/contentManagement';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 
-const Airdrop = ({content = {}}) => {
-  const{description, section1, section2, title} = content
+const Airdrop = ({ content = {} }) => {
+  const { description, section1, section2, title } = content
   const AIRDROP_SCHEMA = AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA(section1)
   const dispatch = useDispatch()
   const onSubmit = (data) => {
-    console.log(data,"dataonsubmit")
+    console.log(data, "dataonsubmit")
     dispatch(
       createAirDrop(data, (message, status) => {
         if (status === STATUS.SUCCESS) {
@@ -29,24 +29,23 @@ const Airdrop = ({content = {}}) => {
   return (
     <section className="position-relative airdrop_sec">
       <div className="container">
-        <div className="airdrop-main">       
-         
-              <div class="heading_title airdrop-info-para">
-                <h2 class="h2 common_title text-center"><SafeHTML html={title}/></h2>
-                <div class="description">
-                <p class="text-center"><SafeHTML html={description} /></p>
-                </div>
-                </div>
-          
-          
-             <div className="whitelisted-row">
-            <CustomForm
-              formData={AIRDROP_SCHEMA}
-              onSubmit={onSubmit}
-              defaultValues={{}}
-              submitText="Update Contract Details Content"
-            />
-              {/* <form className="white-listed-form">
+        <div className="airdrop-main">
+
+          <div className="heading_title">
+            <h2 className="h2 text-center"><SafeHTML html={title} /></h2>
+            <p><SafeHTML html={description} /></p>
+          </div>
+
+          <div className="whitelisted-row">
+            <div className="white-listed-form ">
+              <CustomForm
+                formData={AIRDROP_SCHEMA}
+                onSubmit={onSubmit}
+                defaultValues={{}}
+                submitText="Update Contract Details Content"
+              />
+            </div>
+            {/* <form className="white-listed-form">
                 <h3 className="h4">
                   Get whitelisted for AirDrop
                 </h3>
@@ -215,16 +214,16 @@ const Airdrop = ({content = {}}) => {
                   />
                 </div>
               </form> */}
-              <div className="airdrop-info">
-                <Each of={section2} render={(item, index) => (
-                  <Info
-                    image={addBaseUrlToUrls(item.imageUrl)}
-                    title= {item.title}
-                  />
-                )}/>
-              </div>
+            <div className="airdrop-info">
+              <Each of={section2} render={(item, index) => (
+                <Info
+                  image={addBaseUrlToUrls(item.imageUrl)}
+                  title={item.title}
+                />
+              )} />
             </div>
           </div>
+        </div>
 
       </div>
       <div className="air_drop_bg">

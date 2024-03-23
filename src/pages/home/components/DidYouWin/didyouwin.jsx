@@ -67,7 +67,7 @@ const DidYouWin = ({content = {}}) => {
 				</div>
 			</div>
 			<div className="didyouwin_bg d-none d-lg-block">
-				<img width={2264} height={819}					
+				<img width={900} height={700}					
 					alt="Diduwin"
 					src={ICONS.DidUwinBG}
 					className="img-fluid"
