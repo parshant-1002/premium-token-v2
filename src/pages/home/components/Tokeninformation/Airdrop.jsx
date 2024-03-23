@@ -11,13 +11,17 @@ import { STATUS } from '../../../../shared/constants';
 import { createAirDrop } from '../../../../store/actions/contentManagement';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
+import { hasAtLeastFourValues } from './helpers/utils';
 
 const Airdrop = ({ content = {} }) => {
   const { description, section1, section2, title } = content
   const AIRDROP_SCHEMA = AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA(section1)
   const dispatch = useDispatch()
   const onSubmit = (data) => {
-    console.log(data, "dataonsubmit")
+    if (!hasAtLeastFourValues(data)) {
+      toast.error("Please complete at least four fields to qualify for the airdrop whitelist.");
+      return
+    }
     dispatch(
       createAirDrop(data, (message, status) => {
         if (status === STATUS.SUCCESS) {
@@ -31,8 +35,8 @@ const Airdrop = ({ content = {} }) => {
       <div className="container">
         <div className="airdrop-main">
 
-          <div className="heading_title">
-            <h2 className="h2 text-center"><SafeHTML html={title} /></h2>
+          <div className="heading_title text-center">
+            <h2 className="h2"><SafeHTML html={title} /></h2>
             <p><SafeHTML html={description} /></p>
           </div>
 
@@ -227,11 +231,8 @@ const Airdrop = ({ content = {} }) => {
 
       </div>
       <div className="air_drop_bg">
-        <img width={465} height={886}
-          className="img-fluid"
-          alt="desktop-banner"
-          src={ICONS.AirDropBg}
-        />
+        <img width={465} height={886} className="img-fluid d-none d-lg-block" alt="Bg" src={ICONS.AirDropBg} />
+        <img width={375} height={895} className="img-fluid d-lg-none" alt="Bg" src={ICONS.AuditMobileBG} />
       </div>
     </section>
   )

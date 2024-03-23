@@ -1,11 +1,9 @@
-import "./premiumtoken.scss";
-import premium from '../../../../../public/premium.png';
 import arrow from '../../../../../public/rightarrow.svg';
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
-import { RenderIconWithHover } from "../../../../shared/components/RenderIconWithHover";
 import { addBaseUrlToUrls } from "../../../../shared/utilities";
 import { ICONS } from "../../../../assets";
-const PremiumToken = ({content = {}}) => {
+import "./premiumtoken.scss";
+const PremiumToken = ({ content = {} }) => {
     const { comingSoonButtonText, description, imageUrl, title } = content
     return (
         <section className="premium-token-row position-relative">
@@ -13,10 +11,10 @@ const PremiumToken = ({content = {}}) => {
                 <div className="row align-items-center premium-token-inner">
                     <div className="col-lg-6 order-2 order-lg-1">
                         <div className="token-summary text-center">
-                                        <h2 className="h2"><SafeHTML html={title} /></h2>
-                                        <p><SafeHTML html={description} /></p>
+                            <h2 className="h2"><SafeHTML html={title} /></h2>
+                            <p><SafeHTML html={description} /></p>
                             <button type="button" className="btn btn-md btn-secondary">
-                                            <span className="transform-none"><SafeHTML html={comingSoonButtonText} />
+                                <span className="transform-none"><SafeHTML html={comingSoonButtonText} />
                                     <em className="ms-2">
                                         <img src={arrow} alt="premium" width={14} height={8} />
                                     </em>

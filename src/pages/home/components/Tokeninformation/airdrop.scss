@@ -38,10 +38,14 @@
         @media (min-width:992px) {
             grid-template-columns: 1fr 1fr;
         }
+        @media (max-width:991px) {
+            gap: 70px;
+        }
         .white-listed-form {
             padding: 52px;
             border-radius: 0px 100px 0px 100px;
             background: rgba(56, 153, 137, 0.08);
+            backdrop-filter: blur(500px);
             @media (max-width:767px) {
                 border-radius: 0 40px;
                 padding: 52px 12px;
@@ -53,16 +57,6 @@
                 font-weight: $font-medium;
                 line-height: normal;
                 margin-bottom: 32px;
-            }
-
-            .input-col {
-                position: $relative;
-                margin-bottom: 8px;
-                img {
-                    @include position($absolute, $top: 50%, $left: 10px);
-                    transform: translateY(-50%);
-                    width: 24px;             
-                } 
             }
             .submit-drop{
                 margin-top: 32px;
@@ -125,10 +119,12 @@
 }
 
 .air_drop_bg {
-    @include position($absolute, $right:0px, $top:0);
-    height: 100%; 
-    z-index: -1;
-    @media (max-width:1200px) {
-        top:-72px;
+    @media (min-width:991.99px) {
+        @include position($absolute, $right:0px, $top:-15%);
+        height: 100%; 
+    }
+    @media (max-width:991px) {
+        @include position($absolute, $left:0px, $bottom:-23%);
+        z-index: -1;
     }
 }

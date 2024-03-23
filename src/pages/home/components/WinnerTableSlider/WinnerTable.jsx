@@ -23,7 +23,7 @@ const WinnerTable = ({ socket }) => {
             }
         }))
 
-    }, [skip, totalCount])
+    }, [skip])
 
     useEffect(() => {
         if (socket) {
@@ -62,13 +62,36 @@ const WinnerTable = ({ socket }) => {
         return (
             <tr>
                 {WINNER_HEADINGS?.map((heading) => {
-                    return <td data-label={""}>{row[heading.apiKey]}</td>
+                    return <td data-label={heading.label}>{row[heading.apiKey]}</td>
                 })}
             </tr>
         )
     }
+
+    const responsiveConfig = [    
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: false,
+            arrows: false,
+            dots: true
+          }
+        },
+        {
+            breakpoint: 575,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: false,
+              arrows: false,
+              dots: true
+            }
+          },
+      ]
     return (
-        <CustomSlick slidesToShow={1} handleNextClick={handleNextClick}>
+        <CustomSlick slidesToShow={1} handleNextClick={handleNextClick} responsiveConfig = {responsiveConfig}>
             {tableData?.map((pageData, index) => (
                 <table className="table table-borderless">
                     <thead>

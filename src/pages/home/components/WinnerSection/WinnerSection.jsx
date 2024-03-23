@@ -15,18 +15,7 @@ const WinnerSection = ({content = {}, socket}) => {
     direction: 'rtl',
     arrows: true,
   };
-  const responsiveConfig = [    
-    {
-      breakpoint: 991,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: false,
-        arrows: false,
-        dots: true
-      }
-    }
-  ]
+
 
   return (
     <section className="winner_counter">
