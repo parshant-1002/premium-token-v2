@@ -1,6 +1,24 @@
 @import "../../../../assets/scss/base";
 
-.airdrop_secn {
+
+.heading_title {
+    margin: 0 $auto;
+    @media (min-width:991.99px){
+        max-width: 745px;
+    }
+    .h2 {
+        margin-bottom: 10px
+    }
+    p {
+        font-weight: $font-medium;
+        @include font-size (.938);
+        color: $text-color;
+        line-height: 1.5;
+        margin: 0;
+    }
+}
+
+.airdrop_sec {
     margin-top: 80px;
     margin-bottom: 80px;
     @media (min-width:1440px) {
@@ -8,19 +26,7 @@
         margin-bottom:100px ;
     }
 }
-.airdrop-main {
-    .airdrop-info-para {
-        max-width: 681px;
-        margin: auto;
-
-        h2 {
-            margin-bottom: 8px;
-        }
-
-        p {
-            @include para
-        }
-    }
+.airdrop-main {   
 
     .whitelisted-row {
         display: grid;
@@ -53,17 +59,14 @@
             .input-col {
                 position: $relative;
                 margin-bottom: 8px;
-
                 img {
                     @include position($absolute, $top: 50%, $left: 10px);
                     transform: translateY(-50%);
-
-             
+                    width: 24px;             
                 }
-
                 input {
                     background: rgba(41, 101, 92, 0.25);
-                    border-radius: 10px;
+                    @include border-radius (10px);
                     padding: 8px 16px 8px 40px;
                     width: 100%;
                     border: 0;
@@ -72,10 +75,8 @@
                     font-weight: $font-medium;
                     line-height: 22px;
                     min-height: 40px;
-
                     &::placeholder {
                         color: $green-tin-color-700;
-
                     }
                 }
             }

@@ -4,6 +4,8 @@ import { ICONS } from "../../../../assets";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import WinnerTable from "../WinnerTableSlider/WinnerTable";
 import ConnectButton from "../ConnectButton/ConnectButton";
+import { ICONS } from "../../../../assets";
+import "./WinnerSection.scss";
 
 const WinnerSection = ({content = {}, socket}) => {
   const { marketCap, latestWinnerDetails, connectWalletButtonText, prizeDescription, tokenHolderText }  = content;
@@ -12,21 +14,30 @@ const WinnerSection = ({content = {}, socket}) => {
     digits: 7,
     delay: 200,
     direction: 'rtl',
+    arrows: true,
   };
+  const responsiveConfig = [    
+    {
+      breakpoint: 991,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: false,
+        arrows: false,
+        dots: true
+      }
+    }
+  ]
 
   return (
     <section className="winner_counter">
       <div className="container">
         <div className="heading_title text-center">
-          <h2 className="h2 common_title">
+          <h2 className="h2">
             <SafeHTML html={latestWinnerDetails?.title}/>
-          </h2>
-          <div className="winner_counter_content">
-            <p className="">
-              <SafeHTML html={latestWinnerDetails?.description}/>
-            </p>
-          </div>
-          <div className="market-cap text-success text-center"><SafeHTML html={marketCap?.title} /></div>
+          </h2> 
+          <p><SafeHTML html={latestWinnerDetails?.description}/></p>
+          <span className="market-cap text-success"><SafeHTML html={marketCap?.title} /></span>
         </div>
 
         <SmoothFlipCounter initialValue={marketCap?.marketCapValue || 0} settings={counterSettings} socket = {socket}/>
@@ -36,42 +47,42 @@ const WinnerSection = ({content = {}, socket}) => {
             <SafeHTML html={latestWinnerDetails?.description}/>
           </span>
         </div>
-        {/* table secn */}
-        <div className="table_wallet_secn mw-928">
-          
-
-        <div className="tableHeaderinfo d-flex flex-md-row flex-column justify-content-md-between align-items-md-center">
-          <div className="loopControl">
-            <div className="d-flex gap-1">
-              <span className="text-white"><SafeHTML html={tokenHolderText} /></span>
-              <span className="text-success text-value">4859</span>
-            </div>
-          </div>
-          <div className="wallet-link align-items-center d-flex gap-3">
-            <div className="output">
-              <span className="text-white">{prizeDescription}</span>
-            </div>
-            {/* <button type="button" className="btn btn-md btn-secondary"><SafeHTML html={connectWalletButtonText}/></button> */}
-            <ConnectButton connectWalletButtonText={connectWalletButtonText}/>
-          </div>
-        </div>
-        {/* table slider */}
-        <div className="table_slider my-32">
-          <div className="prize_table">
-              <WinnerTable socket = {socket}/>
-          </div>
-        </div>
-        </div>
       </div>
-      <div className="prize_secn_bg">
-        <img width={1920} height={1596 }
-          className="prize-banner"
-          alt="desktop-banner"
-          src={ICONS.PrizeBannerBg}
-        />
+
+      <div className="winner_list position-relative">
+        <div className="container">
+          <div className="table_wallet_secn">
+            <div className="tableHeaderinfo d-flex flex-md-row flex-column justify-content-md-between align-items-md-center">
+              <div className="loopControl">
+                <div className="d-flex gap-1">
+                        <span className="text-white"><SafeHTML html={tokenHolderText}</span>
+                  <span className="text-success text-value">4859</span>
+                </div>
+              </div>
+              <div className="wallet-link align-items-center d-flex gap-3">
+                <div className="output">
+                  <span className="text-white">{prizeDescription}</span>
+                </div>
+                {/* <button type="button" className="btn btn-md btn-secondary"><span className="transform-none">Connect Wallet</span></button> */}
+                  <ConnectButton connectWalletButtonText={connectWalletButtonText} />
+              </div>
+            </div>
+
+            {/* table slider */}
+            <div className="table_slider">
+              <div className="prize_table">
+                <WinnerTable socket={socket} />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="prize_secn_bg">
+          <img width={1920} height={1596} className="w-100" alt="" src={ICONS.PrizeBannerBg} />
+          <img src={ICONS.PrizeBgMobile} width={500} height={400} alt="" className="d-block d-md-none" />
+        </div>
       </div>
     </section>
-    
+
   );
 };
 

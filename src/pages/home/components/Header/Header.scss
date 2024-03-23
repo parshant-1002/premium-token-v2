@@ -1,104 +1,80 @@
 @import '../../../../assets/scss/base';
 
-.transform-none {
-  text-transform: $transform;
-}
 #main {
-  @media (min-width:1200px){
+  @media (min-width:1200px) {
     padding-top: 104px;
   }
-  @media (max-width:1199.99px){
-    padding-top: 74px;
+
+  @media (max-width:1199.99px) {
+    padding-top: 90px;
   }
 }
+
 .header {
-  width:100%;
-  @include position ($absolute, $top:0,$left:0, $right:0);
+  width: 100%;
+  @include position ($fixed, $top: 0, $left: 0, $right: 0);
+  @include transition-mixin (all, .5s, ease-in-out);
   z-index: 11;
   @media (min-width:1200px) {
     padding: 30px 0;
   }
-  @media (max-width:1199.99px){
-    padding: 15px 0;
+  @media (max-width:1199.99px) {
+    padding: 24px 0;
   }
   &.sticky-header {
     background-color: $body-color;
-    position: $fixed;
+    box-shadow: 0 0 15px rgba($black-color, .4);
   }
-  // Toggle Header
-  &.togglebar {
-    .navbar-brand {
-      position: relative;
-      z-index: 12;
-      padding: 0;
-    }
-    .navbar-toggler {
-      top: 0;
-      z-index: 12;
-    }
-    .navbar-toggler-icons {
-      transition: all 0.3s;
-      span {
-        &:nth-child(1) {
-          transform: rotate(45deg) translate(10px, 10px);
-          background: #fff;
-        }
-        &:nth-child(2) {
-          opacity: 0;
-        }
-        &:nth-child(3) {
-          transform: rotate(-45deg);
-          width: 25px;
-        }
-      }
-    }
-
-
-  }
-
   .navbar-brand {
-    @media(max-width: 991px) {
+    margin-right: 0;
+    @media (max-width:1199.98px) {
+      margin: 0 $auto;
+      max-width: 147px;
+      img,
       svg {
-        max-width: 147px;
+        display: $block;
+        max-width: 100%;
       }
     }
-
+  }
+  .btn {
+    min-width: 150px;
+    span {
+      @include font-size (.875);
+    }
   }
 
+  // Toggle Header
   .navbar-toggler {
+    top: 0;
+    border: 0;
+    z-index: 12;
+    padding: 0;
+    outline: 0!important;
+    box-shadow: $none!important;
+    @media(max-width:1199.98px) {
+      @include position (absolute, $right: 25px, $top: 5px);       
+    }
     &:focus {
       outline: none;
       box-shadow: none;
     }
-
-    @media(max-width:991px) {
-      @include position (absolute, $top: null, $right: 25px, $bottom: null, $left: null);
-      padding: 0;
-    }
   }
-
+ 
   .main-navigation {
-    @media(max-width:991px) {
+    @media(max-width:1199.98px) {
       height: 100%;
-      padding: 0 16px;
+      padding: 24px 16px;
       @include position (fixed, $top: 0, $right: 0, $bottom: null, $left: 0);
       z-index: 11;
-      background-color: #020C0C;
-    }
-
-    .social-icon {
-      @media(max-width:991px) {
-        @include position (absolute, $top: null, $right: null, $bottom: 24px, $left: 50%);
-        transform: translateX(-50%);
-      }
-
+      background-color: $body-color;
+      @include transition-mixin (all, .5s, ease-in-out);
     }
   }
 
   .navbar-toggler-icons {
     display: grid;
     gap: 4px;
-
     span {
       &:nth-child(1) {
         width: 25px;
@@ -107,7 +83,6 @@
         background: $green-tin-color-700;
         @include border-radius(3px)
       }
-
       &:nth-child(2) {
         width: 21px;
         height: 3px;
@@ -116,7 +91,6 @@
         background: #A7D7CF;
         @include border-radius(3px)
       }
-
       &:nth-child(3) {
         width: 17px;
         height: 3px;
@@ -125,24 +99,72 @@
         background: #fff;
         @include border-radius(3px)
       }
-
     }
-
-
     @media (min-width:1200px) {
       padding: 30px 0;
     }
-
     .dark-green-gradient {
       &:hover {
         path {
-          fill: #A7D7CF;
+          fill: $text-color;
         }
       }
     }
+  }
+}
 
-    .transform-none {
-      text-transform: none;
-    }
+// mobile banner mobile version
+.toogleBg {
+  @include position($absolute, $top: 0px, $left: 0px);
+  height: 100%;
+  @include opacity (.9);
+  z-index: -1;
+  @media (max-width:1200px) {
+    $top: 0;
+  }
+  img {
+    max-height: 423px;
+  }
+}
+
+.header_toggle {
+  padding: 24px 0;
+  position: $absolute;
+  top: 0;
+  left: 0;
+}
+
+.mobileMenuList { 
+  background-color: #020C0C;
+  background-image: url(../../../../assets/img/mobile_bg.png);
+  background-repeat: $no-repeat;
+  background-size: 100%;
+  @include position($fixed, $top: 0, $right: 0, $left: 0);
+  background-color: $body-color;
+  padding: 24px 16px;
+  height: 100%;
+  max-height: 100%;
+  width: 100%;
+  z-index: 111;
+  overflow-y: $auto;
+  overflow-x: $hidden;
+  visibility: $hidden;
+  @include transform (translateY(-100%));
+  @include transition-mixin (all, .5s, ease-in-out);
+  .close_menu {
+    border:0;
+    @include position($absolute, $top: 22px, $right: 25px);
+    background-color: $transparent
+  }
+}
+
+.menu-open { 
+  .mobileMenuList {
+    @include flexbox;
+    visibility: $visible;
+    @include transform (translateY(0%));
+  }
+  .header-button {
+    margin-top: 22vh;
   }
 }

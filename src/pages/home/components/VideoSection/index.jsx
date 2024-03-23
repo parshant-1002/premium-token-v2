@@ -18,17 +18,17 @@ const VideoSection = ({ content = {} }) => {
         }
     }
     return (
-        <section className="video-banner position-relative py-72">
+        <section className="video-banner position-relative">
             <div className="container">
                 <div className="video-banner--info text-center">
-                    <h1 className="h1"><SafeHTML html={title} /></h1>
+                    <h1 className="h2"><SafeHTML html={title} /></h1>
                     <div className="video-banner-description">
                         <p>
                             <SafeHTML html={description} />
                         </p>
                     </div>
                 </div>
-                <div className="videoSecn position-relative">
+                <div className="position-relative">
                     <div className="wrapperVideo">
                         <div className="video_home ratio ratio-16x9">
                             <video src={addBaseUrlToUrls(videoUrl)} key={videoUrl} width={1140} height={400} />

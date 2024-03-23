@@ -27,7 +27,7 @@ const Airdrop = ({content = {}}) => {
     );
   };
   return (
-    <section className="position-relative airdrop_secn">
+    <section className="position-relative airdrop_sec">
       <div className="container">
         <div className="airdrop-main">       
          
@@ -125,25 +125,94 @@ const Airdrop = ({content = {}}) => {
                       type="text"
                     />
 
-                  </div>
-                  <div className="input-col">
-                    <img
-                      className=""
-                      alt=""
-                      src="/social-icons-8.svg"
-                    />
-                    <input
-                      className=""
-                      placeholder=" Enter URL to your TikTok profile"
-                      type="text"
-                    />
-
-                  </div>
+        <div className="airdrop-main">
+ 
+          <div className="whitelisted-row">
+            <form className="white-listed-form">
+              <h3 className="h4">
+                Get whitelisted for AirDrop
+              </h3>
+              <div className="main-form">
+                <div className="input-col">
+                  <img className="" alt="" src="/heroiconssolid.svg" />
+                  <input
+                    className=""
+                    placeholder="Enter your PremiumToken wallet address"
+                    type="text"
+                  />
                 </div>
-                <div className="submit-drop">
-                  <button className="btn btn-md btn-secondary">
-                    Submit airdrop
-                  </button>
+
+                <div className="input-col">
+                  <img
+                    className=""
+                    alt=""
+                    src="/social-icons.svg"
+                  />
+                  <input
+                    className=""
+                    placeholder="Enter URL to your Twitter profile"
+                    type="text"
+                  />
+                </div>
+                <div className="input-col">
+                  <img
+                    className=""
+                    alt=""
+                    src="/social-icons-2.svg"
+                  />
+                  <input
+                    className=""
+                    placeholder="Enter your Telegram username"
+                    type="text"
+                  />
+                </div>
+                <div className="input-col">
+                  <img
+                    className=""
+                    alt=""
+                    src="/social-icons-5.svg"
+                  />
+                  <input
+                    className=""
+                    placeholder="Enter URL to your Instagram profile"
+                    type="text"
+                  />
+                </div>
+                <div className="input-col">
+                  <img
+                    className=""
+                    alt=""
+                    src="/social-icons-6.svg"
+                  />
+                  <input
+                    className=""
+                    placeholder="  Enter URL to your Facebook profile"
+                    type="text"
+                  />
+                </div>
+                <div className="input-col">
+                  <img
+                    className=""
+                    alt=""
+                    src="/social-icons-1.svg"
+                  />
+                  <input
+                    className=""
+                    placeholder="Enter your username on Discord"
+                    type="text"
+                  />
+                </div>
+                <div className="input-col">
+                  <img
+                    className=""
+                    alt=""
+                    src="/social-icons-8.svg"
+                  />
+                  <input
+                    className=""
+                    placeholder=" Enter URL to your TikTok profile"
+                    type="text"
+                  />
                 </div>
               </form> */}
               <div className="airdrop-info">
@@ -155,15 +224,15 @@ const Airdrop = ({content = {}}) => {
                 )}/>
               </div>
             </div>
-         
-        </div>
+          </div>
+
       </div>
       <div className="air_drop_bg">
         <img width={465} height={886}
-                        className="img-fluid"
-                        alt="desktop-banner"
-                        src={ICONS.AirDropBg}
-                />
+          className="img-fluid"
+          alt="desktop-banner"
+          src={ICONS.AirDropBg}
+        />
       </div>
     </section>
   )

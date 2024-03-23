@@ -2,73 +2,72 @@
 
 .prize_secn {
   margin: 50px 0 100px;
-
   @media (min-width:1200px) {
     margin: 140px 0;
   }
 }
 
 .card-slider-row {
-  margin-top: 40px;
-
-  .cstm-slider {
+  margin-top: 40px;  
+  .slick-slide>div{
+    [class*=col-] {
+      padding-inline: 10px ;
+    }
+  }
+  
+  .custom-slider {
     .regular {
-      @media (min-width:1200px) {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 1.25rem;
+      margin-inline: -10px;
+      @include flexbox;
+      @media (min-width:991.99px) {
         margin-top: 70px;
-
+      }
+      [class*=col-] {
+        padding-inline: 10px;
       }
     }
-
     .slick {
       &-slider {
         .slick {
           &-list {
-            overflow: visible;
+            overflow: $absolute;
           }
-
-          &-track {
-            @media (max-width:1199.98px) {
-              display: flex !important;
-              gap: 20px;
-            }
-
+          &-track { 
             .slick-slide {
-              flex: 1;
-              height: inherit !important;
+              height: $inherit !important;
             }
           }
         }
       }
-
       &-arrow {
         bottom: 0;
         top: calc(100% + 52px);
-
         @media (min-width:1200px) {
           top: calc(100% + 32px);
         }
       }
-
       &-prev {
-        right: 0; 
+        right: 0;
         @media (max-width:1199.98px) {
           left: calc(50% - calc(100px/2));
         }
       }
-
       &-next {
         right: 0;
-
         @media (max-width:1199.98px) {
           right: calc(50% - calc(100px/2));
         }
-
       }
     }
   }
+}
 
-
+.win_bg {
+  z-index: -1;
+  @include position($absolute, $top:28%,);
+  width:100%; height:100%;
+  @include transform(translateY(-50%));
+  img {
+    width: 100%;
+  }
 }

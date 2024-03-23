@@ -36,10 +36,10 @@
   background-color: $bgcolor;
   border-color: $bordercolor;
   color: $textcolor!important;
-  box-shadow: 0px 4px 16px 0px rgba($green-light-color-700, .05);
+  box-shadow: $none;
   @include transition (all, 0.5s, ease-in-out);
   &:hover, &:focus, &:active{
-    box-shadow: 0px 4px 16px 0px rgba($bgcolor, .15)!important;
+    box-shadow: $none!important;
     background-color: ($bgcolor)!important;
     border-color: ($bordercolor)!important;
     color: $textcolor;
@@ -93,12 +93,6 @@
   font-size: $sizeValue + rem;
 }
 
-//@include fontsize(12);
-// @mixin fontsize($size: 24, $base: 16) {
-//   font-size: $size + px;
-//   font-size: ($size / $base) * 1rem;
-// }
-
 // Position
 @mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
   position: $position;
@@ -107,7 +101,6 @@
   bottom: $bottom;
   left: $left;
 }
-// @include position($absolute, $top: 0, $left: 0);
 
 @mixin box-shadow($top, $left, $blur, $color, $inset: false) {
   @if $inset {
@@ -137,7 +130,9 @@
 @mixin scale($scale) {
   @include transform(scale($scale));
 }
-
+@mixin rotate($rotate) {
+  @include transform(rotate($rotate));
+}
 // Translate
 @mixin translate ($x, $y) {
   @include transform(translate($x, $y));

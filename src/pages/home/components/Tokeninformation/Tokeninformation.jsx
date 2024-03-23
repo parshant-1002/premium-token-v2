@@ -28,15 +28,17 @@ const Tokeninformation = ({content = {}}) => {
 		</div>
 	}
 	return (
-		<section className="token-info">
+		<section className="token-sec">
 			<div className="container">
-				<div class="token-info-para">
-					<h2 class="h2 text-center common_title"><SafeHTML html={title}/></h2>
-					<p class="text-center"><SafeHTML html={description}/></p>
+
+				<div className="heading_title text-center mb-0">
+					<h2 className="h2"><SafeHTML html={title} /></h2>
+					<p><SafeHTML html={description} /></p>
 				</div>
-				<div className="text-center pie-chart">
-					<div style={{ width: '400px', height: '400px', margin: 'auto' }}>
-						<DoughnutChart series={series} options={options(innerTitle)} />
+
+				<div className="pie-chart text-center">
+					<div className="d-inline-block">
+					<DoughnutChart series={series} options={options(innerTitle)} className="chart" />
 					</div>
 				</div>
 
@@ -45,7 +47,6 @@ const Tokeninformation = ({content = {}}) => {
 						<Each of={firstHalfStats} render={(item, index) => (
 							renderStats(item)
 						)}/>
-
 					</div>
 
 					<div className="token-column-right">

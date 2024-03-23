@@ -4,57 +4,59 @@ import { handleCopyLink } from "../../../../shared/constants/utils";
 import { addBaseUrlToUrls } from "../../../../shared/utilities";
 import "./ConnectionCreator.scss";
 
-const ConnectionCreator = ({content = {}}) => {
+const ConnectionCreator = ({ content = {} }) => {
   const { title, premiumTokenButtonText, imageUrl, externalAuditButtonText, description, address } = content
   console.log(content, "Connection")
   return (
     <section className="connection-creator position-relative">
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-md-6 connection-text">
+          <div className="col-lg-6 order-lg-1 order-2 connection-text">
             <div className="maker-text-col">
               <div className="inner-text-column">
-                <h2 className="h2 text-center common_title"><SafeHTML html={title}/></h2>
-                <p className="text-center"><SafeHTML html={description}/></p>
+                <h2 className="h2 text-center common_title"><SafeHTML html={title} /></h2>
+                <p className="text-center"><SafeHTML html={description} /></p>
               </div>
               <button className="link-button">
                 <img
-                  className=""
                   alt=""
                   src="/copy.svg"
+                  width={22} height={22}
                   onClick={() => handleCopyLink(address, "Address")}
                 />
-                <span>
-                  <SafeHTML html={address} />
-                </span>
+                <SafeHTML html={address} />
               </button>
-              <div className="token-info-button">
-                <button className="download-document btn btn-md btn-secondary">
-                  <span><SafeHTML html={premiumTokenButtonText} /></span>
-                </button>
-                <button className="download-document btn btn-md btn-secondary">
-                  <span><SafeHTML html={externalAuditButtonText} /></span>
-                </button>
+              <div className="row gx-3">
+                <div className="col-md-6 mb-3">
+                  <button className="btn btn-md btn-secondary w-100">
+                    <SafeHTML html={premiumTokenButtonText} />
+                  </button>
+                </div>
+                <div className="col-md-6 mb-3">
+                  <button className="btn btn-md btn-secondary w-100">
+                    <SafeHTML html={externalAuditButtonText} />
+                  </button>
+                </div>
               </div>
-
             </div>
           </div>
-          <div className="col-md-6">
-            <div className="maker-image text-end">
-              <img loading="lazy" alt="" src={addBaseUrlToUrls(imageUrl)} />
-            </div>
+          <div className="col-lg-6 order-lg-2 order-1">
+            <figure className="maker-banner text-center text-lg-end mb-0">
+              <img width={375} height={545} className="img-fluid" loading="lazy" alt="" src={addBaseUrlToUrls(imageUrl)} />
+            </figure>
           </div>
-
         </div>
       </div>
+
       <div className="token_info_bg">
         <img width={1044} height={1097}
-          className="img-fluid"
+          className="d-none d-md-block img-fluid"
           alt="desktop-banner"
           src={ICONS.TokenInforBg}
         />
       </div>
-    </section>
+
+    </section >
   );
 };
 

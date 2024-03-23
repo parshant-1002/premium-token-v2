@@ -7,20 +7,17 @@ import SafeHTML from "../../../../shared/components/SanitizeHtml";
 const Card = ({ car }) => {
   const{imageUrl, title} = car
   return (
-    <div className="slider-main">
-    <div className="premium-slider-col" >
-      <img
+    <>
+      <figure className="slider_thumb mb-0">
+        <img
         className=""
         loading="lazy"
         alt=""
         src={addBaseUrlToUrls(imageUrl)}
       />
-       </div>
-      <div className="slider-text">
-          <h3 className="h3"><SafeHTML html={title}/></h3>
-      </div>
-     
-    </div>
+      </figure>
+      <h4 className="h3"><SafeHTML html={title}/></h4>
+    </>
   );
 };
 

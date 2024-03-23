@@ -173,7 +173,7 @@ export const options = (innerTitle) =>  ({
                     },
                     value: {
                         show: true,
-                        fontSize: '24px',
+                        fontSize: window.innerWidth > 768 ? '24px' : '18px', // Adjust font size based on screen width
                         fontFamily: 'Lato',
                         fontWeight: 800,
                         color: "white"
@@ -181,7 +181,7 @@ export const options = (innerTitle) =>  ({
                     total: {
                         show: true,
                         showAlways: true,
-                        fontSize: '12px',
+                        fontSize: window.innerWidth > 768 ? '12px' : '10px', // Adjust font size based on screen width
                         fontFamily: 'Lato',
                         fontWeight: 800,
                         color: "#A7D7CF",
