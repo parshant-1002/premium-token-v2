@@ -122,8 +122,7 @@ $textColor : white;
 }
 
 .market_counter {
-    margin:1rem $auto;
-    max-width: 1100px;
+    margin:1rem 0;
     .currency_sign {
         @include flexCenter;
         svg {

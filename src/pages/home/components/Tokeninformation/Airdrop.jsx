@@ -13,8 +13,8 @@ import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { hasAtLeastFourValues } from './helpers/utils';
 
-const Airdrop = ({content = {}}) => {
-  const{description, section1, section2, title} = content
+const Airdrop = ({ content = {} }) => {
+  const { description, section1, section2, title } = content
   const AIRDROP_SCHEMA = AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA(section1)
   const dispatch = useDispatch()
   const onSubmit = (data) => {
@@ -33,24 +33,23 @@ const Airdrop = ({content = {}}) => {
   return (
     <section className="position-relative airdrop_sec">
       <div className="container">
-        <div className="airdrop-main">       
-         
-              <div class="heading_title airdrop-info-para">
-                <h2 class="h2 common_title text-center"><SafeHTML html={title}/></h2>
-                <div class="description">
-                <p class="text-center"><SafeHTML html={description} /></p>
-                </div>
-                </div>
-          
-          
-             <div className="whitelisted-row">
-            <CustomForm
-              formData={AIRDROP_SCHEMA}
-              onSubmit={onSubmit}
-              defaultValues={{}}
-              submitText="Update Contract Details Content"
-            />
-              {/* <form className="white-listed-form">
+        <div className="airdrop-main">
+
+          <div className="heading_title text-center">
+            <h2 className="h2"><SafeHTML html={title} /></h2>
+            <p><SafeHTML html={description} /></p>
+          </div>
+
+          <div className="whitelisted-row">
+            <div className="white-listed-form ">
+              <CustomForm
+                formData={AIRDROP_SCHEMA}
+                onSubmit={onSubmit}
+                defaultValues={{}}
+                submitText="Update Contract Details Content"
+              />
+            </div>
+            {/* <form className="white-listed-form">
                 <h3 className="h4">
                   Get whitelisted for AirDrop
                 </h3>
@@ -219,24 +218,21 @@ const Airdrop = ({content = {}}) => {
                   />
                 </div>
               </form> */}
-              <div className="airdrop-info">
-                <Each of={section2} render={(item, index) => (
-                  <Info
-                    image={addBaseUrlToUrls(item.imageUrl)}
-                    title= {item.title}
-                  />
-                )}/>
-              </div>
+            <div className="airdrop-info">
+              <Each of={section2} render={(item, index) => (
+                <Info
+                  image={addBaseUrlToUrls(item.imageUrl)}
+                  title={item.title}
+                />
+              )} />
             </div>
           </div>
+        </div>
 
       </div>
       <div className="air_drop_bg">
-        <img width={465} height={886}
-          className="img-fluid"
-          alt="desktop-banner"
-          src={ICONS.AirDropBg}
-        />
+        <img width={465} height={886} className="img-fluid d-none d-lg-block" alt="Bg" src={ICONS.AirDropBg} />
+        <img width={375} height={895} className="img-fluid d-lg-none" alt="Bg" src={ICONS.AuditMobileBG} />
       </div>
     </section>
   )

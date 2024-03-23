@@ -41,8 +41,10 @@ const Home = () => {
     <>
       <Header content={getContentData(SectionTypes.HEADERS)}/>
       <VideoSection content={getContentData(SectionTypes.VIDEO_SECTION)} />
-      <InformationSection content={getContentData(SectionTypes.PRIZE_SECTION)} />
-      <WinnerSection content={{...getContentData(SectionTypes.PRIZE_SECTION), ...getContentData(SectionTypes.WINNER_LIST_SECTION)} } socket = {socket} />
+      <div className="mobile_bg">
+        <InformationSection content={getContentData(SectionTypes.PRIZE_SECTION)} />
+        <WinnerSection content={{ ...getContentData(SectionTypes.PRIZE_SECTION), ...getContentData(SectionTypes.WINNER_LIST_SECTION) }} socket={socket} />
+      </div>
       <DidYouWin content={getContentData(SectionTypes.WINNER_RULES_SECTION)} />
       <DataAggregator content={getContentData(SectionTypes.CONTRACT_DETAILS)} />
       <RoadMap content={getContentData(SectionTypes.ROADMAP_SECTION)} />
@@ -56,7 +58,7 @@ const Home = () => {
       <Partners content={getContentData(SectionTypes.PARTNERS)} />
       < SocialMedia content={getContentData(SectionTypes.FOOTERS)} />
       <Footer content={getContentData(SectionTypes.FOOTERS)} />
-    </>
+      </>
   );
 };
 

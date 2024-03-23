@@ -15,18 +15,7 @@ const WinnerSection = ({content = {}, socket}) => {
     direction: 'rtl',
     arrows: true,
   };
-  const responsiveConfig = [    
-    {
-      breakpoint: 991,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: false,
-        arrows: false,
-        dots: true
-      }
-    }
-  ]
+
 
   return (
     <section className="winner_counter">
@@ -75,9 +64,8 @@ const WinnerSection = ({content = {}, socket}) => {
             </div>
           </div>
         </div>
-        <div className="prize_secn_bg">
-          <img width={1920} height={1596} className="w-100" alt="" src={ICONS.PrizeBannerBg} />
-          <img src={ICONS.PrizeBgMobile} width={500} height={400} alt="" className="d-block d-md-none" />
+        <div className="prize_secn_bg d-none d-lg-block">
+          <img width={1920} height={1596} className="w-100" alt="" src={ICONS.PrizeBannerBg} /> 
         </div>
       </div>
     </section>

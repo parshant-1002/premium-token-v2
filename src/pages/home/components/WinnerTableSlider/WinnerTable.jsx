@@ -67,8 +67,31 @@ const WinnerTable = ({ socket }) => {
             </tr>
         )
     }
+
+    const responsiveConfig = [    
+        {
+          breakpoint: 991,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: false,
+            arrows: false,
+            dots: true
+          }
+        },
+        {
+            breakpoint: 575,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: false,
+              arrows: false,
+              dots: true
+            }
+          },
+      ]
     return (
-        <CustomSlick slidesToShow={1} handleNextClick={handleNextClick}>
+        <CustomSlick slidesToShow={1} handleNextClick={handleNextClick} responsiveConfig = {responsiveConfig}>
             {tableData?.map((pageData, index) => (
                 <table className="table table-borderless">
                     <thead>

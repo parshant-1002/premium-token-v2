@@ -3,9 +3,13 @@
 .didyouwin {
   padding-top: 100px;
   padding-bottom: 105px; 
+  @media (min-width:1200px){
+    padding-top: 150px;
+  }
   &_bg {
-    @include position($absolute, $left: 0px, $top: 0);
+    @include position($absolute, $left: 0px, $bottom: 35%);
     height: 100%;
+    object-fit: $contain;
     z-index: -1;
     @media (max-width:1200px) {
       $top: 0px;

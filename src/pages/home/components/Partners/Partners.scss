@@ -1,9 +1,12 @@
 @import '../../../../assets/scss/base';
 
-.our-teams {
+.our-teams {    
     padding: 50px 0;
     @media (min-width:1200px) {
         padding: 100px 0;
+    }
+    @media (min-width:767px) {
+        padding-top: 0;
     }
     .heading_title {
         @media (min-width:1200px) {

@@ -70,7 +70,7 @@ const Partners = ({content = {}}) => {
       </div>
       <div className="teamSliderBg">
         <img width={542} height={900}
-          className="img-fluid d-md-block d-none"
+          className="img-fluid d-none d-lg-block"
           alt="desktop-banner"
           src={ICONS.PartnersSliderBg}
         />
