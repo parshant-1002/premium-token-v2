@@ -1,5 +1,6 @@
 import { RenderIconWithHover } from "../../../../shared/components/RenderIconWithHover";
 import { INPUT_TYPES } from "../../../../shared/constants";
+import { isValidSolanaAddress } from "../../../../shared/constants/utils";
 import { addBaseUrlToUrls } from "../../../../shared/utilities";
 
 export const data = {
@@ -70,6 +71,9 @@ export const AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA = (data = {}) => {
             icon: <RenderIconWithHover iconUrl={walletIconUrl} hoverIconUrl={walletHoverIconUrl} />,
         className: 'col-md-4',
         placeholder: 'Enter your PremiumToken wallet address',
+        schema:{
+            validate: isValidSolanaAddress
+        }
     },
     twitterProfileURL: {
         type: INPUT_TYPES.TEXT,

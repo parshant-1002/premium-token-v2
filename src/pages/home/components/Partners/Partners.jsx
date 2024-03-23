@@ -9,8 +9,7 @@ import { addBaseUrlToUrls } from "../../../../shared/utilities";
 import "./Partners.scss";
 
 const Partners = ({content = {}}) => {
-  const{title, personData} = content
-  console.log(content,"content<><><><><")
+  const { title, partnersData } = content
   const responsiveConfig = [
     {
       breakpoint: 767,
@@ -63,7 +62,7 @@ const Partners = ({content = {}}) => {
         </div>
         <div className="our_team-slider">
           <CustomSlick slidesToShow={5.2} responsive={responsiveConfig}>
-            {personData?.map((item) =>
+            {partnersData?.map((item) =>
               renderPartner(item)
             )}
           </CustomSlick>

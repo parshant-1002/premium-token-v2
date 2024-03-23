@@ -29,12 +29,12 @@ const ConnectionCreator = ({ content = {} }) => {
               <div className="row gx-3">
                 <div className="col-md-6 mb-3">
                   <button className="btn btn-md btn-secondary w-100">
-                    <SafeHTML html={premiumTokenButtonText} />
+                    <span className="transform-none"><SafeHTML html={premiumTokenButtonText} /></span>
                   </button>
                 </div>
                 <div className="col-md-6 mb-3">
                   <button className="btn btn-md btn-secondary w-100">
-                    <SafeHTML html={externalAuditButtonText} />
+                    <span className="transform-none"><SafeHTML html={externalAuditButtonText} /></span>
                   </button>
                 </div>
               </div>

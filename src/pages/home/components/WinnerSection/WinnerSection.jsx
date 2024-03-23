@@ -4,7 +4,6 @@ import { ICONS } from "../../../../assets";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import WinnerTable from "../WinnerTableSlider/WinnerTable";
 import ConnectButton from "../ConnectButton/ConnectButton";
-import { ICONS } from "../../../../assets";
 import "./WinnerSection.scss";
 
 const WinnerSection = ({content = {}, socket}) => {
@@ -55,7 +54,7 @@ const WinnerSection = ({content = {}, socket}) => {
             <div className="tableHeaderinfo d-flex flex-md-row flex-column justify-content-md-between align-items-md-center">
               <div className="loopControl">
                 <div className="d-flex gap-1">
-                        <span className="text-white"><SafeHTML html={tokenHolderText}</span>
+                        <span className="text-white"><SafeHTML html={tokenHolderText}/></span>
                   <span className="text-success text-value">4859</span>
                 </div>
               </div>
