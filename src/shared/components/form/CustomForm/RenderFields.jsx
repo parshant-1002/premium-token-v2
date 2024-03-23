@@ -23,6 +23,7 @@ export const RenderField = ({ field, id, handleRegister, handleInputChange, getV
                         onChange={(e) => handleInputChange(id, e.target.value)}
                         maxLength={field?.schema?.maxLength?.value || ''}
                         minLength={field?.schema?.minLength?.value || ''}
+                        icon = {field.icon || ""}
                     />
                 );
             case INPUT_TYPES.SELECT:

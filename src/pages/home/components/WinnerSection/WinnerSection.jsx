@@ -1,12 +1,11 @@
 import SmoothFlipCounter from "../../FlipNumbers";
-import premiumtoken  from '../../../../../public/premium-token.png';
-import cartoken  from '../../../../../public/car-token.png';
 import "./WinnerSection.scss";
 import { ICONS } from "../../../../assets";
-import { CustomSlick } from "../../../../shared/components/CustomSlick";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
+import WinnerTable from "../WinnerTableSlider/WinnerTable";
+import ConnectButton from "../ConnectButton/ConnectButton";
 
-const WinnerSection = ({content = {}}) => {
+const WinnerSection = ({content = {}, socket}) => {
   const { marketCap, latestWinnerDetails, connectWalletButtonText, prizeDescription, tokenHolderText }  = content;
   console.log(marketCap, latestWinnerDetails,"latestwinnerdetails")
   const counterSettings = {
@@ -30,7 +29,7 @@ const WinnerSection = ({content = {}}) => {
           <div className="market-cap text-success text-center"><SafeHTML html={marketCap?.title} /></div>
         </div>
 
-        <SmoothFlipCounter initialValue={marketCap?.marketCapValue || 0} settings={counterSettings} />
+        <SmoothFlipCounter initialValue={marketCap?.marketCapValue || 0} settings={counterSettings} socket = {socket}/>
 
         <div className="subtitle">
           <span className="process">
@@ -52,169 +51,24 @@ const WinnerSection = ({content = {}}) => {
             <div className="output">
               <span className="text-white">{prizeDescription}</span>
             </div>
-            <button type="button" className="btn btn-md btn-secondary"><SafeHTML html={connectWalletButtonText}/></button>
-            {/* <ConnectButton/> */}
+            {/* <button type="button" className="btn btn-md btn-secondary"><SafeHTML html={connectWalletButtonText}/></button> */}
+            <ConnectButton connectWalletButtonText={connectWalletButtonText}/>
           </div>
         </div>
         {/* table slider */}
         <div className="table_slider my-32">
           <div className="prize_table">
-              <CustomSlick slidesToShow={1}>
-                <table className="table table-borderless">
-                  <thead>
-                    <tr>
-                      <th scope="col">Prize selected</th>
-                      <th scope="col">MARKET CAP</th>
-                      <th scope="col">Date</th>
-                      <th scope="col">wallet address</th>
-                      <th scope="col">Chance of winning</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div className="td_img">
-                          <img src={premiumtoken} alt="premium" />
-                        </div>
-                      </td>
-                      <td>$50M</td>
-                      <td>05-01-2024</td>
-                      <td>xfsde3eedsd1e12wdsadasd</td>
-                      <td>0.001%</td>
-                    </tr>
-                    <tr>
-                      <td>
-                      <div className="td_img">
-                          <img src={cartoken} alt="premium" />
-                        </div>
-                    </td>
-                    
-                    <td>$50M</td>
-                      <td>05-01-2024</td>
-                      <td>xfsde3eedsd1e12wdsadasd</td>
-                      <td>0.001%</td>
-                    </tr>
-                    <tr>
-                      <td>
-                      <div className="td_img">
-                          <img src={cartoken} alt="premium" />
-                        </div>
-                    </td>
-                    
-                    <td>$50M</td>
-                      <td>05-01-2024</td>
-                      <td>xfsde3eedsd1e12wdsadasd</td>
-                      <td>0.001%</td>
-                    </tr>
-                    <tr>
-                      <td>
-                      <div className="td_img">
-                          <img src={cartoken} alt="premium" />
-                        </div>
-                    </td>
-                    
-                    <td>$50M</td>
-                      <td>05-01-2024</td>
-                      <td>xfsde3eedsd1e12wdsadasd</td>
-                      <td>0.001%</td>
-                    </tr>
-                    <tr>
-                      <td>
-                      <div className="td_img">
-                          <img src={cartoken} alt="premium" />
-                        </div>
-                    </td>
-                    
-                    <td>$50M</td>
-                      <td>05-01-2024</td>
-                      <td>xfsde3eedsd1e12wdsadasd</td>
-                      <td>0.001%</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <table className="table table-borderless">
-                  <thead>
-                    <tr>
-                      <th scope="col">Prize selected</th>
-                      <th scope="col">MARKET CAP</th>
-                      <th scope="col">Date</th>
-                      <th scope="col">wallet address</th>
-                      <th scope="col">Chance of winning</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div className="td_img">
-                          <img src={premiumtoken} alt="premium" />
-                        </div>
-                      </td>
-                      <td>$50M</td>
-                      <td>05-01-2024</td>
-                      <td>xfsde3eedsd1e12wdsadasd</td>
-                      <td>0.001%</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div className="td_img">
-                          <img src={cartoken} alt="premium" />
-                        </div>
-                      </td>
-
-                      <td>$50M</td>
-                      <td>05-01-2024</td>
-                      <td>xfsde3eedsd1e12wdsadasd</td>
-                      <td>0.001%</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div className="td_img">
-                          <img src={cartoken} alt="premium" />
-                        </div>
-                      </td>
-
-                      <td>$50M</td>
-                      <td>05-01-2024</td>
-                      <td>xfsde3eedsd1e12wdsadasd</td>
-                      <td>0.001%</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div className="td_img">
-                          <img src={cartoken} alt="premium" />
-                        </div>
-                      </td>
-
-                      <td>$50M</td>
-                      <td>05-01-2024</td>
-                      <td>xfsde3eedsd1e12wdsadasd</td>
-                      <td>0.001%</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div className="td_img">
-                          <img src={cartoken} alt="premium" />
-                        </div>
-                      </td>
-
-                      <td>$50M</td>
-                      <td>05-01-2024</td>
-                      <td>xfsde3eedsd1e12wdsadasd</td>
-                      <td>0.001%</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </CustomSlick>
+              <WinnerTable socket = {socket}/>
           </div>
         </div>
         </div>
       </div>
       <div className="prize_secn_bg">
         <img width={1920} height={1596 }
-                        className="prize-banner"
-                        alt="desktop-banner"
-                        src={ICONS.PrizeBannerBg}
-                />
+          className="prize-banner"
+          alt="desktop-banner"
+          src={ICONS.PrizeBannerBg}
+        />
       </div>
     </section>
     

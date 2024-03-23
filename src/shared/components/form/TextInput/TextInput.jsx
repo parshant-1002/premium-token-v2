@@ -9,7 +9,7 @@ export function ErrorComponent({ error, render }) {
 }
 
 const TextField = React.forwardRef(
-    function TextField({ type, placeholder, className = 'form-control', ...otherProps }, ref) {
+    function TextField({ type, placeholder, className = 'form-control', icon, ...otherProps }, ref) {
         return type === INPUT_TYPES.TEXT_AREA ? (
             <textarea
                 className={className}
@@ -18,13 +18,16 @@ const TextField = React.forwardRef(
                 {...otherProps}
             />
         ) : (
-            <input
-                type={type}
-                ref={ref}
-                placeholder={placeholder}
-                className={className}
-                {...otherProps}
-            />
+            <>
+                {icon && icon}
+                    <input
+                        type={type}
+                        ref={ref}
+                        placeholder={placeholder}
+                        className={className}
+                        {...otherProps}
+                    />
+            </>
         );
     }
 );

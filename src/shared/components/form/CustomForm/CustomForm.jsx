@@ -17,7 +17,7 @@ function CustomForm({
     className = '',
     onChangeValues = () => {},
     isShowSubmit = true,
-    isDisabledSubmit = false
+    isDisabledSubmit = false,
 }) {
     const {
         register,

@@ -21,9 +21,11 @@ import { getContent } from "../../store/actions/contentManagement";
 import { DidYouWin } from "./components/DidYouWin";
 import Airdrop from "./components/Tokeninformation/Airdrop";
 import { SectionTypes } from "./helpers/constants";
+import useSocket from "../../shared/hooks/useSocket";
 const Home = () => {
   const[content, setContent] = useState({})
   const dispatch = useDispatch()
+  const socket = useSocket();
 
   useEffect(()=>{ 
     dispatch(getContent({},(data)=>{
@@ -39,7 +41,7 @@ const Home = () => {
       <Header content={getContentData(SectionTypes.HEADERS)}/>
       <VideoSection content={getContentData(SectionTypes.VIDEO_SECTION)} />
       <InformationSection content={getContentData(SectionTypes.PRIZE_SECTION)} />
-      <WinnerSection content={{...getContentData(SectionTypes.PRIZE_SECTION), ...getContentData(SectionTypes.WINNER_LIST_SECTION)}} />
+      <WinnerSection content={{...getContentData(SectionTypes.PRIZE_SECTION), ...getContentData(SectionTypes.WINNER_LIST_SECTION)} } socket = {socket} />
       <DidYouWin content={getContentData(SectionTypes.WINNER_RULES_SECTION)} />
       <DataAggregator content={getContentData(SectionTypes.CONTRACT_DETAILS)} />
       <RoadMap content={getContentData(SectionTypes.ROADMAP_SECTION)} />

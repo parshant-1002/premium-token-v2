@@ -5,10 +5,27 @@ import { ICONS } from '../../../../assets';
 import SafeHTML from '../../../../shared/components/SanitizeHtml';
 import { Each } from '../../../../shared/components/Each';
 import { addBaseUrlToUrls } from '../../../../shared/utilities';
+import { AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA } from './config';
+import CustomForm from '../../../../shared/components/form/CustomForm/CustomForm';
+import { STATUS } from '../../../../shared/constants';
+import { createAirDrop } from '../../../../store/actions/contentManagement';
+import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
 
 const Airdrop = ({content = {}}) => {
   const{description, section1, section2, title} = content
-  console.log(content, "airdripcontent")
+  const AIRDROP_SCHEMA = AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA(section1)
+  const dispatch = useDispatch()
+  const onSubmit = (data) => {
+    console.log(data,"dataonsubmit")
+    dispatch(
+      createAirDrop(data, (message, status) => {
+        if (status === STATUS.SUCCESS) {
+          toast.success(message);
+        }
+      })
+    );
+  };
   return (
     <section className="position-relative airdrop_secn">
       <div className="container">
@@ -22,8 +39,14 @@ const Airdrop = ({content = {}}) => {
                 </div>
           
           
-            <div className="whitelisted-row">
-              <form className="white-listed-form">
+             <div className="whitelisted-row">
+            <CustomForm
+              formData={AIRDROP_SCHEMA}
+              onSubmit={onSubmit}
+              defaultValues={{}}
+              submitText="Update Contract Details Content"
+            />
+              {/* <form className="white-listed-form">
                 <h3 className="h4">
                   Get whitelisted for AirDrop
                 </h3>
@@ -122,7 +145,7 @@ const Airdrop = ({content = {}}) => {
                     Submit airdrop
                   </button>
                 </div>
-              </form>
+              </form> */}
               <div className="airdrop-info">
                 <Each of={section2} render={(item, index) => (
                   <Info

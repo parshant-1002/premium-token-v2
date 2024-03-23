@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './style.scss'; // Import custom CSS for styling arrows
 
-const CustomSlick = ({ children, slidesToShow = 4, responsive = [] }) => {
+const CustomSlick = ({ children, slidesToShow = 4, responsive = [], handleNextClick = ()=>{} }) => {
     const ref = useRef()
     const settings = {
         dots: false,
@@ -15,14 +15,12 @@ const CustomSlick = ({ children, slidesToShow = 4, responsive = [] }) => {
         initialSlide: 0,
         swipeToSlide: true,
         easing: "ease",
-        nextArrow: <NextArrow />,
+        nextArrow: <NextArrow handleNextClick={handleNextClick}/>,
         prevArrow: <PrevArrow />,
         ...(responsive?.length && {
             responsive: responsive
         })
     };
-
-    console.log(settings,"settings")
 
     return (
         <>
@@ -36,13 +34,18 @@ const CustomSlick = ({ children, slidesToShow = 4, responsive = [] }) => {
 };
 
 const NextArrow = (props) => {
-    const { className, style, onClick } = props;
+    const { className, style, onClick, handleNextClick } = props;
+    const handleNextArrowClick = (e)=>{
+        console.log(e,"e<><><>><")
+        onClick(e)
+        handleNextClick()
+    }
     return (
         <div
             className={`${className} custom-arrow custom-next`}
             style={{ ...style }}
 
-            onClick={onClick}
+            onClick={handleNextArrowClick   }
         >
             <span>
                 <svg width="14" height="8" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg">

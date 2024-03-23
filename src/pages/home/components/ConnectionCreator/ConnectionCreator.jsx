@@ -1,5 +1,6 @@
 import { ICONS } from "../../../../assets";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
+import { handleCopyLink } from "../../../../shared/constants/utils";
 import { addBaseUrlToUrls } from "../../../../shared/utilities";
 import "./ConnectionCreator.scss";
 
@@ -21,6 +22,7 @@ const ConnectionCreator = ({content = {}}) => {
                   className=""
                   alt=""
                   src="/copy.svg"
+                  onClick={() => handleCopyLink(address, "Address")}
                 />
                 <span>
                   <SafeHTML html={address} />
