@@ -7,16 +7,15 @@ import "./Tokeninformation.scss";
 const Tokeninformation = () => {
 	return (
 
-		<section className="token-info">
+		<section className="token-sec">
 			<div className="container">
-				<div class="token-info-para">
-					<h2 class="h2 text-center common_title">Token supply</h2>
-					<p class="text-center">Here you can see how the full token supply is divided, you can also see the wallet addresses, to see that they will never be used for anything other then what they are intended for and that they can not be drawn as a winner by the smart contract.</p>
+				<div className="token-info-para text-center">
+					<h2 className="h2">Token supply</h2>
+					<p>Here you can see how the full token supply is divided, you can also see the wallet addresses, to see that they will never be used for anything other then what they are intended for and that they can not be drawn as a winner by the smart contract.</p>
 				</div>
-				<div className="text-center pie-chart">
-					<div style={{ width: '400px', height: '400px', margin: 'auto' }}>
-						<DoughnutChart series={series} options={options} />
-					</div>
+				<div className="pie-chart text-center">
+					<div className="d-inline-block">
+						<DoughnutChart series={series} options={options} className="chart" /></div>
 				</div>
 
 				<div className="token-grid-main">

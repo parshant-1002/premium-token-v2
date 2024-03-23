@@ -1,26 +1,33 @@
 @import '../../../../assets/scss/base';
 
-.token-info {
+.token-sec {
     padding-top: 180px;
-
+    @media (max-width:575.99px) and (max-width:1200px){
+        padding-top: 100px;
+    }
+    @media (max-width:575px){
+        padding-top: 80px;
+    }
     .token-info-para {
         max-width: 745px;
-        margin: auto;
-
+        margin: $auto;
         h2 {
             margin-bottom: 8px;
         }
-
         p {
             @include para
         }
     }
-
     .pie-chart {
-        margin-top: 64px;
-        margin-bottom: 100px;
+        @media (min-width:1200.99px){
+            margin-top: 64px;
+            margin-bottom: 100px;
+        }
+        @media (max-width:1200px){
+            margin-top: 40px;
+            margin-bottom: 30px;
+        }
     }
-
     .token-grid-main {
         display: grid;
         grid-template-columns: 1fr;

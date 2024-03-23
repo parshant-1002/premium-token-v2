@@ -13,7 +13,7 @@ const MarketPlace = () => {
     { 
       breakpoint: 991,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
         infinite: false,
         arrows: false,
