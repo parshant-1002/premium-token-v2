@@ -88,20 +88,28 @@
   }
 
   .main-navigation {
-    @media(max-width:991px) {
+    @media(max-width:1199.98px) {
       height: 100%;
       padding: 0 16px;
       @include position (fixed, $top: 0, $right: 0, $bottom: null, $left: 0);
       z-index: 11;
       background-color: #020C0C;
+      padding-top:16px;
+      padding-bottom:24px;
     }
-    .social-icon {
-      @media(max-width:991px) {
-        @include position (absolute, $top: null, $right: null, $bottom: 24px, $left: 50%);
-        transform: translateX(-50%);
+   
+    .CloseMenu {
+      @include position (absolute, $top: calc(50% - 40px/2), $right: 0);
       }
+      .mobileMenuList {
+        
 
-    }
+      }
+      .brand_banner {
+        img {
+          @include opacity(0.4);
+        }
+      }
   }
 
   .navbar-toggler-icons {
@@ -144,4 +152,19 @@
       }
     }
   }
+}
+
+// mobile banner mobile version
+.toogleBg {
+  
+    @include position($absolute, $top: 0px, $left: 0px);
+    height: 100%;
+    @include opacity (.9);
+    z-index: -1;
+    @media (max-width:1200px) {
+        $top: 0;
+    }
+    img {
+      max-height: 423px;
+    }
 }

@@ -137,7 +137,9 @@
 @mixin scale($scale) {
   @include transform(scale($scale));
 }
-
+@mixin rotate($rotate) {
+  @include transform(rotate($rotate));
+}
 // Translate
 @mixin translate ($x, $y) {
   @include transform(translate($x, $y));
