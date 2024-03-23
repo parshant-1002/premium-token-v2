@@ -15,7 +15,18 @@ const InformationSection = ({ content = {} }) => {
         slidesToShow: 1,
         slidesToScroll: 1,
         infinite: true,
-        dots: true
+        arrows: false,
+				dots: true,
+      }
+    },
+    {
+      breakpoint: 820,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: true,
+        arrows: false,
+				dots: true,
       }
     },
     {
@@ -24,7 +35,8 @@ const InformationSection = ({ content = {} }) => {
         slidesToShow: 3,
         slidesToScroll: 1,
         infinite: false,
-        dots: true
+        arrows: false,
+				dots: true,
       }
     },
     {
@@ -36,7 +48,7 @@ const InformationSection = ({ content = {} }) => {
       <section className="prize_secn position-relative">
         <div className="container">
           <div className="heading_title text-center">
-            <h2 className="h2 common_title">
+            <h2 className="h2">
               <SafeHTML html={title} />
             </h2>
           </div>
@@ -49,11 +61,10 @@ const InformationSection = ({ content = {} }) => {
                   item={item}
                 />)}
             </CustomSlick>
-
           </div>
         </div>
         <div className="win_bg">
-          <img src={ICONS.WinBg} width={500} height={400} alt="" />
+          <img src={ICONS.WinBg} width={500} height={400} alt="" className="d-none d-md-block" /> 
         </div>
       </section>
     );

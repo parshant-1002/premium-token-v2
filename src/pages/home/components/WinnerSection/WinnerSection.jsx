@@ -1,22 +1,35 @@
 import SmoothFlipCounter from "../../FlipNumbers";
 import premiumtoken from '../../../../../public/premium-token.png';
 import cartoken from '../../../../../public/car-token.png';
-import "./WinnerSection.scss";
 import { ICONS } from "../../../../assets";
 import { CustomSlick } from "../../../../shared/components/CustomSlick";
+import "./WinnerSection.scss";
 
 const WinnerSection = () => {
   const counterSettings = {
     digits: 7,
     delay: 200,
     direction: 'rtl',
+    arrows: true,
   };
+  const responsiveConfig = [    
+    {
+      breakpoint: 991,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        infinite: false,
+        arrows: false,
+        dots: true
+      }
+    }
+  ]
 
   return (
     <section className="winner_counter">
       <div className="container">
         <div className="heading_title text-center">
-          <h2 className="h2 common_title">
+          <h2 className="h2 mb-0">
             Latest winners
           </h2>
           <div className="winner_counter_content">
@@ -58,7 +71,7 @@ const WinnerSection = () => {
             {/* table slider */}
             <div className="table_slider my-32">
               <div className="prize_table">
-                <CustomSlick slidesToShow={1}>
+                <CustomSlick slidesToShow={1} responsive={responsiveConfig}>
                   <table className="table table-borderless">
                     <thead>
                       <tr>
@@ -71,66 +84,63 @@ const WinnerSection = () => {
                     </thead>
                     <tbody>
                       <tr>
-                        <td>
+                        <td data-label="Prize Selected">
                           <div className="td_img">
-                            <img src={premiumtoken} alt="premium" />
+                            <img src={premiumtoken} alt="premium" width={138} className="w-100"/>
                           </div>
                         </td>
-                        <td>$50M</td>
-                        <td>05-01-2024</td>
-                        <td>xfsde3eedsd1e12wdsadasd</td>
-                        <td>0.001%</td>
+                        <td data-label="Market Cap">$50M</td>
+                        <td data-label="date">05-01-2024</td>
+                        <td data-label="Wallet address">xfsde3eedsd1e12wdsadasd</td>
+                        <td data-label="Chance of winning">0.001%</td>
                       </tr>
                       <tr>
-                        <td>
+                        <td data-label="Prize Selected">
                           <div className="td_img">
                             <img src={cartoken} alt="premium" />
                           </div>
                         </td>
-
-                        <td>$50M</td>
-                        <td>05-01-2024</td>
-                        <td>xfsde3eedsd1e12wdsadasd</td>
-                        <td>0.001%</td>
+                        <td data-label="Market Cap">$50M</td>
+                        <td data-label="date">05-01-2024</td>
+                        <td data-label="Wallet address">xfsde3eedsd1e12wdsadasd</td>
+                        <td data-label="Chance of winning">0.001%</td>
                       </tr>
                       <tr>
-                        <td>
+                        <td data-label="Prize Selected">
                           <div className="td_img">
                             <img src={cartoken} alt="premium" />
                           </div>
                         </td>
-
-                        <td>$50M</td>
-                        <td>05-01-2024</td>
-                        <td>xfsde3eedsd1e12wdsadasd</td>
-                        <td>0.001%</td>
+                        <td data-label="Market Cap">$50M</td>
+                        <td data-label="date">05-01-2024</td>
+                        <td data-label="Wallet address">xfsde3eedsd1e12wdsadasd</td>
+                        <td data-label="Chance of winning">0.001%</td>
                       </tr>
                       <tr>
-                        <td>
+                        <td data-label="Prize Selected">
+                          <div className="td_img">
+                            <img src={cartoken} alt="premium" />
+                          </div>
+                        </td> 
+                        <td data-label="Market Cap">$50M</td>
+                        <td data-label="date">05-01-2024</td>
+                        <td data-label="Wallet address">xfsde3eedsd1e12wdsadasd</td>
+                        <td data-label="Chance of winning">0.001%</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Prize Selected">
                           <div className="td_img">
                             <img src={cartoken} alt="premium" />
                           </div>
                         </td>
-
-                        <td>$50M</td>
-                        <td>05-01-2024</td>
-                        <td>xfsde3eedsd1e12wdsadasd</td>
-                        <td>0.001%</td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div className="td_img">
-                            <img src={cartoken} alt="premium" />
-                          </div>
-                        </td>
-
-                        <td>$50M</td>
-                        <td>05-01-2024</td>
-                        <td>xfsde3eedsd1e12wdsadasd</td>
-                        <td>0.001%</td>
+                        <td data-label="Market Cap">$50M</td>
+                        <td data-label="date">05-01-2024</td>
+                        <td data-label="Wallet address">xfsde3eedsd1e12wdsadasd</td>
+                        <td data-label="Chance of winning">0.001%</td>
                       </tr>
                     </tbody>
                   </table>
+
                   <table className="table table-borderless">
                     <thead>
                       <tr>
@@ -143,63 +153,59 @@ const WinnerSection = () => {
                     </thead>
                     <tbody>
                       <tr>
-                        <td>
+                        <td data-label="Prize Selected">
                           <div className="td_img">
                             <img src={premiumtoken} alt="premium" />
                           </div>
                         </td>
-                        <td>$50M</td>
-                        <td>05-01-2024</td>
-                        <td>xfsde3eedsd1e12wdsadasd</td>
-                        <td>0.001%</td>
+                       <td data-label="Market Cap">$50M</td>
+                        <td data-label="date">05-01-2024</td>
+                        <td data-label="Wallet address">xfsde3eedsd1e12wdsadasd</td>
+                        <td data-label="Chance of winning">0.001%</td>
                       </tr>
                       <tr>
-                        <td>
+                        <td data-label="Prize Selected">
                           <div className="td_img">
                             <img src={cartoken} alt="premium" />
                           </div>
                         </td>
-
-                        <td>$50M</td>
-                        <td>05-01-2024</td>
-                        <td>xfsde3eedsd1e12wdsadasd</td>
-                        <td>0.001%</td>
+                        <td data-label="Market Cap">$50M</td>
+                        <td data-label="date">05-01-2024</td>
+                        <td data-label="Wallet address">xfsde3eedsd1e12wdsadasd</td>
+                        <td data-label="Chance of winning">0.001%</td>
                       </tr>
                       <tr>
-                        <td>
+                        <td data-label="Prize Selected">
                           <div className="td_img">
                             <img src={cartoken} alt="premium" />
                           </div>
                         </td>
-
-                        <td>$50M</td>
-                        <td>05-01-2024</td>
-                        <td>xfsde3eedsd1e12wdsadasd</td>
-                        <td>0.001%</td>
+                        <td data-label="Market Cap">$50M</td>
+                        <td data-label="date">05-01-2024</td>
+                        <td data-label="Wallet address">xfsde3eedsd1e12wdsadasd</td>
+                        <td data-label="Chance of winning">0.001%</td>
                       </tr>
                       <tr>
-                        <td>
+                        <td data-label="Prize Selected">
                           <div className="td_img">
                             <img src={cartoken} alt="premium" />
                           </div>
                         </td>
-
-                        <td>$50M</td>
-                        <td>05-01-2024</td>
-                        <td>xfsde3eedsd1e12wdsadasd</td>
-                        <td>0.001%</td>
+                        <td data-label="Market Cap">$50M</td>
+                        <td data-label="date">05-01-2024</td>
+                        <td data-label="Wallet address">xfsde3eedsd1e12wdsadasd</td>
+                        <td data-label="Chance of winning">0.001%</td>
                       </tr>
                       <tr>
-                        <td>
+                        <td data-label="Prize Selected">
                           <div className="td_img">
                             <img src={cartoken} alt="premium" />
                           </div>
                         </td>
-
-                        <td>$50M</td>
-                        <td>05-01-2024</td>
-                        <td>xfsde3eedsd1e12wdsadasd</td>
-                        <td>0.001%</td>
+                        <td data-label="Market Cap">$50M</td>
+                        <td data-label="date">05-01-2024</td>
+                        <td data-label="Wallet address">xfsde3eedsd1e12wdsadasd</td>
+                        <td data-label="Chance of winning">0.001%</td>
                       </tr>
                     </tbody>
                   </table>
@@ -210,6 +216,7 @@ const WinnerSection = () => {
         </div>
         <div className="prize_secn_bg">
           <img width={1920} height={1596} className="w-100" alt="" src={ICONS.PrizeBannerBg} />
+          <img src={ICONS.PrizeBgMobile} width={500} height={400} alt="" className="d-block d-md-none" />
         </div>
       </div>
     </section>

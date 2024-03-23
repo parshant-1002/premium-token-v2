@@ -19,7 +19,7 @@
     .regular {
       margin-inline: -10px;
       @include flexbox;
-      @media (min-width:990.99px) {
+      @media (min-width:991.99px) {
         margin-top: 70px;
       }
       [class*=col-] {
@@ -34,8 +34,7 @@
           }
           &-track { 
             .slick-slide {
-              flex: 1;
-              height: inherit !important;
+              height: $inherit !important;
             }
           }
         }
@@ -64,8 +63,8 @@
 }
 
 .win_bg {
-  @include position($absolute, $top:28%,);
   z-index: -1;
+  @include position($absolute, $top:28%,);
   width:100%; height:100%;
   @include transform(translateY(-50%));
   img {

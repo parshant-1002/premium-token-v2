@@ -19,9 +19,12 @@ body {
     overflow-x: $hidden;
     scrollbar-width: thin;
 }
+#root {
+    overflow: $hidden;
+}
 .scroll {
     scrollbar-width: thin !important;
-    scrollbar-color: $green-light-color-800 $dark-green-color-400;
+    scrollbar-color: $dark-green-color-300 $green-tin-color-700;
 }
 /* Scroll */
 ::-webkit-scrollbar {
@@ -30,7 +33,7 @@ body {
 }
 ::-webkit-scrollbar-thumb {
     @include border-radius (10px);
-    background-color: $dark-green-color-400;
+    background-color:$dark-green-color-300;
 }
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -251,6 +254,7 @@ a.btn {
         padding: 1px;
         background: linear-gradient(91.03deg, rgba(#fff, 0.22) 1.7248211428523064%, rgba(255, 255, 255, .5) 51.5625%, rgba(255, 255, 255, .22) 100%);
         @include border-radius (10px);
+        min-width: 170px;
         .transform-none {
             @include flexCenter;
             padding: 0.625rem 1rem;
@@ -272,6 +276,7 @@ a.btn {
     &-secondary {
         border:0;
         padding: 1px;
+        min-width: 170px;
         background: linear-gradient(91.03deg, rgb(50 171 151) 1.7248211429%, rgb(255, 255, 255, .8) 51.5625%, rgb(50 171 151) 100%);
         .transform-none {
             @include flexCenter;

@@ -8,19 +8,39 @@ import { CustomSlick } from "../../../../shared/components/CustomSlick";
 
 
 const DidYouWin = () => {
-
-	const responsiveConfig =  [
+	const responsiveConfig = [
 		{
-			breakpoint: 768,
+			breakpoint: 575,
 			settings: {
 				slidesToShow: 1,
 				slidesToScroll: 1,
 				infinite: true,
-				dots: true
+				arrows: false,
+				dots: true,
 			}
 		},
 		{
-			breakpoint: 1024000,
+			breakpoint: 820,
+			settings: {
+				slidesToShow: 1,
+				slidesToScroll: 1,
+				infinite: true,
+				arrows: false,
+				dots: true,
+			}
+		},
+		{
+			breakpoint: 991,
+			settings: {
+				slidesToShow: 3,
+				slidesToScroll: 1,
+				infinite: false,
+				arrows: false,
+				dots: true,
+			}
+		},
+		{
+			breakpoint: 120000000,
 			settings: "unslick"
 		}
 	]
@@ -55,46 +75,48 @@ const DidYouWin = () => {
 		<section className="didyouwin position-relative">
 			<div className="container">
 				<div className="heading_title text-center">
-					<h2 className="h2 common_title">
+					<h2 className="h2">
 						Did you win?
 					</h2>
 				</div>
-				<div className="did-you-win-row">
-					<CustomSlick slidesToShow={1} responsive= {responsiveConfig}>
-					{arr.map((item, index) =>
-						<div className="card-box-green position-relative">
-							<div className="card-counter">
-								<span className="card-counter-no">  {item.prop} </span>
+				<div className="card-slider-row did-you-win-row">
+					<CustomSlick slidesToShow={1} responsive={responsiveConfig}>
+						{arr.map((item, index) =>
+							<div className="col-lg-3">
+								<div className="card-box-green position-relative">
+									<div className="card-counter">
+										<span className="card-counter-no">  {item.prop} </span>
+									</div>
+									<div className="card-img">
+										<img
+											className=""
+											width={225}
+											height={188}
+											loading="lazy"
+											alt="CoinImage"
+											src={item.image}
+										/>
+									</div>
+									<h3 className="h6">{item.title}</h3>
+									<p>{item.data}</p>
+									<div className="w-100 text-center btn_contain">
+										<button type="button" className="btn btn-md btn-secondary">
+											<span className="transform-none">Connect Wallet</span>
+										</button>
+									</div>
+								</div>
 							</div>
-							<div className="card-img">
-								<img
-									className=""
-									width={225}
-									height={188}
-									loading="lazy"
-									alt="CoinImage"
-									src={item.image}
-								/>
-
-							</div>
-							<h4>{item.title}</h4>
-							<p>{item.data}</p>
-							<button type="button" ClassName="btn btn-md btn-secondary">
-								<span>Connect Wallet</span>
-							</button>
-						</div>
-					)}
+						)}
 					</CustomSlick>
 				</div>
-
 			</div>
-				<div className="didyouwin_bg">
-					<img width={2264} height={819 }
-                        className="img-fluid"
-                        alt="Diduwin-banner"
-                        src={ICONS.DidUwinBG}
-                />
-				</div>
+			<div className="didyouwin_bg">
+				<img width={2264} height={819}
+					className="img-fluid"
+					alt="Diduwin-banner"
+					src={ICONS.DidUwinBG}
+				/>
+			</div>
 		</section>)
 };
 

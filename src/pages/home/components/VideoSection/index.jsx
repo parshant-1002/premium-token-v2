@@ -17,10 +17,10 @@ const VideoSection = ({ content = {} }) => {
         }
     }
     return (
-        <section className="video-banner position-relative py-72">
+        <section className="video-banner position-relative">
             <div className="container">
                 <div className="video-banner--info text-center">
-                    <h1 className="h1"><SafeHTML html={title} /></h1>
+                    <h1 className="h2"><SafeHTML html={title} /></h1>
                     <div className="video-banner-description">
                         <p>
                             <SafeHTML html={description} />

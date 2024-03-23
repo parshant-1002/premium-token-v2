@@ -8,7 +8,7 @@ const InformationCard = ({
   prop,
   item
 }) => {
-  console.log(item, "item<><><><><")
+  // console.log(item, "item<><><><><")
   return (
     <div className="col-lg-3">
       <div className="card-box-green position-relative">

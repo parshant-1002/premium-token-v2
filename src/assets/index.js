@@ -1,6 +1,7 @@
 import VideoBanner from "./img/banner-bg.png"
 import Mobile_banner from './img/banner-bg-mobile.png';
 import PrizeBannerBg from './img/table_bg.png';
+import PrizeBgMobile from "./img/win_mobile_bg.png";
 import DidUwinBG from './img/did-u-win-bg.png';
 import GitHUb from './img/GitHub.png';
 import GitHUbBG from './img/git-hub-bg.png';
@@ -26,11 +27,15 @@ import FooterRightBg from "./img/footer-right-bg.png";
 import XIcon from "./img/Social-icons.png";
 import ConnectionCreatorMobileBg from "./img/connection_creator_mobilebg.png";
 
+import NextArrow from "./icons/next_arrow.svg";
+import PrevArrow from "./icons/prev_arrow.svg";
+
 
 export const ICONS = {
     VideoBanner: VideoBanner,
     Mobile_banner:Mobile_banner,
     PrizeBannerBg:PrizeBannerBg,
+    PrizeBgMobile: PrizeBgMobile,
     DidUwinBG:DidUwinBG,
     GitHUb:GitHUb,
     MdIcon:MdIcon,
@@ -55,5 +60,7 @@ export const ICONS = {
     Discord:Discord,
     Telegram:Telegram,
     Airdrop:Airdrop,
-    WinBg:WinBg
+    WinBg: WinBg,
+    NextArrow,
+    PrevArrow
 }

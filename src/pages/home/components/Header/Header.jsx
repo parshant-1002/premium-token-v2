@@ -27,7 +27,6 @@ const Header = ({ content = {} }) => {
 	return (
 
 		<header className={isSticky ? 'header sticky-header' : 'header'}>
-
 			<nav className="navbar navbar-expand-lg bg-transparent py-0">
 				<div className="container">
 					<Link className="navbar-brand" to={"/"}>
@@ -67,7 +66,6 @@ const Header = ({ content = {} }) => {
 					</div>
 				</div>
 			</nav>
-
 		</header>
 	);
 };

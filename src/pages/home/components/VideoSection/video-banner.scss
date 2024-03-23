@@ -1,16 +1,22 @@
 @import "../../../../assets/scss/base";
 
 .video-banner {
+    @media (min-width:991.99px){
+        padding: 72px 0;
+    }
+    @media (max-width:991px){
+        padding: 16px 0 30px;
+    }
     &--info {
-        h1 {
-            font-size: 30px;
+        .h2 {
+           color: $white-color;           
         }
     }
     &-description {
         max-width: 90%;
+        margin: 0 $auto;
         @media (min-width:1200px) {
             max-width: 778px;
-            margin: 0 $auto;
         }
     }
 }

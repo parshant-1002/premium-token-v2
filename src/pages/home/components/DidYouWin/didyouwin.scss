@@ -12,3 +12,34 @@
     }
   }
 }
+
+.card-slider-row {
+  &.did-you-win-row {
+    .card-box-green {
+      .card-img {
+        img {
+          object-fit: $contain;
+          margin: 0 $auto;
+          max-width: 100%;
+          @media (min-width:1200px) {
+            min-height: 120px;
+            max-height: 120px;
+          }
+          @media (max-width:1199.98px) {
+            min-height: 150px;
+            max-height: 150px;
+          }
+        }
+      }
+      .h6 {
+        font-weight: $font-mediumbold;
+        @include font-size (1);
+        color: $text-color;
+      }
+      p {
+        @include font-size (.875);
+        margin: 0;
+      }
+    }
+  }
+}

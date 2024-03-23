@@ -12,12 +12,10 @@ $size44: 44px;
       padding: 42px 22px 16px 22px;
       text-align: $center;
       padding-bottom: 70px;
-      @media (min-width:574.99px) {
-        height: 100%;
-      }
+      height: 100%;
       @media (max-width:991px) {
         margin-top: 22px;
-        padding-bottom: 100px;
+        padding-bottom: 80px;
       }
       .card-img {
         margin-bottom: 20px;
@@ -43,8 +41,8 @@ $size44: 44px;
         min-width: 92px;
         min-height: $size44;
         @include flexCenter;
-        @include border-radius(0 20px 0 20px);
         padding: 1px;
+        @include border-radius(0 20px 0 20px);
         background: linear-gradient(91.03deg, rgb(50 171 151) 1.7248211429%, rgb(255, 255, 255, .8) 51.5625%, rgb(50 171 151) 100%); 
         .card-counter-no {
           @include flexCenter;
