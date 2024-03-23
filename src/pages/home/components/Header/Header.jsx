@@ -54,6 +54,16 @@ const Header = ({ content = {} }) => {
 								<img width={327} height="414" className="img-fluid" src={ICONS.ToogleMenuBg} alt="" />
 							</div>
 							<div className="mobileMenuList">
+							<div className="w-100 header-button d-flex justify-content-between flex-column-reverse align-items-center gap-16">
+									<button type="button" className="btn btn-md btn-primary w-100">
+										<span className="transform-none"><RenderIconWithHover iconUrl={addBaseUrlToUrls(telegram?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Airdrop} /><SafeHTML html={airdropButton?.text} /></span>
+									</button>
+									<button type="button" className="btn btn-md btn-primary w-100"><span className="transform-none"><SafeHTML html={viewChartButton?.text} /></span></button>
+									<button type="button" className="btn btn-md btn-secondary w-100"><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
+								</div>
+								<div className="brand_banner">
+									<img width={378} height="316" className="img-fluid" src={ICONS.BrandFrame} alt="Brand" />
+								</div>
 								<div className="social-icon d-flex justify-content-center align-items-center gap-12 text-center">
 									<Link className="btn_icon btn44 dark-green-gradient" rel="noreferrer">
 										<span><RenderIconWithHover iconUrl={addBaseUrlToUrls(twitter?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Twitter} /></span>
@@ -67,19 +77,6 @@ const Header = ({ content = {} }) => {
 										</span>
 									</Link>
 								</div>
-								<div className="brand_banner">
-									<img width={378} height="316" className="img-fluid" src={ICONS.BrandFrame} alt="Brand" />
-								</div>
-								<div className="w-100 header-button d-flex justify-content-between flex-column-reverse align-items-center gap-16">
-									<button type="button" className="btn btn-md btn-primary w-100">
-										<span className="transform-none"><RenderIconWithHover iconUrl={addBaseUrlToUrls(telegram?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Airdrop} /><SafeHTML html={airdropButton?.text} /></span>
-									</button>
-									<button type="button" className="btn btn-md btn-primary w-100"><span className="transform-none"><SafeHTML html={viewChartButton?.text} /></span></button>
-									<button type="button" className="btn btn-md btn-secondary w-100"><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
-								</div>
-
-
-
 							</div>
 						</div>
 					</div>
