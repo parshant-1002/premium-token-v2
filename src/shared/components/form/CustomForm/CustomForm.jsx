@@ -54,7 +54,7 @@ function CustomForm({
         }
         return register(key, formData[key].schema);
     };
-
+    console.log(errors,"errors<><><")
     return (
         <form
             id={id}

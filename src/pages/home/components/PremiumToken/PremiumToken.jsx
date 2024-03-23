@@ -1,10 +1,8 @@
-import "./premiumtoken.scss";
-import premium from '../../../../../public/premium.png';
 import arrow from '../../../../../public/rightarrow.svg';
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
-import { RenderIconWithHover } from "../../../../shared/components/RenderIconWithHover";
 import { addBaseUrlToUrls } from "../../../../shared/utilities";
 import { ICONS } from "../../../../assets";
+import "./premiumtoken.scss";
 const PremiumToken = ({content = {}}) => {
     const { comingSoonButtonText, description, imageUrl, title } = content
     return (

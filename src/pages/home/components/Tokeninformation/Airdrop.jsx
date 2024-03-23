@@ -11,13 +11,16 @@ import { STATUS } from '../../../../shared/constants';
 import { createAirDrop } from '../../../../store/actions/contentManagement';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
+import { hasAtLeastFourValues } from './helpers/utils';
 
 const Airdrop = ({content = {}}) => {
   const{description, section1, section2, title} = content
   const AIRDROP_SCHEMA = AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA(section1)
   const dispatch = useDispatch()
   const onSubmit = (data) => {
-    console.log(data,"dataonsubmit")
+    if (!hasAtLeastFourValues(data)) {
+      return
+    }
     dispatch(
       createAirDrop(data, (message, status) => {
         if (status === STATUS.SUCCESS) {

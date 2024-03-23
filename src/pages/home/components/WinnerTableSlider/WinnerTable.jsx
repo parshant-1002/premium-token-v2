@@ -23,7 +23,7 @@ const WinnerTable = ({ socket }) => {
             }
         }))
 
-    }, [skip, totalCount])
+    }, [skip])
 
     useEffect(() => {
         if (socket) {
@@ -62,7 +62,7 @@ const WinnerTable = ({ socket }) => {
         return (
             <tr>
                 {WINNER_HEADINGS?.map((heading) => {
-                    return <td data-label={""}>{row[heading.apiKey]}</td>
+                    return <td data-label={heading.label}>{row[heading.apiKey]}</td>
                 })}
             </tr>
         )
