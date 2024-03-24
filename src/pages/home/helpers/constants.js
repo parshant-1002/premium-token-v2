@@ -36,7 +36,7 @@ export const options = (innerTitle) => ({
                         fontWeight: 800,
                         color: "#A7D7CF",
                         formatter: function (w) {
-                            return innerTitle
+                            return innerTitle 
                         }
                     }
                 },
