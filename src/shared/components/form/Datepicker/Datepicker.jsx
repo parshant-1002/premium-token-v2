@@ -3,7 +3,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Controller } from 'react-hook-form';
 
-const CustomDatePicker = React.forwardRef(({ value, control, ...otherProps }) => {
+const CustomDatePicker = React.forwardRef(({ value, control, placeholder, ...otherProps }) => {
     return (
         <Controller
             name="file"
@@ -15,7 +15,7 @@ const CustomDatePicker = React.forwardRef(({ value, control, ...otherProps }) =>
                 const selectedDate = value instanceof Date ? value : null;
 
                 return (
-                    <DatePicker className='form-control' selected={selectedDate} onChange={onChange} />
+                    <DatePicker className='form-control' placeholderText={placeholder} selected={selectedDate} onChange={onChange} />
                 );
             }}
         />
