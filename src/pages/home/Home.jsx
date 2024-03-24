@@ -20,22 +20,29 @@ import { useDispatch } from "react-redux";
 import { getContent } from "../../store/actions/contentManagement";
 import { DidYouWin } from "./components/DidYouWin";
 import Airdrop from "./components/Tokeninformation/Airdrop";
-import { SectionTypes } from "./helpers/constants";
 import useSocket from "../../shared/hooks/useSocket";
+import { STATUS } from "../../shared/constants";
+import { DEFAULT_CONTENT, SectionTypes } from "./helpers/contentManagement";
+import { merge } from "lodash";
 const Home = () => {
   const[content, setContent] = useState({})
   const dispatch = useDispatch()
   const socket = useSocket();
 
   useEffect(()=>{ 
-    dispatch(getContent({},(data)=>{
-      setContent(data)
+    dispatch(getContent({},(data, status)=>{
+      
+      if(status === STATUS.SUCCESS){
+        const mergedContent = merge({}, DEFAULT_CONTENT, data);
+        setContent(mergedContent)
+      }
     }))
   },[])
 
   const getContentData = ((sectionType)=>{
     return content?.[sectionType]
   })
+  
   return (
     <>
       <Header content={getContentData(SectionTypes.HEADERS)}/>
