@@ -54,5 +54,11 @@
   }
   @media (max-width:767px) {
     top: 0;
+    width: 100%;    
+  }
+  img {
+    @media (max-width:767px) and (min-width:575px) {
+      width: 100%;
+    }
   }
 }

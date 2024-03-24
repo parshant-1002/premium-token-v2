@@ -4,6 +4,13 @@
     background-color: #020C0C;
     border: 1px solid #389989;        
     @include border-radius (0 10px 10px 0);
+    @media (min-width:1199.99px){
+        margin-top: 54px;      
+      }
+      @media (max-width:1200px){
+        margin-bottom: 40px;      
+        margin-top: 20px;  
+    }
     &-item {
         @include flexbox;
         @include align-items(center);
