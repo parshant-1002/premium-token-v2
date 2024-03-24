@@ -42,6 +42,7 @@
       }
       p {
         @include font-size (.875);
+        font-weight: $font-medium;
         margin: 0;
       }
     }

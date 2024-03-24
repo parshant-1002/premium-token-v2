@@ -9,13 +9,13 @@
         padding-top: 80px;
     }
     .token-info-para {
-        max-width: 745px;
+        max-width: 750px;
         margin: $auto;
         h2 {
             margin-bottom: 8px;
         }
         p {
-            @include para
+            @include font-size (0.938);
         }
     }
     .pie-chart {

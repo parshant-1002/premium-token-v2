@@ -32,7 +32,10 @@
 }
 
 
-.roadmap_wrap { 
+.roadmap_wrap {
+  @media (max-width:1200px){
+    display: $none;
+  }
   .slick-arrow {
     @media (min-width:991px){
       @include position($absolute, $top:-100px);
