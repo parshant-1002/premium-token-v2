@@ -43,7 +43,7 @@ const DataAggregator = ({content = {}}) => {
            
             <div className="heading_title text-center mb-0">
               <h2 className="h2"><SafeHTML html={transpancy?.title}/></h2>
-              <p><SafeHTML html={transpancy?.description} /></p>
+              <SafeHTML html={transpancy?.description} />
             </div>
 
             <CodeEditor />
