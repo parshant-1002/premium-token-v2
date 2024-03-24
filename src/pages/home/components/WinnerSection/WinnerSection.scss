@@ -192,6 +192,13 @@
           }
         }
       }
+      .slick-list {
+        margin-inline:-5px;
+        .slick-track {
+          @include flexbox;
+          gap: 5px;
+        }  
+      }  
     }
   }
   // Slick Arrows
