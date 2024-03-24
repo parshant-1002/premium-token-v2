@@ -29,8 +29,8 @@ export default function Step2({ handleSubmitStep2, handleAutoNameGeneration, for
                 onChangeValues={handleStateDataChange}
                 className="row"
                 submitBtnClassName="btn btn-primary col-1"
-                secondaryBtnText="Back"
-                handleSecondaryButtonClick={handleAutoNameGeneration}
+                // secondaryBtnText="Back"
+                // handleSecondaryButtonClick={handleAutoNameGeneration}
             />
         </div>
     );

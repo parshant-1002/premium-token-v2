@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './CircularCheckbox.css'; // Import CSS file for styling
+import './CircularCheckbox.scss'; // Import CSS file for styling
 
 const CircularCheckbox = ({ disabled = false, checked = false, setChecked = () => { } }) => {
 
@@ -10,10 +10,10 @@ const CircularCheckbox = ({ disabled = false, checked = false, setChecked = () =
     };
 
     return (
-        <div className={`checkbox-container ${disabled ? 'disabled' : ''}`} onClick={handleCheckboxChange}>
+        <div className={`custom-checkbox ${disabled ? 'disabled' : ''}`} onClick={handleCheckboxChange}>
             <input type="checkbox" className="checkbox" checked={checked} disabled={disabled} onChange={() => { }} />
             <label className="checkbox-label">
-                {checked && <span className="checkbox-tick">&#10003;</span>}
+                {checked && <span className="checkbox-tick"></span>}
             </label>
         </div>
     );

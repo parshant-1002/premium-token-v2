@@ -2,7 +2,7 @@ import React from 'react';
 import { Modal } from 'react-bootstrap';
 import './modal.scss';
 
-const CustomModal = ({ title = '', show = false, onClose = () => { }, children = '', size = "lg", ...props }) => {
+const CustomModal = ({ title = '', show = false, onClose = () => { }, children = '', size = "md", ...props }) => {
   return (
     <Modal onHide={onClose} show={show} size={size} centered backdrop="static" >
       <div className="modal-body p-0" {...props}>

@@ -67,4 +67,6 @@ export const options = (innerTitle) => ({
 });
 export const series = [65, 10, 10, 5, 4.5, 4.5, 1];
 
-
+export const BUTTON_LABELS = {
+    Continue: "Continue"
+}

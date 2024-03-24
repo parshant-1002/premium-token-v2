@@ -5,6 +5,7 @@ import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import { useEffect, useState } from "react";
 import "./Header.scss";
 import { Link } from "react-router-dom";
+import WinnerPopup from "./WinnerPopup/WinnerPopup";
 
 const Header = ({ content = {}, partnersContent }) => {
 	const { twitter, discord, telegram, viewChartButton, airdropButton, buyTokenButton, premiumTokenTitle } = content
@@ -34,11 +35,16 @@ const Header = ({ content = {}, partnersContent }) => {
 	const redirectToUrl = (url) =>{
 		redirectToUrlInNewTab(url)
 	}
-
+	const handleClose = () => {
+		setPopup(false)
+	}
+	const handleOpenWinnerModal = () => {
+		setPopup(true)
+	}
 	return (
 
 		<header className={isSticky ? 'header sticky-header' : 'header'}>
-
+<WinnerPopup show={popup} onClose={handleClose} partners={partnersContent}/>
 			<nav className={`navbar navbar-expand-xl bg-transparent py-0 ${isOpen ? 'menu-open' : ''}`}>
 				<div className="container">
 					<Link className="navbar-brand" href={"/"}>
@@ -75,7 +81,7 @@ const Header = ({ content = {}, partnersContent }) => {
 									<span className="transform-none"><RenderIconWithHover iconUrl={addBaseUrlToUrls(airdropButton?.image)} defaultIcon={ICONS.Airdrop} /><SafeHTML html={airdropButton?.text} /></span>
 								</button>
 								<button type="button" className="btn btn-md btn-primary" onClick={() => redirectToUrl(viewChartButton?.url)}><span className="transform-none"><SafeHTML html={viewChartButton?.text} /></span></button>
-								<button type="button" className="btn btn-md btn-secondary" onClick={() => redirectToUrl(buyTokenButton?.url)}><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
+								<button type="button" className="btn btn-md btn-secondary" onClick={() => handleOpenWinnerModal()}><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
 							</div>
 						</div>
 					</div>

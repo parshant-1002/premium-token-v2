@@ -74,27 +74,21 @@ h2, .h2 {
 }
 h3,
 .h3 {
-    @include font-size(1.2);
-    @media (min-width: 1600px) {
-        @include font-size(1.25);
-    }
+    @include font-size(1.5);   
     @media (max-width: 991px) {
-        @include font-size(1.15);
+        @include font-size(1.35);
     }
 }
 h4,
 .h4 {
-    @include font-size(1.375);
-    @media (min-width: 1600px) {
-        @include font-size(1.5);
+    @include font-size(1.35);
+    @media (max-width: 991px) {
+        @include font-size(1.25);
     }
 }
 h5,
 .h5 {
-    @include font-size(1.375);
-    @media (min-width: 1600px) {
-        @include font-size(1.4);
-    }
+    @include font-size(1.25);
     @media (max-width: 991px) {
         @include font-size(1.2);
     }
@@ -165,14 +159,14 @@ input {
         -webkit-appearance: $none;
         display: $none;
     }
-    // &:-webkit-autofill,
-    // &:-webkit-autofill:hover,
-    // &:-webkit-autofill:focus,
-    // &:-webkit-autofill:active {
-    //     -webkit-text-fill-color: $base-color;
-    //     -webkit-background-clip: text !important;
-    //     -webkit-box-shadow: inset 5px 5px 4px $grey-color-400, inset -5px -5px 4px $grey-color-400 !important;
-    // }
+    &:-webkit-autofill,s
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus,
+    &:-webkit-autofill:active {
+        -webkit-text-fill-color: $white-color;
+        -webkit-background-clip: text !important;
+        -webkit-box-shadow: inset 5px 5px 4px #1C544C, inset -5px -5px 4px #1C544C !important;
+    }
     &[type="search"] {
         width: 100%;
         background-image: $search_icon;
@@ -347,21 +341,22 @@ label {
 }
 .form {
     &-control {
+        width: 100%; 
         height: $auto;
         min-height: 40px;
-        color: $base-color;
-        @include font-size (1);
+        color: $white-color;
         padding: 0.50rem .85rem;
+        @include font-size (.875);
         font-weight: $font-regular;
-        @include border-radius (6px);
-        border: 1px solid $text-color;
-        background-color: $transparent;
+        @include border-radius (10px);
+        background: #1C544C; 
+        border: 1px solid #1C544C;
         @include transition-mixin (all, .5s, ease-in-out);
         &:focus {
             box-shadow: $none;
-            color: $base-color;
-            background-color: $transparent;
-            border-color: $green-light-color-400;
+            color: $white-color;
+            background-color: #1C544C;
+            border-color: #1C544C;
         }
         // &[readonly] {
         //     background-color: $white-color;
@@ -370,14 +365,22 @@ label {
         &:disabled {
             @include opacity (.5);
         }
-    }
-    &-dark {
-        color: $white-color !important;
-    }
+        &::placeholder {
+            color: #ACC7C3;
+        }
+        &::-webkit-input-placeholder {
+            color: #ACC7C3;
+        }
+        &:-ms-input-placeholder {
+            color:#ACC7C3;
+        } 
+    } 
 }
 
 select {
     // background-image: $downArrow;
+    background-color: #1C544C;
+    color: $white-color;
     background-repeat: $no-repeat;
     background-size: 24px;
     background-position: $center $right 15px;

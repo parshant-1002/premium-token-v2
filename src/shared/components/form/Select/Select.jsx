@@ -1,10 +1,12 @@
 import React from 'react';
 import Select from 'react-select';
-import './ReactSelect.scss';
+import './react-select.scss';
 
 const CustomSelect = React.forwardRef(({ isMulti = false, ...otherProps }, ref) => {
     return (
-        <Select {...otherProps} ref={ref} classNamePrefix="react-prefix" className={`react-select ${isMulti ? 'react-multiselect' : ''}`} isMulti={isMulti} />
+        <Select {...otherProps} ref={ref} classNamePrefix="react-prefix" className={`react-select ${isMulti ? 'react-multiselect' : ''}`} isMulti={isMulti}
+            // menuIsOpen={true}
+        />
     );
 });
 
