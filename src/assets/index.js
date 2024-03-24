@@ -31,8 +31,7 @@ import ConnectionCreatorMobileBg from "./img/connection_creator_mobilebg.png";
 import NextArrow from "./icons/next_arrow.svg";
 import PrevArrow from "./icons/prev_arrow.svg";
 
-import ToogleMenuBg from "./img/ToogleBg.png";
-import BrandFrame from "./img/brandframe.png";
+import BrandFrame from "./img/brandLogo.png";
 import CloseMenu from "./img/closeMenu.svg";
 
 
@@ -68,8 +67,7 @@ export const ICONS = {
     Airdrop:Airdrop,
     WinBg: WinBg,
     NextArrow,
-    PrevArrow,
-    ToogleMenuBg,
+    PrevArrow, 
     BrandFrame,
     CloseMenu,
 }

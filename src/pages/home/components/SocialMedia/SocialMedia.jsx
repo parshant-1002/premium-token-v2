@@ -12,7 +12,7 @@ const SocialMedia = () => {
 							<h2 className="h2 common_title  d-inline-block">Lets grow together!</h2>
 							<p>Follow PremiumToken on as many social media networks as possible and spread the word to your friends, family and followers, so will our community and the value of PremiumToken grow faster and faster!</p>
 						</div>
-						<div className="w-100 footer-button d-flex justify-content-between align-items-center gap-24">
+						<div className="w-100 footer-button d-flex justify-content-center align-items-center">
 							<button type="button" className="btn btn-md btn-primary w-100">
 								<span className="transform-none">
 									<div className="image_renderer">

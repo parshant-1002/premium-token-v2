@@ -27,10 +27,13 @@
     position: $relative;
     background: $white-color;
     background: linear-gradient(to bottom left, rgba($color: $white-color, $alpha: .6) 0%, rgba($color: $white-color, $alpha: 0.2) 25%, $body-color 50%, rgba($color: $white-color, $alpha: 0.04) 75%, rgba($color: $white-color, $alpha: .7) 100%);
-    @include border-radius(25px);
     backdrop-filter: blur(500px);
-    @media (min-width:1200px) {
+    @media (min-width:1200.99px) {
+        @include border-radius(25px);
         margin-top: 52px;
+    }
+    @media (max-width:1200px) {
+        @include border-radius(10px);
     }
     @at-root {
         .play_btn {
@@ -57,29 +60,26 @@
     }
 }
 
-.video_home {
-    @media (max-width:199.99px) {
-        @include border-radius (10px);
-    }
-    @media (min-width:1200px) {
+.video_home{    
+    @media (min-width:1200.99px) {
         @include border-radius (25px);
     }
+    @media (max-width:1200px) {
+        @include border-radius (10px);
+    }
     video {
-        @media (max-width:199.99px) {
-            @include border-radius (10px);
-        }
-        @media (min-width:1200px) {
+        @media (min-width:1200.99px) {
             @include border-radius (25px);
+        }
+        @media (max-width:1200px) {
+            @include border-radius (10px);
         }
     }
 }
 
 .video_banner_bg {
     @include position($absolute, $top: -104px, $right: 0px);
-    height: 100%;
     @include opacity (.9);
+    height: 100%;
     z-index: -1;
-    @media (max-width:1200px) {
-        $top: -72px;
-    }
 }

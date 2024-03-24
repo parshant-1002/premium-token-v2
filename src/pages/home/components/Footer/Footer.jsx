@@ -1,20 +1,48 @@
+import { useEffect, useState } from "react";
 import { ICONS } from "../../../../assets";
 import { SocialMedia } from "../SocialMedia";
 import "./footer.scss";
 
 const Footer = ({content = {}}) => {
-  const{premiumTokenTitle, email} = content
+  const { premiumTokenTitle, email } = content
+  
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Get the current scroll position
+      const scrollPosition = window.scrollY;
+
+      // Check if scroll position is greater than 400 pixels
+      if (scrollPosition > 400) {
+        // Set state to true when scrolled past 400 pixels
+        setIsScrolled(true);
+      } else {
+        // Set state to false if not scrolled past 400 pixels
+        setIsScrolled(false);
+      }
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup the scroll event listener
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+  
   return (
-    <footer className="footer bottom_footer">
+    <footer className={`footer bottom_footer ${isScrolled ? 'footer-sticky' : ''}`}>
       <div className="container">
         <div className="row align-items-center">
-          <div className="col-md-4 order-1">
-            <div className="footer_logo text-md-start text-center">
+          <div className="col-lg-4 order-1">
+            <div className="footer_logo text-lg-start text-center">
               <img src={ICONS.Logo} alt="Premium" width={147} />
             </div>
           </div>
 
-          <div className="col-md-4 order-3 order-md-2">
+          <div className="col-lg-4 order-3 order-lg-2">
             <div className="d-flex justify-content-center gap-2">
               <button type="button" className="btn btn-md btn-primary"><span className="transform-none">
                 <span className="render_html_safely">View chart</span></span></button>
@@ -23,7 +51,7 @@ const Footer = ({content = {}}) => {
             </div>
           </div>
 
-          <div className="col-md-4 text-center text-lg-end order-2 order-lg-3">
+          <div className="col-lg-4 text-center text-lg-end order-2 order-lg-3">
             <div className="email_group">
               <a href="mailto:support@beaverswap.com" rel="follow">
                 <em className="me-2">

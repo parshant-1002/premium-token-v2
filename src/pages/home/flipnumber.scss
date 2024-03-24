@@ -3,12 +3,12 @@
 $digitHeight : 108px;
 $speed : .5s;
 $baseColor :rgba(3, 11, 11, 0.6);
-$textColor : white;
-
 
 .numCounter {
+    overflow: $hidden; 
+    text-align: $center;    
     display: $inline-block;
-    height: calc(($digitHeight)/2 - 14px);
+    // height: calc(($digitHeight)/2 - 14px);
     text-shadow: 0 0 2px $white-color;
     line-height: $digitHeight;
     font-weight: $font-bold;
@@ -16,13 +16,14 @@ $textColor : white;
     @include font-size(1.5);
     @media (min-width:992px) {
         font-size:calc($digitHeight/1.5);
-        height: $digitHeight;
+        // height: $digitHeight;
         @include font-size(4);
     }
     .digit_card {
         display: $inline-block;
         vertical-align: top;
-        height: 100%;
+        height: $digitHeight;
+        margin-bottom: 8px;
         span {
             display: $inline-block;
             width: calc($digitHeight/2 - 14px);
@@ -56,10 +57,10 @@ $textColor : white;
             &.blur {
                 opacity: .8;
                 text-shadow: 2px 1px 3px rgba(black, .2),
-                    0 .1em 2px rgba($textColor, .6),
-                    0 .3em 3px rgba($textColor, .3),
-                    0 -.1em 2px rgba($textColor, .6),
-                    0 -.3em 3px rgba($textColor, .3);
+                    0 .1em 2px rgba($white-color, .6),
+                    0 .3em 3px rgba($white-color, .3),
+                    0 -.1em 2px rgba($white-color, .6),
+                    0 -.3em 3px rgba($white-color, .3);
             }
             @for $i from 1 through 9 {
                 &[data-value="#{$i}"]::before {
@@ -67,7 +68,6 @@ $textColor : white;
                 }
             }
         }
-
         // format number (US-format)
         &:nth-last-child(3n):not(:first-child) {
             &::before {
@@ -78,14 +78,8 @@ $textColor : white;
             }
         }
     }
-}
+} 
 
-// Counter
-
-.numCounter {
-    overflow: $hidden; 
-    text-align: $center;    
-}
 .digit_card{
     @include border-radius (10px);
     @include flexbox;

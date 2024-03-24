@@ -12,8 +12,8 @@
     }
     .footer-together {
         @include flexbox;
-        @include flex-direction(column);
         @include align-items(center);
+        @include flex-direction(column);
         text-align: $center;
         gap: 24px;
         @media (min-width:1200px) {
@@ -43,18 +43,26 @@
          }
     }
     .footer-button {
-        @media (max-width:768px) {
+        gap:24px;
+        @media (max-width:991px) {
             gap:12px;
         }
         button {
+            min-width: 160px;
+            max-width: 160px;
             &:not(:last-child) {
-                @media (max-width:991px) {
-                    width: 44px;
+                @media (max-width:1200px) {
+                    min-width: 44px;
+                    max-width: 44px;
                     height: 44px;
                     min-height: 44px;
+                    .image_renderer {
+                        margin-right: 0;
+                    }
                 }
                 @media (max-width:360px) {
-                    width: 40px !important;
+                    min-width: 40px !important;
+                    max-width: 40px !important;
                     height: 40px;
                     min-height: 40px;
                 }
@@ -88,36 +96,10 @@
         }
     }
 }
+
 .footer_column_box {
     max-width: 600px;
     @media (min-width:1200px) {
         max-width: 712px;
     }
 }
-// .footer_social_media  {
-//     ul {
-//         li {
-//             span {
-//                 @include border-radius (25px 0);
-//                 background: #389989;
-//                 border: 1px solid rgba($color: $white-color ,$alpha: 0.5);
-
-
-//                     width: 70px;
-//                     height: 63px;
-//                     display: flex;
-//                     align-items: center;
-//                     justify-content: center;
-
-//                     font-size: 24px;
-//                     -webkit-transition: all 400ms ease-in-out 0s;
-//                     -moz-transition: all 400ms ease-in-out 0s;
-//                     -ms-transition: all 400ms ease-in-out 0s;
-//                     -o-transition: all 400ms ease-in-out 0s;
-//                     transition: all 400ms ease-in-out 0s;
-//                     margin: 0 auto;
-
-//             }
-//         }
-//     }
-// }

@@ -5,6 +5,6 @@ $MobileBg: url(assets/img/mobile_group_bg.png);
 .mobile_bg {
     @media (max-width:991px){
         background: $MobileBg $no-repeat;
-        background-image: 100%;
+        background-size: 100%;
     }
 }
