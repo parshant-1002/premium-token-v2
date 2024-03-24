@@ -61,7 +61,7 @@ const Home = () => {
       <Airdrop content={getContentData(SectionTypes.JOIN_AIRDROP)} />
       <Partners content={getContentData(SectionTypes.PARTNERS)} />
       < SocialMedia content={getContentData(SectionTypes.FOOTERS)} />
-      <Footer content={{...getContentData(SectionTypes.FOOTERS), ...getContentData(SectionTypes.HEADERS)}} />
+      <Footer content={{ ...getContentData(SectionTypes.FOOTERS), ...getContentData(SectionTypes.HEADERS) }} partnersContent={getContentData(SectionTypes.PARTNERS)} />
       </>
   );
 };
