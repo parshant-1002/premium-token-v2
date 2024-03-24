@@ -6,7 +6,7 @@ import { Each } from "../../../../shared/components/Each";
 import { addBaseUrlToUrls } from "../../../../shared/utilities";
 import { ICONS } from "../../../../assets";
 
-const InformationSection = ({ content = {} }) => {
+const InformationSection = ({ content = {}, buyTokenButton = {} }) => {
   const { rulesToWin, title } = content;
   const responsiveConfig = [ 
     {
@@ -37,8 +37,9 @@ const InformationSection = ({ content = {} }) => {
               {rulesToWin?.map((item, index)=><InformationCard
                   illustration={addBaseUrlToUrls(item.imageUrl)}
                   title={item.description}
-                  prop={index}
+                  prop={index + 1}
                   item={item}
+                  buyTokenButton={index === 0 && buyTokenButton}
                 />)}
             </CustomSlick>
           </div>

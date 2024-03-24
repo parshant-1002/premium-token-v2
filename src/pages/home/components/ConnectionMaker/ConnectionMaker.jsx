@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ICONS } from "../../../../assets";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
-import { addBaseUrlToUrls } from "../../../../shared/utilities";
+import { addBaseUrlToUrls, redirectToUrlInNewTab } from "../../../../shared/utilities";
 import "./ConnectionMaker.scss";
 
 const ConnectionMaker = ({ content = {} }) => {
@@ -19,21 +19,22 @@ const ConnectionMaker = ({ content = {} }) => {
 					<div className="col-lg-6">
 						<div className="maker-text-col text-center ms-lg-auto">
 							<h2 className="h2"><SafeHTML html={title} /></h2>
-							<p><SafeHTML html={description} /></p>
-							<button className="link-button">
+							<p><SafeHTML html={description} /></p> 
+								<button
+									className="link-button"
+									onClick={() => { redirectToUrlInNewTab(url) }}
+									target="_blank"
+							>
 								<img
-									className=""
+									className="me-2"
 									alt=""
 									src="/heroiconsoutlinelink.svg"
+									width={25}
+									height={25}
 								/>
-								<Link
-									className=""
-									to={addBaseUrlToUrls(url)}
-									target="_blank"
-								>
 									<SafeHTML html={url} />
-								</Link>
-							</button>
+								</button>
+							 
 							<button className="btn btn-md btn-secondary w-100">
 								<span className="transform-none">
 									<img

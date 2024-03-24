@@ -267,6 +267,9 @@ a.btn {
         }
         .image_renderer {
             margin-right: 8px;
+            img {
+                max-width: 24px;
+            }
         }
         &:hover {
             background-color: $transparent;
@@ -466,6 +469,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .btn_icon {
     padding: 1px;
+    border: 0;
     background: linear-gradient(91.03deg, rgb(23 56 51) 1.7248211429%, rgb(255 255 255 / 25%) 51.5625%, rgb(23 56 51) 100%);
     @include border-radius (10px);
     span {

@@ -5,6 +5,7 @@ import { STATUS } from '../../../../shared/constants'
 import { NUMBER_OF_ROWS_IN_PAGE, WINNER_HEADINGS } from './helpers/constants'
 import { CustomSlick } from '../../../../shared/components/CustomSlick'
 import { shortenString } from '../../../../shared/constants/utils'
+import { transformRow } from './helpers/utils'
 
 const WinnerTable = ({ socket }) => {
     const [skip, setSkip] = useState(0)
@@ -54,15 +55,14 @@ const WinnerTable = ({ socket }) => {
         }
     }
     const renderTableRow = (row = {}) => {
-
+        const reformedRow = transformRow(row)
         // heading.apiKey = "prizeType" ? <div className="td_img">
         //     <img src={row[heading["apiKey"]]} alt="premium" width={138} className="w-100" />
         // </div> : 
-        row["walletAddress"] = shortenString(row["walletAddress"])
         return (
             <tr>
                 {WINNER_HEADINGS?.map((heading) => {
-                    return <td data-label={heading.label}>{row[heading.apiKey]}</td>
+                    return <td data-label={heading.label}>{reformedRow[heading.apiKey]}</td>
                 })}
             </tr>
         )

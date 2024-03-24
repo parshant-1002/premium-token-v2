@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
-import { addBaseUrlToUrls } from "../../../../shared/utilities";
+import { addBaseUrlToUrls, redirectToUrlInNewTab } from "../../../../shared/utilities";
 import { RenderIconWithHover } from "../../../../shared/components/RenderIconWithHover";
 import { ICONS } from "../../../../assets";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import { useEffect, useState } from "react";
 import "./Header.scss";
+import { Link } from "react-router-dom";
 
 const Header = ({ content = {} }) => {
 	const { twitter, discord, telegram, viewChartButton, airdropButton, buyTokenButton, premiumTokenTitle } = content
@@ -31,6 +31,9 @@ const Header = ({ content = {} }) => {
 		setIsOpen(!isOpen);
 	};
 
+	const redirectToUrl = (url) =>{
+		redirectToUrlInNewTab(url)
+	}
 
 	return (
 
@@ -38,7 +41,7 @@ const Header = ({ content = {} }) => {
 
 			<nav className={`navbar navbar-expand-xl bg-transparent py-0 ${isOpen ? 'menu-open' : ''}`}>
 				<div className="container">
-					<Link className="navbar-brand" to={"/"}>
+					<Link className="navbar-brand" href={"/"}>
 						<RenderIconWithHover iconUrl={addBaseUrlToUrls(premiumTokenTitle)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Logo} />
 					</Link>
 
@@ -54,25 +57,25 @@ const Header = ({ content = {} }) => {
 
 						<div className="main-navigation d-flex justify-content-center justify-content-md-between flex-column flex-md-row align-items-center gap-12 ms-auto">
 							<div className="social-icon d-flex justify-content-between align-items-center gap-12 ms-md-auto">
-								<Link className="btn_icon btn44 dark-green-gradient" rel="noreferrer">
-									<span><RenderIconWithHover iconUrl={addBaseUrlToUrls(twitter?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Twitter} /></span>
-								</Link>
-								<Link className="btn_icon btn44 dark-green-gradient" rel="noreferrer">
-									<span><RenderIconWithHover iconUrl={addBaseUrlToUrls(discord?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Discord} /></span>
-								</Link>
-								<Link className="btn_icon btn44 dark-green-gradient" rel="noreferrer">
+								<button className="btn_icon btn44 dark-green-gradient" rel="noreferrer" onClick={()=> redirectToUrlInNewTab(twitter?.url)}>
+									<span><RenderIconWithHover iconUrl={addBaseUrlToUrls(twitter?.image)} defaultIcon={ICONS.Twitter} /></span>
+								</button>
+								<button className="btn_icon btn44 dark-green-gradient" rel="noreferrer" onClick={()=> redirectToUrlInNewTab(discord?.url)}>
+									<span><RenderIconWithHover iconUrl={addBaseUrlToUrls(discord?.image)}  defaultIcon={ICONS.Discord} /></span>
+								</button>
+								<button className="btn_icon btn44 dark-green-gradient" rel="noreferrer" onClick={()=> redirectToUrlInNewTab(telegram?.url)}>
 									<span>
-										<RenderIconWithHover iconUrl={addBaseUrlToUrls(discord?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Discord} />
+										<RenderIconWithHover iconUrl={addBaseUrlToUrls(telegram?.image)} defaultIcon={ICONS.Telegram} />
 									</span>
-								</Link>
+								</button>
 							</div>
 
 							<div className="w-100 d-flex justify-content-between flex-column-reverse flex-md-row align-items-center gap-12 header-button">
-								<button type="button" className="btn btn-md btn-primary">
-									<span className="transform-none"><RenderIconWithHover iconUrl={addBaseUrlToUrls(telegram?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Airdrop} /><SafeHTML html={airdropButton?.text} /></span>
+								<button type="button" className="btn btn-md btn-primary" onClick={() => redirectToUrl(airdropButton?.url)}>
+									<span className="transform-none"><RenderIconWithHover iconUrl={addBaseUrlToUrls(airdropButton?.image)} defaultIcon={ICONS.Airdrop} /><SafeHTML html={airdropButton?.text} /></span>
 								</button>
-								<button type="button" className="btn btn-md btn-primary"><span className="transform-none"><SafeHTML html={viewChartButton?.text} /></span></button>
-								<button type="button" className="btn btn-md btn-secondary"><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
+								<button type="button" className="btn btn-md btn-primary" onClick={() => redirectToUrl(viewChartButton?.url)}><span className="transform-none"><SafeHTML html={viewChartButton?.text} /></span></button>
+								<button type="button" className="btn btn-md btn-secondary" onClick={() => redirectToUrl(buyTokenButton?.url)}><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
 							</div>
 						</div>
 					</div>
@@ -82,7 +85,7 @@ const Header = ({ content = {} }) => {
 				<div className="mobileMenuList d-xl-none justify-content-between flex-column flex-xl-row align-items-center gap-12">
 
 					<div className="w-100 d-flex header_toggle">
-						<Link className="navbar-brand" to={"/"}>
+						<Link className="navbar-brand" href={"/"}>
 							<RenderIconWithHover iconUrl={addBaseUrlToUrls(premiumTokenTitle)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Logo} />
 						</Link>
 
@@ -94,11 +97,11 @@ const Header = ({ content = {} }) => {
 					</div>
 
 					<div className="w-100 header-button d-flex justify-content-between flex-column-reverse flex-md-row align-items-center gap-12 ms-md-auto">
-						<button type="button" className="btn btn-md btn-primary w-100">
-							<span className="transform-none"><RenderIconWithHover iconUrl={addBaseUrlToUrls(telegram?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Airdrop} /><SafeHTML html={airdropButton?.text} /></span>
+						<button type="button" className="btn btn-md btn-primary w-100" onClick={() => redirectToUrl(airdropButton?.url)}>
+							<span className="transform-none"><RenderIconWithHover iconUrl={addBaseUrlToUrls(airdropButton?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Airdrop} /><SafeHTML html={airdropButton?.text} /></span>
 						</button>
-						<button type="button" className="btn btn-md btn-primary w-100"><span className="transform-none"><SafeHTML html={viewChartButton?.text} /></span></button>
-						<button type="button" className="btn btn-md btn-secondary w-100"><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
+						<button type="button" className="btn btn-md btn-primary w-100" onClick={() => redirectToUrl(viewChartButton?.url)}><span className="transform-none" ><SafeHTML html={viewChartButton?.text} /></span></button>
+						<button type="button" className="btn btn-md btn-secondary w-100" onClick={() => redirectToUrl(buyTokenButton?.url)}><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
 					</div>
 
 					<div className="brand_banner">
@@ -106,17 +109,17 @@ const Header = ({ content = {} }) => {
 					</div>
 
 					<div className="social-icon d-flex justify-content-center align-items-center gap-12">
-						<Link className="btn_icon btn44 dark-green-gradient" rel="noreferrer">
+						<button className="btn_icon btn44 dark-green-gradient" rel="noreferrer" onClick={() => redirectToUrlInNewTab(twitter?.url)}>
 							<span><RenderIconWithHover iconUrl={addBaseUrlToUrls(twitter?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Twitter} /></span>
-						</Link>
-						<Link className="btn_icon btn44 dark-green-gradient" rel="noreferrer">
+						</button>
+						<button className="btn_icon btn44 dark-green-gradient" rel="noreferrer" onClick={() => redirectToUrlInNewTab(discord?.url)}>
 							<span><RenderIconWithHover iconUrl={addBaseUrlToUrls(discord?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Discord} /></span>
-						</Link>
-						<Link className="btn_icon btn44 dark-green-gradient" rel="noreferrer">
+						</button>
+						<button className="btn_icon btn44 dark-green-gradient" rel="noreferrer" onClick={() => redirectToUrlInNewTab(telegram?.url)}>
 							<span>
-								<RenderIconWithHover iconUrl={addBaseUrlToUrls(discord?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Discord} />
+								<RenderIconWithHover iconUrl={addBaseUrlToUrls(telegram?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Telegram} />
 							</span>
-						</Link>
+						</button>
 					</div>
 				</div>
 			</nav>
