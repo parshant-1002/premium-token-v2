@@ -66,6 +66,41 @@ export const options = (innerTitle) => ({
     legend: {
         show: false,
     },
+    responsive: [{
+        breakpoint: 768, // Breakpoint for mobile devices
+        options: {
+            plotOptions: {
+                pie: {
+                    donut: {
+                        labels: {
+                            value: {
+                                fontSize: '10px',
+                            },
+                            total: {
+                                fontSize: '12px',
+                            },
+                        },
+                    },
+                },
+            },
+        },
+    },
+{
+        breakpoint: 961, // Breakpoint for mobile devices
+        options: {
+            plotOptions: {
+                pie: {
+                    donut: {
+                        labels: {
+                            value: {
+                                fontSize: '16px',
+                            },
+                        },
+                    },
+                },
+            },
+        },
+    }],
 });
 
 export const BUTTON_LABELS = {
