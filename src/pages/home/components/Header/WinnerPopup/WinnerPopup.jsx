@@ -81,14 +81,12 @@ export default function WinnerPopup({ show, onClose, partners }) {
       show={show}
       onClose={handleCloseModal}
     >
-      <div className="m-5 ">
-        <div className="text-center">
-          <h1>
+      <div className="modal-body">
+        <div className="title_group text-center">
+          <h2 className="h3">
             <SafeHTML html={DEFAULT_CONTENT.WINNER_TITLE} />
-          </h1>
-          <label>
-            <SafeHTML html={DEFAULT_CONTENT.WINNER_DESCRIPTION} />
-          </label>
+          </h2>
+          <p><SafeHTML html={DEFAULT_CONTENT.WINNER_DESCRIPTION} /></p>
         </div>
         {renderStep()}
       </div>

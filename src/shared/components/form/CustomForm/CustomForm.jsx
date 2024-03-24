@@ -78,7 +78,7 @@ function CustomForm({
                 );
             })}
             {preSubmitElement}
-            <div className="btn_groups w-100 text-center">
+            <div className="btn_groups w-100 text-center mt-2">
                 {handleSecondaryButtonClick && (
                     <Button
                         data-content={secondaryBtnText}
@@ -88,7 +88,7 @@ function CustomForm({
                                 ? handleSubmit(handleSecondaryButtonClick)
                                 : handleSecondaryButtonClick
                         }
-                        className="btn-md btn-secondary"
+                        className="btn btn-md btn-secondary w-100"
                     >
                         <span className="transform-none">{secondaryBtnText}</span>
                     </Button>
@@ -97,7 +97,7 @@ function CustomForm({
                     <Button
                         onClick={handleSubmit(onSubmit)}
                         type="submit"
-                        className="btn-md btn-secondary"
+                        className="btn btn-md btn-secondary w-100"
                         disabled={isDisabledSubmit}
                     >
                         <span className="transform-none">{submitText}</span>

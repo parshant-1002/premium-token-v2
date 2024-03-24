@@ -1,0 +1,90 @@
+@import '../../../../assets/scss/base';
+
+.react {
+    &-select { 
+        .react {
+            &-prefix {
+                &__indicator {
+                    padding: 8px 8px 8px 0;
+                    &-separator {
+                        display: $none;
+                    }
+                    svg {
+                        path {
+                            fill: $white-color;
+                        }
+                    }
+                }
+                &__placeholder {
+                    font-weight: $font-semibold;
+                    color: $white-color;
+                }
+                &__single-value {
+                    font-weight: $font-semibold;
+                }
+                &__control {
+                    background: #1C544C;
+                    border-color: #1C544C;
+                    @include border-radius (10px);
+                    box-shadow: $none !important;
+                    height: 40px;
+                    &:hover {
+                        border-color: #1C544C;
+                    }
+                }
+                &__placeholder, &__single-value {
+                    font-weight: $font-regular;
+                    color: $white-color;;
+                }
+                &__input-container {
+                    font-weight: $font-semibold;
+                    color: $white-color;
+                }
+                &__value-container {
+                    padding: 2px 0px 2px 15px;
+                }
+                &__option {
+                    @include font-size (1);
+                    border-bottom: 1px solid rgba($white-color,.1); 
+                    &--is-focused {
+                        background-color: $body-color;
+                    }
+                    &--is-selected {
+                        background-color: rgba($body-color, .5);
+                    }
+                }
+                &__multi-value {
+                    background-color: #1C544C;
+                   @include border-radius(5px);
+                   &__label {
+                    color: var(--white-color);
+                   }
+                   &__remove {
+                    svg {
+                        path {
+                            fill: $white-color;
+                        }
+                    }
+                   }
+                }
+                &__menu {
+                    background-color: #1C544C;
+                    &-list {
+                        padding: 0;
+                        scrollbar-width: thin;
+                    }
+                }
+            }
+        }
+    }
+    &-multiselect {
+        .react {
+            &-prefix {
+                &__control {
+                   height: $auto;
+                   min-height: 44px;
+                }
+            }
+        }
+    }
+}
