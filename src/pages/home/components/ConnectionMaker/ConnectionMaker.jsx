@@ -35,7 +35,7 @@ const ConnectionMaker = ({ content = {} }) => {
 									<SafeHTML html={url} />
 								</button>
 							 
-							<button className="btn btn-md btn-secondary w-100">
+							<button className="btn btn-md btn-secondary w-100" onClick={()=>redirectToUrlInNewTab(downloadDocURL)}>
 								<span className="transform-none">
 									<img
 										className="me-2"
