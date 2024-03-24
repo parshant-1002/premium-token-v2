@@ -1,24 +1,25 @@
-import { Each } from "../../../../shared/components/Each";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
-import { options, series } from "../../helpers/constants";
+import { options } from "../../helpers/constants";
 import { DoughnutChart } from "../DoughnutChart";
 import "./Tokeninformation.scss";
+import { STATISTICS_TITLE } from "./helpers/constants";
+import { extractPercentages } from "./helpers/utils";
 
 const Tokeninformation = ({content = {}}) => {
-	const { title, stats, innerTitle, description } = content;
-	console.log(content,"content<><><>")
-	const firstHalfStats = stats?.slice(0, 4);
-	const secondHalfStats = stats?.slice(4);
-
-	const renderStats = (stat) => {
-		const{title, subTitle, description} = stat;
+	const { title, airdrop, burning, contest, development, exchangeAndTokenHolders, founders, marketing, winnerPrize, innerTitle, description } = content;
+	const firstHalfStats = {airdrop : airdrop, contest : contest, development:development, founders : founders}
+	const secondHalfStats = {winnerPrize, marketing, burning, exchangeAndTokenHolders}
+	const series = extractPercentages({...firstHalfStats, ...secondHalfStats})
+	console.log(series,"series<><><><><><")
+	const renderStats = (key,value = {}) => {
+		const { title, percentage, description} = value;
 		return <div className="token-column-iner">
 			<div className="token-column-button">
-				<button className="bg-green-600">0.25%</button>
+				<button className="bg-green-600"><SafeHTML html={percentage}/></button>
 			</div>
 			<div className="token-column-text">
-				<h4 className="h5"><SafeHTML html={title} /></h4>
-				<SafeHTML html={subTitle} />
+				<h4 className="h5"><SafeHTML html={STATISTICS_TITLE[key]} /></h4>
+				<SafeHTML html={title} />
 				<SafeHTML html={description} />
 			</div>
 		</div>
@@ -34,21 +35,22 @@ const Tokeninformation = ({content = {}}) => {
 
 				<div className="pie-chart text-center">
 					<div className="d-inline-block">
-					<DoughnutChart series={series} options={options(innerTitle)} className="chart" />
+						{console.log(innerTitle,"innertitle")}
+						<DoughnutChart series={series} options={options(innerTitle)} className="chart" />
 					</div>
 				</div>
 
 				<div className="token-grid-main">
 					<div className="token-column-left">
-						<Each of={firstHalfStats} render={(item, index) => (
-							renderStats(item)
-						)}/>
+						{Object.entries(firstHalfStats)?.map(([key, value], index)=>{
+							return renderStats(key, value)
+						})}
 					</div>
 
 					<div className="token-column-right">
-						<Each of={secondHalfStats} render={(item, index) => (
-							renderStats(item)
-						)} />
+						{Object.entries(secondHalfStats)?.map(([key, value], index) => {
+							return renderStats(key, value)
+						})}
 					</div>
 				</div>
 			</div>

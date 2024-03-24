@@ -1,6 +1,5 @@
 import React from 'react'
 import Info from './Info'
-import "./airdrop.scss";
 import { ICONS } from '../../../../assets';
 import SafeHTML from '../../../../shared/components/SanitizeHtml';
 import { Each } from '../../../../shared/components/Each';
@@ -12,6 +11,7 @@ import { createAirDrop } from '../../../../store/actions/contentManagement';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 import { hasAtLeastFourValues } from './helpers/utils';
+import "./airdrop.scss";
 
 const Airdrop = ({ content = {} }) => {
   const { description, section1, section2, title } = content
@@ -49,175 +49,6 @@ const Airdrop = ({ content = {} }) => {
                 submitText="Update Contract Details Content"
               />
             </div>
-            {/* <form className="white-listed-form">
-                <h3 className="h4">
-                  Get whitelisted for AirDrop
-                </h3>
-
-                <div className="main-form">
-
-                  <div className="input-col">
-                    <img className="" alt="" src="/heroiconssolid.svg" />
-
-                    <input
-                      className=""
-                      placeholder="Enter your PremiumToken wallet address"
-                      type="text"
-                    />
-
-                  </div>
-
-                  <div className="input-col">
-                    <img
-                      className=""
-                      alt=""
-                      src="/social-icons.svg"
-                    />
-                    <input
-                      className=""
-                      placeholder="Enter URL to your Twitter profile"
-                      type="text"
-                    />
-                  </div>
-                  <div className="input-col">
-                    <img
-                      className=""
-                      alt=""
-                      src="/social-icons-2.svg"
-                    />
-                    <input
-                      className=""
-                      placeholder="Enter your Telegram username"
-                      type="text"
-                    />
-                  </div>
-                  <div className="input-col">
-                    <img
-                      className=""
-                      alt=""
-                      src="/social-icons-5.svg"
-                    />
-                    <input
-                      className=""
-                      placeholder="Enter URL to your Instagram profile"
-                      type="text"
-                    />
-                  </div>
-                  <div className="input-col">
-                    <img
-                      className=""
-                      alt=""
-                      src="/social-icons-6.svg"
-                    />
-                    <input
-                      className=""
-                      placeholder="  Enter URL to your Facebook profile"
-                      type="text"
-                    />
-
-                  </div>
-                  <div className="input-col">
-                    <img
-                      className=""
-                      alt=""
-                      src="/social-icons-1.svg"
-                    />
-                    <input
-                      className=""
-                      placeholder="Enter your username on Discord"
-                      type="text"
-                    />
-
-        <div className="airdrop-main">
- 
-          <div className="whitelisted-row">
-            <form className="white-listed-form">
-              <h3 className="h4">
-                Get whitelisted for AirDrop
-              </h3>
-              <div className="main-form">
-                <div className="input-col">
-                  <img className="" alt="" src="/heroiconssolid.svg" />
-                  <input
-                    className=""
-                    placeholder="Enter your PremiumToken wallet address"
-                    type="text"
-                  />
-                </div>
-
-                <div className="input-col">
-                  <img
-                    className=""
-                    alt=""
-                    src="/social-icons.svg"
-                  />
-                  <input
-                    className=""
-                    placeholder="Enter URL to your Twitter profile"
-                    type="text"
-                  />
-                </div>
-                <div className="input-col">
-                  <img
-                    className=""
-                    alt=""
-                    src="/social-icons-2.svg"
-                  />
-                  <input
-                    className=""
-                    placeholder="Enter your Telegram username"
-                    type="text"
-                  />
-                </div>
-                <div className="input-col">
-                  <img
-                    className=""
-                    alt=""
-                    src="/social-icons-5.svg"
-                  />
-                  <input
-                    className=""
-                    placeholder="Enter URL to your Instagram profile"
-                    type="text"
-                  />
-                </div>
-                <div className="input-col">
-                  <img
-                    className=""
-                    alt=""
-                    src="/social-icons-6.svg"
-                  />
-                  <input
-                    className=""
-                    placeholder="  Enter URL to your Facebook profile"
-                    type="text"
-                  />
-                </div>
-                <div className="input-col">
-                  <img
-                    className=""
-                    alt=""
-                    src="/social-icons-1.svg"
-                  />
-                  <input
-                    className=""
-                    placeholder="Enter your username on Discord"
-                    type="text"
-                  />
-                </div>
-                <div className="input-col">
-                  <img
-                    className=""
-                    alt=""
-                    src="/social-icons-8.svg"
-                  />
-                  <input
-                    className=""
-                    placeholder=" Enter URL to your TikTok profile"
-                    type="text"
-                  />
-                </div>
-              </form> */}
             <div className="airdrop-info">
               <Each of={section2} render={(item, index) => (
                 <Info
