@@ -9,8 +9,10 @@
 }
 
 .roadmap_wrap {
-  @include flexbox; 
-  li {
+  .slider {
+    @include flexbox;     
+  }
+  .timeline-item{
     width: 25%;
     height: 400px;
     position: $relative;
