@@ -86,6 +86,9 @@
             @include font-size (0.938);            
         }
     }
+    .btn {
+        min-height: 44px;
+    }
 }
 
 .white-listed-form {

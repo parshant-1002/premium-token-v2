@@ -244,3 +244,25 @@
   text-transform: $uppercase;
   @include font-size (.725);
 }
+
+// No Data Found
+.no-data-found {
+  background-color: $dark-green-color-600;
+  @include border-radius (12px);
+  @include flexbox;
+  width: 100%;
+  @media (min-width:991.99px){
+    padding: 42px 100px;
+    gap: 42px;
+  }
+  @media (max-width:991px){
+    padding: 42px;
+    gap: 32px;
+  }
+  p {
+    font-weight: $font-semibold;
+    @include font-size (1.125);
+    color: $text-color;
+    text-align: $center;
+  }
+}
