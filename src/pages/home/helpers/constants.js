@@ -66,4 +66,6 @@ export const options = (innerTitle) => ({
     },
 });
 
-
+export const BUTTON_LABELS = {
+    Continue: "Continue"
+}
