@@ -5,6 +5,7 @@ import { STATUS } from '../../../../shared/constants'
 import { NUMBER_OF_ROWS_IN_PAGE, WINNER_HEADINGS } from './helpers/constants'
 import { CustomSlick } from '../../../../shared/components/CustomSlick'
 import { shortenString } from '../../../../shared/constants/utils'
+import { transformRow } from './helpers/utils'
 
 const WinnerTable = ({ socket }) => {
     const [skip, setSkip] = useState(0)
@@ -30,12 +31,12 @@ const WinnerTable = ({ socket }) => {
             socket.on('latestWinner', (data) => {
                 setTableData((prevPages) => {
                     const firstPage = [data?.data, ...prevPages[0]];
-                    let updatedPages = [firstPage.slice(0, 4)];
-                    let remainingRows = firstPage.slice(4);
+                    let updatedPages = [firstPage.slice(0, NUMBER_OF_ROWS_IN_PAGE)];
+                    let remainingRows = firstPage.slice(NUMBER_OF_ROWS_IN_PAGE);
                     for (let i = 1; i < prevPages.length; i++) {
                         const page = [...remainingRows, ...prevPages[i]];
-                        updatedPages.push(page.slice(0, 4));
-                        remainingRows = page.slice(4);
+                        updatedPages.push(page.slice(0, NUMBER_OF_ROWS_IN_PAGE));
+                        remainingRows = page.slice(NUMBER_OF_ROWS_IN_PAGE);
                     }
                     if (remainingRows.length > 0) {
                         updatedPages.push(remainingRows);
@@ -49,20 +50,19 @@ const WinnerTable = ({ socket }) => {
     }, [socket]);
 
     const handleNextClick = () => {
-        if ((totalCount === null || totalCount > skip * 4)) {
+        if ((totalCount === null || totalCount > skip * NUMBER_OF_ROWS_IN_PAGE)) {
             setSkip((prev) => prev + NUMBER_OF_ROWS_IN_PAGE)
         }
     }
     const renderTableRow = (row = {}) => {
-
+        const reformedRow = transformRow(row)
         // heading.apiKey = "prizeType" ? <div className="td_img">
         //     <img src={row[heading["apiKey"]]} alt="premium" width={138} className="w-100" />
         // </div> : 
-        row["walletAddress"] = shortenString(row["walletAddress"])
         return (
             <tr>
                 {WINNER_HEADINGS?.map((heading) => {
-                    return <td data-label={heading.label}>{row[heading.apiKey]}</td>
+                    return <td data-label={heading.label}>{reformedRow[heading.apiKey]}</td>
                 })}
             </tr>
         )

@@ -1,4 +1,4 @@
-import { CREATE_AIRDROP_REQUEST, GET_CONTENT_REQUEST, GET_WINNERS_LIST, SET_CONTENT_REQUEST } from "../constants";
+import { CREATE_AIRDROP_REQUEST, GET_BLOCKCHAIN_DATA, GET_CONTENT_REQUEST, GET_WINNERS_LIST, SET_CONTENT_REQUEST } from "../constants";
 
 export const getContent = (payload, callback)=>({
     type: GET_CONTENT_REQUEST,
@@ -13,7 +13,6 @@ export const setContent = (data, callback) => ({
 })
 
 export const getWinners = (payload, callback) =>{
-    console.log(payload,"payload<><><>>< in action ")
     return {
     type: GET_WINNERS_LIST,
     payload,
@@ -26,4 +25,10 @@ export const createAirDrop = (payload, callback) => (
         payload,
         callback,
     }
+)
+
+export const getBlockChainData = (callback) =>({
+    type: GET_BLOCKCHAIN_DATA,
+    callback,
+}
 )

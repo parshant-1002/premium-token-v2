@@ -1,130 +1,154 @@
 @import "../../assets/scss/base";
 
 $digitHeight : 108px;
+$Height40 : 40px;
 $speed : .5s;
 $baseColor :rgba(3, 11, 11, 0.6);
-$textColor : white;
-
 
 .numCounter {
+    overflow: $hidden; 
+    text-align: $center;    
+    white-space: normal; 
     display: $inline-block;
-    height: calc(($digitHeight)/2 - 14px);
-    text-shadow: 0 0 2px $white-color;
-    line-height: $digitHeight;
     font-weight: $font-bold;
-    white-space: normal;
-    @include font-size(1.5);
+    text-shadow: 0 0 2px $white-color; 
+    // height: calc(($digitHeight)/2 - 14px);
+    @media (min-width:820.99px) {
+        font-size:calc($digitHeight/1.5);
+        line-height: $digitHeight;
+        // height: $digitHeight;
+    }
+    @media (max-width:820px) {        
+        font-size:calc($Height40/1.5);
+        line-height: $Height40;
+    }
     @media (min-width:992px) {
         font-size:calc($digitHeight/1.5);
-        height: $digitHeight;
-        @include font-size(4);
+        line-height: $digitHeight;
+        // @include font-size(4);
+        // height: $digitHeight;
     }
     .digit_card {
         display: $inline-block;
         vertical-align: top;
-        height: 100%;
+        margin-bottom: 8px;
+        @media (min-width:820.99px) {            
+            height: $digitHeight;
+            @include border-radius(10px);
+            margin-right: 8px;
+            padding: 5px 15px;
+            min-width: 96px;
+        }
+        @media (max-width:820px) {
+            height: calc($Height40);
+            padding: 5px;
+            min-width: 36px;
+            max-width: 36px;
+        }   
         span {
             display: $inline-block;
-            width: calc($digitHeight/2 - 14px);
+            // width: calc($digitHeight/2 - 14px);
             height: 100%;
             margin: 0 .1em;
             border-radius: 8px;
             text-align: $center;
             overflow: $hidden;
-            text-shadow: 2px 1px 3px rgba(black, .2);
             font-weight: $font-bold;
             @include font-size(1.5);
-            top: -6px;
+            text-shadow: 2px 1px 3px rgba($black-color, .2);
             position: $relative;
-            @media (min-width:992px) {
-                @include font-size(4);
+            top: -6px;
+            @media (min-width:820.99px) { 
                 width: calc($digitHeight/2.15);
+                @for $i from 1 through 9 {
+                    &[data-value="#{$i}"]::before {
+                        margin-top: -$digitHeight * $i;
+                    }
+                }
+            }
+            @media (max-width:820px) { 
+                width: calc($Height40/2); 
+                @for $i from 1 through 9 {
+                    &[data-value="#{$i}"]::before {
+                        margin-top: -$Height40 * $i;
+                    }
+                }
             }
             &::before {
                 content: ' 0 1 2 3 4 5 6 7 8 9 ';
-                display: block;
-                word-break: break-all;
+                display: block; 
                 word-break: break-word;
                 transition: $speed cubic-bezier(.75, .15, .6, 1.15),
                 text-shadow 150ms;
-                font-weight: $font-bold;
-                @include font-size(1.5); 
-                @media (min-width:992px) {
+                font-weight: $font-bold;                
+                @media (min-width:820.99px) {
                     @include font-size(4);
+                }
+                @media (max-width:820px) {  
+                    @include font-size(1); 
                 }
             }
             &.blur {
-                opacity: .8;
-                text-shadow: 2px 1px 3px rgba(black, .2),
-                    0 .1em 2px rgba($textColor, .6),
-                    0 .3em 3px rgba($textColor, .3),
-                    0 -.1em 2px rgba($textColor, .6),
-                    0 -.3em 3px rgba($textColor, .3);
-            }
-            @for $i from 1 through 9 {
-                &[data-value="#{$i}"]::before {
-                    margin-top: -$digitHeight * $i;
-                }
+                @include opacity (.8);
+                text-shadow: 2px 1px 3px rgba($black-color, .2),
+                    0 .1em 2px rgba($white-color, .6),
+                    0 .3em 3px rgba($white-color, .3),
+                    0 -.1em 2px rgba($white-color, .6),
+                    0 -.3em 3px rgba($white-color, .3);
             }
         }
-
         // format number (US-format)
         &.add_separator {
+            @media (min-width:820.99px) {
+                margin-right:30px;
+            }
+            @media (max-width:820px) {
+                margin-right:14px;            
+            }
             &::before {
                 content: ",";
                 display: inline;
                 font-size: 1.2em;
                 color: #89B9B1;
-            }
+                position: $absolute;
+                top: -2px;
+                @media (min-width:820.99px) {
+                    right: calc(0px - 19px/2 - 8px - 8px);
+                }    
+                @media (max-width:820.99px) {
+                    right: -12px;
+                }
+            } 
         }
     }
-
 }
 
-// Counter
-
-.numCounter {
-    overflow: $hidden; 
-    text-align: $center;    
-}
 .digit_card{
     @include border-radius (10px);
     @include flexbox;
-    @include flex-direction (column);
-    padding: 5px 15px;
-    min-width: 36px;
+    @include flex-direction (column);  
     margin-right: 3px;
     position: $relative;
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, rgba(255, 255, 255, 0.10) 100%), rgba(3, 11, 11, 0.60);
-    border: 1px solid rgba($white-color, .1); 
-    @media (max-width:820px) {
-        min-width: 36px;
-    }   
-    @media (min-width:820.99px) {
-        @include border-radius(10px);
-        margin-right: 8px;
-        padding: 5px 15px;
-        min-width: 96px;
-    }
+    border: 1px solid rgba($white-color, .1);  
     &.add_separator {
-        margin-right:14px ;
-        @media (min-width:820.99px) {
-            margin-right:30px;
-        }
-        &::before {
-            right: calc(0px - 19px/2 - 8px - 8px);
-            position: $absolute;
-            @media (min-width:820.99px) {
-                right: calc(0px - 19px/2 - 8px - 8px);
-            }          
-        }
+        
     }
 }
 
 .market_counter {
     margin:1rem 0;
     .currency_sign {
-        @include flexCenter;
+        margin-bottom: 8px;
+        display: $inline-flex;
+        @include justify-content ($center);
+        @include align-items ($center);
+        @media (min-width:820.99px){
+            height: $digitHeight;
+        }
+        @media (max-width:820px){
+            height: $Height40;
+        }
         svg {
             max-width: 14px;
             max-height: 28px;

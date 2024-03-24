@@ -252,7 +252,7 @@ a.btn {
     &-primary {
         border:0; 
         padding: 1px;
-        background: linear-gradient(91.03deg, rgba($white-color, 0.22) 1.7248211428523064%, rgba(255, 255, 255, .3) 51.5625%, rgba(255, 255, 255, .22) 100%);
+        background: linear-gradient(91.03deg, rgba($white-color, 0.11) 1.7248211428523064%, rgba(255, 255, 255, .4) 51.5625%, rgba(255, 255, 255, .15) 100%);
         @include border-radius (10px);
         min-width: 170px;
         .transform-none {
@@ -267,9 +267,12 @@ a.btn {
         }
         .image_renderer {
             margin-right: 8px;
+            img {
+                max-width: 24px;
+            }
         }
         &:hover {
-            border-color: $transparent;
+            background-color: $transparent;
         }
         &[disabled] {
             background-color: $grey-color-800;
@@ -466,6 +469,7 @@ input[type="search"]::-webkit-search-results-decoration {
 
 .btn_icon {
     padding: 1px;
+    border: 0;
     background: linear-gradient(91.03deg, rgb(23 56 51) 1.7248211429%, rgb(255 255 255 / 25%) 51.5625%, rgb(23 56 51) 100%);
     @include border-radius (10px);
     span {

@@ -2,8 +2,6 @@ import { Each } from "../../../../shared/components/Each";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import { options, series } from "../../helpers/constants";
 import { DoughnutChart } from "../DoughnutChart";
-import Airdrop from "./Airdrop";
-import Info from "./Info";
 import "./Tokeninformation.scss";
 
 const Tokeninformation = ({content = {}}) => {

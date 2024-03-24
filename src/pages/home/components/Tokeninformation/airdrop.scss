@@ -76,6 +76,9 @@
 
 .form-field {
     margin-bottom: 8px;
+    label{
+        display: $none;
+    }
     &:last-child {
         margin-bottom: 0;
     }

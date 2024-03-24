@@ -3,6 +3,7 @@ import { CustomSlick } from "../../../../shared/components/CustomSlick";
 import { Each } from "../../../../shared/components/Each";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import { addBaseUrlToUrls } from "../../../../shared/utilities";
+import ConnectButton from "../ConnectButton/ConnectButton";
 import { InformationCard } from "../InformationCard";
 import "./didyouwin.scss";
 
@@ -41,7 +42,7 @@ const DidYouWin = ({content = {}}) => {
 							<div className="col-lg-3">
 								<div className="card-box-green position-relative">
 									<div className="card-counter">
-										<span className="card-counter-no">{index} </span>
+										<span className="card-counter-no">{index+1} </span>
 									</div>
 									<div className="card-img">
 										<img
@@ -54,12 +55,10 @@ const DidYouWin = ({content = {}}) => {
 										/>
 									</div>
 									<h3 className="h6">{item.title}</h3>
-									<p>{item.data}</p>
-									<div className="w-100 text-center btn_contain">
-										<button type="button" className="btn btn-md btn-secondary">
-											<span className="transform-none">Connect Wallet</span>
-										</button>
-									</div>
+									<p><SafeHTML html={item.description} /></p>
+									{index === 0 && <div className="w-100 text-center btn_contain">
+										<ConnectButton/>
+									</div>}
 								</div>
 							</div>
 						)}

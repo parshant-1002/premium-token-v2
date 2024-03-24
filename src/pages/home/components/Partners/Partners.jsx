@@ -57,11 +57,12 @@ const Partners = ({content = {}}) => {
       <div className="container">
 
         <div className="heading_title text-center">
-            <h2 className="h2">  <SafeHTML html={title} /></h2>
+            <h2 className="h2"><SafeHTML html={title} /></h2>
           <p>Crypto ipsum bitcoin ethereum dogecoin litecoin. Klaytn golem terraUSD kava amp maker velas. Velas serum harmony XRP algorand aave klaytn.</p>
         </div>
+        
         <div className="our_team-slider">
-          <CustomSlick slidesToShow={5.2} responsive={responsiveConfig}>
+          <CustomSlick slidesToShow={1} responsive={responsiveConfig}>
             {partnersData?.map((item) =>
               renderPartner(item)
             )}

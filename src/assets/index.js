@@ -22,7 +22,6 @@ import Twitter from "./icons/Twitter.svg";
 import Discord from "./icons/Discord.svg";
 import Telegram from "./icons/Telegram.svg";
 import Airdrop from "./icons/Airdrop.svg";
-import premiumtoken from "./img/premium-token.png"
 import WinBg from "./img/win_bg.png";
 import FooterLeftBg from "./img/footer-left-bg.png";
 import FooterRightBg from "./img/footer-right-bg.png";
@@ -32,8 +31,7 @@ import ConnectionCreatorMobileBg from "./img/connection_creator_mobilebg.png";
 import NextArrow from "./icons/next_arrow.svg";
 import PrevArrow from "./icons/prev_arrow.svg";
 
-import ToogleMenuBg from "./img/ToogleBg.png";
-import BrandFrame from "./img/brandframe.png";
+import BrandFrame from "./img/brandLogo.png";
 import CloseMenu from "./img/closeMenu.svg";
 import DemoVideo from "./videos/Video.mp4"
 
@@ -52,6 +50,9 @@ import WinnerRulesSection1 from "./icons/Winner_Rules1.svg"
 import WinnerRulesSection2 from "./icons/Winner_Rules2.svg"
 import WinnerRulesSection3 from "./icons/Winner_Rules3.svg"
 import WinnerRulesSection4 from "./icons/Winner_Rules4.svg"
+
+import RoadMapBG from "./img/roadMap-bg.png"
+import RoadMapMobileBG from "./img/roadMap_Mobilebg.png"
 
 export const ICONS = {
     VideoBanner: VideoBanner,
@@ -73,15 +74,13 @@ export const ICONS = {
     AirDropBg:AirDropBg,
     PartnersSliderBg:PartnersSliderBg,
     SpiralShape:SpiralShape,
-    premiumtoken,
     FooterRighttBg:FooterRightBg,
     FooterLeftBg:FooterLeftBg,
     XIcon:XIcon,
     ConnectionCreatorMobileBg:ConnectionCreatorMobileBg,
     WinBg: WinBg,
     NextArrow,
-    PrevArrow,
-    ToogleMenuBg,
+    PrevArrow, 
     BrandFrame,
     CloseMenu,
    // header
@@ -107,6 +106,8 @@ export const ICONS = {
     WinnerRulesSection3,
     WinnerRulesSection4,
 
+    RoadMapBG,
+    RoadMapMobileBG,
 }
 
 export const VIDEOS = {

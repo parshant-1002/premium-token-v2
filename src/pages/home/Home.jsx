@@ -4,7 +4,6 @@ import { InformationSection } from "./components/InformationSection";
 import { DataAggregator } from "./components/DataAggregator";
 import { WinnerSection } from "./components/WinnerSection";
 import { RoadMap } from "./components/RoadMap";
-// styles
 import { ConnectionCreator } from "./components/ConnectionCreator";
 import { ConnectionMaker } from "./components/ConnectionMaker";
 import { Featured } from "./components/Featured";
@@ -25,13 +24,12 @@ import { STATUS } from "../../shared/constants";
 import { DEFAULT_CONTENT, SectionTypes } from "./helpers/contentManagement";
 import { merge } from "lodash";
 const Home = () => {
-  const[content, setContent] = useState({})
+  const[content, setContent] = useState(DEFAULT_CONTENT)
   const dispatch = useDispatch()
   const socket = useSocket();
 
   useEffect(()=>{ 
     dispatch(getContent({},(data, status)=>{
-      
       if(status === STATUS.SUCCESS){
         const mergedContent = merge({}, DEFAULT_CONTENT, data);
         setContent(mergedContent)
@@ -48,7 +46,7 @@ const Home = () => {
       <Header content={getContentData(SectionTypes.HEADERS)} partnersContent={getContentData(SectionTypes.PARTNERS)}/>
       <VideoSection content={getContentData(SectionTypes.VIDEO_SECTION)} />
       <div className="mobile_bg">
-        <InformationSection content={getContentData(SectionTypes.PRIZE_SECTION)} />
+        <InformationSection content={getContentData(SectionTypes.PRIZE_SECTION)} buyTokenButton={getContentData(SectionTypes.HEADERS)?.buyTokenButton}/>
         <WinnerSection content={{ ...getContentData(SectionTypes.PRIZE_SECTION), ...getContentData(SectionTypes.WINNER_LIST_SECTION) }} socket={socket} />
       </div>
       <DidYouWin content={getContentData(SectionTypes.WINNER_RULES_SECTION)} />
@@ -63,7 +61,7 @@ const Home = () => {
       <Airdrop content={getContentData(SectionTypes.JOIN_AIRDROP)} />
       <Partners content={getContentData(SectionTypes.PARTNERS)} />
       < SocialMedia content={getContentData(SectionTypes.FOOTERS)} />
-      <Footer content={getContentData(SectionTypes.FOOTERS)} />
+      <Footer content={{...getContentData(SectionTypes.FOOTERS), ...getContentData(SectionTypes.HEADERS)}} />
       </>
   );
 };

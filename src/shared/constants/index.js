@@ -4,6 +4,7 @@ const VERSION = import.meta.env.VITE_API_VERSION || 'v1';
 export const SOCKET_URL = import.meta.env.VITE_SOCKET_URL;
 export const API = {
     BASE_URL: import.meta.env.VITE_API_BASE_URL,
+    ASSETS_BASE_URL: import.meta.env.VITE_ASSETS_BASE_URL,
     GET_DATA: '/ttt',
     URL: "/v1",
     LOGIN: "/admin/login",
@@ -16,6 +17,7 @@ export const API_URLS = {
     GET_CONTENT: VERSION + "/content",
     GET_WINNER_LIST: VERSION + "/winners",
     CREATE_AIRDROP_REQUEST: VERSION + "/createAirdrop",
+    GET_BLOCKCHAIN_DATA:  "/getBlockChainData",
 }
 
 export const API_METHODS = {
@@ -62,6 +64,8 @@ export const VALIDATION_REGEX = {
     VALID_LINK: /^https?:\/\/(?:www\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$/,
     USERNAME: /^[a-z0-9]+$/,
 };
+
+
 
 /* Constants for RPC Connection the Solana Blockchain */
 export const commitmentLevel = "processed";

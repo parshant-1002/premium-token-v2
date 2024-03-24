@@ -1,50 +1,35 @@
-import { Link } from "react-router-dom";
 import { ICONS } from "../../../../assets";
 import "./SocialMedia.scss";
+import SafeHTML from "../../../../shared/components/SanitizeHtml";
+import { RenderIconWithHover } from "../../../../shared/components/RenderIconWithHover";
+import { addBaseUrlToUrls, redirectToUrlInNewTab } from "../../../../shared/utilities";
+import { SOCIAL_MEDIA_ICONS_CONFIG } from "./helpers/contants";
 
-const SocialMedia = () => {
+const SocialMedia = ({content = {}}) => {
+	const { title, description, twitter, telegram, premiumTokenTitle, airdrop, discord, email } = content;
+
+	//hooks
+	console.log(content,"socialmediacontent")
 	return (
 		<section className="footer-row position-relative">
 			<div className="container">
 				<div className="footer_column_box mx-auto">
 					<div className="footer-together">
 						<div className="comon-heade-title">
-							<h2 className="h2 common_title  d-inline-block">Lets grow together!</h2>
-							<p>Follow PremiumToken on as many social media networks as possible and spread the word to your friends, family and followers, so will our community and the value of PremiumToken grow faster and faster!</p>
+							<h2 className="h2 common_title  d-inline-block"><SafeHTML html={title}/></h2>
+							<p><SafeHTML html={description} /></p>
 						</div>
-						<div className="w-100 footer-button d-flex justify-content-between align-items-center gap-24">
-							<button type="button" className="btn btn-md btn-primary w-100">
-								<span className="transform-none">
-									<div className="image_renderer">
-										<img src={ICONS.XIcon} />
-									</div>
-									<span className="render_html_safely">Join X</span>
-								</span>
-							</button>
-							<button type="button" className="btn btn-md btn-primary w-100">
-								<span className="transform-none">
-									<div className="image_renderer">
-										<img src={ICONS.XIcon} />
-									</div>
-									<span className="render_html_safely">Join X</span>
-								</span>
-							</button>
-							<button type="button" className="btn btn-md btn-primary w-100">
-								<span className="transform-none">
-									<div className="image_renderer">
-										<img src={ICONS.XIcon} />
-									</div>
-									<span className="render_html_safely">Join X</span>
-								</span>
-							</button>
-							<button type="button" className="btn btn-md btn-primary w-100">
-								<span className="transform-none">
-									<div className="image_renderer">
-										<img src={ICONS.XIcon} />
-									</div>
-									<span className="render_html_safely">Join X</span>
-								</span>
-							</button>
+						<div className="w-100 footer-button d-flex justify-content-center align-items-center">
+							{Object.entries(SOCIAL_MEDIA_ICONS_CONFIG(content)).map(([key, item], index)=>{
+								return <button type="button" key={key} className="btn btn-md btn-primary w-100" onClick={() => redirectToUrlInNewTab(item?.url)}>
+									<span className="transform-none">
+										<div className="image_renderer">
+											<RenderIconWithHover iconUrl={addBaseUrlToUrls(item?.imageUrl)} hoverIconUrl={item?.hovers}/>
+										</div>
+										<span className="render_html_safely"><SafeHTML html={item?.title} /></span>
+									</span>
+								</button>
+							})}
 						</div>
 					</div>
 				</div>

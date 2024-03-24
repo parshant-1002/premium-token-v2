@@ -3,8 +3,13 @@
 
 $MobileBg: url(assets/img/mobile_group_bg.png);
 .mobile_bg {
-    @media (max-width:991px){
+    @media (min-width:767.99px) and (max-width:1279px){
         background: $MobileBg $no-repeat;
-        background-image: 100%;
+        backdrop-filter: blur(100px);
+        background-size: 60% 100%;
+    }
+    @media (max-width:767px){
+        background: $MobileBg $no-repeat;
+        background-size: 100%;
     }
 }
