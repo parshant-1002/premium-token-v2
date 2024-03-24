@@ -208,13 +208,15 @@ a.btn {
     &-lg {
         min-width: 180px;
         padding: 0.5rem 1.5rem;
-        font-weight: $font-bold;
-        min-height: 48px;
-        @include font-size(1.125);
+        font-weight: $font-bold;        
+        font-size: 18px!important;
         @media (max-width:1200px) {
             @include font-size(1.1);
             min-width: 140px;
             min-height: 42px;
+        }
+        .transform-none {
+            min-height: 52px!important;
         }
     }
     &-md {

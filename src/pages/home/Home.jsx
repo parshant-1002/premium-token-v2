@@ -53,7 +53,7 @@ const Home = () => {
       <DataAggregator content={getContentData(SectionTypes.CONTRACT_DETAILS)} />
       <RoadMap content={getContentData(SectionTypes.ROADMAP_SECTION)} />
       <PremiumToken content={getContentData(SectionTypes.PREMIUM_TOKEN_WALLET)} />
-      <Featured content={getContentData(SectionTypes.FEATURES)} />
+      <Featured content={getContentData(SectionTypes.FEATURE_SECTION)} />
       <ConnectionCreator content={getContentData(SectionTypes.TOKEN_INFO)} />
       <ConnectionMaker content={getContentData(SectionTypes.EXTERNAL_AUDIT)} />
       <MarketPlace content={getContentData(SectionTypes.PREMIUM_MARKET_PLACE)} />
@@ -61,7 +61,7 @@ const Home = () => {
       <Airdrop content={getContentData(SectionTypes.JOIN_AIRDROP)} />
       <Partners content={getContentData(SectionTypes.PARTNERS)} />
       < SocialMedia content={getContentData(SectionTypes.FOOTERS)} />
-      <Footer content={{...getContentData(SectionTypes.FOOTERS), ...getContentData(SectionTypes.HEADERS)}} />
+      <Footer content={{ ...getContentData(SectionTypes.FOOTERS), ...getContentData(SectionTypes.HEADERS) }} partnersContent={getContentData(SectionTypes.PARTNERS)} />
       </>
   );
 };

@@ -40,4 +40,9 @@ footer {
       color: $white-color;
     }
   }
+  img {
+    width: 15px;
+    max-height: 10px;
+    object-fit: $contain;
+  }
 }

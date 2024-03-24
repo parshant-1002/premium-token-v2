@@ -48,7 +48,7 @@ const WinnerSection = ({content = {}, socket}) => {
 
         <div className="subtitle">
           <span className="process">
-            <SafeHTML html={replaceTagWithValue(marketCap?.description, "$X", blockChainData?.nextWinnerMarketCap)}/>
+            <SafeHTML html={replaceTagWithValue(marketCap?.description, "$X", blockChainData?.nextWinnerMarketCap+"$")}/>
           </span>
         </div>
       </div>  

@@ -62,26 +62,19 @@ const RoadMap = ({content = {}}) => {
       <div className="roadmap_wrap">
         <CustomSlick slidesToShow={6} responsive={responsiveConfig}>
           {roadMap?.map((item, index)=>{
-            return <div className={`timeline-item ${item?.level <= 2 ? "active" : ""}`}>
-              <div className="timeline_block text-start text-md-center">
-                <SafeHTML html={item?.description}/>
-              </div>
-              <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none">
-                <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
-              </svg>
+            console.log(item,"item<><><><><><><")
+            return <div key = {item?._id} className={`timeline-item ${item?.level <= 2 ? "active" : ""}`}>
+                <div className="timeline_block text-start text-md-center">
+                  <h6 className="h6"><SafeHTML html={item?.title}/></h6>
+                  <span><SafeHTML html={item?.subTitle}/></span>
+                <p><SafeHTML html={item?.description} /></p>
+                </div>
+                <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none">
+                  <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
+                </svg>
+
             </div>
           })}
-          {/* <div className="timeline-item active">
-            <div className="timeline_block text-start text-md-center">
-              <h6 className="h6">Reach 1000 holders</h6>
-              <span>Completed after: <span className="text-success">3 days</span></span>
-              <p>We aim and hope we will reach this goal rather quickly.</p>
-            </div>
-            <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none">
-              <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
-            </svg>
-        </div>*/}
-
         </CustomSlick>
       </div>
 

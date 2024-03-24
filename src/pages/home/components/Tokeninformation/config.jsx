@@ -63,12 +63,12 @@ export const options = {
 
 export const AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA = (data = {}) => {
     console.log(data,"dataairdro")
-    const{discord, facebook, instagram, premiumToken, telegram, titktok, title, twitter} = data
+    const{discord, facebook, instagram, premiumToken, telegram, tiktok, title, twitter} = data
 
     return {
     walletAddress: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(premiumToken?.iconUrl)} />,
+        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(premiumToken?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(premiumToken?.hovers)} />,
         className: 'col-md-4',
         placeholder: premiumToken?.placeholder,
         schema: {
@@ -83,37 +83,37 @@ export const AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA = (data = {}) => {
     },
     twitterProfileURL: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(twitter?.iconUrl)} />,
+        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(twitter?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(twitter?.hovers)} />,
         className: 'col-md-4',
         placeholder: twitter?.placeholder,
     },
     telegramUsername: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(telegram?.iconUrl)}  />,
+        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(telegram?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(telegram?.hovers)} />,
         className: 'col-md-4',
         placeholder: telegram?.placeholder,
     },
     instagramProfileURL: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(instagram?.iconUrl)}  />,
+        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(instagram?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(instagram?.hovers)} />,
         className: 'col-md-4',
         placeholder: instagram?.placeholder,
     },
     facebookProfileURL: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(facebook?.iconUrl)}  />,
+        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(facebook?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(facebook?.hovers)} />,
         className: 'col-md-4',
         placeholder: facebook?.placeholder,
     },
     tiktokProfileURL: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(titktok?.iconUrl)}  />,
+        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(tiktok?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(tiktok?.hovers)} />,
         className: 'col-md-4',
-        placeholder: titktok?.placeholder,
+        placeholder: tiktok?.placeholder,
     },
     discordUsername: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(discord?.iconUrl)}  />,
+        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(discord?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(discord?.hovers)} />,
         className: 'col-md-4',
         placeholder: discord?.placeholder,
     },

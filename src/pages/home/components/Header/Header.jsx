@@ -48,7 +48,7 @@ const Header = ({ content = {}, partnersContent }) => {
 			<nav className={`navbar navbar-expand-xl bg-transparent py-0 ${isOpen ? 'menu-open' : ''}`}>
 				<div className="container">
 					<Link className="navbar-brand" href={"/"}>
-						<RenderIconWithHover iconUrl={addBaseUrlToUrls(premiumTokenTitle)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Logo} />
+						<RenderIconWithHover iconUrl={addBaseUrlToUrls(premiumTokenTitle)} hoverIconUrl={addBaseUrlToUrls(premiumTokenTitle)} defaultIcon={ICONS.Logo} />
 					</Link>
 
 					<button className="navbar-toggler" onClick={toggleMenu}>
@@ -64,21 +64,21 @@ const Header = ({ content = {}, partnersContent }) => {
 						<div className="main-navigation d-flex justify-content-center justify-content-md-between flex-column flex-md-row align-items-center gap-12 ms-auto">
 							<div className="social-icon d-flex justify-content-between align-items-center gap-12 ms-md-auto">
 								<button className="btn_icon btn44 dark-green-gradient" rel="noreferrer" onClick={()=> redirectToUrlInNewTab(twitter?.url)}>
-									<span><RenderIconWithHover iconUrl={addBaseUrlToUrls(twitter?.image)} defaultIcon={ICONS.Twitter} /></span>
+									<span><RenderIconWithHover iconUrl={addBaseUrlToUrls(twitter?.image)} hoverIconUrl={addBaseUrlToUrls(twitter?.hovers)} defaultIcon={ICONS.Twitter} /></span>
 								</button>
 								<button className="btn_icon btn44 dark-green-gradient" rel="noreferrer" onClick={()=> redirectToUrlInNewTab(discord?.url)}>
-									<span><RenderIconWithHover iconUrl={addBaseUrlToUrls(discord?.image)}  defaultIcon={ICONS.Discord} /></span>
+									<span><RenderIconWithHover iconUrl={addBaseUrlToUrls(discord?.image)} hoverIconUrl={addBaseUrlToUrls(discord?.hovers)}  defaultIcon={ICONS.Discord} /></span>
 								</button>
 								<button className="btn_icon btn44 dark-green-gradient" rel="noreferrer" onClick={()=> redirectToUrlInNewTab(telegram?.url)}>
 									<span>
-										<RenderIconWithHover iconUrl={addBaseUrlToUrls(telegram?.image)} defaultIcon={ICONS.Telegram} />
+										<RenderIconWithHover iconUrl={addBaseUrlToUrls(telegram?.image)} hoverIconUrl={addBaseUrlToUrls(telegram?.hovers)} defaultIcon={ICONS.Telegram} />
 									</span>
 								</button>
 							</div>
 
 							<div className="w-100 d-flex justify-content-between flex-column-reverse flex-md-row align-items-center gap-12 header-button">
 								<button type="button" className="btn btn-md btn-primary" onClick={() => redirectToUrl(airdropButton?.url)}>
-									<span className="transform-none"><RenderIconWithHover iconUrl={addBaseUrlToUrls(airdropButton?.image)} defaultIcon={ICONS.Airdrop} /><SafeHTML html={airdropButton?.text} /></span>
+									<span className="transform-none"><RenderIconWithHover iconUrl={addBaseUrlToUrls(airdropButton?.image)}  defaultIcon={ICONS.Airdrop} /><SafeHTML html={airdropButton?.text} /></span>
 								</button>
 								<button type="button" className="btn btn-md btn-primary" onClick={() => redirectToUrl(viewChartButton?.url)}><span className="transform-none"><SafeHTML html={viewChartButton?.text} /></span></button>
 								<button type="button" className="btn btn-md btn-secondary" onClick={() => handleOpenWinnerModal()}><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
@@ -107,7 +107,7 @@ const Header = ({ content = {}, partnersContent }) => {
 							<span className="transform-none"><RenderIconWithHover iconUrl={addBaseUrlToUrls(airdropButton?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Airdrop} /><SafeHTML html={airdropButton?.text} /></span>
 						</button>
 						<button type="button" className="btn btn-md btn-primary w-100" onClick={() => redirectToUrl(viewChartButton?.url)}><span className="transform-none" ><SafeHTML html={viewChartButton?.text} /></span></button>
-						<button type="button" className="btn btn-md btn-secondary w-100" onClick={() => redirectToUrl(buyTokenButton?.url)}><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
+						<button type="button" className="btn btn-md btn-secondary w-100" onClick={() => handleOpenWinnerModal()}><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
 					</div>
 
 					<div className="brand_banner">
