@@ -42,6 +42,8 @@ export const FILTER_ORDER = {
   };
 export const INPUT_TYPES = {
     TEXT: 'text',
+    DATE: 'date',
+    PHONE: 'phone',
     TEXT_AREA: 'textarea',
     NUMBER: 'number',
     EMAIL: 'email',

@@ -11,6 +11,12 @@ export default function WinnerPopup({ show, onClose, partners }) {
   const [stepToShow, setStepToView] = useState({
     first: true,
   });
+  const [prizeSelected, setPrizeSelected] = useState({
+    first: false,
+    second: true
+  });
+  const [partnerSelected, setPartnerSelected] = useState({});
+
   const handleSubmitStep1 = (data) => {
     setFormData((prev) => ({ ...prev, ...data }));
     setStepToView({
@@ -39,6 +45,10 @@ export default function WinnerPopup({ show, onClose, partners }) {
           <Step1
             partners={partners}
             formData={formData}
+            prizeSelected={prizeSelected}
+            setPrizeSelected={setPrizeSelected}
+            partnerSelected={partnerSelected}
+            setPartnerSelected={setPartnerSelected}
             handleSubmitStep1={handleSubmitStep1}
           />
         );

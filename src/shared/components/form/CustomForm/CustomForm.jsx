@@ -11,6 +11,7 @@ function CustomForm({
     defaultValues = {},
     formData = {},
     handleStateDataChange = () => {},
+    watchKey='',
     secondaryBtnText = '',
     handleSecondaryButtonClick,
     secondaryButtonType = 'button',
@@ -27,6 +28,7 @@ function CustomForm({
         setValue,
         getValues,
         // formState,
+        control,
         formState: { errors }
     } = useForm({ defaultValues: { ...defaultValues } });
 
@@ -42,15 +44,17 @@ function CustomForm({
     }, [defaultValues]);
 
     useEffect(() => {
-        const subscription = watch((value, { name, type }) => {
-            handleStateDataChange(name, value[name], type);
-        });
-        return () => subscription.unsubscribe();
-    }, [watch]);
+        if(watchKey == name){
+            const subscription = watch((value, { name, type }) => {
+                handleStateDataChange(name, value[name], type);
+            });
+            return () => subscription.unsubscribe();
+        }
+    }, [watch, watchKey]);
 
     const handleRegister = (key) => {
         if (typeof formData[key].schema === 'function') {
-            return register(key, formData[key].schema(watch('password')));
+            return register(key, formData[key].schema(watch(key)));
         }
         return register(key, formData[key].schema);
     };
@@ -69,8 +73,10 @@ function CustomForm({
                         field={formData[key]}
                         handleRegister={handleRegister}
                         handleInputChange={handleInputChange}
+                        value={getValues()[key]}
                         getValues={getValues}
                         errors={errors}
+                        control={control}
                     />
                 );
             })}

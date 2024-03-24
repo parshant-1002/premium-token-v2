@@ -3,8 +3,10 @@ import TextField, { ErrorComponent } from "../TextInput/TextInput";
 import CustomSelect from "../Select";
 import { INPUT_TYPES } from "../../../constants";
 import RichText from "../RIchText/RitchText";
+import Datepicker from "../Datepicker";
+import PhoneInput from "../PhoneInput";
 
-export const RenderField = ({ field, id, handleRegister, handleInputChange, getValues, errors }) => {
+export const RenderField = ({ field, id, handleRegister, handleInputChange, getValues, errors, value, control }) => {
     const [inputType, setInputType] = useState(field.type);
     const handleEyeClick = () => {
         setInputType((prev) => prev === INPUT_TYPES.PASSWORD ? INPUT_TYPES.TEXT : INPUT_TYPES.PASSWORD);
@@ -26,10 +28,31 @@ export const RenderField = ({ field, id, handleRegister, handleInputChange, getV
                         icon = {field.icon || ""}
                     />
                 );
+            case INPUT_TYPES.DATE:
+                return (
+                    <Datepicker
+                        id={id}
+                        placeholder={field.placeholder}
+                        {...handleRegister(id)}
+                        onChange={(value) => handleInputChange(id, value)}
+                        control={control}
+                    />
+                );
+            case INPUT_TYPES.PHONE:
+                return (
+                    <PhoneInput
+                        id={id}
+                        placeholder={field.placeholder}
+                        {...handleRegister(id)}
+                        onChange={(value) => handleInputChange(id, value)}
+                        control={control}
+                    />
+                );
             case INPUT_TYPES.SELECT:
                 return (
                     <CustomSelect
                         id={id}
+                        value={value}
                         options={field.options}
                         {...handleRegister(id)}
                         onChange={(value) => handleInputChange(id, value)}
@@ -53,7 +76,7 @@ export const RenderField = ({ field, id, handleRegister, handleInputChange, getV
 
     return (
         <div className="form-field" key={id}>
-            <label htmlFor={id}>{field.label}</label>
+            {field.label && <label htmlFor={id}>{field.label}</label>}
             <div className="position-relative">
                 {renderInput()}
                 {field.type === 'password' && (

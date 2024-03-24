@@ -10,4 +10,5 @@ export const FORM_VALIDATION_MESSAGES = (...args) => ({
     VALID_LINK: 'Please enter valid link.',
     ANSWER_REQUIRED: 'Please add your answer to join this squad',
     LONDER_ANSWER_REQUIRED: 'Please provide a longer answer',
+    INVALID_SOLANA_ADDRESS: 'Please enter a valid Solana address',
   });

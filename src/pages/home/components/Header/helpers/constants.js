@@ -1,4 +1,5 @@
 import { INPUT_TYPES } from "../../../../../shared/constants";
+import { isValidSolanaAddress } from "../../../../../shared/constants/utils";
 import { FORM_VALIDATION_MESSAGES } from "../../../../../shared/constants/validations";
 
 export const WINNER_MODAL_FORM_SCHEMA = {
@@ -9,7 +10,7 @@ export const WINNER_MODAL_FORM_SCHEMA = {
             className: 'form-control col-md-6',
             placeholder: 'Whatsapp/Skype/Telegram',
             schema: {
-                required: FORM_VALIDATION_MESSAGES.REQUIRED,
+                required: FORM_VALIDATION_MESSAGES().REQUIRED,
             }
         },
         walletAddress: {
@@ -17,37 +18,44 @@ export const WINNER_MODAL_FORM_SCHEMA = {
             label: 'wallet address',
             className: 'form-control col-md-6',
             placeholder: 'wallet address',
-            schema: {
-                required: FORM_VALIDATION_MESSAGES.REQUIRED,
-            }
+            schema: (data) => ({
+                required: FORM_VALIDATION_MESSAGES().REQUIRED,
+                validate: () => {
+                    const valid = isValidSolanaAddress(data);
+                    if (!valid) {
+                        return FORM_VALIDATION_MESSAGES().INVALID_SOLANA_ADDRESS;
+                    }
+                    return true;
+                },
+            })
         }
     },
-    step2: {
+    step2: (countries = [], states = []) => ({
         name: {
             type: INPUT_TYPES.TEXT,
             label: 'Full name',
             className: 'form-control col-md-6',
             placeholder: 'Full name',
             schema: {
-                required: FORM_VALIDATION_MESSAGES.REQUIRED,
+                required: FORM_VALIDATION_MESSAGES().REQUIRED,
             }
         },
         dob: {
-            type: INPUT_TYPES.TEXT,
+            type: INPUT_TYPES.DATE,
             label: 'Date Of Birth',
             className: 'form-control col-md-6',
             placeholder: 'Date Of Birth',
             schema: {
-                required: FORM_VALIDATION_MESSAGES.REQUIRED,
+                required: FORM_VALIDATION_MESSAGES().REQUIRED,
             }
         },
         phoneNumber: {
-            type: INPUT_TYPES.TEXT,
+            type: INPUT_TYPES.PHONE,
             label: 'Phone Number',
             className: 'form-control col-md-6',
             placeholder: 'Phone Number',
             schema: {
-                required: FORM_VALIDATION_MESSAGES.REQUIRED,
+                required: FORM_VALIDATION_MESSAGES().REQUIRED,
             }
         },
         country: {
@@ -55,27 +63,19 @@ export const WINNER_MODAL_FORM_SCHEMA = {
             label: 'Country',
             className: 'col-md-6',
             placeholder: 'Select Country',
-            options: [
-                { value: 'India', label: 'India' },
-                { value: 'Pakistan', label: 'Pakistan' },
-                { value: 'Canada', label: 'Canada' }
-            ],
+            options: countries,
             schema: {
-                required: FORM_VALIDATION_MESSAGES.REQUIRED,
+                required: FORM_VALIDATION_MESSAGES().REQUIRED,
             }
         },
         city: {
             type: INPUT_TYPES.SELECT,
-            label: 'Country',
+            label: 'City',
             className: 'col-md-6',
-            placeholder: 'Select Country',
-            options: [
-                { value: 'India', label: 'India' },
-                { value: 'Pakistan', label: 'Pakistan' },
-                { value: 'Canada', label: 'Canada' }
-            ],
+            placeholder: 'Select City',
+            options: states,
             schema: {
-                required: FORM_VALIDATION_MESSAGES.REQUIRED,
+                required: FORM_VALIDATION_MESSAGES().REQUIRED,
             }
         },
         streetAddress: {
@@ -84,7 +84,7 @@ export const WINNER_MODAL_FORM_SCHEMA = {
             className: 'form-control col-md-6',
             placeholder: 'Street Address',
             schema: {
-                required: FORM_VALIDATION_MESSAGES.REQUIRED,
+                required: FORM_VALIDATION_MESSAGES().REQUIRED,
             }
         },
         zip: {
@@ -93,10 +93,10 @@ export const WINNER_MODAL_FORM_SCHEMA = {
             className: 'form-control col-md-6',
             placeholder: 'ZIP',
             schema: {
-                required: FORM_VALIDATION_MESSAGES.REQUIRED,
+                required: FORM_VALIDATION_MESSAGES().REQUIRED,
             }
         },
-    }
+    })
 };
 
 export const DEFAULT_CONTENT = {
