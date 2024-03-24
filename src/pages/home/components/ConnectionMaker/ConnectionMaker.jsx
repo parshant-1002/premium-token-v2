@@ -26,13 +26,13 @@ const ConnectionMaker = ({ content = {} }) => {
 									alt=""
 									src="/heroiconsoutlinelink.svg"
 								/>
-								<Link
+								<button
 									className=""
-									to={addBaseUrlToUrls(url)}
+									onClick={() => redirectToUrlInNewTab(url)}
 									target="_blank"
 								>
 									<SafeHTML html={url} />
-								</Link>
+								</button>
 							</button>
 							<button className="btn btn-md btn-secondary w-100">
 								<span className="transform-none">
