@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { ICONS } from '../../../assets';
 import './style.scss'; 
 
-const CustomSlick = ({ children, slidesToShow = 4, responsive = [], handleNextClick = ()=>{} }) => {
+const CustomSlick = ({ children, slidesToShow = 4, responsive = [], handleNextClick = ()=>{}, check = "" }) => {
     const ref = useRef()
     const settings = {
         dots: false,
@@ -22,7 +22,8 @@ const CustomSlick = ({ children, slidesToShow = 4, responsive = [], handleNextCl
             responsive: responsive
         })
     };
-
+    if(check)
+    console.log(settings,"settings<><><><>")
     return (
             <div className='custom-slider' style={{ zIndex: "99999" }}>
                 <Slider ref={ref} {...settings} >

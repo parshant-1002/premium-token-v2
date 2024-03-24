@@ -6,8 +6,9 @@ import { NUMBER_OF_ROWS_IN_PAGE, WINNER_HEADINGS } from './helpers/constants'
 import { CustomSlick } from '../../../../shared/components/CustomSlick'
 import { shortenString } from '../../../../shared/constants/utils'
 import { transformRow } from './helpers/utils'
+import { addBaseUrlToUrls } from '../../../../shared/utilities'
 
-const WinnerTable = ({ socket }) => {
+const WinnerTable = ({ socket, prize }) => {
     const [skip, setSkip] = useState(0)
     const [totalCount, setTotalCount] = useState(null)
     const [tableData, setTableData] = useState([])
@@ -56,13 +57,23 @@ const WinnerTable = ({ socket }) => {
     }
     const renderTableRow = (row = {}) => {
         const reformedRow = transformRow(row)
-        // heading.apiKey = "prizeType" ? <div className="td_img">
-        //     <img src={row[heading["apiKey"]]} alt="premium" width={138} className="w-100" />
-        // </div> : 
+        const getImageUrl = (prizeType)=>{
+            return addBaseUrlToUrls( prize?.find((item) => item.type == prizeType)?.imageUrl)
+        }
         return (
             <tr>
                 {WINNER_HEADINGS?.map((heading) => {
-                    return <td data-label={heading.label}>{reformedRow[heading.apiKey]}</td>
+                    console.log(heading,"heading<><><><")
+                    if(heading.apiKey === "prizetype"){
+                        return <td>
+                            <div className='td_img'>
+                                <img src={getImageUrl(reformedRow[heading.apiKey])} />
+                            </div>
+                        </td>
+                    }
+                    return (
+                        <td data-label={heading.label}>{reformedRow[heading.apiKey]}</td>
+                    )
                 })}
             </tr>
         )
@@ -91,7 +102,7 @@ const WinnerTable = ({ socket }) => {
           },
       ]
     return (
-        <CustomSlick slidesToShow={1} handleNextClick={handleNextClick} responsiveConfig = {responsiveConfig}>
+        <CustomSlick slidesToShow={1} handleNextClick={handleNextClick} responsive = {responsiveConfig}>
             {tableData?.map((pageData, index) => (
                 <table className="table table-borderless">
                     <thead>
