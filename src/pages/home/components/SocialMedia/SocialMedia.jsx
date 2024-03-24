@@ -24,7 +24,7 @@ const SocialMedia = ({content = {}}) => {
 								return <button type="button" key={key} className="btn btn-md btn-primary w-100" onClick={() => redirectToUrlInNewTab(item?.url)}>
 									<span className="transform-none">
 										<div className="image_renderer">
-											<RenderIconWithHover iconUrl={addBaseUrlToUrls(item?.imageUrl)} hoverIconUrl={item?.hovers}/>
+											<RenderIconWithHover iconUrl={addBaseUrlToUrls(item?.imageUrl)}/>
 										</div>
 										<span className="render_html_safely"><SafeHTML html={item?.title} /></span>
 									</span>

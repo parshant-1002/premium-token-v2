@@ -16,7 +16,8 @@ export const SectionTypes = {
     JOIN_AIRDROP: 'joinAirdrop',
     PARTNERS: 'partners',
     FOOTERS: 'footers',
-    FEATURES: 'features'
+    // FEATURES: 'features',
+    FEATURE_SECTION:"featureSection"
 };
 
 // Enum for headers

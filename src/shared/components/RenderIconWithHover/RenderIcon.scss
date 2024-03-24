@@ -1,7 +1,29 @@
-    .image_renderer .img-top {
-        display: none;
-    }
+.image_renderer {
+    position: relative;
+    display: inline-block;
+    /* or use 'block' depending on your layout */
+}
 
-    .image_renderer:hover .img-top {
-        display: inline;
-    }
+.image_renderer img {
+    display: block;
+    /* Prevents any unwanted space below the image */
+    width: 100%;
+    /* Adjust the width as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+}
+
+.img-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.3s ease;
+    /* Optional: for a fade-in effect on hover */
+    opacity: 0;
+    /* Hide the hover image initially */
+}
+
+.image_renderer:hover .img-top {
+    opacity: 1;
+    /* Show the hover image on hover */
+}

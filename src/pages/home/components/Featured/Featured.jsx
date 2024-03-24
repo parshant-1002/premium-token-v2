@@ -1,17 +1,18 @@
 import { ICONS } from "../../../../assets";
 import { Each } from "../../../../shared/components/Each";
 import { RenderIconWithHover } from "../../../../shared/components/RenderIconWithHover";
+import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import { addBaseUrlToUrls } from "../../../../shared/utilities";
 import "./Featured.scss";
 
 const Featured = ({content = {}}) => {
-	console.log(content,"featured")
+	const{title, features} = content;
 	return (
 		<section className="featured-on position-relative">
 			<div className="container">
-				<h2 className="h2 text-center">Featured on</h2>
+				<h2 className="h2 text-center"><SafeHTML html={title}/></h2>
 				<div className="featured-row">
-					<Each of={content} render={(item, index) => (
+					<Each of={features} render={(item, index) => (
 						<div className="fetured-image" key={index}>
 							<RenderIconWithHover iconUrl={addBaseUrlToUrls(item)}/>
 						</div>
