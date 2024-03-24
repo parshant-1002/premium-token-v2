@@ -1,8 +1,9 @@
+import { ICONS } from "../../../../assets";
 import { CustomSlick } from "../../../../shared/components/CustomSlick";
 import "./style.scss";
 
 const RoadMap = () => {
-  const responsiveConfig = [ 
+  const responsiveConfig = [
     {
       breakpoint: 120000000,
       settings: {
@@ -10,7 +11,7 @@ const RoadMap = () => {
         slidesToScroll: 1,
         infinite: false,
         arrows: false,
-				dots: false,
+        dots: false,
       }
     },
   ]
@@ -109,99 +110,106 @@ const RoadMap = () => {
       </div>
     </section> */}
 
-      <section className="roadMap_sec">
+      <section className="position-relative roadMap_sec">
+
         <div className="container">
-          <div className="roadmap_wrap">
-            <CustomSlick slidesToShow={6} responsive={responsiveConfig}>
-              <div className="timeline-item active">
-                <div className="timeline_block text-center">
-                  <h6 className="h6">Reach 1000 holders</h6>
-                  <span>Completed after: <span className="text-success">3 days</span></span>
-                  <p>We aim and hope we will reach this goal rather quickly.</p>
-                </div>
-                <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
-                </svg>
-              </div>
-             <div className="timeline-item">
-                <div className="pos_bottom timeline_block text-center">
-                  <h6 className="h6">Reach 1000 holders</h6>
-                  <span>Completed after: <span className="text-success">3 days</span></span>
-                  <p>We aim and hope we will reach this goal rather quickly.</p>
-                </div>
-                <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
-                </svg>
 
-              </div>
-             <div className="timeline-item">
-                <div className="timedivne_block text-center">
-                  <h6 className="h6">Reach 1000 holders</h6>
-                  <span>Completed after: <span className="text-success">3 days</span></span>
-                  <p>We aim and hope we will reach this goal rather quickly.</p>
-                </div>
-                <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
-                </svg>
-
-              </div>
-             <div className="timeline-item">
-                <div className="pos_bottom timeline_block text-center">
-                  <h6 className="h6">Reach 1000 holders</h6>
-                  <span>Completed after: <span className="text-success">3 days</span></span>
-                  <p>We aim and hope we will reach this goal rather quickly.</p>
-                </div>
-                <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
-                </svg>
-
-              </div>
-              <div className="timeline-item">
-                <div className="pos_bottom timeline_block text-center">
-                  <h6 className="h6">Reach 1000 holders</h6>
-                  <span>Completed after: <span className="text-success">3 days</span></span>
-                  <p>We aim and hope we will reach this goal rather quickly.</p>
-                </div>
-                <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
-                </svg>
-
-              </div>
-              <div className="timeline-item">
-                <div className="pos_bottom timeline_block text-center">
-                  <h6 className="h6">Reach 1000 holders</h6>
-                  <span>Completed after: <span className="text-success">3 days</span></span>
-                  <p>We aim and hope we will reach this goal rather quickly.</p>
-                </div>
-                <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
-                </svg>
-
-              </div>
-              <div className="timeline-item">
-                <div className="pos_bottom timeline_block text-center">
-                  <h6 className="h6">Reach 1000 holders</h6>
-                  <span>Completed after: <span className="text-success">3 days</span></span>
-                  <p>We aim and hope we will reach this goal rather quickly.</p>
-                </div>
-                <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
-                </svg>
-
-              </div>
-               <div className="timeline-item">
-                  <div className="pos_bottom timeline_block text-center">
-                    <h6 className="h6">Reach 1000 holders</h6>
-                    <span>Completed after: <span className="text-success">3 days</span></span>
-                    <p>We aim and hope we will reach this goal rather quickly.</p>
-                  </div>
-                  <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
-                  </svg>
-
-                </div>
-            </CustomSlick>
+          <div className="road_title text-left">
+            <h2 className="h2 mb-0">Roadmap of PremiumToken</h2>
           </div>
+
+        </div>
+
+        <div className="roadmap_wrap">
+          <svg className="line-before" width="221" height="31" viewBox="0 0 221 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
+          </svg>
+          <CustomSlick slidesToShow={6} responsive={responsiveConfig}>
+            <div className="timeline-item active">
+              <div className="timeline_block text-center">
+                <h6 className="h6">Reach 1000 holders</h6>
+                <span>Completed after: <span className="text-success">3 days</span></span>
+                <p>We aim and hope we will reach this goal rather quickly.</p>
+              </div>
+              <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
+              </svg>
+            </div>
+            <div className="timeline-item">
+              <div className="pos_bottom timeline_block text-center">
+                <h6 className="h6">Reach 1000 holders</h6>
+                <span>Completed after: <span className="text-success">3 days</span></span>
+                <p>We aim and hope we will reach this goal rather quickly.</p>
+              </div>
+              <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
+              </svg>
+            </div>
+            <div className="timeline-item">
+              <div className="timedivne_block text-center">
+                <h6 className="h6">Reach 1000 holders</h6>
+                <span>Completed after: <span className="text-success">3 days</span></span>
+                <p>We aim and hope we will reach this goal rather quickly.</p>
+              </div>
+              <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
+              </svg>
+            </div>
+            <div className="timeline-item">
+              <div className="pos_bottom timeline_block text-center">
+                <h6 className="h6">Reach 1000 holders</h6>
+                <span>Completed after: <span className="text-success">3 days</span></span>
+                <p>We aim and hope we will reach this goal rather quickly.</p>
+              </div>
+              <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
+              </svg>
+            </div>
+            <div className="timeline-item">
+              <div className="pos_bottom timeline_block text-center">
+                <h6 className="h6">Reach 1000 holders</h6>
+                <span>Completed after: <span className="text-success">3 days</span></span>
+                <p>We aim and hope we will reach this goal rather quickly.</p>
+              </div>
+              <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
+              </svg>
+            </div>
+            <div className="timeline-item">
+              <div className="pos_bottom timeline_block text-center">
+                <h6 className="h6">Reach 1000 holders</h6>
+                <span>Completed after: <span className="text-success">3 days</span></span>
+                <p>We aim and hope we will reach this goal rather quickly.</p>
+              </div>
+              <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
+              </svg>
+            </div>
+            <div className="timeline-item">
+              <div className="pos_bottom timeline_block text-center">
+                <h6 className="h6">Reach 1000 holders</h6>
+                <span>Completed after: <span className="text-success">3 days</span></span>
+                <p>We aim and hope we will reach this goal rather quickly.</p>
+              </div>
+              <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
+              </svg>
+            </div>
+            <div className="timeline-item">
+              <div className="pos_bottom timeline_block text-center">
+                <h6 className="h6">Reach 1000 holders</h6>
+                <span>Completed after: <span className="text-success">3 days</span></span>
+                <p>We aim and hope we will reach this goal rather quickly.</p>
+              </div>
+              <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
+              </svg>
+            </div>
+          </CustomSlick>
+        </div>
+
+        <div className="premium_token_bg d-none d-lg-block">
+          <img width={749} height={882} className="img-fluid" alt="background" src={ICONS.RoadMapBG} />
         </div>
       </section>
     </>

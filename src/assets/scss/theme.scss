@@ -267,6 +267,9 @@ a.btn {
         }
         .image_renderer {
             margin-right: 8px;
+            img {
+                max-width: 24px;
+            }
         }
         &:hover {
             background-color: $transparent;

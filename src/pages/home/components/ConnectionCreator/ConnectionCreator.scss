@@ -36,7 +36,7 @@
       @include border-radius (10px);
       background: $dark-green-color-400;
       @include flexCenter;
-      padding: 8px 32px;
+      padding: 8px 32px 8px 10px;
       margin:24px 0 32px;
       position: $relative;
       text-align: $center;
@@ -44,6 +44,8 @@
         @include position($absolute, $top: 50%, $right: 16px);
         @include transform (translateY(-50%));
         width: 22px;
+        height: 22px;
+        object-fit: $contain;
       }
       span {
         color: $text-color;

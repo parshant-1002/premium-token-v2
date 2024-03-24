@@ -19,21 +19,22 @@ const ConnectionMaker = ({ content = {} }) => {
 					<div className="col-lg-6">
 						<div className="maker-text-col text-center ms-lg-auto">
 							<h2 className="h2"><SafeHTML html={title} /></h2>
-							<p><SafeHTML html={description} /></p>
-							<button className="link-button">
-								<img
-									className=""
-									alt=""
-									src="/heroiconsoutlinelink.svg"
-								/>
+							<p><SafeHTML html={description} /></p> 
 								<Link
-									className=""
+									className="link-button"
 									to={addBaseUrlToUrls(url)}
 									target="_blank"
-								>
+							>
+								<img
+									className="me-2"
+									alt=""
+									src="/heroiconsoutlinelink.svg"
+									width={25}
+									height={25}
+								/>
 									<SafeHTML html={url} />
 								</Link>
-							</button>
+							 
 							<button className="btn btn-md btn-secondary w-100">
 								<span className="transform-none">
 									<img
