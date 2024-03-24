@@ -9,6 +9,9 @@
         width: 338px;
         @include align-items ($center);
     }
+    @media (max-width:991px){
+        margin: 0 $auto;
+    }
     @media (max-width:575px){
         height: 160px;
     }
@@ -35,6 +38,9 @@
 .market-col {
     display: flex!important;
     flex-direction: column!important;
+    @media (max-width:991px){
+        @include justify-content ($center);
+    }
     @media (max-width:575px){
         width: 294px; height: 247px;
         padding: 20px;
