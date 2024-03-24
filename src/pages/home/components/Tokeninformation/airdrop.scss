@@ -11,9 +11,9 @@
     }
     p {
         font-weight: $font-medium;
-        @include font-size (.938);
+        @include font-size (1.125);
         color: $text-color;
-        line-height: 1.5;
+        line-height: 1.4;
         margin: 0;
     }
 }
@@ -73,6 +73,14 @@
                     }
                 }
             }
+        }
+    }
+    .heading_title {
+        @media (min-width:1200px){
+            max-width: 681px;
+        }
+        p{
+            @include font-size (0.938);            
         }
     }
 }

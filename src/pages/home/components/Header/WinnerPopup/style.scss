@@ -56,6 +56,7 @@
         }
     }
     [class*=col-] {
+        margin-bottom: 7px;
         &:first-child {
             .partner_logo {
                 background-color: #222121;
@@ -80,10 +81,8 @@
             .partner_logo {
                 background-color: $white-color;
             }
-            .checkbox-label {
-                .partner_logo {
-                    border-color: $black-color;
-                }
+            .checkbox-label { 
+                border-color: $black-color;
             }
         }
         &:nth-child(6) {
