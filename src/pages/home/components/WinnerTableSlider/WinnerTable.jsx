@@ -63,9 +63,8 @@ const WinnerTable = ({ socket, prize }) => {
         return (
             <tr>
                 {WINNER_HEADINGS?.map((heading) => {
-                    console.log(heading,"heading<><><><")
                     if(heading.apiKey === "prizetype"){
-                        return <td>
+                        return <td data-label={heading.label} prizeType = {reformedRow[heading.apiKey]}>
                             <div className='td_img'>
                                 <img src={getImageUrl(reformedRow[heading.apiKey])} />
                             </div>
