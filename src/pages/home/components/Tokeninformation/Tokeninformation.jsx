@@ -1,4 +1,5 @@
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
+import { firstHalfColorOptions, secondHalfColorOptions } from "../../helpers/constants";
 import { DoughnutChart } from "../DoughnutChart";
 import { extractPercentages } from "./helpers/utils";
 import "./Tokeninformation.scss";
@@ -8,11 +9,11 @@ const Tokeninformation = ({content = {}}) => {
 	const firstHalfStats = {airdrop : airdrop, contest : contest, development:development, founders : founders}
 	const secondHalfStats = {winnerPrize, marketing, burning, exchangeAndTokenHolders}
 	const series = extractPercentages({...firstHalfStats, ...secondHalfStats})
-	const renderStats = (key,value = {}) => {
+	const renderStats = (key,value = {}, index, colorOptions) => {
 		const { title,subTitle, percentage, description} = value;
 		return <div className="token-column-iner">
 			<div className="token-column-button">
-				<button className="bg-green-600"><SafeHTML html={percentage}/>%</button>
+				<button className="bg-green-600" style={{ backgroundColor: colorOptions[index]}}><SafeHTML html={percentage}/>%</button>
 			</div>
 			<div className="token-column-text">
 				<h4 className="h5"><SafeHTML html={title} /></h4>
@@ -39,13 +40,13 @@ const Tokeninformation = ({content = {}}) => {
 				<div className="token-grid-main">
 					<div className="token-column-left">
 						{Object.entries(firstHalfStats)?.map(([key, value], index)=>{
-							return renderStats(key, value)
+							return renderStats(key, value, index, firstHalfColorOptions)
 						})}
 					</div>
 
 					<div className="token-column-right">
 						{Object.entries(secondHalfStats)?.map(([key, value], index) => {
-							return renderStats(key, value)
+							return renderStats(key, value, index, secondHalfColorOptions)
 						})}
 					</div>
 				</div>

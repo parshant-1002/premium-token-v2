@@ -1,5 +1,7 @@
+export const secondHalfColorOptions = ["#4C7570", "#256059", "#389989", "#71AFA5"]
+export const firstHalfColorOptions = ["#031815", "#0D2624", "#1F423D", "#3D615D"]
 export const options = (innerTitle) => ({
-    colors: ["#389989", "#175F53", "#083029", "#031815", "#031815", "#031815", "#175F53"],
+    colors: [...firstHalfColorOptions, ...secondHalfColorOptions],
     chart: {
         fontFamily: "Sora",
         foreColor: '#fff',
