@@ -65,6 +65,5 @@ export const options = (innerTitle) => ({
         show: false,
     },
 });
-export const series = [65, 10, 10, 5, 4.5, 4.5, 1];
 
 

@@ -62,53 +62,58 @@ export const options = {
 
 export const AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA = (data = {}) => {
     console.log(data,"dataairdro")
-    const walletIconUrl = addBaseUrlToUrls( data?.whitelistForAirDrop?.imageUrl)
-    const walletHoverIconUrl = data?.whitelistForAirDrop?.imageUrl
-    const title = data?.title
+    const{discord, facebook, instagram, premiumToken, telegram, titktok, title, twitter} = data
+
     return {
     walletAddress: {
         type: INPUT_TYPES.TEXT,
-            icon: <RenderIconWithHover iconUrl={walletIconUrl} hoverIconUrl={walletHoverIconUrl} />,
+        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(premiumToken?.iconUrl)} />,
         className: 'col-md-4',
-        placeholder: 'Enter your PremiumToken wallet address',
-        schema:{
-            validate: isValidSolanaAddress
+        placeholder: premiumToken?.placeholder,
+        schema: {
+            validate: () => {
+                const valid = isValidSolanaAddress(data);
+                if (!valid) {
+                    return FORM_VALIDATION_MESSAGES().INVALID_SOLANA_ADDRESS;
+                }
+                return true;
+            },
         }
     },
     twitterProfileURL: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover iconUrl={walletIconUrl} hoverIconUrl={walletHoverIconUrl} />,
+        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(twitter?.iconUrl)} />,
         className: 'col-md-4',
-        placeholder: 'Enter URL to your Twitter profile',
+        placeholder: twitter?.placeholder,
     },
     telegramUsername: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover iconUrl={walletIconUrl} hoverIconUrl={walletHoverIconUrl} />,
+        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(telegram?.iconUrl)}  />,
         className: 'col-md-4',
-        placeholder: 'Enter your Telegram username',
+        placeholder: telegram?.placeholder,
     },
     instagramProfileURL: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover iconUrl={walletIconUrl} hoverIconUrl={walletHoverIconUrl} />,
+        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(instagram?.iconUrl)}  />,
         className: 'col-md-4',
-        placeholder: 'Enter URL to your Instagram profile',
+        placeholder: instagram?.placeholder,
     },
     facebookProfileURL: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover iconUrl={walletIconUrl} hoverIconUrl={walletHoverIconUrl} />,
+        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(facebook?.iconUrl)}  />,
         className: 'col-md-4',
-        placeholder: 'Enter URL to your Facebook profile',
+        placeholder: facebook?.placeholder,
     },
     tiktokProfileURL: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover iconUrl={walletIconUrl} hoverIconUrl={walletHoverIconUrl} />,
+        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(titktok?.iconUrl)}  />,
         className: 'col-md-4',
-        placeholder: 'Enter URL to your TikTok profile',
+        placeholder: titktok?.placeholder,
     },
     discordUsername: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover iconUrl={walletIconUrl} hoverIconUrl={walletHoverIconUrl} />,
+        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(discord?.iconUrl)}  />,
         className: 'col-md-4',
-        placeholder: 'Enter your username on Discord',
+        placeholder: discord?.placeholder,
     },
 }};

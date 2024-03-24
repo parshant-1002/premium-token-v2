@@ -13,7 +13,7 @@ import { replaceTagWithValue } from "./helpers/utils";
 
 const WinnerSection = ({content = {}, socket}) => {
   // props destructuring
-  const { marketCap, latestWinnerDetails, connectWalletButtonText, prizeDescription, tokenHolderText }  = content;  
+  const { marketCap, latestWinnerDetails, connectWalletButtonText, prizeDescription, tokenHolderText, prize }  = content;  
 
   //hooks
   const[blockChainData, setBlockChainData] = useState({})
@@ -67,7 +67,6 @@ const WinnerSection = ({content = {}, socket}) => {
                 <div className="output">
                   <span className="text-white">{prizeDescription}</span>
                 </div>
-                {/* <button type="button" className="btn btn-md btn-secondary"><span className="transform-none">Connect Wallet</span></button> */}
                   <ConnectButton connectWalletButtonText={connectWalletButtonText} />
               </div>
             </div>
@@ -75,7 +74,7 @@ const WinnerSection = ({content = {}, socket}) => {
             {/* table slider */}
             <div className="table_slider">
               <div className="prize_table">
-                <WinnerTable socket={socket} />
+                <WinnerTable socket={socket} prize = {prize}/>
               </div>
             </div>
           </div>

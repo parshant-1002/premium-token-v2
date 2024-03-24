@@ -1,6 +1,6 @@
 import arrow from '../../../../../public/rightarrow.svg';
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
-import { addBaseUrlToUrls } from "../../../../shared/utilities";
+import { addBaseUrlToUrls, redirectToUrlInNewTab } from "../../../../shared/utilities";
 import { ICONS } from "../../../../assets";
 import "./premiumtoken.scss";
 const PremiumToken = ({ content = {} }) => {
@@ -13,7 +13,7 @@ const PremiumToken = ({ content = {} }) => {
                         <div className="token-summary text-center">
                             <h2 className="h2"><SafeHTML html={title} /></h2>
                             <p><SafeHTML html={description} /></p>
-                            <button type="button" className="btn btn-md btn-secondary">
+                            <button type="button" className="btn btn-md btn-secondary" onClick={() =>redirectToUrlInNewTab()}>
                                 <span className="transform-none"><SafeHTML html={comingSoonButtonText} />
                                     <em className="ms-2">
                                         <img src={arrow} alt="premium" width={14} height={8} />
