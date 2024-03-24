@@ -27,6 +27,12 @@
     }
     .slick {
       &-slider {
+        &>div {
+          height: 100%;
+          [class*=col-] {
+            height: 100%;
+          }
+        }
         .slick {
           &-list {
             overflow: $absolute;
@@ -34,6 +40,9 @@
           &-track { 
             .slick-slide {
               height: $inherit !important;
+            }
+            @media (max-width:991px){
+              @include flexbox; 
             }
           }
         }

@@ -13,8 +13,8 @@ $size44: 44px;
       text-align: $center; 
       height: 100%;
       @media (max-width:991px) {
-        margin-top: 22px;
-        padding-bottom: 80px;
+        margin-top: 22px; 
+        height: calc(100% - 22px);
       }
       .card-img {
         margin-bottom: 20px;
