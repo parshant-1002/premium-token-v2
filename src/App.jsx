@@ -9,23 +9,33 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.scss';
 import RootRouter from './routes/RootRouter';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Web3ModalProvider } from './shared/HOC/Web3ModalProvider';
+import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
+import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
+import { endpoint } from './shared/constants';
+import { PhantomWalletAdapter } from '@solana/wallet-adapter-wallets';
+import "@solana/wallet-adapter-react-ui/styles.css";
 
 function App() {
+
+    const phantomWallet = new PhantomWalletAdapter();
     return (
-        <Web3ModalProvider>
-        <Provider store={store}>
-            <PersistGate loading={null} persistor={persistor}>
-                <HelmetProvider>
-                    <BrowserRouter>
-                        {/* <Loader /> */}
-                        <ToastContainer autoClose={3000} limit={3} />
-                        <RootRouter />
-                    </BrowserRouter>
-                </HelmetProvider>
-            </PersistGate>
-        </Provider>
-        </Web3ModalProvider>
+        <ConnectionProvider endpoint={endpoint}>
+            <WalletProvider wallets={[phantomWallet]}>
+                <WalletModalProvider>
+                    <Provider store={store}>
+                        <PersistGate loading={null} persistor={persistor}>
+                            <HelmetProvider>
+                                <BrowserRouter>
+                                    {/* <Loader /> */}
+                                    <ToastContainer autoClose={3000} limit={3} />
+                                    <RootRouter />
+                                </BrowserRouter>
+                            </HelmetProvider>
+                        </PersistGate>
+                    </Provider>
+                </WalletModalProvider>
+            </WalletProvider>
+        </ConnectionProvider>
     );
 }
 

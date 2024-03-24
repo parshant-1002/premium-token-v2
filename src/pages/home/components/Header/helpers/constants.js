@@ -1,4 +1,5 @@
-import { INPUT_TYPES, VALIDATION_MESSAGES } from "../../../../../shared/constants";
+import { INPUT_TYPES } from "../../../../../shared/constants";
+import { FORM_VALIDATION_MESSAGES } from "../../../../../shared/constants/validations";
 
 export const WINNER_MODAL_FORM_SCHEMA = {
     step1: {
@@ -8,7 +9,7 @@ export const WINNER_MODAL_FORM_SCHEMA = {
             className: 'form-control col-md-6',
             placeholder: 'Whatsapp/Skype/Telegram',
             schema: {
-                required: VALIDATION_MESSAGES.REQUIRED,
+                required: FORM_VALIDATION_MESSAGES.REQUIRED,
             }
         },
         walletAddress: {
@@ -17,7 +18,7 @@ export const WINNER_MODAL_FORM_SCHEMA = {
             className: 'form-control col-md-6',
             placeholder: 'wallet address',
             schema: {
-                required: VALIDATION_MESSAGES.REQUIRED,
+                required: FORM_VALIDATION_MESSAGES.REQUIRED,
             }
         }
     },
@@ -28,7 +29,7 @@ export const WINNER_MODAL_FORM_SCHEMA = {
             className: 'form-control col-md-6',
             placeholder: 'Full name',
             schema: {
-                required: VALIDATION_MESSAGES.REQUIRED,
+                required: FORM_VALIDATION_MESSAGES.REQUIRED,
             }
         },
         dob: {
@@ -37,7 +38,7 @@ export const WINNER_MODAL_FORM_SCHEMA = {
             className: 'form-control col-md-6',
             placeholder: 'Date Of Birth',
             schema: {
-                required: VALIDATION_MESSAGES.REQUIRED,
+                required: FORM_VALIDATION_MESSAGES.REQUIRED,
             }
         },
         phoneNumber: {
@@ -46,7 +47,7 @@ export const WINNER_MODAL_FORM_SCHEMA = {
             className: 'form-control col-md-6',
             placeholder: 'Phone Number',
             schema: {
-                required: VALIDATION_MESSAGES.REQUIRED,
+                required: FORM_VALIDATION_MESSAGES.REQUIRED,
             }
         },
         country: {
@@ -60,7 +61,7 @@ export const WINNER_MODAL_FORM_SCHEMA = {
                 { value: 'Canada', label: 'Canada' }
             ],
             schema: {
-                required: VALIDATION_MESSAGES.REQUIRED,
+                required: FORM_VALIDATION_MESSAGES.REQUIRED,
             }
         },
         city: {
@@ -74,7 +75,7 @@ export const WINNER_MODAL_FORM_SCHEMA = {
                 { value: 'Canada', label: 'Canada' }
             ],
             schema: {
-                required: VALIDATION_MESSAGES.REQUIRED,
+                required: FORM_VALIDATION_MESSAGES.REQUIRED,
             }
         },
         streetAddress: {
@@ -83,7 +84,7 @@ export const WINNER_MODAL_FORM_SCHEMA = {
             className: 'form-control col-md-6',
             placeholder: 'Street Address',
             schema: {
-                required: VALIDATION_MESSAGES.REQUIRED,
+                required: FORM_VALIDATION_MESSAGES.REQUIRED,
             }
         },
         zip: {
@@ -92,7 +93,7 @@ export const WINNER_MODAL_FORM_SCHEMA = {
             className: 'form-control col-md-6',
             placeholder: 'ZIP',
             schema: {
-                required: VALIDATION_MESSAGES.REQUIRED,
+                required: FORM_VALIDATION_MESSAGES.REQUIRED,
             }
         },
     }

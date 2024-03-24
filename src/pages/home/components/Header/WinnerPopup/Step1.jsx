@@ -52,7 +52,7 @@ export default function Step1({ partners, handleSubmitStep1, formData = {} }) {
                         />
 
                         {DEFAULT_CONTENT.SELECT_PARTNER}
-                        {prizeSelected.first ? partners?.personData?.map((person) => (
+                        {partners?.partnersData?.map((person) => (
                             <div>
                                 <span>
                                     <RenderIconWithHover
@@ -66,7 +66,7 @@ export default function Step1({ partners, handleSubmitStep1, formData = {} }) {
                                     setChecked={(checked) => setPartnerSelected(checked)}
                                 />
                             </div>
-                        )) : null}
+                        ))}
                     </div>
                 }
             />

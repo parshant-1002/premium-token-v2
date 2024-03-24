@@ -1,6 +1,24 @@
 @import "../../../../assets/scss/base";
 
-.airdrop_secn {
+
+.heading_title {
+    margin: 0 $auto;
+    @media (min-width:991.99px){
+        max-width: 745px;
+    }
+    .h2 {
+        margin-bottom: 10px
+    }
+    p {
+        font-weight: $font-medium;
+        @include font-size (.938);
+        color: $text-color;
+        line-height: 1.5;
+        margin: 0;
+    }
+}
+
+.airdrop_sec {
     margin-top: 80px;
     margin-bottom: 80px;
     @media (min-width:1440px) {
@@ -8,20 +26,7 @@
         margin-bottom:100px ;
     }
 }
-.airdrop-main {
-    .airdrop-info-para {
-        max-width: 681px;
-        margin: auto;
-
-        h2 {
-            margin-bottom: 8px;
-        }
-
-        p {
-            @include para
-        }
-    }
-
+.airdrop-main {   
     .whitelisted-row {
         display: grid;
         grid-template-columns: 1fr;
@@ -33,10 +38,14 @@
         @media (min-width:992px) {
             grid-template-columns: 1fr 1fr;
         }
+        @media (max-width:991px) {
+            gap: 70px;
+        }
         .white-listed-form {
             padding: 52px;
             border-radius: 0px 100px 0px 100px;
             background: rgba(56, 153, 137, 0.08);
+            backdrop-filter: blur(500px);
             @media (max-width:767px) {
                 border-radius: 0 40px;
                 padding: 52px 12px;
@@ -48,36 +57,6 @@
                 font-weight: $font-medium;
                 line-height: normal;
                 margin-bottom: 32px;
-            }
-
-            .input-col {
-                position: $relative;
-                margin-bottom: 8px;
-
-                img {
-                    @include position($absolute, $top: 50%, $left: 10px);
-                    transform: translateY(-50%);
-
-             
-                }
-
-                input {
-                    background: rgba(41, 101, 92, 0.25);
-                    border-radius: 10px;
-                    padding: 8px 16px 8px 40px;
-                    width: 100%;
-                    border: 0;
-                    color: $green-tin-color-700;
-                    font-size: 14px;
-                    font-weight: $font-medium;
-                    line-height: 22px;
-                    min-height: 40px;
-
-                    &::placeholder {
-                        color: $green-tin-color-700;
-
-                    }
-                }
             }
             .submit-drop{
                 margin-top: 32px;
@@ -95,11 +74,57 @@
     }
 }
 
-.air_drop_bg {
-    @include position($absolute, $right:0px, $top:0);
-    height: 100%; 
-    z-index: -1;
-    @media (max-width:1200px) {
-         $top:-72px;
+.form-field {
+    margin-bottom: 8px;
+    label{
+        display: $none;
     }
-  }
+    &:last-child {
+        margin-bottom: 0;
+    }
+    .image_renderer {
+        @include position($absolute, $top:calc(9px), $left:14px);
+        img { width: 24px; height: 24px; display: $block;}
+    }
+    .form-control { 
+        border: 0;
+        width: 100%;
+        background: rgba(41, 101, 92, 0.25);
+        @include border-radius (10px);
+        padding: 8px 16px 8px 48px;
+        color: $green-tin-color-700;
+        @include font-size (.875);
+        font-weight: $font-medium;
+        line-height: 22px;
+        min-height: 40px;
+        &::placeholder {
+            color: $green-tin-color-700;
+        }
+        &::-webkit-input-placeholder {
+            color: $green-tin-color-700;
+        }
+        &:-ms-input-placeholder {
+            color: $green-tin-color-700;
+        } 
+    }
+}
+
+.btn_groups {
+    margin-top: 32px;
+    @media (max-width:575px){
+        .btn {
+            width: 100%;
+        }
+    }
+}
+
+.air_drop_bg {
+    @media (min-width:991.99px) {
+        @include position($absolute, $right:0px, $top:-15%);
+        height: 100%; 
+    }
+    @media (max-width:991px) {
+        @include position($absolute, $left:0px, $bottom:-23%);
+        z-index: -1;
+    }
+}

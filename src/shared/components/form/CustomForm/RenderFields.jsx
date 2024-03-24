@@ -23,6 +23,7 @@ export const RenderField = ({ field, id, handleRegister, handleInputChange, getV
                         onChange={(e) => handleInputChange(id, e.target.value)}
                         maxLength={field?.schema?.maxLength?.value || ''}
                         minLength={field?.schema?.minLength?.value || ''}
+                        icon = {field.icon || ""}
                     />
                 );
             case INPUT_TYPES.SELECT:
@@ -51,7 +52,7 @@ export const RenderField = ({ field, id, handleRegister, handleInputChange, getV
     };
 
     return (
-        <div className="form-group mb-3" key={id}>
+        <div className="form-field" key={id}>
             <label htmlFor={id}>{field.label}</label>
             <div className="position-relative">
                 {renderInput()}
@@ -61,16 +62,14 @@ export const RenderField = ({ field, id, handleRegister, handleInputChange, getV
                     </button>
                 )}
             </div>
-            <div className="d-flex align-items-center text-start justify-content-between flex-nowrap mt-2">
-                <ErrorComponent error={errors[id]} render={field.render} />
-                {field?.isShowInputCount ? (
-                    <span className="badge bg-outline-primary rounded-50 ms-auto">
-                        {getValues(id)?.length}
-                        /
-                        {field?.schema?.maxLength?.value}
-                    </span>
-                ) : null}
-            </div>
+            <ErrorComponent error={errors[id]} render={field.render} />
+            {field?.isShowInputCount ? (
+                <span className="badge bg-outline-primary rounded-50 ms-auto">
+                    {getValues(id)?.length}
+                    /
+                    {field?.schema?.maxLength?.value}
+                </span>
+            ) : null}            
         </div>
     );
 };

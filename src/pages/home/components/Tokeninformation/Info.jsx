@@ -1,20 +1,14 @@
-import { useMemo } from "react";
+import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import  "./Info.scss";
 
-const Info = ({ frame89, followPremiumTokenOnOur6S = "", propPadding }) => {
-  const frameDivStyle = useMemo(() => {
-    return {
-      padding: propPadding,
-    };
-  }, [propPadding]);
-
+const Info = ({ image, title = "" }) => {
   return (
     <div className="airdrop-list">
       <div className="airdrop-image">
-      <img loading="lazy" alt="" src={frame89} />
+      <img loading="lazy" alt="" src={image} />
       </div>
       <div className="airdrop-list-text" >
-        <p> {followPremiumTokenOnOur6S} </p>
+        <p><SafeHTML html = {title}/> </p>
       </div>
     </div>
   );

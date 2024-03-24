@@ -1,28 +1,40 @@
 import React, { useEffect, useState } from 'react';
 import "./flipnumber.scss"
+import { formatNumber } from '../../shared/constants/utils';
 
-const SmoothFlipCounter = ({ initialValue, settings }) => {
+const SmoothFlipCounter = ({ initialValue, socket }) => {
+    console.log(initialValue,"intialvalue")
     const [value, setValue] = useState(initialValue);
-    const [counterSettings, setCounterSettings] = useState({
-        digits: settings.digits || 5,
-        delay: settings.delay || 250,
-        direction: settings.direction || '',
-    });
+    // const [counterSettings,     ] = useState({
+    //     digits: settings.digits || 5,
+    //     delay: settings.delay || 250,
+    //     direction: settings.direction || '',
+    // });
+
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         // Update the value dynamically, e.g., from the backend
+    //         setValue((prevValue) => prevValue + 5365); // Example update
+    //     }, 3000);
+
+    //     return () => clearInterval(interval);
+    // }, []);
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            // Update the value dynamically, e.g., from the backend
-            setValue((prevValue) => prevValue + 5365); // Example update
-        }, 3000);
-
-        return () => clearInterval(interval);
-    }, []);
+        if (socket) {
+            socket.on('blockChainData', (data) => {
+                setValue(data?.marketCap)
+            });
+        }
+    }, [socket]);
 
     const renderDigits = () => {
-        const digits = value.toString().padStart(counterSettings.digits, '0').split('');
+        const digits = formatNumber(value).toString().split('');
         return digits.map((digit, index) => (
-            <div className="digit_card" key={index}>
-                <span data-value={digit}>{digit}</span>
+             digit != "," &&
+            <div className={`digit_card ${digits[index+1] == "," ? "add_separator" : ""}`}  key={index}>
+                {console.log(digit == "","digit><><><><<")}
+              <span data-value={digit}>{digit}</span>
             </div>
         ));
     };
