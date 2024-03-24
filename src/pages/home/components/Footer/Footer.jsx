@@ -33,7 +33,7 @@ const Footer = ({content = {}}) => {
             <div className="footer_logo text-lg-start text-center">
               <img src={addBaseUrlToUrls(premiumTokenTitle)} alt="Premium" width={147} />
             </div>
-          </div>
+          </div>  
 
           <div className="col-lg-4 order-3 order-lg-2">
             <div className="d-flex justify-content-center gap-2">
