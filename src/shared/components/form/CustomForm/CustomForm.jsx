@@ -88,7 +88,7 @@ function CustomForm({
                                 ? handleSubmit(handleSecondaryButtonClick)
                                 : handleSecondaryButtonClick
                         }
-                        className="btn btn-md btn-secondary w-100"
+                        className="btn btn-lg btn-secondary w-100"
                     >
                         <span className="transform-none">{secondaryBtnText}</span>
                     </Button>
@@ -97,7 +97,7 @@ function CustomForm({
                     <Button
                         onClick={handleSubmit(onSubmit)}
                         type="submit"
-                        className="btn btn-md btn-secondary w-100"
+                        className="btn btn-lg btn-secondary w-100"
                         disabled={isDisabledSubmit}
                     >
                         <span className="transform-none">{submitText}</span>

@@ -54,6 +54,8 @@ import WinnerRulesSection4 from "./icons/Winner_Rules4.svg"
 import RoadMapBG from "./img/roadMap-bg.png"
 import RoadMapMobileBG from "./img/roadMap_Mobilebg.png"
 
+import NoDataFound from "./img/no_data_found.svg"
+
 export const ICONS = {
     VideoBanner: VideoBanner,
     Mobile_banner:Mobile_banner,
@@ -108,6 +110,7 @@ export const ICONS = {
 
     RoadMapBG,
     RoadMapMobileBG,
+    NoDataFound,
 }
 
 export const VIDEOS = {

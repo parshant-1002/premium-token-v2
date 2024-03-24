@@ -26,6 +26,7 @@
     @media (max-width:991px) {
       padding: 18px 5px;
       @include flex-wrap (wrap);
+      @include align-items ($center);
       @include justify-content ($center);
       @include border-radius(0 30px);
     }
