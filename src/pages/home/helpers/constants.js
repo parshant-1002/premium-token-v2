@@ -1,5 +1,7 @@
+export const secondHalfColorOptions = ["#4C7570", "#256059", "#389989", "#71AFA5"]
+export const firstHalfColorOptions = ["#031815", "#0D2624", "#1F423D", "#3D615D"]
 export const options = (innerTitle) => ({
-    colors: ["#389989", "#175F53", "#083029", "#031815", "#031815", "#031815", "#175F53"],
+    colors: [...firstHalfColorOptions, ...secondHalfColorOptions],
     chart: {
         fontFamily: "Sora",
         foreColor: '#fff',
@@ -64,6 +66,41 @@ export const options = (innerTitle) => ({
     legend: {
         show: false,
     },
+    responsive: [{
+        breakpoint: 768, // Breakpoint for mobile devices
+        options: {
+            plotOptions: {
+                pie: {
+                    donut: {
+                        labels: {
+                            value: {
+                                fontSize: '10px',
+                            },
+                            total: {
+                                fontSize: '12px',
+                            },
+                        },
+                    },
+                },
+            },
+        },
+    },
+{
+        breakpoint: 961, // Breakpoint for mobile devices
+        options: {
+            plotOptions: {
+                pie: {
+                    donut: {
+                        labels: {
+                            value: {
+                                fontSize: '16px',
+                            },
+                        },
+                    },
+                },
+            },
+        },
+    }],
 });
 
 export const BUTTON_LABELS = {

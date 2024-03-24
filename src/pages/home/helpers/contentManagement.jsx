@@ -675,16 +675,19 @@ export const DEFAULT_CONTENT = {
         "twitter": {
             "url": "https://www.google.co.in/",
             "imageUrl": "/uploads/files/twitter_1711300974027.png",
+            "title": "Join Twitter ",
             "hovers": "/uploads/files/twitter-hover_1711301055086.png"
         },
         "discord": {
             "url": "https://www.google.co.in/",
             "imageUrl": "/uploads/files/discord_1711300982357.png",
+            "title": "Join Discord ",
             "hovers": "/uploads/files/discord-hover_1711301077174.png"
         },
         "telegram": {
             "url": "https://www.google.co.in/",
             "imageUrl": "/uploads/files/telegram_1711300989905.png",
+            "title": "Join Telegram ",
             "hovers": "/uploads/files/telegram-hover_1711301105683.png"
         },
         "airdrop": {

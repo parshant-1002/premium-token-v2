@@ -36,7 +36,6 @@ const CustomSlick = ({ children, slidesToShow = 4, responsive = [], handleNextCl
 const NextArrow = (props) => {
     const { className, style, onClick, handleNextClick } = props;
     const handleNextArrowClick = (e)=>{
-        console.log(e,"e<><><>><")
         onClick(e)
         handleNextClick()
     }

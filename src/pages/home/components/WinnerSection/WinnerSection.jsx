@@ -48,7 +48,7 @@ const WinnerSection = ({ content = {}, socket }) => {
 
         <div className="subtitle">
           <span className="process">
-            <SafeHTML html={replaceTagWithValue(marketCap?.description, "$X", blockChainData?.nextWinnerMarketCap)} />
+            <SafeHTML html={replaceTagWithValue(marketCap?.description, "$X", blockChainData?.nextWinnerMarketCap+"$")}/>
           </span>
         </div>
       </div>
@@ -75,13 +75,6 @@ const WinnerSection = ({ content = {}, socket }) => {
             <div className="table_slider">
               <div className="prize_table">
                 <WinnerTable socket={socket} prize={prize} />
-              </div>
-
-              <div className="d-flex justify-content-center flex-md-row flex-column align-items-center no-data-found">
-                <figure className="mb-0">
-                  <img src={ICONS.NoDataFound} width={302} height={202} alt="No Data" />
-                </figure>
-                <p>Currently no winners.<br/> Stay tuned for updates!</p>
               </div>
 
             </div>
