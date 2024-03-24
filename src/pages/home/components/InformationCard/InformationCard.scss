@@ -1,28 +1,39 @@
 @import "../../../../assets/scss/base";
 
-$size44:44px;
+$size44: 44px;
 
 .card {
   &-box {
     &-green {
       @include border-radius(25px);
-      background: $dark-green-color-500;
+      background: rgba(56, 153, 137, 0.25);
       box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.05);
       backdrop-filter: blur(40px);
-      padding: 42px 16px 16px 16px;
+      padding: 42px 22px 16px 22px;
       text-align: $center;
+      padding-bottom: 70px;
+      height: 100%;
+      @media (max-width:991px) {
+        margin-top: 22px;
+        padding-bottom: 80px;
+      }
       .card-img {
         margin-bottom: 20px;
-      img {
-        max-height: 188px;
-        object-fit: $contain;
-        @media (min-width:1200px) {
-          min-height: 188px;
+        img {
+          object-fit: $contain;
+          margin: 0 $auto;
+          max-width: 100%;
+          @media (min-width:1200px) {
+            min-height: 188px;
+            max-height: 188px;
+          }
+          @media (max-width:1199.98px) {
+            min-height: 206px;
+            max-height: 206px;
+          }
         }
-      }     
-    }
+      }
       .card-counter {
-         content: '';
         position: $absolute;
         top: calc((0px - $size44)/2);
         left: 50%;
@@ -30,22 +41,29 @@ $size44:44px;
         min-width: 92px;
         min-height: $size44;
         @include flexCenter;
+        padding: 1px;
         @include border-radius(0 20px 0 20px);
-        background-color: $green-tin-color-700;
-        border: 1px solid rgba($color: $white-color, $alpha: 0.15);
-        span {
-          @include font-size(1.188);
-          color: $white-color;
-          line-height: $normal;
-          font-style: $normal;
+        background: linear-gradient(91.03deg, rgb(50 171 151) 1.7248211429%, rgb(255, 255, 255, .8) 51.5625%, rgb(50 171 151) 100%); 
+        .card-counter-no {
+          @include flexCenter;
+          padding: 0.625rem 1rem;
+          @include button($green-tin-color-700, $transparent, $white-color);
+          @include border-radius(0 20px 0 20px);
+          width: 100%;
+          height: 100%;
+          min-height: 44px;
+          @include font-size (1);
+          line-height: 1; 
         }
       }
       p {
         font-weight: $font-bold;
-        margin-bottom: 0;
         @include font-size(1);
       }
     }
-    
   }
+}
+
+.btn_contain {
+  @include position($absolute, $bottom:16px, $left:0);
 }

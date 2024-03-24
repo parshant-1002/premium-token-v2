@@ -1,33 +1,4 @@
-const SectionTypes = {
-    HEADER: 'headers',
-    VIDEO_SECTION: 'videoSection',
-    PRIZE_SECTION: 'prizeSection',
-    WINNER_LIST_SECTION: 'winnerListSection',
-    WINNER_RULES_SECTION: 'winnerRulesSection',
-    CONTRACT_DETAILS: 'contractDetails',
-    ROADMAP_SECTION: 'roadmapSection',
-    EXTERNAL_AUDIT: 'externalAudit',
-    PREMIUM_MARKETPLACE: 'premiumMarketPlace',
-    TOKEN_SUPPLY: 'tokenSupply',
-    JOIN_AIRDROP: 'joinAirdrop',
-    PARTNERS: 'partners',
-    FOOTER: 'footers'
-};
-
-const ButtonTypes = {
-    VIEW_CHART: 'viewChartButton',
-    AIRDROP: 'airdropButton',
-    BUY_TOKEN: 'buyTokenButton'
-};
-
-const SocialMediaTypes = {
-    TWITTER: 'twitter',
-    DISCORD: 'discord',
-    TELEGRAM: 'telegram'
-};
-
-
-export const options = {
+export const options = (innerTitle) => ({
     colors: ["#389989", "#175F53", "#083029", "#031815", "#031815", "#031815", "#175F53"],
     chart: {
         fontFamily: "Sora",
@@ -52,7 +23,7 @@ export const options = {
                     },
                     value: {
                         show: true,
-                        fontSize: '24px',
+                        fontSize: window.innerWidth > 768 ? '24px' : '18px', // Adjust font size based on screen width
                         fontFamily: 'Lato',
                         fontWeight: 800,
                         color: "white"
@@ -60,12 +31,12 @@ export const options = {
                     total: {
                         show: true,
                         showAlways: true,
-                        fontSize: '12px',
+                        fontSize: window.innerWidth > 768 ? '12px' : '10px', // Adjust font size based on screen width
                         fontFamily: 'Lato',
                         fontWeight: 800,
                         color: "#A7D7CF",
                         formatter: function (w) {
-                            return "888,888,888,888,888"
+                            return innerTitle
                         }
                     }
                 },
@@ -93,5 +64,7 @@ export const options = {
     legend: {
         show: false,
     },
-};
+});
 export const series = [65, 10, 10, 5, 4.5, 4.5, 1];
+
+

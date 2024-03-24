@@ -5,9 +5,7 @@
 html {
     scrollbar-width: thin;
     scrollbar-color: $green-light-color-800 $dark-green-color-1000;
-}
-#root {
-    overflow-x: $hidden !important;
+    overflow-x: $hidden;
 }
 body {
     margin: 0;
@@ -21,9 +19,12 @@ body {
     overflow-x: $hidden;
     scrollbar-width: thin;
 }
+#root {
+    overflow: $hidden;
+}
 .scroll {
     scrollbar-width: thin !important;
-    scrollbar-color: $green-light-color-800 $dark-green-color-450;
+    scrollbar-color: $dark-green-color-300 $green-tin-color-700;
 }
 /* Scroll */
 ::-webkit-scrollbar {
@@ -32,7 +33,7 @@ body {
 }
 ::-webkit-scrollbar-thumb {
     @include border-radius (10px);
-    background-color: $dark-green-color-450;
+    background-color:$dark-green-color-300;
 }
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -51,12 +52,15 @@ h5, .h5,
 h6, .h6 {
     line-height: 1.3;
     color: $white-color;
-    font-weight: $font-bold;
+    font-weight: $font-mediumbold;
 }
 h1, .h1 {
-    @include font-size(3);
+    @include font-size(2.5);
     @media (min-width: 1600px) {
         @include font-size(3.125);
+    }
+    @media (max-width:991.98px) {
+        @include font-size(1.5);
     }
 }
 h2, .h2 {
@@ -97,7 +101,7 @@ h5,
 }
 h6,
 .h6 {
-    @include font-size(1.1);
+    @include font-size(1.125);
     @media (min-width: 1600px) {
         @include font-size(1.125);
     }
@@ -126,7 +130,7 @@ a {
     @include transition-mixin (all, .5s, ease-in-out);
     &:hover,
     &:focus {
-        color: $dark-green-color-450;
+        color: $dark-green-color-400;
     }
 }
 p {
@@ -221,11 +225,13 @@ a.btn {
     }
     &-md {
         @include border-radius (10px);
-        text-transform: $uppercase;
         font-weight: $font-bold;
-        padding: 0.625rem 0.875rem;
-        @include font-size(1);      
-        min-height: 44px;       
+        padding: 0.625rem 1rem;
+        @include font-size(1);
+        min-height: 44px;
+        @media (min-width:1200px) {
+            min-width: 150px;
+        }
     }
     &-sm {
         line-height: 1;
@@ -242,17 +248,28 @@ a.btn {
         @media (max-width:359px) {
             @include font-size(.800);
         }
-    } 
+    }
     &-primary {
-        @include button(rgba($green-tin-color-700, 0.25), $transparent, $white-color); 
-        span {
+        border:0; 
+        padding: 1px;
+        background: linear-gradient(91.03deg, rgba($white-color, 0.11) 1.7248211428523064%, rgba(255, 255, 255, .4) 51.5625%, rgba(255, 255, 255, .15) 100%);
+        @include border-radius (10px);
+        min-width: 170px;
+        .transform-none {
             @include flexCenter;
+            padding: 0.625rem 1rem;
+            @include button(rgba(#11342F, 1), $transparent, $white-color);
+            @include border-radius (9px);
+            width:100%; height: 100%;
+            min-height: 44px;
             @include font-size (.875);
-            font-weight: $font-regular;
-            color: $white-color;
-            svg {
-                margin-right:0.5rem ;
-            }
+            line-height: 1;
+        }
+        .image_renderer {
+            margin-right: 8px;
+        }
+        &:hover {
+            background-color: $transparent;
         }
         &[disabled] {
             background-color: $grey-color-800;
@@ -260,18 +277,19 @@ a.btn {
         }
     }
     &-secondary {
-        @include button($green-tin-color-700, $transparent, $white-color);
-        overflow: $hidden;
-        position: $relative;
-        z-index: 1;  
-        span {
+        border:0;
+        padding: 1px;
+        min-width: 170px;
+        background: linear-gradient(91.03deg, rgb(50 171 151) 1.7248211429%, rgb(255, 255, 255, .8) 51.5625%, rgb(50 171 151) 100%);
+        .transform-none {
             @include flexCenter;
+            padding: 0.625rem 1rem;
+            @include button($green-tin-color-700, $transparent, $white-color);
+            @include border-radius (9px);
+            width:100%; height: 100%;
+            min-height: 44px;
             @include font-size (.875);
-            font-weight: $font-regular;
-            color: $white-color;
-            svg {
-                margin-right:0.5rem ;
-            }
+            line-height: 1;
         }
     }
     &-transparent {
@@ -296,7 +314,7 @@ a.btn {
                 color: $white-color!important;
             }
         }
-    } 
+    }
     &-grey {
         background-color: $text-color;
         color: $base-color;
@@ -310,7 +328,7 @@ a.btn {
         border: 0;
     }
 }
- 
+
 // Input Controls
 label {
     line-height: 1.1;
@@ -387,7 +405,7 @@ select {
     &-txt {
         @extend .error;
     }
-} 
+}
 
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
@@ -444,30 +462,45 @@ input[type="search"]::-webkit-search-results-decoration {
         object-position: $center;
         z-index: 1;
     }
-} 
+}
 
 .btn_icon {
-    padding: 1px; 
+    padding: 1px;
+    background: linear-gradient(91.03deg, rgb(23 56 51) 1.7248211429%, rgb(255 255 255 / 25%) 51.5625%, rgb(23 56 51) 100%);
     @include border-radius (10px);
-    background: radial-gradient(#fff 9.07%,#054625 90.05%,);
     span {
-        background:$dark-green-color-500;        
+        background:$dark-green-color-500;
         height: 100%;
         width: 100%;
         @include flexCenter;
         @include border-radius (9px);
+        img {
+            width: 24px;
+            display: $block;
+        }
+    }
+    &:hover{
+        path{
+            fill: $text-color;
+        }
     }
 }
- 
+
 .gap {
     &-12 {
         gap:0.75rem;
     }
+    &-16 {
+        gap:16px;
+    }
     &-20 {
         gap:20px;
     }
+    &-24 {
+        gap:20px;
+    }
     &-32 {
-        gap:32px;
+        gap:24px;
     }
     &-54 {
         gap:54px;
@@ -475,13 +508,10 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .py-72 {
-    padding: 36px 0;
-    @media (min-width:1400px) {
-        padding: 72px 0;
-    }   
+    padding: 72px 0;
 }
 
-// 
+//
 .bg-green-600 {
     background: $bg-green-600;
 }

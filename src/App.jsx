@@ -4,28 +4,62 @@ import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { ToastContainer } from 'react-toastify';
 import { store, persistor } from './store';
-
-import 'react-toastify/dist/ReactToastify.css';
-import './App.scss';
+import { useEffect, useState } from 'react';
+import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
+import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
+import { endpoint } from './shared/constants';
+import { PhantomWalletAdapter } from '@solana/wallet-adapter-wallets';
 import RootRouter from './routes/RootRouter';
+import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Web3ModalProvider } from './shared/HOC/Web3ModalProvider';
+import "@solana/wallet-adapter-react-ui/styles.css";
+import './App.scss';
 
 function App() {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollPosition = window.scrollY;
+            if (scrollPosition > 400) {
+                // Add class to body when scrolled down 400 pixels
+                document.body.classList.add('scrolled');
+                setScrolled(true);
+            } else {
+                // Remove class from body when scrolled less than 400 pixels
+                document.body.classList.remove('scrolled');
+                setScrolled(false);
+            }
+        };
+
+        // Attach scroll event listener
+        window.addEventListener('scroll', handleScroll);
+
+        // Cleanup
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
+
+    const phantomWallet = new PhantomWalletAdapter();
     return (
-        <Web3ModalProvider>
-        <Provider store={store}>
-            <PersistGate loading={null} persistor={persistor}>
-                <HelmetProvider>
-                    <BrowserRouter>
-                        {/* <Loader /> */}
-                        <ToastContainer autoClose={3000} limit={3} />
-                        <RootRouter />
-                    </BrowserRouter>
-                </HelmetProvider>
-            </PersistGate>
-        </Provider>
-        </Web3ModalProvider>
+        <ConnectionProvider endpoint={endpoint}>
+            <WalletProvider wallets={[phantomWallet]}>
+                <WalletModalProvider>
+                    <Provider store={store}>
+                        <PersistGate loading={null} persistor={persistor}>
+                            <HelmetProvider>
+                                <BrowserRouter>
+                                    {/* <Loader /> */}
+                                    <ToastContainer autoClose={3000} limit={3} />
+                                    <RootRouter />
+                                </BrowserRouter>
+                            </HelmetProvider>
+                        </PersistGate>
+                    </Provider>
+                </WalletModalProvider>
+            </WalletProvider>
+        </ConnectionProvider>
     );
 }
 

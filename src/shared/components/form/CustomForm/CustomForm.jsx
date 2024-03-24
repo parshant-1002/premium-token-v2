@@ -17,7 +17,7 @@ function CustomForm({
     className = '',
     onChangeValues = () => {},
     isShowSubmit = true,
-    isDisabledSubmit = false
+    isDisabledSubmit = false,
 }) {
     const {
         register,
@@ -54,7 +54,7 @@ function CustomForm({
         }
         return register(key, formData[key].schema);
     };
-
+    console.log(errors,"errors<><><")
     return (
         <form
             id={id}
@@ -75,7 +75,7 @@ function CustomForm({
                 );
             })}
             {preSubmitElement}
-            <div className="btn_groups pt-2 d-flex text-center justify-content-center gap-2">
+            <div className="btn_groups w-100 text-center">
                 {handleSecondaryButtonClick && (
                     <Button
                         data-content={secondaryBtnText}
@@ -85,19 +85,19 @@ function CustomForm({
                                 ? handleSubmit(handleSecondaryButtonClick)
                                 : handleSecondaryButtonClick
                         }
-                        className="btn btn-sm btn-secondary text-captialize rounded-50 mx-2"
+                        className="btn-md btn-secondary"
                     >
-                        {secondaryBtnText}
+                        <span className="transform-none">{secondaryBtnText}</span>
                     </Button>
                 )}
                 {isShowSubmit ? (
                     <Button
                         onClick={handleSubmit(onSubmit)}
                         type="submit"
-                        className="btn btn-sm btn-primary text-captialize rounded-50"
+                        className="btn-md btn-secondary"
                         disabled={isDisabledSubmit}
                     >
-                        {submitText}
+                        <span className="transform-none">{submitText}</span>
                     </Button>
                 ) : null}
             </div>

@@ -2,80 +2,65 @@ import React, { useRef } from 'react';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import './style.scss'; // Import custom CSS for styling arrows
+import { ICONS } from '../../../assets';
+import './style.scss'; 
 
-const CustomSlick = ({ children, slidesToShow = 4, responsive = false }) => {
-    console.log(responsive,"responsive")
+const CustomSlick = ({ children, slidesToShow = 4, responsive = [], handleNextClick = ()=>{} }) => {
     const ref = useRef()
     const settings = {
         dots: false,
-        infinite: true,
+        infinite: false,
         speed: 600,
         slidesToShow: slidesToShow,
         slidesToScroll: 1,
         initialSlide: 0,
         swipeToSlide: true,
-        easing:"ease",
-        nextArrow: <NextArrow />,
+        easing: "ease",
+        nextArrow: <NextArrow handleNextClick={handleNextClick}/>,
         prevArrow: <PrevArrow />,
-        ...(responsive && {responsive: [
-            {
-                breakpoint: 768, 
-                settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 1199,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 1,
-                    infinite: true,
-                    dots: true
-                }
-            },
-            {
-                breakpoint: 1000000,
-                settings: "unslick" 
-            }
-        ]})
+        ...(responsive?.length && {
+            responsive: responsive
+        })
     };
 
-    console.log(settings,"settings")
-
     return (
-        <>
-        <div className='container' style={{zIndex:"99999"}}>
-            <Slider ref={ref} {...settings} >
-            {children}
-        </Slider>
-        </div>
-        </>
+            <div className='custom-slider' style={{ zIndex: "99999" }}>
+                <Slider ref={ref} {...settings} >
+                    {children}
+                </Slider>
+            </div>
     );
 };
 
 const NextArrow = (props) => {
-    const { className, style, onClick } = props;
+    const { className, style, onClick, handleNextClick } = props;
+    const handleNextArrowClick = (e)=>{
+        console.log(e,"e<><><>><")
+        onClick(e)
+        handleNextClick()
+    }
     return (
-        <div
-            className={`${className} custom-arrow custom-next`}
+        <button type="button"
+            className={`${className}`}
             style={{ ...style }}
-            onClick={onClick}
-        />
+
+            onClick={handleNextArrowClick   }
+        >
+            <img src={ICONS.NextArrow} alt="Next Arrow" width={40} height={40} />
+        </button>
     );
 };
 
 const PrevArrow = (props) => {
     const { className, style, onClick } = props;
     return (
-        <div
-            className={`${className} custom-arrow custom-prev`}
+        <button type="button"
+            className={`${className}`}
             style={{ ...style }}
             onClick={onClick}
-        />
+        >
+            <img src={ICONS.PrevArrow} alt="Prev Arrow" width={40} height={40} />
+        </button>
     );
 };
 

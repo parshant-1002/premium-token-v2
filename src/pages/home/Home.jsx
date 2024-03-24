@@ -5,7 +5,6 @@ import { DataAggregator } from "./components/DataAggregator";
 import { WinnerSection } from "./components/WinnerSection";
 import { RoadMap } from "./components/RoadMap";
 // styles
-import styles from "./Home.module.css";
 import { ConnectionCreator } from "./components/ConnectionCreator";
 import { ConnectionMaker } from "./components/ConnectionMaker";
 import { Featured } from "./components/Featured";
@@ -21,69 +20,51 @@ import { useDispatch } from "react-redux";
 import { getContent } from "../../store/actions/contentManagement";
 import { DidYouWin } from "./components/DidYouWin";
 import Airdrop from "./components/Tokeninformation/Airdrop";
+import useSocket from "../../shared/hooks/useSocket";
+import { STATUS } from "../../shared/constants";
+import { DEFAULT_CONTENT, SectionTypes } from "./helpers/contentManagement";
+import { merge } from "lodash";
 const Home = () => {
-  const[content, setContent] = useState({})
+  const[content, setContent] = useState(DEFAULT_CONTENT)
   const dispatch = useDispatch()
+  const socket = useSocket();
 
   useEffect(()=>{ 
-    dispatch(getContent({},(data)=>{
-      setContent(data)
+    dispatch(getContent({},(data, status)=>{
+      
+      if(status === STATUS.SUCCESS){
+        const mergedContent = merge({}, DEFAULT_CONTENT, data);
+        setContent(mergedContent)
+      }
     }))
   },[])
-  console.log(content,"content")
+
+  const getContentData = ((sectionType)=>{
+    return content?.[sectionType]
+  })
+  
   return (
     <>
-   
-      {/* <div className={styles.wrapperBgBlur}>
-        <img className={styles.bgBlurIcon} alt="" src="/bg-blur.svg" />
-      </div> */}
-      {/* <section className={styles.wrapperBgBlurParent}>
-        <div className={styles.wrapperBgBlur1}>
-          <img className={styles.bgBlurIcon1} alt="" src="/bg-blur-1.svg" />
-        </div>
-        <img className={styles.bgBlurIcon2} alt="" src="/bg-blur-2@2x.png" />
-      </section>
-      <img className={styles.bgBlurIcon3} alt="" src="/bg-blur-3@2x.png" /> */}
-      <Header/>
-      {/* <div className={styles.wrapperBgBlur2}>
-        <img className={styles.bgBlurIcon4} alt="" src="/bg-blur-4.svg" />
+      <Header content={getContentData(SectionTypes.HEADERS)}/>
+      <VideoSection content={getContentData(SectionTypes.VIDEO_SECTION)} />
+      <div className="mobile_bg">
+        <InformationSection content={getContentData(SectionTypes.PRIZE_SECTION)} />
+        <WinnerSection content={{ ...getContentData(SectionTypes.PRIZE_SECTION), ...getContentData(SectionTypes.WINNER_LIST_SECTION) }} socket={socket} />
       </div>
-      <img className={styles.bgBlurIcon5} alt="" src="/bg-blur-5@2x.png" /> */}
-      <VideoSection/>
-      <InformationSection />
-      <WinnerSection />
-      <DidYouWin/>
-   
-      <DataAggregator />
-      <RoadMap />
-      <PremiumToken/>
-      <Featured />
-      <ConnectionCreator />
-      <ConnectionMaker />
-      {/* <section className={styles.dataJoiner}>
-        <img className={styles.bgBlurIcon6} alt="" src="/bg-blur-12@2x.png" />
-        <img className={styles.roadLineIcon} alt="" src="/road-line.svg" />
-        <div className={styles.wrapperActiveDot}>
-          <img className={styles.activeDotIcon} alt="" src="/active-dot.svg" />
-        </div>
-        <div className={styles.wrapperActiveDot1}>
-          <img className={styles.activeDotIcon1} alt="" src="/active-dot.svg" />
-        </div>
-        <div className={styles.wrapperDisabledDots}>
-          <img
-            className={styles.disabledDotsIcon}
-            alt=""
-            src="/disabled-dots.svg"
-          />
-        </div>
-      </section> */}
-      <MarketPlace />
-      <Tokeninformation />
-      <Airdrop />
-      <Partners/>
-      < SocialMedia/>
-      <Footer />
-    </>
+      <DidYouWin content={getContentData(SectionTypes.WINNER_RULES_SECTION)} />
+      <DataAggregator content={getContentData(SectionTypes.CONTRACT_DETAILS)} />
+      <RoadMap content={getContentData(SectionTypes.ROADMAP_SECTION)} />
+      <PremiumToken content={getContentData(SectionTypes.PREMIUM_TOKEN_WALLET)} />
+      <Featured content={getContentData(SectionTypes.FEATURES)} />
+      <ConnectionCreator content={getContentData(SectionTypes.TOKEN_INFO)} />
+      <ConnectionMaker content={getContentData(SectionTypes.EXTERNAL_AUDIT)} />
+      <MarketPlace content={getContentData(SectionTypes.PREMIUM_MARKET_PLACE)} />
+      <Tokeninformation content={getContentData(SectionTypes.TOKEN_SUPPLY)} />
+      <Airdrop content={getContentData(SectionTypes.JOIN_AIRDROP)} />
+      <Partners content={getContentData(SectionTypes.PARTNERS)} />
+      < SocialMedia content={getContentData(SectionTypes.FOOTERS)} />
+      <Footer content={getContentData(SectionTypes.FOOTERS)} />
+      </>
   );
 };
 

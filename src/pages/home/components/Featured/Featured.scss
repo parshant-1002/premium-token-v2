@@ -1,37 +1,44 @@
 @import '../../../../assets/scss/base';
 
 .featured-on {
-
-  padding: 200px 0;
-
-  h2 {
-    margin-bottom: 40px;
+  @media (min-width:991.99px) {
+    padding: 200px 0;
   }
-
+  @media (max-width:991px) {
+    padding: 80px 0;
+  }
+  .h2 {
+    margin-bottom: 40px;
+    line-height: 1;
+  }
   .featured-row {
     @include flexbox;
     gap: 12px;
     background-color: rgba(56, 153, 137, 0.2470588235);
     border-top-right-radius: 60px;
     border-bottom-left-radius: 60px;
-    padding:2.5rem 2rem;
+    padding: 2.5rem 2rem;
     box-shadow: 0px 0px 35px rgb(0 0 0 / 25%);
     border: 1px solid rgb(255 255 255 / 11%);
+    @media (min-width:1200px) {
+      gap: 40px;
+    }
     @media (max-width:991px) {
-      flex-wrap: wrap;
-     padding:18px 5px;
-     @include border-radius(0 30px);
+      padding: 18px 5px;
+      @include flex-wrap (wrap);
+      @include justify-content ($center);
+      @include border-radius(0 30px);
     }
-    @media (min-width:1440px) {
-      gap:40px;
-    }
-    .fetured-image {     
+    .fetured-image {
       img {
         max-width: 100%;
+        @media (max-width:991px) {
+          max-height: 30px;
+        }
       }
       &:not(:nth-child(3)) {
         @media (max-width:991px) {
-          flex:0 0 calc(50% - 12px);
+          max-width: 125px; 
         }
       }
     }
@@ -39,10 +46,19 @@
 }
 
 .partners_bg {
-  @include position($absolute, $left:0px, $bottom:200px);
-  height: 100%; 
+  @include position($absolute, $left: 0px, $bottom: 40px);
+  height: 100%;
   z-index: -1;
   @media (max-width:1200px) {
-       bottom:-72px;
+    bottom: 200px;
+  }
+  @media (max-width:767px) {
+    top: 0;
+    width: 100%;    
+  }
+  img {
+    @media (max-width:767px) and (min-width:575px) {
+      width: 100%;
+    }
   }
 }

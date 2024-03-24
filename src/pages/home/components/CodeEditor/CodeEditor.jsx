@@ -25,8 +25,7 @@ function CodeEditor() {
 
     // Model
     export default mongoose.model(collection, schema, collection);
-`,
-        'file2.py': "# Python code for file 2",
+`
     });
     const monaco = useMonaco();
 
@@ -36,8 +35,6 @@ function CodeEditor() {
                 base: 'vs-dark', // assuming the theme in the image is a dark theme
                 inherit: true, // this will also enable VS Code's default dark theme rules to be applied
                 rules: [
-                    // Custom color rules can be added here
-                    // Example: (you should change the colors based on your image)
                     { token: 'comment', foreground: '66bb6a' }, // For comments
                     { token: 'string', foreground: '#ffffff' }, // For strings
                     { token: 'keyword', foreground: 'ba68c8' }, // For keywords
@@ -55,7 +52,6 @@ function CodeEditor() {
                     'editorLineNumber.foreground': '#858585', // Line numbers color
                     'editor.selectionBackground': '#2a2d2e', // Text selection color
                     'editor.inactiveSelectionBackground': '#3a3d41', // Inactive selection
-                    // More colors can be customized as needed
                 },
             });
     }
@@ -75,7 +71,6 @@ function CodeEditor() {
 
 
     const handleEditorChange = (value) => {
-        console.log(value, "value><><><><><")
         setFiles({ ...files, [currentFile]: value });
     };
 
@@ -116,7 +111,8 @@ function CodeEditor() {
                 {fileTabs}
             </div>
             <Editor
-                height="90vh"
+                // height="60vh"
+                className="editor_box"
                 defaultLanguage="javascript"
                 language={currentFile.split('.').pop()}
                 value={files[currentFile]}

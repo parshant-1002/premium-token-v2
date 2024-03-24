@@ -1,0 +1,105 @@
+@import '../../../../assets/scss/base';
+
+.footer-row {
+    @media (min-width:1200.99px) {
+        padding:100px 0 92px 0;
+    }
+    @media (max-width:1200px) {
+        padding:100px 0 40px 0;
+    }
+    @media (max-width:767px) {
+        padding:60px 0 40px 0;
+    }
+    .footer-together {
+        @include flexbox;
+        @include align-items(center);
+        @include flex-direction(column);
+        text-align: $center;
+        gap: 24px;
+        @media (min-width:1200px) {
+            gap: 52px;
+        }
+        p {
+            @include font-size(0.938);
+            line-height: 1.5;
+            @media (max-width:767px) {
+                @include font-size(0.875);
+            }
+        }
+    }
+
+    .footer_left_shape {
+        @include position($absolute, $left: 0px, $bottom: 0);
+        z-index: -1;
+        @media (max-width:768px) {
+           display: $none;
+        }
+    }
+    .footer_right_shape {
+        @include position($absolute, $right: 0px,$bottom: calc(0px - 109px));
+        z-index: -1;
+        @media (max-width:768px) {
+            display: $none;
+         }
+    }
+    .footer-button {
+        gap:24px;
+        @media (max-width:991px) {
+            gap:12px;
+        }
+        button {
+            min-width: 160px;
+            max-width: 160px;
+            &:not(:last-child) {
+                @media (max-width:1200px) {
+                    min-width: 44px;
+                    max-width: 44px;
+                    height: 44px;
+                    min-height: 44px;
+                    .image_renderer {
+                        margin-right: 0;
+                    }
+                }
+                @media (max-width:360px) {
+                    min-width: 40px !important;
+                    max-width: 40px !important;
+                    height: 40px;
+                    min-height: 40px;
+                }
+               .transform-none {
+                    .image_renderer {
+                        @media (max-width:768px) {
+                           margin-right: 0;
+                        }
+                    }
+                    .render_html_safely {
+                        @media (max-width:991px) {
+                            display: $none;
+                        }
+                    }
+                    @media (max-width:360px) {
+                        min-height: 38px;
+                        min-width: 38px;
+                        padding:5px
+                    }
+                }
+            }
+            @media (max-width:360px) {
+                min-height: 40px;
+                .transform-none {
+                  min-height: 38px;
+                  img {
+                    width: 20px;
+                  }
+                }
+            }
+        }
+    }
+}
+
+.footer_column_box {
+    max-width: 600px;
+    @media (min-width:1200px) {
+        max-width: 712px;
+    }
+}
