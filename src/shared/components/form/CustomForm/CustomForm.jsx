@@ -11,7 +11,6 @@ function CustomForm({
     defaultValues = {},
     formData = {},
     handleStateDataChange = () => {},
-    watchKey='',
     secondaryBtnText = '',
     handleSecondaryButtonClick,
     secondaryButtonType = 'button',
@@ -44,13 +43,11 @@ function CustomForm({
     }, [defaultValues]);
 
     useEffect(() => {
-        if(watchKey == name){
-            const subscription = watch((value, { name, type }) => {
-                handleStateDataChange(name, value[name], type);
-            });
-            return () => subscription.unsubscribe();
-        }
-    }, [watch, watchKey]);
+        const subscription = watch((value, { name, type }) => {
+            handleStateDataChange(name, value[name], type);
+        });
+        return () => subscription.unsubscribe();
+    }, [watch]);
 
     const handleRegister = (key) => {
         if (typeof formData[key].schema === 'function') {

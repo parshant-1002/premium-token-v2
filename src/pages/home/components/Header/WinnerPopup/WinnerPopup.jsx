@@ -74,6 +74,7 @@ export default function WinnerPopup({ show, onClose, partners }) {
     setStepToView({
       first: true,
     });
+    setFormData({});
   };
   return (
     <CustomModal

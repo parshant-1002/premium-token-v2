@@ -8,11 +8,9 @@ const countries = CountriesJson.map(({ name }) => ({ label: name, value: name })
 
 export default function Step2({ handleSubmitStep2, handleAutoNameGeneration, formData = {} }) {
     const [formSchema, setFormSchema] = useState(WINNER_MODAL_FORM_SCHEMA.step2(countries, []));
-
     const { name, dob, phoneNumber, country, city, streetAddress, zip } = formData || {};
 
     const handleStateDataChange = (name, value) => {
-        debugger
         if (name === 'country') {
             const selectedCountry = CountriesJson.find(({ name }) => name === value?.value);
             if (selectedCountry?.states?.length !== 0) {
@@ -28,8 +26,7 @@ export default function Step2({ handleSubmitStep2, handleAutoNameGeneration, for
                 onSubmit={handleSubmitStep2}
                 submitText={BUTTON_LABELS.Continue}
                 defaultValues={{ name, dob, phoneNumber, country, city, streetAddress, zip }}
-                handleStateDataChange={handleStateDataChange}
-                watchKey={'country'}
+                onChangeValues={handleStateDataChange}
                 className="row"
                 submitBtnClassName="btn btn-primary col-1"
                 secondaryBtnText="Back"

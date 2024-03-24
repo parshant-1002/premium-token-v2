@@ -32,6 +32,7 @@ export const RenderField = ({ field, id, handleRegister, handleInputChange, getV
                 return (
                     <Datepicker
                         id={id}
+                        value={value}
                         placeholder={field.placeholder}
                         {...handleRegister(id)}
                         onChange={(value) => handleInputChange(id, value)}
@@ -42,6 +43,7 @@ export const RenderField = ({ field, id, handleRegister, handleInputChange, getV
                 return (
                     <PhoneInput
                         id={id}
+                        value={value}
                         placeholder={field.placeholder}
                         {...handleRegister(id)}
                         onChange={(value) => handleInputChange(id, value)}

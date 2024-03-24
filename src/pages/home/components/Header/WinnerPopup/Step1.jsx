@@ -44,9 +44,12 @@ export default function Step1({
             {DEFAULT_CONTENT.SELECT_BETWEEN_TWO}
             <Prize
               prizeSelected={prizeSelected.first}
-              setPrizeSelected={(checked) =>
+              setPrizeSelected={(checked) =>{
                 setPrizeSelected({ first: checked })
-              }
+                if(checked){
+                  setPartnerSelected(false)
+                }
+              }}
             />
             <Prize
               prizeSelected={prizeSelected.second}
@@ -56,7 +59,7 @@ export default function Step1({
             />
 
             {DEFAULT_CONTENT.SELECT_PARTNER}
-            {partners?.partnersData?.map((person) => (
+            {partners?.partnersData?.map((person, index) => (
               <div key={person?.companyLogo}>
                 <span>
                   <RenderIconWithHover
@@ -66,8 +69,9 @@ export default function Step1({
                 </span>
                 <CircularCheckBox
                   className="position-absolute"
-                  checked={partnerSelected}
-                  setChecked={(checked) => setPartnerSelected(checked)}
+                  checked={partnerSelected && partnerSelected.id === person?._id && partnerSelected.checked}
+                  setChecked={(checked) => setPartnerSelected({ id: person?._id, checked })}
+                  disabled={prizeSelected.first}
                 />
               </div>
             ))}
