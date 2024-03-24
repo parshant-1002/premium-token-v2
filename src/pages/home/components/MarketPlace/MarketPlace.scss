@@ -15,7 +15,10 @@
         padding:0;
     }
     .heading_title {
-        max-width: 550px;        
+        max-width: 584px;
+        p {
+            @include font-size (.938)
+        }
     }  
 }
 

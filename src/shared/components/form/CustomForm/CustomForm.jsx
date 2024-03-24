@@ -78,7 +78,7 @@ function CustomForm({
                 );
             })}
             {preSubmitElement}
-            <div className="btn_groups w-100 text-center mt-4">
+            <div className="btn_groups w-100 text-center mt-3">
                 {handleSecondaryButtonClick && (
                     <Button
                         data-content={secondaryBtnText}

@@ -130,12 +130,16 @@
               }
               .td_img {
                 max-width: 92px;
-                display: $inline-block;
+                // display: $inline-block;
                 @media (max-width:991px){ 
                   max-width:110px;
                 }
                 img { 
                   max-width: 100%;
+                  object-fit: $contain;
+                  @media (min-width:991.99px){ 
+                    max-height: 66px;
+                  }
                 }
               }
               // Responsive
