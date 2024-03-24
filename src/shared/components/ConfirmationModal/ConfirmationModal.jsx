@@ -1,8 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
-import { LogoutIcon1 } from 'Assets';
-import CustomModal from 'Components/atoms/CustomModal/CustomModal';
+import CustomModal from '../CustomModal/CustomModal';
 import './style.scss';
 
 function ConfirmationModal({

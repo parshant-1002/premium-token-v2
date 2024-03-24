@@ -44,12 +44,15 @@ export const FILTER_ORDER = {
   };
 export const INPUT_TYPES = {
     TEXT: 'text',
+    DATE: 'date',
+    PHONE: 'phone',
     TEXT_AREA: 'textarea',
     NUMBER: 'number',
     EMAIL: 'email',
     PASSWORD: 'password',
     SELECT: 'select',
     RICH_TEXT: 'rich-text',
+    RADIO: "radio"
 };
   
 export const VALIDATION_REGEX = {
