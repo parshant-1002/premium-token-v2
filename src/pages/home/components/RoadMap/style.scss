@@ -7,66 +7,185 @@
 }
 
 .road_title {
-  margin-bottom: 80px;
+  @media (min-width:767.99px){
+    margin-bottom: 80px;
+  }
+  @media (max-width:767px){
+    margin-bottom: 30px;
+  }
 }
-
 .line {
   position: $absolute;
   left: calc(-50% + 12px);
   top: 40%;
   width: 100%;
-  height: 51px;
+  height: 56px;  
+  @media (max-width:1540px) {
+    height: 65px;
+  }
+  @media (max-width:1200px) {
+    height: 75px;
+  }
+  @media (max-width:767px) {
+    display: $none; 
+  }
 }
 
-.roadmap_wrap {
-  @media (min-width:991.99px) {
-    padding: 0 150px;    
+
+.roadmap_wrap { 
+  .slick-arrow {
+    @media (min-width:991px){
+      @include position($absolute, $top:-100px);
+    }
+    &.slick{
+      &-next {
+        @media (min-width:1200.99px){
+          right:calc(50vw - 1140px / 2);
+        }
+      }
+      &-prev {
+        left: $auto;
+        @media (min-width:1200.99px){
+          right:calc(50vw - 1140px / 2 + 60px);
+        } 
+      }
+    }
   }
   .slick-track {
     @include flexbox;
   }
   .slick-slide {
-    &:nth-child(even) {
+    // &:first-child {
+    //   .timeline-item{
+    //     &::before {
+    //       display: $none;
+    //     }
+    //   }
+    // }
+    &:nth-child(odd){
       .timeline_block {
         top: calc(50% + 30px);
       }
     }
   }
-
-  .line-before {
-    position: $absolute;
-    top: calc(50% - 44px);
-    left: 50%;
-  }
-
+ 
   .timeline_block {
-    max-width: 285px;
-    position: $absolute;
+    @media (min-width:767.99px){
+      max-width: 90%;
+      @include opacity (.7);
+      position: $absolute;
+      left: 5%;
+    }
+    .h6 {
+      margin-bottom: 3px;
+    }
+    span {
+      color: $white-color;
+    }
+    p {
+      margin-top: 3px;
+      color: $text-color;
+      @include font-size (.875);
+    }
   }
 
   .timeline-item {
-    height: 400px;
-    position: $relative;
-    &::before {
-      content: '';
-      width: 24px;
-      height: 24px;
-      background: #102F2B;
-      border: 6px solid transparent;
-      filter: drop-shadow(0px 0px 30px rgba(16, 85, 73, 0.75));
-      @include border-radius (50%);
-      position: $absolute;
-      top: calc(50% - 44px);
-      left: 50%;
-      z-index: 1;
+    @media (min-width:767.99px){
+      position: $relative;
+      height: 500px;
+      &::before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        background: #102F2B;
+        border: 6px solid $transparent;
+        filter: drop-shadow(0px 0px 30px rgba(98, 153, 144, 0.75));
+        @include border-radius (50%);
+        position: $absolute;
+        top: calc(40% - 7px);
+        left: 50%;
+        z-index: 1;
+        @media (max-width:1540px){
+          top: calc(50% - 40px);
+        }
+      }
     }
     &.active {
+      .timeline_block {
+        @include opacity (1);
+      }
       &::before {
-        border-color: $text-color;
+        @media (min-width:767.99px){
+          background-color: $green-tin-color-700;
+          border-color: $text-color;
+          width: 32px;
+          height: 32px;
+          top: calc(40% - 10px);
+        }
       }
       .line {
         path {
           stroke: $text-color;
+        }
+      }
+    } 
+  }
+}
+
+.roadmap_bg {
+  pointer-events: $none;
+  @media (min-width:767.99px){
+    @include position($absolute, $left:0, $top:-30%);
+    width: 100%; height: 100%;
+    pointer-events: $none;
+  }
+  @media (max-width:767px){
+    @include position($absolute, $right:0, $top:0%);
+  }
+}
+
+// RoadMap Responsive
+@media (max-width:767px){
+  .roadmap_wrap {
+    padding:0 15px;
+    .slick-track {
+      @include flex-direction (column);
+    }
+    .slick-slide {
+      width: 100%!important;
+      @for $i from 2 through 9 {
+        &:nth-child(#{$i}) { 
+          padding-left: 7px * $i; // Increase margin by 10px for each nth-child
+        }
+      }
+    }
+    .timeline-item {
+      position: $relative;
+      padding-left: 30px;
+      max-width: 300px;
+      &::before {
+        content: '';
+        width: 17px;
+        height: 17px;
+        background: #102F2B;
+        border: 4px solid $transparent;
+        filter: drop-shadow(0px 0px 30px rgba(98, 153, 144, 0.75));
+        @include border-radius (50%);
+        @include position($absolute, $left:0, $top:0);
+        z-index: 1;
+      }
+      &.active {
+        &::before {
+          background: $green-tin-color-700;
+          border-color: $text-color;
+          width: 20px;
+          height: 20px; 
+        }
+      }
+      .timeline_block {
+        margin-bottom: 12px; 
+        .h6 {
+          @include font-size (0.938);
         }
       }
     }
