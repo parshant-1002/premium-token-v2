@@ -6,10 +6,10 @@ import { useEffect, useState } from "react";
 import "./Header.scss";
 import { Link } from "react-router-dom";
 
-const Header = ({ content = {} }) => {
+const Header = ({ content = {}, partnersContent }) => {
 	const { twitter, discord, telegram, viewChartButton, airdropButton, buyTokenButton, premiumTokenTitle } = content
 	const [isSticky, setIsSticky] = useState(false);
-
+	const [popup, setPopup] = useState(false);
 	const handleScroll = () => {
 		const scrollTop = window.scrollY;
 		const stickyClassThreshold = 0; // Change this to the desired scroll position

@@ -23,9 +23,10 @@ export const handleCopyLink = async (value, contentType) => {
 export function isValidSolanaAddress(address) {
     try {
         new PublicKey(address);
+        return true;
     } catch (e) {
         console.log(e,"e<><><><><><")
-        return "Please Enter a valid wallet address";
+        return false;
     }
 }
 
