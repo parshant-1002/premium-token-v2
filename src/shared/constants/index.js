@@ -4,6 +4,7 @@ const VERSION = import.meta.env.VITE_API_VERSION || 'v1';
 export const SOCKET_URL = import.meta.env.VITE_SOCKET_URL;
 export const API = {
     BASE_URL: import.meta.env.VITE_API_BASE_URL,
+    ASSETS_BASE_URL: import.meta.env.VITE_ASSETS_BASE_URL,
     GET_DATA: '/ttt',
     URL: "/v1",
     LOGIN: "/admin/login",
@@ -16,6 +17,7 @@ export const API_URLS = {
     GET_CONTENT: VERSION + "/content",
     GET_WINNER_LIST: VERSION + "/winners",
     CREATE_AIRDROP_REQUEST: VERSION + "/createAirdrop",
+    GET_BLOCKCHAIN_DATA:  "/getBlockChainData",
 }
 
 export const API_METHODS = {

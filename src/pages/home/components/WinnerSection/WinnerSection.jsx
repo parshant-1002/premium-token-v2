@@ -5,18 +5,34 @@ import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import WinnerTable from "../WinnerTableSlider/WinnerTable";
 import ConnectButton from "../ConnectButton/ConnectButton";
 import "./WinnerSection.scss";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { getBlockChainData } from "../../../../store/actions/contentManagement";
+import { STATUS } from "../../../../shared/constants";
+import { replaceTagWithValue } from "./helpers/utils";
 
 const WinnerSection = ({content = {}, socket}) => {
-  const { marketCap, latestWinnerDetails, connectWalletButtonText, prizeDescription, tokenHolderText }  = content;
-  console.log(marketCap, latestWinnerDetails,"latestwinnerdetails")
+  // props destructuring
+  const { marketCap, latestWinnerDetails, connectWalletButtonText, prizeDescription, tokenHolderText }  = content;  
+
+  //hooks
+  const[blockChainData, setBlockChainData] = useState({})
+  const dispatch = useDispatch()
+  useEffect(()=>{
+    dispatch(getBlockChainData((data, status)=>{
+      if(status === STATUS.SUCCESS){
+        setBlockChainData(data)
+      }
+    }))
+  },[])
+  
+  
   const counterSettings = {
     digits: 7,
     delay: 200,
     direction: 'rtl',
     arrows: true,
   };
-
-
   return (
     <section className="winner_counter">
       <div className="container">
@@ -28,14 +44,14 @@ const WinnerSection = ({content = {}, socket}) => {
           <span className="market-cap text-success"><SafeHTML html={marketCap?.title} /></span>
         </div>
 
-        <SmoothFlipCounter initialValue={marketCap?.marketCapValue || 0} settings={counterSettings} socket = {socket}/>
+        <SmoothFlipCounter initialValue={blockChainData?.marketCap || 0} settings={counterSettings} socket = {socket}/>
 
         <div className="subtitle">
           <span className="process">
-            <SafeHTML html={latestWinnerDetails?.description}/>
+            <SafeHTML html={replaceTagWithValue(marketCap?.description, "$X", blockChainData?.nextWinnerMarketCap)}/>
           </span>
         </div>
-      </div>
+      </div>  
 
       <div className="winner_list position-relative">
         <div className="container">
@@ -44,7 +60,7 @@ const WinnerSection = ({content = {}, socket}) => {
               <div className="loopControl">
                 <div className="d-flex gap-1">
                         <span className="text-white"><SafeHTML html={tokenHolderText}/></span>
-                  <span className="text-success text-value">4859</span>
+                  <span className="text-success text-value">{blockChainData?.automaticTokenHolder}</span>
                 </div>
               </div>
               <div className="wallet-link align-items-center d-flex gap-3">

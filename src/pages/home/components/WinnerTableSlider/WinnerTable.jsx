@@ -30,12 +30,12 @@ const WinnerTable = ({ socket }) => {
             socket.on('latestWinner', (data) => {
                 setTableData((prevPages) => {
                     const firstPage = [data?.data, ...prevPages[0]];
-                    let updatedPages = [firstPage.slice(0, 4)];
-                    let remainingRows = firstPage.slice(4);
+                    let updatedPages = [firstPage.slice(0, NUMBER_OF_ROWS_IN_PAGE)];
+                    let remainingRows = firstPage.slice(NUMBER_OF_ROWS_IN_PAGE);
                     for (let i = 1; i < prevPages.length; i++) {
                         const page = [...remainingRows, ...prevPages[i]];
-                        updatedPages.push(page.slice(0, 4));
-                        remainingRows = page.slice(4);
+                        updatedPages.push(page.slice(0, NUMBER_OF_ROWS_IN_PAGE));
+                        remainingRows = page.slice(NUMBER_OF_ROWS_IN_PAGE);
                     }
                     if (remainingRows.length > 0) {
                         updatedPages.push(remainingRows);
@@ -49,7 +49,7 @@ const WinnerTable = ({ socket }) => {
     }, [socket]);
 
     const handleNextClick = () => {
-        if ((totalCount === null || totalCount > skip * 4)) {
+        if ((totalCount === null || totalCount > skip * NUMBER_OF_ROWS_IN_PAGE)) {
             setSkip((prev) => prev + NUMBER_OF_ROWS_IN_PAGE)
         }
     }

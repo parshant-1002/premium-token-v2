@@ -25,7 +25,7 @@ import { STATUS } from "../../shared/constants";
 import { DEFAULT_CONTENT, SectionTypes } from "./helpers/contentManagement";
 import { merge } from "lodash";
 const Home = () => {
-  const[content, setContent] = useState({})
+  const[content, setContent] = useState(DEFAULT_CONTENT)
   const dispatch = useDispatch()
   const socket = useSocket();
 

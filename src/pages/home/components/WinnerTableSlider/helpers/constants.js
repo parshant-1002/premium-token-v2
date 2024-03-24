@@ -1,4 +1,4 @@
-export const NUMBER_OF_ROWS_IN_PAGE = 4
+export const NUMBER_OF_ROWS_IN_PAGE = 5
 
 export const WINNER_HEADINGS = [
     { label: "Prize selected", apiKey: "prizetype" },

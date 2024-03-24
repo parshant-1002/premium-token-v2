@@ -41,7 +41,7 @@ const DidYouWin = ({content = {}}) => {
 							<div className="col-lg-3">
 								<div className="card-box-green position-relative">
 									<div className="card-counter">
-										<span className="card-counter-no">{index} </span>
+										<span className="card-counter-no">{index+1} </span>
 									</div>
 									<div className="card-img">
 										<img
@@ -54,7 +54,7 @@ const DidYouWin = ({content = {}}) => {
 										/>
 									</div>
 									<h3 className="h6">{item.title}</h3>
-									<p>{item.data}</p>
+									<p><SafeHTML html={item.description} /></p>
 									<div className="w-100 text-center btn_contain">
 										<button type="button" className="btn btn-md btn-secondary">
 											<span className="transform-none">Connect Wallet</span>

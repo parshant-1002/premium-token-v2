@@ -1,6 +1,7 @@
 import "./InformationCard.scss";
 import { RenderIconWithHover } from "../../../../shared/components/RenderIconWithHover";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
+import { addBaseUrlToUrls } from "../../../../shared/utilities";
 
 const InformationCard = ({
   illustration,
@@ -8,7 +9,7 @@ const InformationCard = ({
   prop,
   item
 }) => {
-  // console.log(item, "item<><><><><")
+  console.log(illustration, "item<><><><><")
   return (
     <div className="col-lg-3">
       <div className="card-box-green position-relative">
