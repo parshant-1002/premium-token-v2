@@ -15,6 +15,9 @@
         color: $text-color;
         line-height: 1.4;
         margin: 0;
+        @media (max-width:767px){
+            @include font-size (.875);
+        }
     }
 }
 
@@ -133,5 +136,8 @@
     @media (max-width:991px) {
         @include position($absolute, $left:0px, $bottom:-23%);
         z-index: -1;
+    }
+    @media (max-width:991px) {
+        bottom: -32%;
     }
 }

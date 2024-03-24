@@ -25,13 +25,13 @@
         padding-inline: 7px;
       }
     }
+    .slick-slide>div {
+      height: 100%;
+    }
     .slick {
-      &-slider {
-        &>div {
+      &-slider {        
+        [class*=col-] {
           height: 100%;
-          [class*=col-] {
-            height: 100%;
-          }
         }
         .slick {
           &-list {
