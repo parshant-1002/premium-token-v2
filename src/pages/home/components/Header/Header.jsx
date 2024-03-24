@@ -55,21 +55,21 @@ const Header = ({ content = {} }) => {
 						<div className="main-navigation d-flex justify-content-center justify-content-md-between flex-column flex-md-row align-items-center gap-12 ms-auto">
 							<div className="social-icon d-flex justify-content-between align-items-center gap-12 ms-md-auto">
 								<Link className="btn_icon btn44 dark-green-gradient" rel="noreferrer">
-									<span><RenderIconWithHover iconUrl={addBaseUrlToUrls(twitter?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Twitter} /></span>
+									<span><RenderIconWithHover iconUrl={addBaseUrlToUrls(twitter?.image)} defaultIcon={ICONS.Twitter} /></span>
 								</Link>
 								<Link className="btn_icon btn44 dark-green-gradient" rel="noreferrer">
-									<span><RenderIconWithHover iconUrl={addBaseUrlToUrls(discord?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Discord} /></span>
+									<span><RenderIconWithHover iconUrl={addBaseUrlToUrls(discord?.image)}  defaultIcon={ICONS.Discord} /></span>
 								</Link>
 								<Link className="btn_icon btn44 dark-green-gradient" rel="noreferrer">
 									<span>
-										<RenderIconWithHover iconUrl={addBaseUrlToUrls(discord?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Discord} />
+										<RenderIconWithHover iconUrl={addBaseUrlToUrls(telegram?.image)} defaultIcon={ICONS.Telegram} />
 									</span>
 								</Link>
 							</div>
 
 							<div className="w-100 d-flex justify-content-between flex-column-reverse flex-md-row align-items-center gap-12 header-button">
 								<button type="button" className="btn btn-md btn-primary">
-									<span className="transform-none"><RenderIconWithHover iconUrl={addBaseUrlToUrls(telegram?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Airdrop} /><SafeHTML html={airdropButton?.text} /></span>
+									<span className="transform-none"><RenderIconWithHover iconUrl={addBaseUrlToUrls(airdropButton?.image)} defaultIcon={ICONS.Airdrop} /><SafeHTML html={airdropButton?.text} /></span>
 								</button>
 								<button type="button" className="btn btn-md btn-primary"><span className="transform-none"><SafeHTML html={viewChartButton?.text} /></span></button>
 								<button type="button" className="btn btn-md btn-secondary"><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
