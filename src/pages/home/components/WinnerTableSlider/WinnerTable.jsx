@@ -4,9 +4,9 @@ import { getWinners } from '../../../../store/actions/contentManagement'
 import { STATUS } from '../../../../shared/constants'
 import { NUMBER_OF_ROWS_IN_PAGE, WINNER_HEADINGS } from './helpers/constants'
 import { CustomSlick } from '../../../../shared/components/CustomSlick'
-import { transformRow } from './helpers/utils'
 import { addBaseUrlToUrls } from '../../../../shared/utilities'
 import { ICONS } from '../../../../assets'
+import { transformRow } from './helpers/utils'
 
 const WinnerTable = ({ socket, prize }) => {
     const [skip, setSkip] = useState(0)

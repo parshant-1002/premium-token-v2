@@ -1,23 +1,27 @@
+import SafeHTML from "../../../../../shared/components/SanitizeHtml";
 import { INPUT_TYPES } from "../../../../../shared/constants";
 import { isValidSolanaAddress } from "../../../../../shared/constants/utils";
 import { FORM_VALIDATION_MESSAGES } from "../../../../../shared/constants/validations";
 
-export const WINNER_MODAL_FORM_SCHEMA = {
+export const WINNER_MODAL_FORM_SCHEMA =(data)=>{
+    const { popUp1, popUp2, popUp3 } = data
+    return {
+  
     step1: {
         socialMedia: {
             type: INPUT_TYPES.TEXT,
-            label: 'Whatsapp/Skype/Telegram',
+            label: <SafeHTML html={popUp1?.socialPlatforms?.title}/>,
             className: 'form-control col-md-6',
-            placeholder: 'Whatsapp/Skype/Telegram',
+            placeholder: popUp1?.socialPlatforms?.placeholder,
             schema: {
                 required: FORM_VALIDATION_MESSAGES().REQUIRED,
             }
         },
         walletAddress: {
             type: INPUT_TYPES.TEXT,
-            label: 'wallet address',
+            label: <SafeHTML html={popUp1?.walletAddress?.title} />,
             className: 'form-control col-md-6',
-            placeholder: 'wallet address',
+            placeholder: popUp1?.walletAddress?.placeholder,
             schema: (data) => ({
                 required: FORM_VALIDATION_MESSAGES().REQUIRED,
                 validate: () => {
@@ -33,36 +37,36 @@ export const WINNER_MODAL_FORM_SCHEMA = {
     step2: (countries = [], states = []) => ({
         name: {
             type: INPUT_TYPES.TEXT,
-            label: 'Full name',
+            label: <SafeHTML html={popUp2?.fullName?.title} />,
             className: 'form-control col-md-6',
-            placeholder: 'Full name',
+            placeholder: popUp2?.fullName?.placeholder,
             schema: {
                 required: FORM_VALIDATION_MESSAGES().REQUIRED,
             }
         },
         dob: {
             type: INPUT_TYPES.DATE,
-            label: 'Date Of Birth',
+            label: <SafeHTML html={popUp2?.dateOfBirth?.title} />,
             className: 'form-control col-md-6',
-            placeholder: 'Date Of Birth',
+            placeholder: popUp2?.dateOfBirth?.placeholder,
             schema: {
                 required: FORM_VALIDATION_MESSAGES().REQUIRED,
             }
         },
         phoneNumber: {
             type: INPUT_TYPES.PHONE,
-            label: 'Phone Number',
+            label: <SafeHTML html={popUp2?.phoneNumber?.title} />,
             className: 'form-control col-md-6',
-            placeholder: 'Phone Number',
+            placeholder: popUp2?.phoneNumber?.placeholder,
             schema: {
                 required: FORM_VALIDATION_MESSAGES().REQUIRED,
             }
         },
         country: {
             type: INPUT_TYPES.SELECT,
-            label: 'Country',
+            label: <SafeHTML html={popUp2?.country?.title} />,
             className: 'col-md-6',
-            placeholder: 'Select Country',
+            placeholder: popUp2?.country?.placeholder,
             options: countries,
             schema: {
                 required: FORM_VALIDATION_MESSAGES().REQUIRED,
@@ -70,9 +74,9 @@ export const WINNER_MODAL_FORM_SCHEMA = {
         },
         city: {
             type: INPUT_TYPES.SELECT,
-            label: 'City',
+            label: <SafeHTML html={popUp2?.city?.title} />,
             className: 'col-md-6',
-            placeholder: 'Select City',
+            placeholder: popUp2?.city?.placeholder,
             options: states,
             schema: {
                 required: FORM_VALIDATION_MESSAGES().REQUIRED,
@@ -80,24 +84,24 @@ export const WINNER_MODAL_FORM_SCHEMA = {
         },
         streetAddress: {
             type: INPUT_TYPES.TEXT,
-            label: 'Street Address',
+            label: <SafeHTML html={popUp2?.streetAddress?.title} />,
             className: 'form-control col-md-6',
-            placeholder: 'Street Address',
+            placeholder: popUp2?.streetAddress?.placeholder,
             schema: {
                 required: FORM_VALIDATION_MESSAGES().REQUIRED,
             }
         },
         zip: {
-            type: INPUT_TYPES.TEXT,
+            type: <SafeHTML html={popUp2?.zip?.title} />,
             label: 'ZIP',
             className: 'form-control col-md-6',
-            placeholder: 'ZIP',
-            schema: {
+            placeholder: popUp2?.zip?.placeholder,
+            schema: {   
                 required: FORM_VALIDATION_MESSAGES().REQUIRED,
             }
         },
     })
-};
+}};
 
 export const DEFAULT_CONTENT = {
     WINNER_TITLE: "Congratz, you have won!",
@@ -106,5 +110,11 @@ export const DEFAULT_CONTENT = {
     PRIZE_LABEL_1: "350,000 $ worth of PremiumToken",
     PRIZE_LABEL_2: "Supercar to a value of 350,000 $",
 
-    SELECT_PARTNER: "Select Partner",
+    SELECT_PARTNER: "Partner",
+}
+
+export const POPUP_TYPE = {
+    popUp1:1,
+    popUp2:2,
+    popUp3:3
 }

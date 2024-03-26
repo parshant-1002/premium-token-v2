@@ -7,7 +7,7 @@ import "./Header.scss";
 import { Link } from "react-router-dom";
 import WinnerPopup from "./WinnerPopup/WinnerPopup";
 
-const Header = ({ content = {}, partnersContent }) => {
+const Header = ({ content = {}, partnersContent, winnerPopup }) => {
 	const { twitter, discord, telegram, viewChartButton, airdropButton, buyTokenButton, premiumTokenTitle } = content
 	const [isSticky, setIsSticky] = useState(false);
 	const [popup, setPopup] = useState(false);
@@ -44,7 +44,7 @@ const Header = ({ content = {}, partnersContent }) => {
 	return (
 
 		<header className={isSticky ? 'header sticky-header' : 'header'}>
-<WinnerPopup show={popup} onClose={handleClose} partners={partnersContent}/>
+<WinnerPopup show={popup} onClose={handleClose} partners={partnersContent} winnerPopup = {winnerPopup}/>
 			<nav className={`navbar navbar-expand-xl bg-transparent py-0 ${isOpen ? 'menu-open' : ''}`}>
 				<div className="container">
 					<Link className="navbar-brand" href={"/"}>

@@ -1,7 +1,7 @@
 import { API } from "./constants"
 
 export const addBaseUrlToUrls = (url)=>{
-    return API.ASSETS_BASE_URL + url
+    return url
 }
 
 export const redirectToUrlInNewTab = (url) => window.open(url, '_blank')

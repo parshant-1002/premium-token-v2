@@ -17,7 +17,8 @@ export const SectionTypes = {
     PARTNERS: 'partners',
     FOOTERS: 'footers',
     // FEATURES: 'features',
-    FEATURE_SECTION:"featureSection"
+    FEATURE_SECTION:"featureSection",
+    WINNER_POPUP:"winnerPopUps"
 };
 
 // Enum for headers

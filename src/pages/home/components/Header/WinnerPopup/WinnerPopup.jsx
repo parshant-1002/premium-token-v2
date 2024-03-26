@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import CustomModal from "../../../../../shared/components/CustomModal/CustomModal";
 import SafeHTML from "../../../../../shared/components/SanitizeHtml";
-import { DEFAULT_CONTENT } from "../helpers/constants";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
+import { DEFAULT_CONTENT, POPUP_TYPE, WINNER_MODAL_FORM_SCHEMA } from "../helpers/constants";
+import { WINNER_DESCRIPTION } from "../helpers/utils";
 
-export default function WinnerPopup({ show, onClose, partners }) {
+export default function WinnerPopup({ show, onClose, partners, winnerPopup = {} }) {
+  const {popUp1, popUp2, popUp3} = winnerPopup
   const [formData, setFormData] = useState({});
-  const [stepToShow, setStepToView] = useState({
-    first: true,
-  });
+  const [stepToShow, setStepToView] = useState(POPUP_TYPE.popUp1);
   const [prizeSelected, setPrizeSelected] = useState({
     first: false,
     second: true
@@ -19,28 +19,27 @@ export default function WinnerPopup({ show, onClose, partners }) {
 
   const handleSubmitStep1 = (data) => {
     setFormData((prev) => ({ ...prev, ...data }));
-    setStepToView({
-      second: true,
-    });
+    setStepToView(POPUP_TYPE.popUp2);
   };
   const handleSubmitStep2 = (data) => {
     setFormData((prev) => ({ ...prev, ...data }));
-    setStepToView({
-      thired: true
-    });
+    setStepToView(POPUP_TYPE.popUp3);
   };
   const handleSure = () => {
     handleCloseModal();
   };
   const handleCheckAgain = () => {
-    setStepToView({ first: true });
+    setStepToView(POPUP_TYPE.popUp1);
   };
   const handleAutoNameGeneration = () => {
-    setStepToView({ first: true });
+    setStepToView(POPUP_TYPE.popUp1);
   };
+
+  const REFORMED_WINNER_MODAL_FORM_SCHEMA = WINNER_MODAL_FORM_SCHEMA(winnerPopup)
+  console.log(REFORMED_WINNER_MODAL_FORM_SCHEMA,"REFORMED_WINNER_MODAL_FORM_SCHEMA")
   const renderStep = () => {
-    switch (true) {
-      case stepToShow.first:
+    switch (stepToShow) {
+      case POPUP_TYPE.popUp1:
         return (
           <Step1
             partners={partners}
@@ -50,14 +49,18 @@ export default function WinnerPopup({ show, onClose, partners }) {
             partnerSelected={partnerSelected}
             setPartnerSelected={setPartnerSelected}
             handleSubmitStep1={handleSubmitStep1}
+            popUp1 = {popUp1}
+            REFORMED_WINNER_MODAL_FORM_SCHEMA={REFORMED_WINNER_MODAL_FORM_SCHEMA}
           />
         );
-      case stepToShow.second:
+      case POPUP_TYPE.popUp2:
         return (
           <Step2
             formData={formData}
             handleSubmitStep2={handleSubmitStep2}
             handleAutoNameGeneration={handleAutoNameGeneration}
+            popUp2 = {popUp2}
+            REFORMED_WINNER_MODAL_FORM_SCHEMA={REFORMED_WINNER_MODAL_FORM_SCHEMA}
           />
         );
       default:
@@ -65,15 +68,14 @@ export default function WinnerPopup({ show, onClose, partners }) {
           <Step3
             handleSure={handleSure}
             handleCheckAgain={handleCheckAgain}
+            popUp3 = {popUp3}
           />
         );
     }
   };
   const handleCloseModal = () => {
     onClose();
-    setStepToView({
-      first: true,
-    });
+    setStepToView(POPUP_TYPE.popUp1);
     setFormData({});
   };
   return (
@@ -85,7 +87,7 @@ export default function WinnerPopup({ show, onClose, partners }) {
         <h2 className="h3">
           <SafeHTML html={DEFAULT_CONTENT.WINNER_TITLE} />
         </h2>
-        <p><SafeHTML html={DEFAULT_CONTENT.WINNER_DESCRIPTION} /></p>
+        <p><SafeHTML html={WINNER_DESCRIPTION(winnerPopup)?.[stepToShow]} /></p>
       </div>
       {renderStep()}
     </CustomModal>
