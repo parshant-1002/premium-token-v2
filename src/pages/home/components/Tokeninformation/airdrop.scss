@@ -29,7 +29,7 @@
         margin-bottom:100px ;
     }
 }
-.airdrop-main {   
+.airdrop-main {
     .whitelisted-row {
         display: grid;
         grid-template-columns: 1fr;
@@ -83,11 +83,13 @@
             max-width: 681px;
         }
         p{
-            @include font-size (0.938);            
+            @include font-size (0.938);
         }
     }
     .btn {
-        min-height: 44px;
+        .transform-none {
+            min-height: 44px!important;
+        }
     }
 }
 
@@ -99,16 +101,16 @@
         }
         .image_renderer {
             @include position($absolute, $top:calc(9px), $left:14px);
-            img { 
-                width: 24px; 
-                height: 24px; 
+            img {
+                width: 24px;
+                height: 24px;
                 display: $block;
             }
         }
-        .form-control { 
-            border: 0;  
-            padding: 8px 16px 8px 48px; 
-            background: rgba(41, 101, 92, 0.25); 
+        .form-control {
+            border: 0;
+            padding: 8px 16px 8px 48px;
+            background: rgba(41, 101, 92, 0.25);
             &::placeholder {
                 color: #389989;
             }
@@ -117,7 +119,7 @@
             }
             &:-ms-input-placeholder {
                 color:#389989;
-            } 
+            }
         }
     }
 }
@@ -134,7 +136,7 @@
 .air_drop_bg {
     @media (min-width:991.99px) {
         @include position($absolute, $right:0px, $top:-15%);
-        height: 100%; 
+        height: 100%;
     }
     @media (max-width:991px) {
         @include position($absolute, $left:0px, $bottom:-23%);

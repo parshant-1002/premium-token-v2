@@ -22,11 +22,10 @@
     .airdrop-list-text {
         padding-right: 16px;
         p {
-            color: $white-color;
-            font-weight: 400;
-            line-height: normal;
-            max-width: 291px;
+            max-width: 280px;
             line-height: 1.4;
+            color: $white-color;
+            font-weight: $font-regular;
         }
     }
 }

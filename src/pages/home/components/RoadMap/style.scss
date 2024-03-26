@@ -19,7 +19,7 @@
   left: calc(-50% + 12px);
   top: 40%;
   width: 100%;
-  height: 56px;  
+  height: 56px;
   @media (max-width:1540px) {
     height: 65px;
   }
@@ -27,7 +27,7 @@
     height: 75px;
   }
   @media (max-width:767px) {
-    display: $none; 
+    display: $none;
   }
 }
 
@@ -50,7 +50,7 @@
         left: $auto;
         @media (min-width:1200.99px){
           right:calc(50vw - 1140px / 2 + 60px);
-        } 
+        }
       }
     }
   }
@@ -71,7 +71,7 @@
       }
     }
   }
- 
+
   .timeline_block {
     @media (min-width:767.99px){
       max-width: 90%;
@@ -108,8 +108,8 @@
         top: calc(40% - 7px);
         left: 50%;
         z-index: 1;
-        @media (max-width:1540px){
-          top: calc(50% - 40px);
+        @media (max-width:1750px){
+          top: calc(50% - 53px);
         }
       }
     }
@@ -125,13 +125,16 @@
           height: 32px;
           top: calc(40% - 10px);
         }
+        @media (min-width:767.99px) and (max-width:1670px){
+          top: calc(40% - 7px);
+        }
       }
       .line {
         path {
           stroke: $text-color;
         }
       }
-    } 
+    }
   }
 }
 
@@ -157,7 +160,7 @@
     .slick-slide {
       width: 100%!important;
       @for $i from 2 through 9 {
-        &:nth-child(#{$i}) { 
+        &:nth-child(#{$i}) {
           padding-left: 7px * $i; // Increase margin by 10px for each nth-child
         }
       }
@@ -182,11 +185,11 @@
           background: $green-tin-color-700;
           border-color: $text-color;
           width: 20px;
-          height: 20px; 
+          height: 20px;
         }
       }
       .timeline_block {
-        margin-bottom: 12px; 
+        margin-bottom: 12px;
         .h6 {
           @include font-size (0.938);
         }

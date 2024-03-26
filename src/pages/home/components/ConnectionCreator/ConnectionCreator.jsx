@@ -17,12 +17,11 @@ const ConnectionCreator = ({ content = {} }) => {
                 <h2 className="h2 text-center common_title"><SafeHTML html={title} /></h2>
                 <p className="text-center"><SafeHTML html={description} /></p>
               </div>
-              <button className="link-button">
+              <button className="link-button" onClick={() => handleCopyLink(address, "Address")}>
                 <img
                   alt=""
                   src="/copy.svg"
                   width={22} height={22}
-                  onClick={() => handleCopyLink(address, "Address")}
                 />
                 <SafeHTML html={address} />
               </button>

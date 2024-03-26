@@ -56,9 +56,9 @@ const DidYouWin = ({content = {}}) => {
 									</div>
 									<h3 className="h6">{item.title}</h3>
 									<p><SafeHTML html={item.description} /></p>
-									{index === 0 && <div className="w-100 text-center btn_contain">
+									{/* {index === 0 && <div className="w-100 text-center btn_contain">
 										<ConnectButton/>
-									</div>}
+									</div>} */}
 								</div>
 							</div>
 						)}
@@ -66,7 +66,7 @@ const DidYouWin = ({content = {}}) => {
 				</div>
 			</div>
 			<div className="didyouwin_bg d-none d-lg-block">
-				<img width={900} height={700}					
+				<img width={900} height={700}
 					alt="Diduwin"
 					src={ICONS.DidUwinBG}
 					className="img-fluid"

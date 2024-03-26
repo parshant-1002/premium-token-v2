@@ -38,12 +38,12 @@ const VideoSection = ({ content = {} }) => {
         <section className="video-banner position-relative">
             <div className="container">
                 <div className="heading_title text-center">
-                    <h1 className="h2"><SafeHTML html={title} /></h1> 
+                    <h1 className="h2"><SafeHTML html={title} /></h1>
                     <p><SafeHTML html={description} /></p>
                 </div>
                 <div className="position-relative">
                     <div className="wrapperVideo">
-                        <div className="video_home ratio ratio-16x9">
+                        <div className="video_home ratio ratio-21x9">
                             <video id="video" src={addBaseUrlToUrls(videoUrl)} key={videoUrl} onPlay={hideIcon} onPause={showIcon} onEnded={showIcon}  width={1140} height={400} />
                         </div>
                        {isVideoPaused && <button className="play_btn" onClick={handlePlay} id="play_icon">

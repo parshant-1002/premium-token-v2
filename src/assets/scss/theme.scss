@@ -74,7 +74,7 @@ h2, .h2 {
 }
 h3,
 .h3 {
-    @include font-size(1.5);   
+    @include font-size(1.5);
     @media (max-width: 991px) {
         @include font-size(1.35);
     }
@@ -208,7 +208,7 @@ a.btn {
     &-lg {
         min-width: 180px;
         padding: 0.5rem 1.5rem;
-        font-weight: $font-bold;        
+        font-weight: $font-bold;
         font-size: 18px!important;
         @media (max-width:1200px) {
             @include font-size(1.1);
@@ -216,7 +216,13 @@ a.btn {
             min-height: 42px;
         }
         .transform-none {
-            min-height: 52px!important;
+            @include flexCenter;
+            padding: 0.675rem 1rem;
+            @include border-radius (9px);
+            width:100%; height: 100%;
+            @include font-size (.875);
+            min-height: 52px;
+            line-height: 1;
         }
     }
     &-md {
@@ -225,6 +231,15 @@ a.btn {
         padding: 0.625rem 1rem;
         @include font-size(1);
         min-height: 44px;
+        .transform-none {
+            @include flexCenter;
+            padding: 0.625rem 1rem;
+            @include border-radius (9px);
+            width:100%; height: 100%;
+            @include font-size (.875);
+            min-height: 44px;
+            line-height: 1;
+        }
         @media (min-width:1200px) {
             min-width: 150px;
         }
@@ -246,20 +261,13 @@ a.btn {
         }
     }
     &-primary {
-        border:0; 
+        border:0;
         padding: 1px;
         background: linear-gradient(91.03deg, rgba($white-color, 0.11) 1.7248211428523064%, rgba(255, 255, 255, .4) 51.5625%, rgba(255, 255, 255, .15) 100%);
         @include border-radius (10px);
         min-width: 170px;
         .transform-none {
-            @include flexCenter;
-            padding: 0.625rem 1rem;
             @include button(rgba(#11342F, 1), $transparent, $white-color);
-            @include border-radius (9px);
-            width:100%; height: 100%;
-            min-height: 44px;
-            @include font-size (.875);
-            line-height: 1;
         }
         .image_renderer {
             margin-right: 8px;
@@ -281,14 +289,7 @@ a.btn {
         min-width: 170px;
         background: linear-gradient(91.03deg, rgb(50 171 151) 1.7248211429%, rgb(255, 255, 255, .8) 51.5625%, rgb(50 171 151) 100%);
         .transform-none {
-            @include flexCenter;
-            padding: 0.625rem 1rem;
-            @include button($green-tin-color-700, $transparent, $white-color);
-            @include border-radius (9px);
-            width:100%; height: 100%;
-            min-height: 44px;
-            @include font-size (.875);
-            line-height: 1;
+            @include button($green-tin-color-700, $transparent, $white-color)
         }
     }
     &-transparent {
@@ -343,7 +344,7 @@ label {
 }
 .form {
     &-control {
-        width: 100%; 
+        width: 100%;
         height: $auto;
         min-height: 40px;
         color: $white-color;
@@ -351,7 +352,7 @@ label {
         @include font-size (.875);
         font-weight: $font-regular;
         @include border-radius (10px);
-        background: #1C544C; 
+        background: #1C544C;
         border: 1px solid #1C544C;
         @include transition-mixin (all, .5s, ease-in-out);
         &:focus {
@@ -375,8 +376,8 @@ label {
         }
         &:-ms-input-placeholder {
             color:#ACC7C3;
-        } 
-    } 
+        }
+    }
 }
 
 select {

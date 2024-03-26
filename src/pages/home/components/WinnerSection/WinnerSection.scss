@@ -1,11 +1,16 @@
 @import "../../../../assets/scss/base";
 
 .winner_counter {
-  position: $relative;  
+  position: $relative;
   &_content {
     @media (min-width:992px) {
       max-width: 761px;
       margin: 0 $auto;
+    }
+  }
+  .heading_title {
+    p {
+      color: $white-color;
     }
   }
 }
@@ -80,10 +85,10 @@
             @include font-size(0.725);
             font-style: $normal;
             font-weight: $font-mediumbold;
-            line-height: 14px; 
+            line-height: 14px;
             text-transform: $uppercase;
             padding:0.625rem 1.5rem 0;
-            &:last-child {           
+            &:last-child {
               padding-right:30px;
             }
             // Responsive
@@ -107,7 +112,7 @@
                 margin-bottom: 0;
               }
               // &:first-child {
-              //   .td_img { 
+              //   .td_img {
               //     margin-top: -20px;
               //   }
               // }
@@ -136,14 +141,14 @@
               }
               .td_img {
                 max-width: 92px;
-                @media (max-width:991px){ 
+                @media (max-width:991px){
                   display: $inline-block;
                   max-width:110px;
                 }
-                img { 
+                img {
                   max-width: 100%;
                   object-fit: $contain;
-                  @media (min-width:991.99px){ 
+                  @media (min-width:991.99px){
                     max-height: 66px;
                   }
                 }
@@ -162,18 +167,18 @@
                     margin-top: -15px;
                   }
                 }
-              }              
+              }
               @media (max-width:991px) {
                 background: $transparent;
                 display: $block;
-                padding: 6px 12px; 
+                padding: 6px 12px;
                 padding-left: 40%;
                 text-align: $right;
                 position: $relative;
                 @include font-size (.875);
                 @media (max-width:360px){
                   @include font-size (.725);
-                }                
+                }
                 &::before {
                   content: attr(data-label);
                   width: 40%;
@@ -185,7 +190,7 @@
                   color: $green-tin-color-600;
                   font-weight: $font-mediumbold;
                   @include position($absolute, $left: 0, $top: 50%);
-                  @include transform (translateY(-50%)); 
+                  @include transform (translateY(-50%));
                 }
               }
             }
@@ -197,14 +202,14 @@
         .slick-track {
           @include flexbox;
           gap: 5px;
-        }  
-      }  
+        }
+      }
     }
   }
   // Slick Arrows
   .slick {
     &-arrow {
-      bottom:0;            
+      bottom:0;
       @media (min-width:1200px) {
         top:calc(100% + 32px);
       }
@@ -232,10 +237,10 @@
   }
   img {
     object-fit: $contain;
-    object-position: bottom; 
-  }  
+    object-position: bottom;
+  }
   @media (max-width:575px) {
-    
+
   }
 }
 
@@ -243,6 +248,7 @@
   font-weight: $font-mediumbold;
   text-transform: $uppercase;
   @include font-size (.725);
+  margin-top:16px;
 }
 
 // No Data Found
