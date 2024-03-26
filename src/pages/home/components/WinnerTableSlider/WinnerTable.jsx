@@ -4,7 +4,6 @@ import { getWinners } from '../../../../store/actions/contentManagement'
 import { STATUS } from '../../../../shared/constants'
 import { NUMBER_OF_ROWS_IN_PAGE, WINNER_HEADINGS } from './helpers/constants'
 import { CustomSlick } from '../../../../shared/components/CustomSlick'
-import { shortenString } from '../../../../shared/constants/utils'
 import { transformRow } from './helpers/utils'
 import { addBaseUrlToUrls } from '../../../../shared/utilities'
 import { ICONS } from '../../../../assets'
@@ -100,7 +99,7 @@ const WinnerTable = ({ socket, prize }) => {
         )
     }
 
-    const responsiveConfig = [    
+    const responsiveConfig = [
         {
           breakpoint: 991,
           settings: {
@@ -143,7 +142,7 @@ const WinnerTable = ({ socket, prize }) => {
                 </table>
             ))}
 
-        </CustomSlick> : 
+        </CustomSlick> :
             <div className="d-flex justify-content-center flex-md-row flex-column align-items-center no-data-found">
                 <figure className="mb-0">
                     <img src={ICONS.NoDataFound} width={302} height={202} alt="No Data" />

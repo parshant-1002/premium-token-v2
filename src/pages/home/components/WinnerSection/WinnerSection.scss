@@ -1,7 +1,7 @@
 @import "../../../../assets/scss/base";
 
 .winner_counter {
-  position: $relative;  
+  position: $relative;
   &_content {
     @media (min-width:992px) {
       max-width: 761px;
@@ -56,7 +56,7 @@
   }
 }
 
-.table_slider {
+.table_list {
   margin: 32px 0 15px;
   @media (max-width:991px) {
     margin-top: 17px;
@@ -80,10 +80,10 @@
             @include font-size(0.725);
             font-style: $normal;
             font-weight: $font-mediumbold;
-            line-height: 14px; 
+            line-height: 14px;
             text-transform: $uppercase;
             padding:0.625rem 1.5rem 0;
-            &:last-child {           
+            &:last-child {
               padding-right:30px;
             }
             // Responsive
@@ -107,7 +107,7 @@
                 margin-bottom: 0;
               }
               // &:first-child {
-              //   .td_img { 
+              //   .td_img {
               //     margin-top: -20px;
               //   }
               // }
@@ -134,16 +134,34 @@
                   padding-right: 30px;
                 }
               }
+              .wallet-address {
+                position: $relative;
+                padding-right: 16px;
+                @media (min-width:991.99px){
+                  display: $inline-block;
+                  vertical-align: text-bottom;
+                  max-width: 233px;
+                  line-height: 1.1;
+                }
+                em {
+                  @include position($absolute,$right:0, $top:0);
+                  img {
+                    width: 14px;
+                    vertical-align: middle;
+                    display: $inline-block;
+                  }
+                }
+              }
               .td_img {
                 max-width: 92px;
-                @media (max-width:991px){ 
+                @media (max-width:991px){
                   display: $inline-block;
                   max-width:110px;
                 }
-                img { 
+                img {
                   max-width: 100%;
                   object-fit: $contain;
-                  @media (min-width:991.99px){ 
+                  @media (min-width:991.99px){
                     max-height: 66px;
                   }
                 }
@@ -162,18 +180,18 @@
                     margin-top: -15px;
                   }
                 }
-              }              
+              }
               @media (max-width:991px) {
                 background: $transparent;
                 display: $block;
-                padding: 6px 12px; 
+                padding: 6px 12px;
                 padding-left: 40%;
                 text-align: $right;
                 position: $relative;
                 @include font-size (.875);
                 @media (max-width:360px){
                   @include font-size (.725);
-                }                
+                }
                 &::before {
                   content: attr(data-label);
                   width: 40%;
@@ -185,7 +203,7 @@
                   color: $green-tin-color-600;
                   font-weight: $font-mediumbold;
                   @include position($absolute, $left: 0, $top: 50%);
-                  @include transform (translateY(-50%)); 
+                  @include transform (translateY(-50%));
                 }
               }
             }
@@ -197,14 +215,14 @@
         .slick-track {
           @include flexbox;
           gap: 5px;
-        }  
-      }  
+        }
+      }
     }
   }
   // Slick Arrows
   .slick {
     &-arrow {
-      bottom:0;            
+      bottom:0;
       @media (min-width:1200px) {
         top:calc(100% + 32px);
       }
@@ -226,16 +244,14 @@
 .prize_secn_bg {
   @include position($absolute, $left:0px, $bottom:20%);
   height: 100%; width: 100%;
+  pointer-events: $none;
   z-index: -1;
   @media (max-width:1200px) {
     $top:-72px;
   }
   img {
     object-fit: $contain;
-    object-position: bottom; 
-  }  
-  @media (max-width:575px) {
-    
+    object-position: $bottom;
   }
 }
 
@@ -243,6 +259,8 @@
   font-weight: $font-mediumbold;
   text-transform: $uppercase;
   @include font-size (.725);
+  display: $inline-block;
+  margin-top:16px;
 }
 
 // No Data Found

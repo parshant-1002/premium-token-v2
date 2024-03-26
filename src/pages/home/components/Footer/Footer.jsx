@@ -8,7 +8,7 @@ import WinnerPopup from "../Header/WinnerPopup/WinnerPopup";
 const Footer = ({content = {},partnersContent = {}}) => {
   const { premiumTokenTitle, viewChartButton, buyTokenButton, email } = content
   console.log(content,"content><><><><><><><>")
-  
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [popup, setPopup] = useState(false);
 
@@ -33,7 +33,7 @@ const Footer = ({content = {},partnersContent = {}}) => {
   const handleOpenWinnerModal = () => {
     setPopup(true)
   }
-  
+
   return (
     <footer className={`footer bottom_footer ${isScrolled ? 'footer-sticky' : ''}`}>
       <WinnerPopup show={popup} onClose={handleClose} partners={partnersContent} />
@@ -43,12 +43,12 @@ const Footer = ({content = {},partnersContent = {}}) => {
             <div className="footer_logo text-lg-start text-center">
               <img src={addBaseUrlToUrls(premiumTokenTitle)} alt="Premium" width={147} />
             </div>
-          </div>  
+          </div>
 
           <div className="col-lg-4 order-3 order-lg-2">
             <div className="d-flex justify-content-center gap-2">
               <button type="button" className="btn btn-md btn-primary" onClick={() => window.open(viewChartButton?.url, '_blank')}><span className="transform-none"><SafeHTML html={viewChartButton?.text} /></span></button>
-              <button type="button" className="btn btn-md btn-primary" onClick={() => handleOpenWinnerModal(true)}><span className="transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
+              <button type="button" className="btn btn-md btn-secondary" onClick={() => handleOpenWinnerModal(true)}><span className="transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
             </div>
           </div>
 
@@ -61,7 +61,6 @@ const Footer = ({content = {},partnersContent = {}}) => {
               </span>
             </div>
           </div>
-
         </div>
       </div>
     </footer>

@@ -39,7 +39,7 @@ import DemoVideo from "./videos/Video.mp4"
 import RulesToWin1 from "./icons/Rules_To_Win1.svg"
 import RulesToWin2 from "./icons/Rules_To_Win2.svg"
 import RulesToWin3 from "./icons/Rules_To_Win3.svg"
-import RulesToWin4 from "./icons/Rules_To_Win4.svg" 
+import RulesToWin4 from "./icons/Rules_To_Win4.svg"
 
 //Winner section
 import PrizeTypeToken from "./icons/Prize_Type_Token.svg"
@@ -55,6 +55,7 @@ import RoadMapBG from "./img/roadMap-bg.png"
 import RoadMapMobileBG from "./img/roadMap_Mobilebg.png"
 
 import NoDataFound from "./img/no_data_found.svg"
+import CopyIcon from "./icons/copy_icon.svg"
 
 export const ICONS = {
     VideoBanner: VideoBanner,
@@ -82,7 +83,7 @@ export const ICONS = {
     ConnectionCreatorMobileBg:ConnectionCreatorMobileBg,
     WinBg: WinBg,
     NextArrow,
-    PrevArrow, 
+    PrevArrow,
     BrandFrame,
     CloseMenu,
    // header
@@ -97,7 +98,7 @@ export const ICONS = {
     RulesToWin2,
     RulesToWin3,
     RulesToWin4,
-   
+
     //Winner section
     PrizeTypeToken,
     PrizeTypeCar,
@@ -111,6 +112,7 @@ export const ICONS = {
     RoadMapBG,
     RoadMapMobileBG,
     NoDataFound,
+    CopyIcon,
 }
 
 export const VIDEOS = {

@@ -38,18 +38,18 @@ const DataAggregator = ({content = {}}) => {
           </div>
 
           <div className="col-lg-8 order-lg-2 order-1">
-           
-            <div className="heading_title text-center mb-0">
+
+            <div className="heading_title text-left text-md-center mb-0">
               <h2 className="h2"><SafeHTML html={transpancy?.title}/></h2>
               <SafeHTML html={transpancy?.description} />
             </div>
 
             <CodeEditor />
-        
+
           </div>
         </div>
       </div>
-      
+
       <div className="git_hub_bg">
         <img width={831} height={1203}
           className="img-fluid"

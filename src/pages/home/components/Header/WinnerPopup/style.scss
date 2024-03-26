@@ -11,7 +11,7 @@
         @include flexbox;
         @include align-items ($center);
         padding: 0.625rem 1rem;
-        background-color: #1A4B44;
+        background-color: $bg-green-380;
         @include border-radius (9px);
         width: 100%;
         height: 100%;
@@ -64,7 +64,7 @@
         }
         &:nth-child(2) {
             .partner_logo {
-                background-color: #000000;
+                background-color: $black-color;
             }
         }
         &:nth-child(3) {
@@ -81,20 +81,26 @@
             .partner_logo {
                 background-color: $white-color;
             }
-            .checkbox-label { 
+            .checkbox-label {
                 border-color: $black-color;
             }
         }
         &:nth-child(6) {
             .partner_logo {
-                background-color: #262525;
+                background-color: $base-color;
             }
         }
     }
 }
 
 .prize_col {
-    margin: 15px 0;
+    margin: 15px 0 0;
+    label {
+        color: $text-color;
+        @include font-size (0.725);
+        text-transform: $uppercase;
+        font-weight: $font-mediumbold;
+    }
 }
 
 // Date Picker

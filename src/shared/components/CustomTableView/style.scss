@@ -16,7 +16,3 @@
 .activeOrder {
     @include opacity (1);
 }
-
-.table-responsive {
-    overflow: $hidden;
-}

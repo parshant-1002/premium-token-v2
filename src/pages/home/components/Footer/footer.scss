@@ -1,23 +1,26 @@
 @import "../../../../assets/scss/base";
 
-.scrolled { 
+.scrolled {
   @media (max-width:1200px){
+    padding-bottom: 114px;
+  }
+  @media (max-width:991px){
     padding-bottom: 184px;
   }
- .bottom_footer { 
+ .bottom_footer {
     @media (max-width:1200px){
       @include position($fixed, $bottom:0, $left:0, $right:0);
       @include transform (translateY(0));
-      z-index: 11; 
+      z-index: 11;
     }
-  } 
+  }
 }
 
 footer {
   &.bottom_footer {
     padding:30px 0;
-    background:$dark-green-color-300;    
-    @media (max-width:1200px){
+    background:$dark-green-color-300;
+    @media (max-width:991px){
       @include transform (translateY(100%));
       @include transition (all, .5s, ease-in-out, .10s);
     }
