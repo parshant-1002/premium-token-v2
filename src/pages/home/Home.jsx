@@ -31,8 +31,8 @@ const Home = () => {
   useEffect(()=>{ 
     dispatch(getContent({},(data, status)=>{
       if(status === STATUS.SUCCESS){
-        const mergedContent = merge({}, DEFAULT_CONTENT, data);
-        setContent(mergedContent)
+        // const mergedContent = merge({}, DEFAULT_CONTENT, data);
+        // setContent(mergedContent)
       }
     }))
   },[])

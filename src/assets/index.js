@@ -82,8 +82,25 @@ import DiscordHover from "./icons/Discord_hover.svg";
 import TelegramHover from "./icons/Telegram_hover.svg";
 import FacebookHover from "./icons/Facebook_hover.svg";
 import InstagramHover from "./icons/Instagram_hover.svg";
-import TikTokHover from "./icons/TikTok_hover.svg";
+import TikTokHover from "./icons/Tiktok_hover.svg";
 import WalletHover from "./icons/Wallet_hover.svg";
+import Airdrop_Section_Two_1 from "./icons/Airdrop_Section_2.1.svg";
+import Airdrop_Section_Two_2 from "./icons/Airdrop_Section_2.2.svg";
+import Airdrop_Section_Two_3 from "./icons/Airdrop_Section_2.3.svg";
+
+// Partners
+import Partner from "./icons/Partner.svg";
+
+//Footer
+import Email from "./icons/Email.svg";
+
+//Featured on 
+import Featured_Image_1  from './icons/Featured_Image_1.svg';
+import Featured_Image_2 from './icons/Featured_Image_2.svg';
+import Featured_Image_3 from './icons/Featured_Image_3.svg';
+import Featured_Image_4 from './icons/Featured_Image_4.svg';
+import Featured_Image_5 from './icons/Featured_Image_5.svg';
+
 export const ICONS = {
     VideoBanner: VideoBanner,
     Mobile_banner:Mobile_banner,
@@ -169,8 +186,26 @@ export const ICONS = {
     TwitterHover,
     DiscordHover,
     TelegramHover,
-    WalletHover
-}
+    WalletHover,
+
+    // Airdrop section two
+    Airdrop_Section_Two_1,
+    Airdrop_Section_Two_2,
+    Airdrop_Section_Two_3,
+
+    //Partner
+    Partner,
+
+    //Footer
+    Email,
+
+    //Featured on
+    Featured_Image_1,
+    Featured_Image_2,
+    Featured_Image_3,
+    Featured_Image_4,
+    Featured_Image_5
+} 
 
 export const VIDEOS = {
     DemoVideo:DemoVideo
