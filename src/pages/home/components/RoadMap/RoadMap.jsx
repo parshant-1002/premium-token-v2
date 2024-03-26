@@ -8,23 +8,13 @@ const RoadMap = ({content = {}}) => {
   const{title, roadMap} = content
   const responsiveConfig = [
     {
-      breakpoint: 468,
+      breakpoint: 1400,
       settings: {
-        slidesToShow: 6,
-        slidesToScroll: 6,
-        infinite: false,
-        arrows: false,
-        dots: true, 
-      }
-    },
-    {
-      breakpoint: 991,
-      settings: {
-        slidesToShow: 2,
+        slidesToShow: 4,
         slidesToScroll: 1,
         infinite: false,
-        arrows: true,
-        dots: false,
+        arrows: false,
+        dots: true,
       }
     },
     {
@@ -33,20 +23,22 @@ const RoadMap = ({content = {}}) => {
         slidesToShow: 3,
         slidesToScroll: 1,
         infinite: false,
-        arrows: true,
-        dots: false,
+        arrows: false,
+        dots: true,
       }
     },
     {
-      breakpoint: 1580,
+      breakpoint: 767,
       settings: {
-        slidesToShow: 4,
+        slidesToShow: 6,
         slidesToScroll: 1,
         infinite: false,
-        arrows: true,
-        dots: false,
+        arrows: false,
+        dots: true,
+        vertical: true,
+        verticalSwiping: false,
       }
-    },    
+    },
   ]
 
   return (
@@ -56,7 +48,7 @@ const RoadMap = ({content = {}}) => {
 
         <div className="road_title text-md-start text-center">
           <h2 className="h2 mb-0"><SafeHTML html={title}/></h2>
-        </div> 
+        </div>
       </div>
 
       <div className="roadmap_wrap">
