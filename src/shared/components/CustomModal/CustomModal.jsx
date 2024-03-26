@@ -5,7 +5,7 @@ import './modal.scss';
 const CustomModal = ({ title = '', show = false, onClose = () => { }, children = '', size = "md", ...props }) => {
   return (
     <Modal onHide={onClose} show={show} size={size} centered backdrop="static" >
-      <div className="modal-body p-0" {...props}>
+      <div className="modal-body" {...props}>
         {title ? <div className='modal-header'>
           <h4 className="modal-title h4">{title} </h4>
         </div> : null}

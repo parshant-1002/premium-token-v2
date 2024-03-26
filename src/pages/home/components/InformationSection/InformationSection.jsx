@@ -8,7 +8,7 @@ import { ICONS } from "../../../../assets";
 
 const InformationSection = ({ content = {}, buyTokenButton = {} }) => {
   const { rulesToWin, title } = content;
-  const responsiveConfig = [ 
+  const responsiveConfig = [
     {
       breakpoint: 991,
       settings: {
@@ -43,9 +43,13 @@ const InformationSection = ({ content = {}, buyTokenButton = {} }) => {
                 />)}
             </CustomSlick>
           </div>
+          {buyTokenButton &&
+          <div className="w-100 text-center btn_contain mt-4 pt-2">
+            <button type="button" className="btn btn-md btn-secondary text-capitalize" onClick={() => redirectToUrlInNewTab(buyTokenButton?.url)}><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
+          </div>}
         </div>
         <div className="win_bg">
-          <img src={ICONS.WinBg} width={500} height={400} alt="" className="d-none d-md-block" /> 
+          <img src={ICONS.WinBg} width={500} height={400} alt="" className="d-none d-md-block" />
         </div>
       </section>
     );
