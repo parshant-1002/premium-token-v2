@@ -12,7 +12,7 @@
     }
     .footer-together {
         @include flexbox;
-        @include align-items(center);
+        @include align-items($center);
         @include flex-direction(column);
         text-align: $center;
         gap: 24px;
