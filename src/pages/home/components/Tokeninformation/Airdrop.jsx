@@ -14,7 +14,7 @@ import { hasAtLeastFourValues } from './helpers/utils';
 import "./airdrop.scss";
 
 const Airdrop = ({ content = {} }) => {
-  const { description, section1, section2, title } = content
+  const { description, section1, section2, title, buttonText } = content
   const AIRDROP_SCHEMA = AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA(section1)
   const dispatch = useDispatch()
   const onSubmit = (data) => {
@@ -30,6 +30,7 @@ const Airdrop = ({ content = {} }) => {
       })
     );
   };
+  console.log(buttonText,"buttonText")
   return (
     <section className="position-relative airdrop_sec">
       <div className="container">
@@ -46,7 +47,7 @@ const Airdrop = ({ content = {} }) => {
                 formData={AIRDROP_SCHEMA}
                 onSubmit={onSubmit}
                 defaultValues={{}}
-                submitText="Update Contract Details Content"
+                submitText= {<SafeHTML html={buttonText}/>}
               />
             </div>
             <div className="airdrop-info">

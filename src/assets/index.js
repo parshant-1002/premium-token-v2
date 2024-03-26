@@ -54,6 +54,36 @@ import WinnerRulesSection4 from "./icons/Winner_Rules4.svg"
 import RoadMapBG from "./img/roadMap-bg.png"
 import RoadMapMobileBG from "./img/roadMap_Mobilebg.png"
 
+// github logo
+import GithubLogo from "./icons/GithubLogo.svg";
+import PremiumTokenMobile from "./icons/Mobile.svg";
+
+//External Audit
+import ExternalAudit from "./icons/External_Audit.svg";
+
+//Token Info
+import TokenInfo from "./icons/Token_Info.svg";
+
+
+// PREMIUM MARKETPLACE
+import Marketplace_car1 from "./icons/Marketplace_car1.svg";
+import Marketplace_car2 from "./icons/Marketplace_car2.svg";
+import Marketplace_car3 from "./icons/Marketplace_car3.svg";
+
+//Airdrop
+import AirdropWallet from "./icons/Airdrop_Wallet.svg";
+import Facebook from "./icons/Facebook.svg";
+import Instagram from "./icons/Instagram.svg";
+import TikTok from "./icons/TikTok.svg";
+
+// Social Media hover icons
+import TwitterHover from "./icons/Twitter_hover.svg";
+import DiscordHover from "./icons/Discord_hover.svg";
+import TelegramHover from "./icons/Telegram_hover.svg";
+import FacebookHover from "./icons/Facebook_hover.svg";
+import InstagramHover from "./icons/Instagram_hover.svg";
+import TikTokHover from "./icons/TikTok_hover.svg";
+import WalletHover from "./icons/Wallet_hover.svg";
 export const ICONS = {
     VideoBanner: VideoBanner,
     Mobile_banner:Mobile_banner,
@@ -108,6 +138,38 @@ export const ICONS = {
 
     RoadMapBG,
     RoadMapMobileBG,
+
+    // GithubLogo
+    GithubLogo: GithubLogo,
+
+    //Premium token wallet
+    PremiumTokenMobile: PremiumTokenMobile,
+
+    //External Audit
+    ExternalAudit: ExternalAudit,
+
+    //Token Info
+    TokenInfo: TokenInfo,
+
+    //Premium Marketplace
+    Marketplace_car1,
+    Marketplace_car2,
+    Marketplace_car3,
+
+    //Airdrop 
+    AirdropWallet,
+    Facebook,
+    Instagram,
+    TikTok,
+
+    //Social Media Hover icons
+    InstagramHover,
+    FacebookHover,
+    TikTokHover,
+    TwitterHover,
+    DiscordHover,
+    TelegramHover,
+    WalletHover
 }
 
 export const VIDEOS = {
