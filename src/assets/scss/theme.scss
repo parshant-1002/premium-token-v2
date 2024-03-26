@@ -205,6 +205,26 @@ a.btn {
         pointer-events: $none;
         @include opacity (0.6);
     }
+    .transform-none {
+        overflow: $hidden;
+        position: $relative;
+        &::after {
+            content: '';
+            transition: all 400ms ease-in-out 0s;
+            @include position($absolute, $top:0, $left:0, $bottom:0, $right:0);
+            height: 0;
+            width: 100%;
+            background-color: rgba($white-color, .1);
+            z-index: 1;
+        }
+    }
+    &:hover {
+        .transform-none {
+            &::after {
+                height: 100%;
+            }
+        }
+    }
     &-lg {
         min-width: 180px;
         padding: 0.5rem 1.5rem;
@@ -480,16 +500,32 @@ input[type="search"]::-webkit-search-results-decoration {
     @include border-radius (10px);
     span {
         background:$dark-green-color-500;
+        @include border-radius (9px);
+        @include flexCenter;
         height: 100%;
         width: 100%;
-        @include flexCenter;
-        @include border-radius (9px);
+        overflow: $hidden;
+        position: $relative;
+        &::after {
+            content: '';
+            transition: all 400ms ease-in-out 0s;
+            @include position($absolute, $top:0, $left:0, $bottom:0, $right:0);
+            height: 0;
+            width: 100%;
+            background-color: rgba($white-color, .1);
+            z-index: 1;
+        }
         img {
             width: 24px;
             display: $block;
         }
     }
     &:hover{
+        span {
+            &::after {
+                height: 100%;
+            }
+        }
         path{
             fill: $text-color;
         }

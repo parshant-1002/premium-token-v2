@@ -30,7 +30,7 @@
             max-width: 480px;
         }
         &-content {
-            background: #133D38;
+            background: $bg-green-390;
             @at-root {
                 .modal-title {
                     padding-right: 40px;

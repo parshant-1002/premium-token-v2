@@ -27,7 +27,6 @@
             }
         }
     }
-
     .footer_left_shape {
         @include position($absolute, $left: 0px, $bottom: 0);
         z-index: -1;
@@ -51,13 +50,16 @@
             min-width: 160px;
             max-width: 160px;
             &:not(:last-child) {
-                @media (max-width:1200px) {
+                @media (max-width:991px) {
                     min-width: 44px;
                     max-width: 44px;
                     height: 44px;
                     min-height: 44px;
                     .image_renderer {
                         margin-right: 0;
+                    }
+                    .transform-none {
+                        padding: 10px;
                     }
                 }
                 @media (max-width:360px) {

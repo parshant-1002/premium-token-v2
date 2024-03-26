@@ -13,3 +13,19 @@ $MobileBg: url(assets/img/mobile_group_bg.png);
         background-size: 100%;
     }
 }
+
+// Connect Wallet
+.wallet-adapter-modal {
+    &-wrapper {
+        background-color: $bg-green-390;
+    }
+    &-button-close {
+        background-color: $transparent;
+        padding: 0;
+        svg {
+            path {
+              color: $white-color;
+            }
+        }
+    }
+}
