@@ -16,3 +16,12 @@ export const formatDate = (dateString, format = "DD-MM-YYYY") => {
 export const covertToMillion = (number) => {
     return `$${(number / 1000000).toFixed(2)}M`
 }
+
+export function removeEmptyKeys(obj) {
+    return Object.entries(obj).reduce((acc, [key, value]) => {
+        if (value !== '') {
+            acc[key] = value;
+        }
+        return acc;
+    }, {});
+}

@@ -71,7 +71,7 @@ export const AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA = (data = {}) => {
         icon: <RenderIconWithHover onClick ={ ()=>{redirectToUrlInNewTab(premiumToken?.link)} } iconUrl={addBaseUrlToUrls(premiumToken?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(premiumToken?.hovers)} />,
         className: 'col-md-4',
         placeholder: premiumToken?.placeholder,
-        schema: {
+        schema: (data)=>({
             validate: () => {
                 const valid = isValidSolanaAddress(data);
                 if (!valid) {
@@ -79,7 +79,7 @@ export const AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA = (data = {}) => {
                 }
                 return true;
             },
-        }
+        })
     },
     twitterProfileURL: {
         type: INPUT_TYPES.TEXT,

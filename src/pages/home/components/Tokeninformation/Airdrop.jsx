@@ -3,7 +3,7 @@ import Info from './Info'
 import { ICONS } from '../../../../assets';
 import SafeHTML from '../../../../shared/components/SanitizeHtml';
 import { Each } from '../../../../shared/components/Each';
-import { addBaseUrlToUrls } from '../../../../shared/utilities';
+import { addBaseUrlToUrls, removeEmptyKeys } from '../../../../shared/utilities';
 import { AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA } from './config';
 import CustomForm from '../../../../shared/components/form/CustomForm/CustomForm';
 import { STATUS } from '../../../../shared/constants';
@@ -22,14 +22,16 @@ const Airdrop = ({ content = {} }) => {
       toast.error("Please complete at least four fields to qualify for the airdrop whitelist.");
       return
     }
+    const payload = removeEmptyKeys(data)
     dispatch(
-      createAirDrop(data, (message, status) => {
+      createAirDrop(payload, (message, status) => {
         if (status === STATUS.SUCCESS) {
           toast.success(message);
         }
       })
     );
   };
+
   return (
     <section className="position-relative airdrop_sec">
       <div className="container">
