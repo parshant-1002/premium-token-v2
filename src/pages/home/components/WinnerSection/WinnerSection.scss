@@ -134,10 +134,19 @@
                   padding-right: 30px;
                 }
               }
-              &[data-label="Wallet address"] {
+              .wallet-address {
                 @media (min-width:991.99px){
-                  max-width: 230px;
+                  display: $inline-block;
+                  vertical-align: text-bottom;
+                  max-width: 233px;
                   line-height: 1.1;
+                  em {
+                    img {
+                      width: 14px;
+                      vertical-align: middle;
+                      display: $inline-block;
+                    }
+                  }
                 }
               }
               .td_img {

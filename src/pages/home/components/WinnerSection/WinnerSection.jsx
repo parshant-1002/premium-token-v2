@@ -76,7 +76,6 @@ const WinnerSection = ({ content = {}, socket }) => {
               <div className="prize_table">
                 <WinnerTable socket={socket} prize={prize} />
               </div>
-
             </div>
           </div>
         </div>

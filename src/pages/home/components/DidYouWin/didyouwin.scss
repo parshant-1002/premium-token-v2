@@ -2,7 +2,7 @@
 
 .didyouwin {
   padding-top: 100px;
-  padding-bottom: 105px; 
+  padding-bottom: 105px;
   @media (min-width:1200px){
     padding-top: 150px;
   }
@@ -13,6 +13,11 @@
     z-index: -1;
     @media (max-width:1200px) {
       $top: 0px;
+    }
+  }
+  .btn_contain {
+    .btn {
+      min-width: 230px;
     }
   }
 }

@@ -20,7 +20,7 @@ const ConnectionCreator = ({ content = {} }) => {
               <button className="link-button" onClick={() => handleCopyLink(address, "Address")}>
                 <img
                   alt=""
-                  src="/copy.svg"
+                  src={ICONS.CopyIcon}
                   width={22} height={22}
                 />
                 <SafeHTML html={address} />
