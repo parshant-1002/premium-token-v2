@@ -28,12 +28,12 @@ export const options = (innerTitle) => ({
                         fontSize: window.innerWidth > 768 ? '24px' : '18px', // Adjust font size based on screen width
                         fontFamily: 'Lato',
                         fontWeight: 800,
-                        color: "white"
+                        color: "white",
                     },
                     total: {
                         show: true,
                         showAlways: true,
-                        fontSize: window.innerWidth > 768 ? '12px' : '10px', // Adjust font size based on screen width
+                        fontSize: window.innerWidth > 768 ? '16px' : '14px', // Adjust font size based on screen width
                         fontFamily: 'Lato',
                         fontWeight: 800,
                         color: "#A7D7CF",
@@ -43,6 +43,7 @@ export const options = (innerTitle) => ({
                     }
                 },
                 size: "70%",
+                minAngleToShowLabel: 10,
             },
         },
     },
@@ -62,6 +63,16 @@ export const options = (innerTitle) => ({
     },
     dataLabels: {
         enabled: true,
+        formatter: function (val, opts) {
+            const value = opts.w.config.series[opts.seriesIndex];
+            return value % 1 === 0 ?
+                `${parseInt(value)}%` :
+                `${value.toFixed(1)}%`;
+        },
+        style: {
+
+            fontSize: "6px"
+        }
     },
     legend: {
         show: false,
@@ -74,10 +85,10 @@ export const options = (innerTitle) => ({
                     donut: {
                         labels: {
                             value: {
-                                fontSize: '10px',
+                                fontSize: '14px',
                             },
                             total: {
-                                fontSize: '12px',
+                                fontSize: '16px',
                             },
                         },
                     },

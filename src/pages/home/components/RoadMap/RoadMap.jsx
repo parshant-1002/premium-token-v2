@@ -62,11 +62,10 @@ const RoadMap = ({content = {}}) => {
       <div className="roadmap_wrap">
         <CustomSlick slidesToShow={6} responsive={responsiveConfig}>
           {roadMap?.map((item, index)=>{
-            console.log(item,"item<><><><><><><")
             return <div key = {item?._id} className={`timeline-item ${item?.level <= 2 ? "active" : ""}`}>
                 <div className="timeline_block text-start text-md-center">
                   <h6 className="h6"><SafeHTML html={item?.title}/></h6>
-                  <span><SafeHTML html={item?.subTitle}/></span>
+                <span><SafeHTML html={item?.completionTitle} /></span><span><SafeHTML html={item?.completionTime} /></span>
                 <p><SafeHTML html={item?.description} /></p>
                 </div>
                 <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none">

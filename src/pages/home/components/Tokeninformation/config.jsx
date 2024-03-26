@@ -2,7 +2,7 @@ import { RenderIconWithHover } from "../../../../shared/components/RenderIconWit
 import { INPUT_TYPES } from "../../../../shared/constants";
 import { isValidSolanaAddress } from "../../../../shared/constants/utils";
 import { FORM_VALIDATION_MESSAGES } from "../../../../shared/constants/validations";
-import { addBaseUrlToUrls } from "../../../../shared/utilities";
+import { addBaseUrlToUrls, redirectToUrlInNewTab } from "../../../../shared/utilities";
 
 export const data = {
     labels: ['65%', '10%', '10%', '5%', '4.5%', '4.5%', '1%'],
@@ -68,7 +68,7 @@ export const AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA = (data = {}) => {
     return {
     walletAddress: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(premiumToken?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(premiumToken?.hovers)} />,
+        icon: <RenderIconWithHover onClick ={ ()=>{redirectToUrlInNewTab(premiumToken?.link)} } iconUrl={addBaseUrlToUrls(premiumToken?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(premiumToken?.hovers)} />,
         className: 'col-md-4',
         placeholder: premiumToken?.placeholder,
         schema: {
@@ -83,37 +83,37 @@ export const AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA = (data = {}) => {
     },
     twitterProfileURL: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(twitter?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(twitter?.hovers)} />,
+        icon: <RenderIconWithHover onClick={() => { redirectToUrlInNewTab(twitter?.link) }}  iconUrl={addBaseUrlToUrls(twitter?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(twitter?.hovers)} />,
         className: 'col-md-4',
         placeholder: twitter?.placeholder,
     },
     telegramUsername: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(telegram?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(telegram?.hovers)} />,
+        icon: <RenderIconWithHover onClick={() => { redirectToUrlInNewTab(premiumToken?.link) }} iconUrl={addBaseUrlToUrls(telegram?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(telegram?.hovers)} />,
         className: 'col-md-4',
         placeholder: telegram?.placeholder,
     },
     instagramProfileURL: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(instagram?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(instagram?.hovers)} />,
+        icon: <RenderIconWithHover onClick={() => { redirectToUrlInNewTab(instagram?.link) }}  iconUrl={addBaseUrlToUrls(instagram?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(instagram?.hovers)} />,
         className: 'col-md-4',
         placeholder: instagram?.placeholder,
     },
     facebookProfileURL: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(facebook?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(facebook?.hovers)} />,
+        icon: <RenderIconWithHover onClick={() => { redirectToUrlInNewTab(facebook?.link) }}  iconUrl={addBaseUrlToUrls(facebook?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(facebook?.hovers)} />,
         className: 'col-md-4',
         placeholder: facebook?.placeholder,
     },
     tiktokProfileURL: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(tiktok?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(tiktok?.hovers)} />,
+        icon: <RenderIconWithHover onClick={() => { redirectToUrlInNewTab(tiktok?.link) }} iconUrl={addBaseUrlToUrls(tiktok?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(tiktok?.hovers)} />,
         className: 'col-md-4',
         placeholder: tiktok?.placeholder,
     },
     discordUsername: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover iconUrl={addBaseUrlToUrls(discord?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(discord?.hovers)} />,
+        icon: <RenderIconWithHover onClick={() => { redirectToUrlInNewTab(discord?.link) }}  iconUrl={addBaseUrlToUrls(discord?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(discord?.hovers)} />,
         className: 'col-md-4',
         placeholder: discord?.placeholder,
     },

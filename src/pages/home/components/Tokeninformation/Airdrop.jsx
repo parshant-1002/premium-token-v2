@@ -30,7 +30,6 @@ const Airdrop = ({ content = {} }) => {
       })
     );
   };
-  console.log(buttonText,"buttonText")
   return (
     <section className="position-relative airdrop_sec">
       <div className="container">
@@ -47,7 +46,7 @@ const Airdrop = ({ content = {} }) => {
                 formData={AIRDROP_SCHEMA}
                 onSubmit={onSubmit}
                 defaultValues={{}}
-                submitText= {<SafeHTML html={buttonText}/>}
+                submitText= {<SafeHTML html={section1?.buttonText}/>}
               />
             </div>
             <div className="airdrop-info">

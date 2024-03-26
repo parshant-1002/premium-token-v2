@@ -5,6 +5,7 @@ import './style.scss';
 
 const DoughnutChart = ({ series, innerTitle }) => {
     const [chartOptions, setChartOptions] = useState(options(innerTitle));
+    console.log(series,"series><><><>")
     useEffect(() => {
         setChartOptions(options(innerTitle));
     }, [innerTitle]);

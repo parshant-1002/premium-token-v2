@@ -1,11 +1,11 @@
 import { ICONS } from "../../../../assets";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import { handleCopyLink } from "../../../../shared/constants/utils";
-import { addBaseUrlToUrls } from "../../../../shared/utilities";
+import { addBaseUrlToUrls, redirectToUrlInNewTab } from "../../../../shared/utilities";
 import "./ConnectionCreator.scss";
 
 const ConnectionCreator = ({ content = {} }) => {
-  const { title, premiumTokenButtonText, imageUrl, externalAuditButtonText, description, address } = content
+  const { title, premiumTokenButton, imageUrl, externalAuditButton, description, address } = content
   console.log(content, "Connection")
   return (
     <section className="connection-creator position-relative">
@@ -28,13 +28,13 @@ const ConnectionCreator = ({ content = {} }) => {
               </button>
               <div className="row gx-3">
                 <div className="col-md-6 mb-3">
-                  <button className="btn btn-md btn-secondary w-100">
-                    <span className="transform-none"><SafeHTML html={premiumTokenButtonText} /></span>
+                  <button className="btn btn-md btn-secondary w-100" onClick={() => redirectToUrlInNewTab(premiumTokenButton.url)}>
+                    <span className="transform-none"><SafeHTML html={premiumTokenButton?.text} /></span>
                   </button>
                 </div>
                 <div className="col-md-6 mb-md-3">
-                  <button className="btn btn-md btn-secondary w-100">
-                    <span className="transform-none"><SafeHTML html={externalAuditButtonText} /></span>
+                  <button className="btn btn-md btn-secondary w-100" onClick={() => redirectToUrlInNewTab(premiumTokenButton.url)}> 
+                    <span className="transform-none"><SafeHTML html={externalAuditButton?.url} /></span>
                   </button>
                 </div>
               </div>

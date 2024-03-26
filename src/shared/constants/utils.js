@@ -25,14 +25,16 @@ export function isValidSolanaAddress(address) {
         new PublicKey(address);
         return true;
     } catch (e) {
-        console.log(e,"e<><><><><><")
         return false;
     }
 }
 
-export function formatNumber(num) {
-    // International numbering system
-    var internationalFormatted = num.toLocaleString('en-US');
-
-    return internationalFormatted
+export function formatNumber(number) {
+    if (isNaN(number)) {
+        return number
+    }
+    number = Number(number);
+    number = Number.isInteger(number) ? number : number.toFixed(2);
+    let localeCode = 'en-US';
+    return number.toLocaleString(localeCode);
 }

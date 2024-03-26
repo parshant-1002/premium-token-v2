@@ -187,35 +187,29 @@ export const DEFAULT_CONTENT = {
         "description": "Watch our partner PlatinumCars, one of the biggest premium car dealerships in Sweden, talk and explain about how PremiumToken works and how you can win a $350,000 premium car from them.",
         "videoUrl": VIDEOS.DemoVideo,
     },
-    [SectionTypes.FEATURES]: {
-        "features": [
-            "/uploads/files/car (2)_1711141939258.svg"
-        ],
-        "title": "dsadsad"
-    },
     [SectionTypes.PRIZE_SECTION]: {
         [PrizeSectionEnum.LATEST_WINNER_DETAILS]: {
             "title": "Latest winners",
-            "description": "<p>In the list below can you see all latest winners that the smart contract has drawn for each increase of $10 million market cap. The contract draws the winners automatic and all holders that hold minimum 1000 tokens have a chance of winning, the winners can choose a prize between $350,000 worth of PremiumToken or a premium car from our partners worth $350,000.</p>"
+            "description": "In the list below can you see all latest winners that the smart contract has drawn for each increase of $10 million market cap. The contract draws the winners automatic and all holders that hold minimum 1000 tokens have a chance of winning, the winners can choose a prize between $350,000 worth of PremiumToken or a premium car from our partners worth $350,000."
         },
         [PrizeSectionEnum.MARKET_CAP]: {
             "title": "MARKET CAP",
             "marketCapValue": 2000000000,
-            "description": "<p>The smart contract will draw the next winner at $X million market cap!</p>"
+            "description": "The smart contract will draw the next winner at $X million market cap!"
         },
         [PrizeSectionEnum.TITLE]: "How to win a $350,000 prize",
         [PrizeSectionEnum.RULES_TO_WIN]: [
             {
                 "imageUrl": ICONS.RulesToWin1,
-                "description": "<p>Click on the Buy button or go to Raydium.io to buy PremiumToken for Solana</p>"
+                "description": "Click on the Buy button or go to Raydium.io to buy PremiumToken for Solana"
             },
             {
                 "imageUrl": ICONS.RulesToWin2,
-                "description": "<p>Hold minimum of 1000 tokens in you wallet and get a chance to win a $350,000 prize</p>"
+                "description": "Hold minimum of 1000 tokens in you wallet and get a chance to win a $350,000 prize"
             },
             {
                 "imageUrl": ICONS.RulesToWin3,
-                "description": "<p>The smart contract draws a new winners automatic at each $10 million market cap</p>"
+                "description": "The smart contract draws a new winners automatic at each $10 million market cap"
             },
             {
                 "imageUrl": ICONS.RulesToWin4,
@@ -244,12 +238,12 @@ export const DEFAULT_CONTENT = {
             {
                 "imageUrl": ICONS.WinnerRulesSection1,
                 title:"Connect your wallet",
-                "description": "<p>If you see your wallet address on the winners list, connect your wallet, its integrated with Web3 API and it’s 100% secure!</p>"
+                "description": "If you see your wallet address on the winners list, connect your wallet, its integrated with Web3 API and it’s 100% secure!>"
             },
             {
                 "imageUrl": ICONS.WinnerRulesSection2,
                 title:"Enter your contact information",
-                "description": "<p>Fill our your email and your WhatsApp, skype or Telegram and we will contact you shortly, be sure to double check your information before sending in the information to us, your wallet address will be added automatic when you connect your wallet.</p>"
+                "description": "Fill our your email and your WhatsApp, skype or Telegram and we will contact you shortly, be sure to double check your information before sending in the information to us, your wallet address will be added automatic when you connect your wallet."
             },
             {
                 "imageUrl": ICONS.WinnerRulesSection3,
@@ -359,8 +353,14 @@ export const DEFAULT_CONTENT = {
         "title": "Token Info",
         "description": "Here below can you easily see and copy PremiumtToken’s contract address, if you wish to buy tokens or add the token to your wallet. You can also check PremiumToken on Solscan.io or view the externa audit!",
         "address": "xfsde3eedsd1e12wdsadasd",
-        "premiumTokenButtonText": "PremiumToken on Solscan.io",
-        "externalAuditButtonText": "View the External Audit",
+        "premiumTokenButton": {
+            "text": "PremiumToken on Solscan.io",
+            "url": "https://ExternalauditLink"
+        },
+        "externalAuditButton": {
+            "text": "View the External Audit",
+            "url": "https://ExternalauditLink"
+        },
         "imageUrl": ICONS.TokenInfo,
     },
     "premiumMarketPlace": {
@@ -551,6 +551,10 @@ export const DEFAULT_CONTENT = {
                 "hovers": "/uploads/files/PlatinumCars_1711307573174.png"
             },
             {
+                "imageUrl": ICONS.Featured_Image_5,
+                "hovers": "/uploads/files/PlatinumCars_1711307573174.png"
+            },
+            {
                 "imageUrl": ICONS.Featured_Image_2,
                 "hovers": "/uploads/files/PlatinumCars_1711307573174.png"
             },
@@ -560,10 +564,6 @@ export const DEFAULT_CONTENT = {
             },
             {
                 "imageUrl": ICONS.Featured_Image_4,
-                "hovers": "/uploads/files/PlatinumCars_1711307573174.png"
-            },
-            {
-                "imageUrl": ICONS.Featured_Image_5,
                 "hovers": "/uploads/files/PlatinumCars_1711307573174.png"
             }
         ]

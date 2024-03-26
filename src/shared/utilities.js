@@ -1,7 +1,7 @@
 import { API } from "./constants"
 
 export const addBaseUrlToUrls = (url)=>{
-    return url
+    return API.ASSETS_BASE_URL + url
 }
 
 export const redirectToUrlInNewTab = (url) => window.open(url, '_blank')
@@ -12,3 +12,7 @@ export const formatDate = (dateString, format = "DD-MM-YYYY") => {
     return formattedDate
 
 } 
+
+export const covertToMillion = (number) => {
+    return `$${(number / 1000000).toFixed(2)}M`
+}

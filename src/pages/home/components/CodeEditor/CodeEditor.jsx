@@ -4,9 +4,9 @@ import "./editor.scss";
 import { ICONS } from '../../../../assets';
 
 function CodeEditor() {
-    const [currentFile, setCurrentFile] = useState('file1.js');
+    const [currentFile, setCurrentFile] = useState('SmartContract.js');
     const [files, setFiles] = useState({
-        'file1.js': `import mongoose,{Schema} from 'mongoose';
+        'SmartContract.js': `import mongoose,{Schema} from 'mongoose';
     // Collection name
     export const collection = 'Product';
     // Schema
@@ -69,15 +69,6 @@ function CodeEditor() {
         }
     }, [monaco]);
 
-
-    const handleEditorChange = (value) => {
-        setFiles({ ...files, [currentFile]: value });
-    };
-
-    const handleFileChange = (fileName) => {
-        setCurrentFile(fileName);
-    };
-
     const handleEditorWillMount = (monaco) => {
         defineCustomTheme(monaco)
     };
@@ -89,7 +80,7 @@ function CodeEditor() {
     const fileTabs = Object.keys(files).map(fileName => (
         <button
             key={fileName}
-            onClick={() => handleFileChange(fileName)}
+
             style={currentFile === fileName ? { backgroundColor: '#333'} : {}}
         >
             <em>
@@ -116,7 +107,6 @@ function CodeEditor() {
                 defaultLanguage="javascript"
                 language={currentFile.split('.').pop()}
                 value={files[currentFile]}
-                onChange={handleEditorChange}
                 theme='customTheme'
                 beforeMount={handleEditorWillMount}
                 onMount={handleEditorDidMount}
@@ -125,6 +115,8 @@ function CodeEditor() {
                     fontSize: 16,
                     minimap: { enabled: false },
                     automaticLayout: true,
+                    domReadOnly: true,
+                    readOnly:true,
                 }}
             />
         </div>
