@@ -6,6 +6,9 @@
     margin: 140px 0;
   }
   .btn_contain {
+    @media (max-width:767px){
+      padding-top: 3.2rem!important;
+    }
     .btn {
       min-width: 230px;
     }

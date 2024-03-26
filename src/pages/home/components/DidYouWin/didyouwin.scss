@@ -6,6 +6,9 @@
   @media (min-width:1200px){
     padding-top: 150px;
   }
+  @media (max-width:1200px){
+    padding-bottom: 30px;
+  }
   &_bg {
     @include position($absolute, $left: 0px, $bottom: 35%);
     height: 100%;
@@ -16,6 +19,9 @@
     }
   }
   .btn_contain {
+    @media (max-width:767px){
+      padding-top: 3.2rem!important;
+    }
     .btn {
       min-width: 230px;
     }
