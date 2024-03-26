@@ -2,15 +2,21 @@
 
 .airdrop-list {
     display: grid;
-    align-items: center;
+    align-items: $center;
     grid-template-columns: 156px 1fr;
     gap: 16px;
     margin-bottom: 24px;
     &:last-child {
         margin-bottom: 0;
     }
-    img {
-        max-width: 100%;
+    .airdrop-image {
+        text-align: $center;
+        img {
+            max-width: 100%;
+            object-fit: $contain;
+            max-height: 160px;
+            object-position: $center;
+        }
     }
 
     .airdrop-list-text {
@@ -20,6 +26,7 @@
             font-weight: 400;
             line-height: normal;
             max-width: 291px;
+            line-height: 1.4;
         }
     }
 }

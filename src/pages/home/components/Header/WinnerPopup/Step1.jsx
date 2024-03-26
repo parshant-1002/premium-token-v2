@@ -38,9 +38,10 @@ export default function Step1({
       // handleSecondaryButtonClick={handleAutoNameGeneration}
       secondaryBtnText="Auto-Name"
       preSubmitElement={
-        <div className="form-field">
+        <div className="prize_col">
           <label>{DEFAULT_CONTENT.SELECT_BETWEEN_TWO}</label>
           <Prize
+            label={DEFAULT_CONTENT.PRIZE_LABEL_1}
             prizeSelected={prizeSelected.first}
             setPrizeSelected={(checked) => {
               setPrizeSelected({ first: checked })
@@ -50,6 +51,7 @@ export default function Step1({
             }}
           />
           <Prize
+            label={DEFAULT_CONTENT.PRIZE_LABEL_2}
             prizeSelected={prizeSelected.second}
             setPrizeSelected={(checked) =>
               setPrizeSelected({ second: checked })

@@ -11,10 +11,13 @@
     }
     p {
         font-weight: $font-medium;
-        @include font-size (.938);
+        @include font-size (1.125);
         color: $text-color;
-        line-height: 1.5;
+        line-height: 1.4;
         margin: 0;
+        @media (max-width:767px){
+            @include font-size (.875);
+        }
     }
 }
 
@@ -75,6 +78,17 @@
             }
         }
     }
+    .heading_title {
+        @media (min-width:1200px){
+            max-width: 681px;
+        }
+        p{
+            @include font-size (0.938);            
+        }
+    }
+    .btn {
+        min-height: 44px;
+    }
 }
 
 .white-listed-form {
@@ -125,5 +139,8 @@
     @media (max-width:991px) {
         @include position($absolute, $left:0px, $bottom:-23%);
         z-index: -1;
+    }
+    @media (max-width:991px) {
+        bottom: -32%;
     }
 }

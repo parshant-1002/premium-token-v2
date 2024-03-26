@@ -100,6 +100,7 @@ import Featured_Image_2 from './icons/Featured_Image_2.svg';
 import Featured_Image_3 from './icons/Featured_Image_3.svg';
 import Featured_Image_4 from './icons/Featured_Image_4.svg';
 import Featured_Image_5 from './icons/Featured_Image_5.svg';
+import NoDataFound from "./img/no_data_found.svg"
 
 export const ICONS = {
     VideoBanner: VideoBanner,
@@ -204,8 +205,9 @@ export const ICONS = {
     Featured_Image_2,
     Featured_Image_3,
     Featured_Image_4,
-    Featured_Image_5
-} 
+    Featured_Image_5,
+    NoDataFound,
+}
 
 export const VIDEOS = {
     DemoVideo:DemoVideo

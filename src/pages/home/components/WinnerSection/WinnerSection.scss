@@ -58,6 +58,9 @@
 
 .table_slider {
   margin: 32px 0 15px;
+  @media (max-width:991px) {
+    margin-top: 17px;
+  }
   @at-root {
     .prize_table {
       table {
@@ -66,6 +69,9 @@
           border-collapse: separate;
           border-spacing: 0 1rem;
           display: table !important;
+        }
+        @media (max-width:991px) {
+          margin-top: 15px;
         }
         thead {
           th {
@@ -95,7 +101,7 @@
               display: $block;
               margin-bottom: 20px;
               @include border-radius (12px);
-              padding: 10px 0;
+              padding: 0 0 10px 0;
               background: $dark-green-color-600;
               &:last-child {
                 margin-bottom: 0;
@@ -130,15 +136,33 @@
               }
               .td_img {
                 max-width: 92px;
-                display: $inline-block;
                 @media (max-width:991px){ 
+                  display: $inline-block;
                   max-width:110px;
                 }
                 img { 
                   max-width: 100%;
+                  object-fit: $contain;
+                  @media (min-width:991.99px){ 
+                    max-height: 66px;
+                  }
                 }
               }
               // Responsive
+              &[prizetype="1"]{
+                @media (max-width:991px) {
+                  &::before {
+                    vertical-align: bottom;
+                    bottom: 10px;
+                    top: $auto;
+                  }
+                }
+                .td_img {
+                  @media (max-width:991px) {
+                    margin-top: -15px;
+                  }
+                }
+              }              
               @media (max-width:991px) {
                 background: $transparent;
                 display: $block;
@@ -159,7 +183,7 @@
                   display: $inline-block;
                   @include font-size (.725);
                   color: $green-tin-color-600;
-                  font-weight: $font-semibold;
+                  font-weight: $font-mediumbold;
                   @include position($absolute, $left: 0, $top: 50%);
                   @include transform (translateY(-50%)); 
                 }
@@ -168,6 +192,13 @@
           }
         }
       }
+      .slick-list {
+        margin-inline:-5px;
+        .slick-track {
+          @include flexbox;
+          gap: 5px;
+        }  
+      }  
     }
   }
   // Slick Arrows
@@ -212,4 +243,26 @@
   font-weight: $font-mediumbold;
   text-transform: $uppercase;
   @include font-size (.725);
+}
+
+// No Data Found
+.no-data-found {
+  background-color: $dark-green-color-600;
+  @include border-radius (12px);
+  @include flexbox;
+  width: 100%;
+  @media (min-width:991.99px){
+    padding: 42px 100px;
+    gap: 42px;
+  }
+  @media (max-width:991px){
+    padding: 42px;
+    gap: 32px;
+  }
+  p {
+    font-weight: $font-semibold;
+    @include font-size (1.125);
+    color: $text-color;
+    text-align: $center;
+  }
 }

@@ -32,7 +32,7 @@ const ConnectionCreator = ({ content = {} }) => {
                     <span className="transform-none"><SafeHTML html={premiumTokenButtonText} /></span>
                   </button>
                 </div>
-                <div className="col-md-6 mb-3">
+                <div className="col-md-6 mb-md-3">
                   <button className="btn btn-md btn-secondary w-100">
                     <span className="transform-none"><SafeHTML html={externalAuditButtonText} /></span>
                   </button>

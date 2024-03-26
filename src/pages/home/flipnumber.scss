@@ -67,6 +67,9 @@ $baseColor :rgba(3, 11, 11, 0.6);
                 }
             }
             @media (max-width:820px) { 
+                top: -7px;
+            }
+            @media (max-width:820px) { 
                 width: calc($Height40/2); 
                 @for $i from 1 through 9 {
                     &[data-value="#{$i}"]::before {
@@ -85,7 +88,7 @@ $baseColor :rgba(3, 11, 11, 0.6);
                     @include font-size(4);
                 }
                 @media (max-width:820px) {  
-                    @include font-size(1); 
+                    @include font-size(1.4); 
                 }
             }
             &.blur {

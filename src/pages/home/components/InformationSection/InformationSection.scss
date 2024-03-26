@@ -14,7 +14,6 @@
       padding-inline: 7px;
     }
   }
-  
   .custom-slider {
     .regular {
       margin-inline: -10px;
@@ -23,11 +22,17 @@
         margin-top: 70px;
       }
       [class*=col-] {
-        padding-inline: 10px;
+        padding-inline: 7px;
       }
     }
+    .slick-slide>div {
+      height: 100%;
+    }
     .slick {
-      &-slider {
+      &-slider {        
+        [class*=col-] {
+          height: 100%;
+        }
         .slick {
           &-list {
             overflow: $absolute;
@@ -35,6 +40,9 @@
           &-track { 
             .slick-slide {
               height: $inherit !important;
+            }
+            @media (max-width:991px){
+              @include flexbox; 
             }
           }
         }

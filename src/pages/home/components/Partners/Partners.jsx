@@ -46,7 +46,7 @@ const Partners = ({content = {}}) => {
           </div>
           <div className="text-center text-captialize partner_info">
             <h3 className="h6"><SafeHTML html={name} /></h3>
-            <span><SafeHTML html={position} /></span>
+            <p><SafeHTML html={position} /></p>
           </div>
         </div>
       </div>

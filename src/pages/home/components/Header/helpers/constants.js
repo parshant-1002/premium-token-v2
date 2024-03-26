@@ -103,6 +103,8 @@ export const DEFAULT_CONTENT = {
     WINNER_TITLE: "Congratz, you have won!",
     WINNER_DESCRIPTION: "Fill out the information below to get your prize.",
     SELECT_BETWEEN_TWO: "Select between the 2 prizes",
-    PRIZE_LABEL: "350,000 $ worth of PremiumToken",
+    PRIZE_LABEL_1: "350,000 $ worth of PremiumToken",
+    PRIZE_LABEL_2: "Supercar to a value of 350,000 $",
+
     SELECT_PARTNER: "Select Partner",
 }
