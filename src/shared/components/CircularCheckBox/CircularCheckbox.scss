@@ -30,7 +30,7 @@
   border-radius: 50%;
   background-color: $transparent;
 }
- 
+
 .checkbox-tick {
   background-color: #A7D7CF;
   @include border-radius (10px);
@@ -45,7 +45,7 @@
     content: '';
     position: $absolute;
     top: 1px;
-    left: 5px;
+    left: 6px;
     transform: rotate(45deg);
     height: 10px;
     width: 5px;
@@ -61,5 +61,5 @@
 }
 
 .custom-checkbox.disabled:hover {
-  cursor: not-allowed; 
+  cursor: not-allowed;
 }
