@@ -7,7 +7,6 @@ import "./DataAggregator.scss";
 
 const DataAggregator = ({content = {}}) => {
   const { transpancy, githubViewButtonUrl, githubViewButtonText, githubTitle, githubLogo, contractImageUrl } = content
-  console.log(content,"dataAggregator")
   return (
     <section className="dataAggregator position-relative">
       <div className="container">

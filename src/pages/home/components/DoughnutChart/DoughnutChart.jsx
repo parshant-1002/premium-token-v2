@@ -8,7 +8,6 @@ const DoughnutChart = ({ series, innerTitle }) => {
     useEffect(() => {
         setChartOptions(options(innerTitle));
     }, [innerTitle]);
-
     const chartHeight = window.innerWidth > 768 ? 500 : 300; // Adjust height based on screen width
     const chartWidth = window.innerWidth > 768 ? 500 : '100%'; // Adjust width based on screen widtinnerTitle
     // Dynamically calculate the left margin to center the chart on mobile innerTitleinnerTitleinneinnerTitle

@@ -43,7 +43,7 @@ const Home = () => {
   
   return (
     <>
-      <Header content={getContentData(SectionTypes.HEADERS)} partnersContent={getContentData(SectionTypes.PARTNERS)}/>
+      <Header content={getContentData(SectionTypes.HEADERS)} partnersContent={getContentData(SectionTypes.PARTNERS)} winnerPopup = {getContentData(SectionTypes.WINNER_POPUP)}/>
       <VideoSection content={getContentData(SectionTypes.VIDEO_SECTION)} />
       <div className="mobile_bg">
         <InformationSection content={getContentData(SectionTypes.PRIZE_SECTION)} buyTokenButton={getContentData(SectionTypes.HEADERS)?.buyTokenButton}/>

@@ -7,7 +7,6 @@ import WinnerPopup from "../Header/WinnerPopup/WinnerPopup";
 
 const Footer = ({content = {},partnersContent = {}}) => {
   const { premiumTokenTitle, viewChartButton, buyTokenButton, email } = content
-  console.log(content,"content><><><><><><><>")
 
   const [isScrolled, setIsScrolled] = useState(false);
   const [popup, setPopup] = useState(false);

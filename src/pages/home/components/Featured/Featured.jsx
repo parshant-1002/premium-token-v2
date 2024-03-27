@@ -14,7 +14,7 @@ const Featured = ({content = {}}) => {
 				<div className="featured-row">
 					<Each of={features} render={(item, index) => (
 						<div className="fetured-image" key={index}>
-							<RenderIconWithHover iconUrl={addBaseUrlToUrls(item)}/>
+							<RenderIconWithHover iconUrl={addBaseUrlToUrls(item?.imageUrl)} hoverIconUrl={addBaseUrlToUrls(item?.hovers)}/>
 						</div>
 					)}/>
 				</div>

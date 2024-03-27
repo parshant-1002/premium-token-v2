@@ -1,7 +1,8 @@
 import { API } from "./constants"
+import { formatNumber } from "./constants/utils"
 
 export const addBaseUrlToUrls = (url)=>{
-    return API.ASSETS_BASE_URL+url
+    return url
 }
 
 export const redirectToUrlInNewTab = (url) => window.open(url, '_blank')
@@ -12,3 +13,25 @@ export const formatDate = (dateString, format = "DD-MM-YYYY") => {
     return formattedDate
 
 } 
+
+export const convertToAppropriateUnit = (value) => {
+    const numZeros = Math.floor(Math.log10(value));
+    if (numZeros >= 6 && numZeros < 9) {
+        return (value / 1000000).toFixed(2) + ' M';
+    } else if (numZeros >= 9 && numZeros < 12) {
+        return (value / 1000000000).toFixed(2) + ' B';
+    } else if (numZeros >= 12) {
+        return (value / 1000000000000).toFixed(2) + ' T';
+    } else {
+        return formatNumber(value).toString();
+    }
+}
+
+export function removeEmptyKeys(obj) {
+    return Object.entries(obj).reduce((acc, [key, value]) => {
+        if (value !== '') {
+            acc[key] = value;
+        }
+        return acc;
+    }, {});
+}

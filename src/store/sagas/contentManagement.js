@@ -61,9 +61,9 @@ function* createAirDrop({ payload, callback = () => { } }) {
         });
         if (status !== STATUS_CODES.SUCCESS) {
             yield put(stopLoading());
-            callback(data.msg, STATUS.ERROR);
+            callback(data.message, STATUS.ERROR);
         } else {
-            callback(data, STATUS.SUCCESS);
+            callback(data.message, STATUS.SUCCESS);
             yield put(stopLoading());
         }
     } catch (error) {

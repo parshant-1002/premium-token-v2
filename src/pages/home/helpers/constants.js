@@ -28,12 +28,12 @@ export const options = (innerTitle) => ({
                         fontSize: window.innerWidth > 768 ? '24px' : '18px', // Adjust font size based on screen width
                         fontFamily: 'Lato',
                         fontWeight: 800,
-                        color: "white"
+                        color: "white",
                     },
                     total: {
                         show: true,
                         showAlways: true,
-                        fontSize: window.innerWidth > 768 ? '12px' : '10px', // Adjust font size based on screen width
+                        fontSize: window.innerWidth > 768 ? '16px' : '14px', // Adjust font size based on screen width
                         fontFamily: 'Lato',
                         fontWeight: 800,
                         color: "#A7D7CF",
@@ -43,7 +43,9 @@ export const options = (innerTitle) => ({
                     }
                 },
                 size: "70%",
+                minAngleToShowLabel: 0,
             },
+            minAngleToShowLabel: 0
         },
     },
     states: {
@@ -55,13 +57,45 @@ export const options = (innerTitle) => ({
         },
     },
     tooltip: {
-        enabled: false
+        enabled: true,
+        // x: {
+        //     formatter: function (val) {
+        //         return 'Category: ' + val; // Customize the tooltip's x-axis label
+        //     },
+        // },
+        y: {
+            formatter: function (val) {
+                return 'Value: ' + val + '%'; // Customize the tooltip's y-axis value
+            },
+        },
+        custom: function ({ series, seriesIndex, dataPointIndex, w }) {
+            return (
+                '<div class="arrow_box">' +
+                '<span>' + series[seriesIndex] + '%</span>' +
+                '</div>'
+            );
+        }
     },
     grid: {
         show: false,
     },
     dataLabels: {
         enabled: true,
+        distributed:true,
+        formatter: function (val, opts) {
+            const value = opts.w.config.series[opts.seriesIndex];
+            return value % 1 === 0 ?
+                `${parseInt(value)}%` :
+                `${value.toFixed(1)}%`;
+        },
+        style: {
+            fontSize: "12px",
+            fontFamily: 'Lato',
+        },
+        offsetX: -25,
+        position:"outside",
+        rotate: -45,
+        minAngleToShowLabel: 0,
     },
     legend: {
         show: false,
@@ -74,10 +108,10 @@ export const options = (innerTitle) => ({
                     donut: {
                         labels: {
                             value: {
-                                fontSize: '10px',
+                                fontSize: '14px',
                             },
                             total: {
-                                fontSize: '12px',
+                                fontSize: '16px',
                             },
                         },
                     },
