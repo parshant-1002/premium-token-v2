@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { ICONS } from "../../../../assets";
 import { CustomSlick } from "../../../../shared/components/CustomSlick";
 import { Each } from "../../../../shared/components/Each";
@@ -6,11 +7,21 @@ import { addBaseUrlToUrls } from "../../../../shared/utilities";
 import ConnectButton from "../ConnectButton/ConnectButton";
 import { InformationCard } from "../InformationCard";
 import "./didyouwin.scss";
+import { SectionTypes } from "../../helpers/contentManagement";
+import { useSelector } from "react-redux";
 
 
 const DidYouWin = ({content = {}}) => {
-	const{title, rules} = content
+	const[updatedContent, setUpdatedContent ] = useState(content)
+	const socketData = useSelector((store) => store.contentManagementReducer.socketContentData)
+	console.log(updatedContent,"updatecconent")
+	const { title, rules } = updatedContent
 
+	useEffect(()=>{
+		if(socketData){
+			setUpdatedContent(socketData?.[SectionTypes.WINNER_RULES_SECTION])
+		}
+	},[socketData])
 	const responsiveConfig =  [
 		{
 			breakpoint: 991,
@@ -27,6 +38,7 @@ const DidYouWin = ({content = {}}) => {
 			settings: "unslick"
 		}
 	]
+
 	return (
 
 		<section className="didyouwin position-relative">

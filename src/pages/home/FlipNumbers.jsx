@@ -3,7 +3,7 @@ import "./flipnumber.scss"
 import { formatNumber } from '../../shared/constants/utils';
 
 const SmoothFlipCounter = ({ initialValue, socket }) => {
-    const [value, setValue] = useState(initialValue);
+    const [value, setValue] = useState(0);
 
     // useEffect(() => {
     //     if (socket) {
@@ -12,7 +12,6 @@ const SmoothFlipCounter = ({ initialValue, socket }) => {
     //         });
     //     }
     // }, [socket]);
-
     useEffect(() => {
         const interval = setInterval(() => {
             setValue((prevValue) => prevValue + 5365);

@@ -32,7 +32,7 @@ const ConnectionCreator = ({ content = {} }) => {
                 </div>
                 <div className="col-md-6 mb-md-3">
                   <button className="btn btn-md btn-secondary w-100" onClick={() => redirectToUrlInNewTab(premiumTokenButton.url)}> 
-                    <span className="transform-none"><SafeHTML html={externalAuditButton?.url} /></span>
+                    <span className="transform-none"><SafeHTML html={externalAuditButton?.text} /></span>
                   </button>
                 </div>
               </div>

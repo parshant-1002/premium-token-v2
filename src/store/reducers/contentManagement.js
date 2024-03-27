@@ -1,8 +1,9 @@
 import { REHYDRATE } from "redux-persist";
-import {  SET_CONTENT_REQUEST } from "../constants";
+import {  SET_CONTENT_REQUEST, SET_SOCKET_DATA } from "../constants";
 
 const initialState = {
-    homePageContent: {}
+    homePageContent: {},
+    socketContentData : null,
 };
 
 const contentManagementReducer = (state = initialState, action) => {
@@ -11,6 +12,11 @@ const contentManagementReducer = (state = initialState, action) => {
             return {
                 ...state,
                 homePageContent: action.data
+            };
+        case SET_SOCKET_DATA:
+            return {
+                ...state,
+                socketContentData: action.data
             };
         case REHYDRATE:
             let persistedHomePageContent =

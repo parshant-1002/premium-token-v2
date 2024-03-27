@@ -21,12 +21,14 @@ const WinnerTable = ({ socket, prize }) => {
         }
         dispatch(getWinners(payload, (data, responseType) => {
             if (responseType === STATUS.SUCCESS) {
+                if (data?.data?.length) {
                 const firstPageData = data?.data?.slice(0,NUMBER_OF_ROWS_IN_PAGE)
                 const secondPageData = data?.data?.slice(NUMBER_OF_ROWS_IN_PAGE)
                 setTableData((prev) => ([...prev, firstPageData, secondPageData]))
                 setTotalCount(data.totalCount)
                 setSkip(skip + NUMBER_OF_ROWS_IN_PAGE*2)
                 limitRef.current = NUMBER_OF_ROWS_IN_PAGE
+                }
             }
         }))
     }, [])
@@ -38,37 +40,40 @@ const WinnerTable = ({ socket, prize }) => {
         }
         dispatch(getWinners(payload, (data, responseType) => {
             if (responseType === STATUS.SUCCESS) {
-                setTableData((prev) => ([...prev, data?.data]))
-                setTotalCount(data.totalCount)
+                if(data?.data?.length){
+                    setTableData((prev) => ([...prev, data?.data]))
+                    setTotalCount(data.totalCount)
+
+                }
             }
         }))
     }
 
-    // useEffect(() => {
-    //     if (socket) {
-    //         socket.on('latestWinner', (data) => {
-    //             if(data){
-    //                 setTableData((prevPages) => {
-    //                     const firstPage = [data?.data, ...prevPages[0]];
-    //                     let updatedPages = [firstPage.slice(0, NUMBER_OF_ROWS_IN_PAGE)];
-    //                     let remainingRows = firstPage.slice(NUMBER_OF_ROWS_IN_PAGE);
-    //                     for (let i = 1; i < prevPages.length; i++) {
-    //                         const page = [...remainingRows, ...prevPages[i]];
-    //                         updatedPages.push(page.slice(0, NUMBER_OF_ROWS_IN_PAGE));
-    //                         remainingRows = page.slice(NUMBER_OF_ROWS_IN_PAGE);
-    //                     }
-    //                     if (remainingRows.length > 0) {
-    //                         updatedPages.push(remainingRows);
-    //                     }
+    useEffect(() => {
+        if (socket) {
+            socket.on('latestWinner', (data) => {
+                if(data){
+                    setTableData((prevPages) => {
+                        const firstPage = [data?.data, ...prevPages[0]];
+                        let updatedPages = [firstPage.slice(0, NUMBER_OF_ROWS_IN_PAGE)];
+                        let remainingRows = firstPage.slice(NUMBER_OF_ROWS_IN_PAGE);
+                        for (let i = 1; i < prevPages.length; i++) {
+                            const page = [...remainingRows, ...prevPages[i]];
+                            updatedPages.push(page.slice(0, NUMBER_OF_ROWS_IN_PAGE));
+                            remainingRows = page.slice(NUMBER_OF_ROWS_IN_PAGE);
+                        }
+                        if (remainingRows.length > 0) {
+                            updatedPages.push(remainingRows);
+                        }
 
-    //                     return updatedPages;
-    //                 });
-    //                 setTotalCount(totalCount + 1);
-    //             }
+                        return updatedPages;
+                    });
+                    setTotalCount(totalCount + 1);
+                }
 
-    //         });
-    //     }
-    // }, [socket]);
+            });
+        }
+    }, [socket]);
 
     const handleNextClick = () => {
         if ((totalCount === null || totalCount > skip)) {
@@ -121,6 +126,7 @@ const WinnerTable = ({ socket, prize }) => {
             }
           },
       ]
+    console.log(tableData,"tableDAta><><><")
     return (tableData?.length ?
          <CustomSlick slidesToShow={1} handleNextClick={handleNextClick} responsive = {responsiveConfig}>
             {tableData?.map((pageData, index) => (
