@@ -9,6 +9,7 @@ import { WINNER_DESCRIPTION, transformClaimPrizeData } from "../helpers/utils";
 import { useDispatch } from "react-redux";
 import { claimPrize } from "../../../../../store/actions/WinnerSection";
 import { STATUS } from "../../../../../shared/constants";
+import { toast } from "react-toastify";
 
 export default function WinnerPopup({ show, onClose, partners, winnerPopup = {}, }) {
   const {popUp1, popUp2, popUp3} = winnerPopup
