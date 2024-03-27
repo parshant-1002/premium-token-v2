@@ -18,7 +18,7 @@ function* getContent({ payload, callback = ()=>{} }) {
             callback(data.msg, STATUS.ERROR);
         } else {
             callback(data.data, STATUS.SUCCESS);
-            // yield put(setContent(data.data));
+            yield put(setContent(data.data));
             yield put(stopLoading());
         }
     } catch (error) {

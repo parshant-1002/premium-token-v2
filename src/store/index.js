@@ -14,7 +14,7 @@ const persistConfig = {
   key: 'root',
   storage,
   // // Optionally, whitelist some reducers to be persisted (if not provided, all reducers will be persisted)
-  whitelist: ['common']
+  whitelist: ['common', "contentManagementReducer"]
 };
 
 // Create a persisted reducer

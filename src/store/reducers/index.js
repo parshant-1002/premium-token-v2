@@ -4,7 +4,7 @@ import contentManagementReducer from './contentManagement';
 
 const rootReducer = combineReducers({
   loader: globalLoaderReducer,
-  homePageContent: contentManagementReducer
+  contentManagementReducer: contentManagementReducer
 });
 
 export default rootReducer;

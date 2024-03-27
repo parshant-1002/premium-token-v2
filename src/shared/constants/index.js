@@ -17,7 +17,9 @@ export const API_URLS = {
     GET_CONTENT: VERSION + "/content",
     GET_WINNER_LIST: VERSION + "/winners",
     CREATE_AIRDROP_REQUEST: VERSION + "/createAirdrop",
-    GET_BLOCKCHAIN_DATA:  "/getBlockChainData",
+    GET_BLOCKCHAIN_DATA: VERSION + "/getBlockChainData",
+    CHECK_IS_WINNER: VERSION + "/winnerSelection/checkWinner",
+    POST_PRIZE_SELECTION_DATA : VERSION + "/v1/winnerSelection/claimPrize"
 }
 
 export const API_METHODS = {
