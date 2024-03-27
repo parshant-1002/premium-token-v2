@@ -18,6 +18,7 @@ function CustomForm({
     onChangeValues = () => {},
     isShowSubmit = true,
     isDisabledSubmit = false,
+    options,
 }) {
     const {
         register,
@@ -30,17 +31,16 @@ function CustomForm({
         control,
         formState: { errors }
     } = useForm({ defaultValues: { ...defaultValues } });
-
     const handleInputChange = (name, value) => {
         setValue(name, value);
         onChangeValues(name, value);
     };
 
-    useEffect(() => {
-        if (Object.keys(defaultValues).length) {
-            reset({ ...defaultValues });
-        }
-    }, [defaultValues]);
+    // useEffect(() => {
+    //     if (Object.keys(defaultValues).length) {
+    //         reset({ ...defaultValues });
+    //     }
+    // }, [defaultValues]);
 
     useEffect(() => {
         const subscription = watch((value, { name, type }) => {
@@ -74,6 +74,7 @@ function CustomForm({
                         getValues={getValues}
                         errors={errors}
                         control={control}
+                        options={options?.[key] || []}
                     />
                 );
             })}

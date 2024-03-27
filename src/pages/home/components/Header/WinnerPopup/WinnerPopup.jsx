@@ -10,7 +10,7 @@ import { WINNER_DESCRIPTION } from "../helpers/utils";
 export default function WinnerPopup({ show, onClose, partners, winnerPopup = {} }) {
   const {popUp1, popUp2, popUp3} = winnerPopup
   const [formData, setFormData] = useState({});
-  const [stepToShow, setStepToView] = useState(POPUP_TYPE.popUp1);
+  const [stepToShow, setStepToView] = useState(POPUP_TYPE.popUp2);
   const [prizeSelected, setPrizeSelected] = useState({
     first: false,
     second: true

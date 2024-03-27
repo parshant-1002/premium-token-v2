@@ -34,7 +34,7 @@ export const WINNER_MODAL_FORM_SCHEMA =(data)=>{
             })
         }
     },
-    step2: (countries = [], states = []) => ({
+    step2:{
         name: {
             type: INPUT_TYPES.TEXT,
             label: <SafeHTML html={popUp2?.fullName?.title} />,
@@ -67,7 +67,6 @@ export const WINNER_MODAL_FORM_SCHEMA =(data)=>{
             label: <SafeHTML html={popUp2?.country?.title} />,
             className: 'col-md-6',
             placeholder: popUp2?.country?.placeholder,
-            options: countries,
             schema: {
                 required: FORM_VALIDATION_MESSAGES().REQUIRED,
             }
@@ -77,7 +76,6 @@ export const WINNER_MODAL_FORM_SCHEMA =(data)=>{
             label: <SafeHTML html={popUp2?.city?.title} />,
             className: 'col-md-6',
             placeholder: popUp2?.city?.placeholder,
-            options: states,
             schema: {
                 required: FORM_VALIDATION_MESSAGES().REQUIRED,
             }
@@ -92,15 +90,15 @@ export const WINNER_MODAL_FORM_SCHEMA =(data)=>{
             }
         },
         zip: {
-            type: <SafeHTML html={popUp2?.zip?.title} />,
-            label: 'ZIP',
+            type: INPUT_TYPES.TEXT,
+            label: <SafeHTML html={popUp2?.zip?.title} />,
             className: 'form-control col-md-6',
             placeholder: popUp2?.zip?.placeholder,
             schema: {   
                 required: FORM_VALIDATION_MESSAGES().REQUIRED,
             }
         },
-    })
+    },
 }};
 
 export const DEFAULT_CONTENT = {

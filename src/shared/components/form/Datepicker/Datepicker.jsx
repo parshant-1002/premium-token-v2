@@ -3,10 +3,9 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { Controller } from 'react-hook-form';
 
-const CustomDatePicker = React.forwardRef(({ value, control, placeholder, ...otherProps }) => {
+const CustomDatePicker = React.forwardRef(({ control, placeholder, ...otherProps }) => {
     return (
         <Controller
-            name="file"
             control={control}
             defaultValue={[]}
             {...otherProps}

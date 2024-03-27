@@ -6,7 +6,7 @@ import RichText from "../RIchText/RitchText";
 import Datepicker from "../Datepicker";
 import PhoneInput from "../PhoneInput";
 
-export const RenderField = ({ field, id, handleRegister, handleInputChange, getValues, errors, value, control }) => {
+export const RenderField = ({ field, id, handleRegister, handleInputChange, getValues, errors, value, control, options }) => {
     const [inputType, setInputType] = useState(field.type);
     const handleEyeClick = () => {
         setInputType((prev) => prev === INPUT_TYPES.PASSWORD ? INPUT_TYPES.TEXT : INPUT_TYPES.PASSWORD);
@@ -55,7 +55,7 @@ export const RenderField = ({ field, id, handleRegister, handleInputChange, getV
                     <CustomSelect
                         id={id}
                         value={value}
-                        options={field.options}
+                        options={options}
                         {...handleRegister(id)}
                         onChange={(value) => handleInputChange(id, value)}
                     />
