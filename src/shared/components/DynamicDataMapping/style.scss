@@ -53,10 +53,9 @@ $staticBg: url(../../../assets/img/banner-bg.png);
     }
 }
 
-.static_pages {
-    @media (max-width:1199.98px) {
-        background: $body-color;
-    }
+
+.banner_pic {
+    width: 100%;
 }
 
 // for mobile view
@@ -65,8 +64,8 @@ $staticBg: url(../../../assets/img/banner-bg.png);
         background: linear-gradient(180deg, rgb(23 56 51) 38.07%, $transparent 96.05%);
         @include border-radius (8px);
         display: $inline-block;
+        padding: 25px;
         width: 100%;
-        padding: 1px;
     }
 }
 
@@ -98,7 +97,7 @@ $staticBg: url(../../../assets/img/banner-bg.png);
         @media (min-width:1200px) {
             padding: 26px 20px;
             line-height: 24px;
-            background-color: $body-color;
+            background-color: rgba(56, 153, 137, 0.25);
         }
         h4 {
             @include font-size (1.125);

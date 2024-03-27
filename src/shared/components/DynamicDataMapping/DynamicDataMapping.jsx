@@ -19,7 +19,7 @@ const DynamicDataMapping = ({ pageData = {} }) => {
                             </div>
                             <div className="col-md-5">
                                 <div className="banner_pic">
-                                    <img src={ICONS.PremiumTokenBg} alt="Mr Cashback" width={953} height={725} />
+                                    <img src={ICONS.PremiumTokenBg} alt="Mr Cashback" width={500} height={500} className="img-fluid" />
                                 </div>
                             </div>
                         </div>
@@ -42,26 +42,24 @@ const DynamicDataMapping = ({ pageData = {} }) => {
 
             <div className="static_pages pt-120">
                 <div className="container">
-                    <div className="static_wrapper">
 
-                        <div className="heading_title text-center mb-4">
-                            <h2 className="h2 mb-0 text-capitalize"><SafeHTML html={pageData?.moreInformationTitle}/></h2>
-                        </div>
-
-                        <div className="static_wrapper_in">
-                            {pageData?.moreInformation?.map((item, index) => {
-                                return (
-                                    <div className="static_card">
-                                        <div
-                                            key={index}
-                                            className="static_card_content"
-                                        ><SafeHTML html={item?.section}/></div>
-                                    </div>
-                                );
-                            })}
-                        </div>
-
+                    <div className="heading_title text-center mb-4">
+                        <h2 className="h2 mb-0 text-capitalize"><SafeHTML html={pageData?.moreInformationTitle}/></h2>
                     </div>
+
+                    <div className="static_wrapper">
+                        {pageData?.moreInformation?.map((item, index) => {
+                            return (
+                                <div className="static_card">
+                                    <div
+                                        key={index}
+                                        className="static_card_content"
+                                    ><SafeHTML html={item?.section}/></div>
+                                </div>
+                            );
+                        })}
+                    </div>
+
                 </div>
             </div>
         </>
