@@ -1,4 +1,3 @@
-import partner from '../../../../../public/mike_logo.png';
 import React, { useRef } from 'react';
 import Team from './Team';
 import { CustomSlick } from '../../../../shared/components/CustomSlick'
