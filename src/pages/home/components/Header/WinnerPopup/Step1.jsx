@@ -41,7 +41,7 @@ export default function Step1({
         <div className="prize_col">
           <label><SafeHTML html={prizeSection?.title}/></label>
           <Prize
-            label={<SafeHTML html={prizeSection?.prize1?.title} />}
+            label={"$250,000 worth of PremiumToken"}
             prizeSelected={prizeSelected.first}
             setPrizeSelected={(checked) => {
               setPrizeSelected({ first: checked })
@@ -52,7 +52,7 @@ export default function Step1({
             imageUrl={prizeSection?.prize1?.imageUrl}
           />
           <Prize
-            label={<SafeHTML html={prizeSection?.prize2?.title} />}
+            label={"Supercar to a value of $250,000"}
             prizeSelected={prizeSelected.second}
             setPrizeSelected={(checked) =>
               setPrizeSelected({ second: checked })

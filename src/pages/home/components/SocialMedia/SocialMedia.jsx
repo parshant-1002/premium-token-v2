@@ -32,14 +32,6 @@ const SocialMedia = ({content = {}}) => {
 						</div>
 					</div>
 				</div>
-				<div className="text-center d-flex justify-content-center mt-4 mt-md-4 footer_links">
-				<Link to = {ROUTES.TERMS_AND_CONDITIONS} className="text-success">
-					<SafeHTML html={content?.terms}/>
-          		</Link>
-				<Link to={ROUTES.PRIVACY_POLICY} className="text-success">
-					<SafeHTML html={content?.privacy}/>
-				</Link>
-				</div>
 			</div>
 			<div className="footer_left_shape d-none d-md-block">
 				<img width={633} height="800" src={ICONS.FooterLeftBg} className="img-fluid" />
