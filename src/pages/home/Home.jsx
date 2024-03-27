@@ -54,7 +54,7 @@ const Home = () => {
       <Header content={getContentData(SectionTypes.HEADERS)} partnersContent={getContentData(SectionTypes.PARTNERS)} winnerPopup = {getContentData(SectionTypes.WINNER_POPUP)}/>
       <VideoSection content={getContentData(SectionTypes.VIDEO_SECTION)} />
       <div className="mobile_bg">
-        <InformationSection content={getContentData(SectionTypes.PRIZE_SECTION)} buyTokenButton={getContentData(SectionTypes.HEADERS)?.buyTokenButton}/>
+        <InformationSection content={getContentData(SectionTypes.PRIZE_SECTION)}/>
         <WinnerSection content={{ ...getContentData(SectionTypes.PRIZE_SECTION), ...getContentData(SectionTypes.WINNER_LIST_SECTION) }} socket={socket} />
       </div>
       <DidYouWin content={getContentData(SectionTypes.WINNER_RULES_SECTION)} socket = {socket} />

@@ -3,11 +3,11 @@ import { InformationCard } from "../InformationCard";
 import "./InformationSection.scss";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import { Each } from "../../../../shared/components/Each";
-import { addBaseUrlToUrls } from "../../../../shared/utilities";
+import { addBaseUrlToUrls, redirectToUrlInNewTab } from "../../../../shared/utilities";
 import { ICONS } from "../../../../assets";
 
-const InformationSection = ({ content = {}, buyTokenButton = {} }) => {
-  const { rulesToWin, title } = content;
+const InformationSection = ({ content = {} }) => {
+  const { rulesToWin, title, buyTokenButton} = content;
   const responsiveConfig = [
     {
       breakpoint: 991,
