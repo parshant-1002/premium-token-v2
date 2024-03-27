@@ -1,15 +1,26 @@
 
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ICONS } from "../../../../assets";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import { addBaseUrlToUrls } from "../../../../shared/utilities";
 import "./video-banner.scss";
+import { useSelector } from "react-redux";
+import { SectionTypes } from "../../helpers/contentManagement";
 
 const VideoSection = ({ content = {} }) => {
-    const { title, description, videoUrl } = content;
+    const [updatedContent, setUpdatedContent] = useState(content)
+    // const socketData = useSelector((store) => store.contentManagementReducer.socketContentData)
+    const { title, description, videoUrl } = updatedContent;
 
     const [isVideoPaused, setIsVideoPaused] = useState(true)
+
+
+    // useEffect(() => {
+    //     if (socketData) {
+    //         setUpdatedContent(socketData?.[SectionTypes.WINNER_RULES_SECTION])
+    //     }
+    // }, [socketData])
 
     const handlePlay = () => {
         const video = document.querySelector("video");

@@ -103,16 +103,17 @@ export const AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA = (data = {}) => {
         className: 'col-md-4',
         placeholder: facebook?.placeholder,
     },
+    discordUsername: {
+        type: INPUT_TYPES.TEXT,
+        icon: <RenderIconWithHover onClick={() => { redirectToUrlInNewTab(discord?.link) }} iconUrl={addBaseUrlToUrls(discord?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(discord?.hovers)} />,
+        className: 'col-md-4',
+        placeholder: discord?.placeholder,
+    },
     tiktokProfileURL: {
         type: INPUT_TYPES.TEXT,
         icon: <RenderIconWithHover onClick={() => { redirectToUrlInNewTab(tiktok?.link) }} iconUrl={addBaseUrlToUrls(tiktok?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(tiktok?.hovers)} />,
         className: 'col-md-4',
         placeholder: tiktok?.placeholder,
     },
-    discordUsername: {
-        type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover onClick={() => { redirectToUrlInNewTab(discord?.link) }}  iconUrl={addBaseUrlToUrls(discord?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(discord?.hovers)} />,
-        className: 'col-md-4',
-        placeholder: discord?.placeholder,
-    },
+
 }};

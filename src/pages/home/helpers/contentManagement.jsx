@@ -313,27 +313,6 @@ export const DEFAULT_CONTENT = {
                 "title": "ewe",
                 "subTitle": "wew"
             },
-            {
-                "_id": "6600728c54941acef4027edb",
-                "level": "7",
-                "description": "<p><span style=\"white-space-collapse: preserve; color: var(--bs-card-color); text-align: var(--bs-body-text-align); font-size: 1rem;\"><strong>Reach 1000 holders</strong><br></span><span style=\"white-space-collapse: preserve;\">Completed after: 3 days<br></span><span style=\"white-space-collapse: preserve;\">We aim and hope we will reach this goal rather quickly.</span><span style=\"white-space-collapse: preserve;\"><br></span><span style=\"white-space-collapse: preserve; color: var(--bs-card-color); text-align: var(--bs-body-text-align); font-size: 1rem;\"><br></span><br></p>",
-                "title": "wew",
-                "subTitle": "ewe"
-            },
-            {
-                "_id": "6600728c54941acef4027edc",
-                "level": "8",
-                "description": "<p><span style=\"white-space-collapse: preserve; color: var(--bs-card-color); text-align: var(--bs-body-text-align); font-size: 1rem;\"><strong>Reach 1000 holders</strong><br></span><span style=\"white-space-collapse: preserve;\">Completed after: 3 days<br></span><span style=\"white-space-collapse: preserve;\">We aim and hope we will reach this goal rather quickly.</span><span style=\"white-space-collapse: preserve;\"><br></span><br></p>",
-                "title": "ewe",
-                "subTitle": "wew"
-            },
-            {
-                "_id": "6600728c54941acef4027edd",
-                "level": "9",
-                "description": "<p><span style=\"white-space-collapse: preserve; color: var(--bs-card-color); text-align: var(--bs-body-text-align); font-size: 1rem;\"><strong>Reach 1000 holders</strong><br></span><span style=\"white-space-collapse: preserve;\">Completed after: 3 days<br></span><span style=\"white-space-collapse: preserve;\">We aim and hope we will reach this goal rather quickly.</span><br></p>",
-                "title": "ewe",
-                "subTitle": "wewe"
-            }
         ]
     },
     "premiumTokenWallet": {

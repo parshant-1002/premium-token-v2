@@ -23,3 +23,5 @@ export const GET_BLOCKCHAIN_DATA = "GET_BLOCKCHAIN_DATA";
 //Winner section
 export const CHECK_IS_WINNER = "CHECK_IS_WINNER";
 export const WINNER_CLAIM_PRIZE = "WINNER_CLAIM_PRIZE";
+
+export const SET_SOCKET_DATA = "SET_SOCKET_DATA";

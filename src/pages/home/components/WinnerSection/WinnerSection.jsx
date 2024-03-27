@@ -6,14 +6,17 @@ import WinnerTable from "../WinnerTableSlider/WinnerTable";
 import ConnectButton from "../ConnectButton/ConnectButton";
 import "./WinnerSection.scss";
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { getBlockChainData } from "../../../../store/actions/contentManagement";
 import { STATUS } from "../../../../shared/constants";
 import { replaceTagWithValue } from "./helpers/utils";
+import { SectionTypes } from "../../helpers/contentManagement";
 
 const WinnerSection = ({ content = {}, socket }) => {
+  const [updatedContent, setUpdatedContent] = useState(content)
+  const socketData = useSelector((store) => store.contentManagementReducer.socketContentData)
   // props destructuring
-  const { marketCap, latestWinnerDetails, connectWalletButtonText, prizeDescription, tokenHolderText, prize } = content;
+  const { marketCap, latestWinnerDetails, connectWalletButtonText, prizeDescription, tokenHolderText, prize } = updatedContent;
 
   //hooks
   const [blockChainData, setBlockChainData] = useState({})
@@ -25,6 +28,13 @@ const WinnerSection = ({ content = {}, socket }) => {
       }
     }))
   }, [])
+
+
+  // useEffect(() => {
+  //   if (Object.keys(socketData).length) {
+  //     setUpdatedContent(socketData?.[SectionTypes.PRIZE_SECTION])
+  //   }
+  // }, [socketData])
 
 
   const counterSettings = {

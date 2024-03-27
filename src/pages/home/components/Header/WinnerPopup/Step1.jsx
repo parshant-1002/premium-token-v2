@@ -59,7 +59,7 @@ export default function Step1({
             }
             imageUrl={prizeSection?.prize2?.imageUrl}
           />
-
+{/* 
           <div className="partners_col">
             <label>{DEFAULT_CONTENT.SELECT_PARTNER}</label>
             <div className="row gx-2 partners_col">
@@ -70,17 +70,11 @@ export default function Step1({
                       iconUrl={addBaseUrlToUrls(person?.companyLogo)}
                       defaultIcon={ICONS.Discord}
                     />
-                    {/* <CircularCheckBox
-                      className="position-absolute"
-                      checked={partnerSelected && partnerSelected.id === person?._id && partnerSelected.checked}
-                      setChecked={(checked) => setPartnerSelected({ id: person?._id, checked })}
-                      disabled={prizeSelected.first}
-                    /> */}
                   </div>
                 </div>
               ))}
             </div>
-          </div>
+          </div> */}
         </div>
       }
     />

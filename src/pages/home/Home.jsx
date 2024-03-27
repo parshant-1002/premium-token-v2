@@ -16,7 +16,7 @@ import VideoSection from "./components/VideoSection";
 import { PremiumToken } from "./components/PremiumToken";
 import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { getContent } from "../../store/actions/contentManagement";
+import { getContent, setSocketData } from "../../store/actions/contentManagement";
 import { DidYouWin } from "./components/DidYouWin";
 import Airdrop from "./components/Tokeninformation/Airdrop";
 import useSocket from "../../shared/hooks/useSocket";
@@ -37,6 +37,14 @@ const Home = () => {
     }))
   },[])
 
+  useEffect(() => {
+    if (socket) {
+      socket.on('contentData', (data) => {
+        dispatch(setSocketData(data));
+      });
+    }
+  }, [socket]);
+
   const getContentData = ((sectionType)=>{
     return content?.[sectionType]
   })
@@ -49,7 +57,7 @@ const Home = () => {
         <InformationSection content={getContentData(SectionTypes.PRIZE_SECTION)} buyTokenButton={getContentData(SectionTypes.HEADERS)?.buyTokenButton}/>
         <WinnerSection content={{ ...getContentData(SectionTypes.PRIZE_SECTION), ...getContentData(SectionTypes.WINNER_LIST_SECTION) }} socket={socket} />
       </div>
-      <DidYouWin content={getContentData(SectionTypes.WINNER_RULES_SECTION)} />
+      <DidYouWin content={getContentData(SectionTypes.WINNER_RULES_SECTION)} socket = {socket} />
       <DataAggregator content={getContentData(SectionTypes.CONTRACT_DETAILS)} />
       <RoadMap content={getContentData(SectionTypes.ROADMAP_SECTION)} />
       <PremiumToken content={getContentData(SectionTypes.PREMIUM_TOKEN_WALLET)} />
@@ -59,8 +67,8 @@ const Home = () => {
       <MarketPlace content={getContentData(SectionTypes.PREMIUM_MARKET_PLACE)} />
       <Tokeninformation content={getContentData(SectionTypes.TOKEN_SUPPLY)} />
       <Airdrop content={getContentData(SectionTypes.JOIN_AIRDROP)} />
-      <Partners content={getContentData(SectionTypes.PARTNERS)} />
-      < SocialMedia content={getContentData(SectionTypes.FOOTERS)} />
+      {/* <Partners content={getContentData(SectionTypes.PARTNERS)} /> */}
+      <SocialMedia content={getContentData(SectionTypes.FOOTERS)} />
       <Footer content={{ ...getContentData(SectionTypes.FOOTERS), ...getContentData(SectionTypes.HEADERS) }} partnersContent={getContentData(SectionTypes.PARTNERS)} />
       </>
   );

@@ -1,4 +1,3 @@
-import { left } from "@popperjs/core";
 import { ICONS } from "../../../../assets";
 import { CustomSlick } from "../../../../shared/components/CustomSlick";
 import "./style.scss";
