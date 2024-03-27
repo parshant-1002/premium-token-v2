@@ -78,5 +78,6 @@ $size400: 400px;
 .premium_token_bg {
     @include position($absolute, $right: 0px, $bottom: 100px);
     height: 100%;
+    pointer-events: $none;
     z-index: -1;
 }
