@@ -116,3 +116,8 @@ export const POPUP_TYPE = {
     popUp2:2,
     popUp3:3
 }
+
+export const prizeType = {
+    first:1,
+    second:2
+}

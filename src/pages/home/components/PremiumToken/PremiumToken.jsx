@@ -1,4 +1,3 @@
-import arrow from '../../../../../public/rightarrow.svg';
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import { addBaseUrlToUrls, redirectToUrlInNewTab } from "../../../../shared/utilities";
 import { ICONS } from "../../../../assets";
@@ -16,7 +15,7 @@ const PremiumToken = ({ content = {} }) => {
                             <button type="button" className="btn btn-md btn-secondary" onClick={() =>redirectToUrlInNewTab()}>
                                 <span className="transform-none"><SafeHTML html={comingSoonButtonText} />
                                     <em className="ms-2">
-                                        <img src={arrow} alt="premium" width={14} height={8} />
+                                        <img src={ICONS.RightArrow} alt="premium" width={14} height={8} />
                                     </em>
                                 </span>
                             </button>

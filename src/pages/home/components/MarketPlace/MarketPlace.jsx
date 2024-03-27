@@ -1,9 +1,8 @@
 import Card from "../Card";
-import "./MarketPlace.scss";
-import arrow from '../../../../../public/rightarrow.svg';
-import { ICONS } from "../../../../assets";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import { CustomSlick } from "../../../../shared/components/CustomSlick";
+import { ICONS } from "../../../../assets";
+import "./MarketPlace.scss";
 
 const MarketPlace = ({ content = {} }) => {
   const { cars, description, title } = content
@@ -57,7 +56,7 @@ const MarketPlace = ({ content = {} }) => {
           <button type="button" className="btn btn-md btn-secondary mw-240">
             <span className="transform-none">
               Coming soon
-              <em className="ms-3"><img src={arrow} alt="premium" width={14} height={8} /></em>
+              <em className="ms-3"><img src={ICONS.RightArrow} alt="premium" width={14} height={8} /></em>
             </span>
           </button>
         </div>

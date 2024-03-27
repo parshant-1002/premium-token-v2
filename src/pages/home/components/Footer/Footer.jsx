@@ -11,9 +11,6 @@ const Footer = ({content = {},partnersContent = {}}) => {
   const { premiumTokenTitle, viewChartButton, buyTokenButton, email } = content
 
   const [isScrolled, setIsScrolled] = useState(false);
-  const [popup, setPopup] = useState(false);
-
-  const navigate = useNavigate()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,16 +27,8 @@ const Footer = ({content = {},partnersContent = {}}) => {
     };
   }, []);
 
-  const handleClose = () => {
-    setPopup(false)
-  }
-  const handleOpenWinnerModal = () => {
-    setPopup(true)
-  }
-
   return (
     <footer className={`footer bottom_footer ${isScrolled ? 'footer-sticky' : ''}`}>
-      <WinnerPopup show={popup} onClose={handleClose} partners={partnersContent} />
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-4 order-1">
@@ -51,7 +40,7 @@ const Footer = ({content = {},partnersContent = {}}) => {
           <div className="col-lg-4 order-3 order-lg-2">
             <div className="d-flex justify-content-center gap-2">
               <button type="button" className="btn btn-md btn-primary" onClick={() => window.open(viewChartButton?.url, '_blank')}><span className="transform-none"><SafeHTML html={viewChartButton?.text} /></span></button>
-              <button type="button" className="btn btn-md btn-secondary" onClick={() => handleOpenWinnerModal(true)}><span className="transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
+              <button type="button" className="btn btn-md btn-secondary"><span className="transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
             </div>
           </div>
 
