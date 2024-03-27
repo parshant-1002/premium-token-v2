@@ -4,8 +4,6 @@ import "./footer.scss";
 import { addBaseUrlToUrls } from "../../../../shared/utilities";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import WinnerPopup from "../Header/WinnerPopup/WinnerPopup";
-import { Link, useNavigate } from "react-router-dom";
-import { ROUTES } from "../../../../shared/constants/routes";
 
 const Footer = ({content = {},partnersContent = {}}) => {
   const { premiumTokenTitle, viewChartButton, buyTokenButton, email } = content
@@ -53,12 +51,6 @@ const Footer = ({content = {},partnersContent = {}}) => {
               </span>
             </div>
           </div>
-          <Link to = {ROUTES.TERMS_AND_CONDITIONS}>
-            Terms and conditions
-          </Link>
-          <Link to={ROUTES.PRIVACY_POLICY}>
-            Privacy Policy
-          </Link>
         </div>
       </div>
     </footer>
