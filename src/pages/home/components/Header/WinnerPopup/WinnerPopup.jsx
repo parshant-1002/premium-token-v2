@@ -5,9 +5,13 @@ import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
 import { DEFAULT_CONTENT, POPUP_TYPE, WINNER_MODAL_FORM_SCHEMA } from "../helpers/constants";
-import { WINNER_DESCRIPTION } from "../helpers/utils";
+import { WINNER_DESCRIPTION, transformClaimPrizeData } from "../helpers/utils";
+import { useDispatch } from "react-redux";
+import { claimPrize } from "../../../../../store/actions/WinnerSection";
+import { STATUS } from "../../../../../shared/constants";
+import { toast } from "react-toastify";
 
-export default function WinnerPopup({ show, onClose, partners, winnerPopup = {} }) {
+export default function WinnerPopup({ show, onClose, partners, winnerPopup = {}, }) {
   const {popUp1, popUp2, popUp3} = winnerPopup
   const [formData, setFormData] = useState({});
   const [stepToShow, setStepToView] = useState(POPUP_TYPE.popUp1);
@@ -17,6 +21,8 @@ export default function WinnerPopup({ show, onClose, partners, winnerPopup = {} 
   });
   const [partnerSelected, setPartnerSelected] = useState({});
 
+  const dispatch = useDispatch()
+
   const handleSubmitStep1 = (data) => {
     setFormData((prev) => ({ ...prev, ...data }));
     setStepToView(POPUP_TYPE.popUp2);
@@ -25,7 +31,13 @@ export default function WinnerPopup({ show, onClose, partners, winnerPopup = {} 
     setFormData((prev) => ({ ...prev, ...data }));
     setStepToView(POPUP_TYPE.popUp3);
   };
-  const handleSure = () => {
+  const handleSure = (data) => {
+    const payload = transformClaimPrizeData(formData)
+    dispatch(claimPrize(payload, (message, status) => {
+      if(status === STATUS.SUCCESS){
+        toast.success(message)
+      }
+    }))
     handleCloseModal();
   };
   const handleCheckAgain = () => {

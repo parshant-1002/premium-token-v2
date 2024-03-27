@@ -1,6 +1,5 @@
-import { useMemo } from "react";
+
 import "./Card.scss";
-import lambo from '../../../../../public/lambo.png';
 import { addBaseUrlToUrls } from "../../../../shared/utilities";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
 

@@ -10,7 +10,6 @@ import WinnerPopup from "./WinnerPopup/WinnerPopup";
 const Header = ({ content = {}, partnersContent, winnerPopup }) => {
 	const { twitter, discord, telegram, viewChartButton, airdropButton, buyTokenButton, premiumTokenTitle } = content
 	const [isSticky, setIsSticky] = useState(false);
-	const [popup, setPopup] = useState(false);
 	const handleScroll = () => {
 		const scrollTop = window.scrollY;
 		const stickyClassThreshold = 0; // Change this to the desired scroll position
@@ -35,16 +34,11 @@ const Header = ({ content = {}, partnersContent, winnerPopup }) => {
 	const redirectToUrl = (url) =>{
 		redirectToUrlInNewTab(url)
 	}
-	const handleClose = () => {
-		setPopup(false)
-	}
-	const handleOpenWinnerModal = () => {
-		setPopup(true)
-	}
+
 	return (
 
 		<header className={isSticky ? 'header sticky-header' : 'header'}>
-<WinnerPopup show={popup} onClose={handleClose} partners={partnersContent} winnerPopup = {winnerPopup}/>
+
 			<nav className={`navbar navbar-expand-xl bg-transparent py-0 ${isOpen ? 'menu-open' : ''}`}>
 				<div className="container">
 					<Link className="navbar-brand" href={"/"}>
@@ -81,7 +75,7 @@ const Header = ({ content = {}, partnersContent, winnerPopup }) => {
 									<span className="transform-none"><RenderIconWithHover iconUrl={addBaseUrlToUrls(airdropButton?.image)}  defaultIcon={ICONS.Airdrop} /><SafeHTML html={airdropButton?.text} /></span>
 								</button>
 								<button type="button" className="btn btn-md btn-primary" onClick={() => redirectToUrl(viewChartButton?.url)}><span className="transform-none"><SafeHTML html={viewChartButton?.text} /></span></button>
-								<button type="button" className="btn btn-md btn-secondary" onClick={() => handleOpenWinnerModal()}><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
+								<button type="button" className="btn btn-md btn-secondary"><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
 							</div>
 						</div>
 					</div>

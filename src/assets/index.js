@@ -104,6 +104,7 @@ import NoDataFound from "./img/no_data_found.svg"
 import CopyIcon from "./icons/copy_icon.svg"
 
 import walletIcon from "./img/Wallet_icon.png"
+import RightArrow from "./icons/rightarrow.svg"
 
 export const ICONS = {
     VideoBanner: VideoBanner,
@@ -211,6 +212,7 @@ export const ICONS = {
     Featured_Image_5,
     NoDataFound,
     CopyIcon,
+    RightArrow
 }
 
 export const IMAGES = {
