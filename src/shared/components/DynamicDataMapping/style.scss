@@ -2,9 +2,18 @@
 
 $staticBg: url(../../../assets/img/banner-bg.png);
 
+.pt-120 {
+    padding: 80px 0;
+    @media (min-width:1200px) {
+        padding: 120px 0;
+    }
+    @media (max-width:991px) {
+        padding: 32px 0 0;
+    }
+}
+
 .dyn_pages {
     padding: 40px 0;
-
     p {
         margin: 0 0 10px;
     }
@@ -13,12 +22,10 @@ $staticBg: url(../../../assets/img/banner-bg.png);
 .userpanel_view {
     ul {
         list-style: $inherit;
-
         li {
             list-style: $inherit;
         }
     }
-
     ol {
         li {
             list-style: $inherit;
@@ -34,147 +41,80 @@ $staticBg: url(../../../assets/img/banner-bg.png);
     background: $none;
     border: 0;
     display: $block;
-
     .customise-text {
         @include font-size (.875);
     }
-
     .fa-edit {
         @include font-size (1);
         margin-left: 2px;
     }
-
     &:hover {
         color: $green-light-color-900;
     }
 }
 
-// static page css
-.static-bg {
-    @media (min-width:1200px) {
-        background-image: $staticBg;
-        background-repeat: $no-repeat;
-        background-position: $center $top;
-        background-attachment: $fixed;
-        background-size: 100%;
-        background-color: $dark-green-color-900;
-    }
 
-}
-
-.static_banner {
-    background: linear-gradient(110deg, rgba(5, 70, 52, 0.00) 54.8%, $dark-green-color-900 100.72%), linear-gradient(180deg, rgba(5, 70, 52, 0.00) 4.53%, $dark-green-color-900 100%);
-    padding-top: 80px;
-
-    @media (max-width:1199.98px) {
-        display: $none;
-    }
-
-}
-
-.static_pages {
-    @media (max-width:1199.98px) {
-        background: $body-color;
-    }
-}
-
-.pt-120 {
-    padding: 80px 0;
-
-    @media (min-width:1200px) {
-        padding: 120px 0;
-    }
-
-    @media (max-width:991px) {
-        padding: 32px 0 0;
-    }
+.banner_pic {
+    width: 100%;
 }
 
 // for mobile view
 .static_wrapper {
     @media (max-width:1199.98px) {
-        background: linear-gradient(180deg, $green-light-color-750 38.07%, $transparent 96.05%);
+        background: linear-gradient(180deg, rgb(23 56 51) 38.07%, $transparent 96.05%);
         @include border-radius (8px);
         display: $inline-block;
+        padding: 25px;
         width: 100%;
-        padding: 1px;
-    }
-
-    &_column {
-        @media (max-width:1199.98px) {
-            @include flexbox;
-            @include flex-direction(column);
-            @include border-radius (7px);
-            @include transition (all, 400ms, ease-in-out, 0s);
-            background-color: $body-color;
-            outline: $none !important;
-            padding: 40px 20px;
-        }
-
-        .title-Betse {
-            @media (max-width:1199.98px) {
-                margin-bottom: 32px;
-            }
-        }
     }
 }
 
 // for mobile view ends
 .static_card {
     @media (min-width:1200px) {
-        background: linear-gradient(180deg, $green-light-color-750 38.07%, $transparent 96.05%);
+        background: linear-gradient(180deg, rgb(23 56 51) 38.07%, $transparent 96.05%);
         @include border-radius (8px);
         display: $inline-block;
         width: 100%;
         padding: 1px;
     }
-
     &:not(:last-child) {
         margin-bottom: 46px;
-
         @media (max-width:1199.98px) {
             margin-bottom: 32px;
         }
     }
-
     &_content {
         @include flexbox;
         @include flex-direction(column);
         @include border-radius (7px);
         @include transition (all, 400ms, ease-in-out, 0s);
+        font-weight: $font-medium;
         outline: $none !important;
         word-break: break-word;
         color: $text-color;
-        font-weight: 300;
         line-height: 22px;
-
         @media (min-width:1200px) {
             padding: 26px 20px;
             line-height: 24px;
-            background-color: $body-color;
+            background-color: rgba(56, 153, 137, 0.25);
         }
-
         h4 {
             @include font-size (1.125);
             margin-bottom: 10px;
         }
-
         h5 {
             @include font-size (1);
             margin-bottom: 10px;
         }
-
         ul {
             margin-bottom: 20px;
-
             &.list-styled {
                 list-style-type: disc;
                 padding-inline-start: 20px;
-
                 @media (min-width:1200px) {
                     padding-inline-start: 16px;
                 }
-
                 li {
                     &:not(:last-child) {
                         @media (max-width:1199.98px) {
@@ -183,18 +123,14 @@ $staticBg: url(../../../assets/img/banner-bg.png);
                     }
                 }
             }
-
             li {
-                font-size: inherit;
-
+                font-size: $inherit;
                 &:not(:last-child) {
+                    margin-bottom: 10px;
                     @media (max-width:1199.98px) {
                         margin-bottom: 30px;
                     }
-
-                    margin-bottom: 10px;
                 }
-
                 ol {
                     margin-top: 10px;
                 }

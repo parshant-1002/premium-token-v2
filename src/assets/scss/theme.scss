@@ -308,8 +308,11 @@ a.btn {
         padding: 1px;
         min-width: 170px;
         background: linear-gradient(91.03deg, rgb(50 171 151) 1.7248211429%, rgb(255, 255, 255, .8) 51.5625%, rgb(50 171 151) 100%);
+        &:hover {
+            background-color: $transparent;
+        }
         .transform-none {
-            @include button($green-tin-color-700, $transparent, $white-color)
+            @include button($green-tin-color-700, $transparent, $white-color);
         }
     }
     &-transparent {
@@ -494,8 +497,8 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 
 .btn_icon {
-    padding: 1px;
     border: 0;
+    padding: 1px;
     background: linear-gradient(91.03deg, rgb(23 56 51) 1.7248211429%, rgb(255 255 255 / 25%) 51.5625%, rgb(23 56 51) 100%);
     @include border-radius (10px);
     span {
@@ -508,7 +511,7 @@ input[type="search"]::-webkit-search-results-decoration {
         position: $relative;
         &::after {
             content: '';
-            transition: all 400ms ease-in-out 0s;
+            @include transition (all, 400ms, ease-in-out, 0s);
             @include position($absolute, $top:0, $left:0, $bottom:0, $right:0);
             height: 0;
             width: 100%;
@@ -551,34 +554,4 @@ input[type="search"]::-webkit-search-results-decoration {
     &-54 {
         gap:54px;
     }
-}
-
-.py-72 {
-    padding: 72px 0;
-}
-
-//
-.bg-green-600 {
-    background: $bg-green-600;
-}
-.bg-green-500 {
-    background: $bg-green-500;
-}
-.bg-green-400 {
-    background: $bg-green-400;
-}
-.bg-green-350 {
-    background: $bg-green-350;
-}
-.bg-green-300 {
-    background: $bg-green-300;
-}
-.bg-green-200 {
-    background: $bg-green-200;
-}
-.bg-green-150 {
-    background: $bg-green-150;
-}
-.bg-green-100 {
-    background: $bg-green-100;
 }
