@@ -58,7 +58,7 @@ const Footer = ({ content = {}, partnersContent = {} }) => {
         <div className="footer_btm">
           <div className="row align-items-center">
             <div className="col-md-6 text-center text-md-start order-2 order-md-1">
-              <span className="copyright_text"><SafeHTML html={content?.privacy} /></span>
+              <span className="copyright_text"><SafeHTML html={content?.reservedRight} /></span>
             </div>
             <div className="col-md-6 order-1 order-md-2">
               <div className="text-center d-flex justify-content-center justify-content-md-end footer_links">
