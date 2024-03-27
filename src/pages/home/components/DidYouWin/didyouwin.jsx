@@ -12,16 +12,15 @@ import { useSelector } from "react-redux";
 
 
 const DidYouWin = ({content = {}}) => {
-	const[updatedContent, setUpdatedContent ] = useState(content)
-	const socketData = useSelector((store) => store.contentManagementReducer.socketContentData)
-	console.log(updatedContent,"updatecconent")
-	const { title, rules } = updatedContent
+	// const[updatedContent, setUpdatedContent ] = useState(content)
+	// const socketData = useSelector((store) => store.contentManagementReducer.socketContentData)
+	const { title, rules } = content
 
-	useEffect(()=>{
-		if(socketData){
-			setUpdatedContent(socketData?.[SectionTypes.WINNER_RULES_SECTION])
-		}
-	},[socketData])
+	// useEffect(()=>{
+	// 	if(socketData){
+	// 		setUpdatedContent(socketData?.[SectionTypes.WINNER_RULES_SECTION])
+	// 	}
+	// },[socketData])
 	const responsiveConfig =  [
 		{
 			breakpoint: 991,

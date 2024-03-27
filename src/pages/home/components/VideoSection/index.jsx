@@ -11,7 +11,7 @@ import { SectionTypes } from "../../helpers/contentManagement";
 const VideoSection = ({ content = {} }) => {
     const [updatedContent, setUpdatedContent] = useState(content)
     // const socketData = useSelector((store) => store.contentManagementReducer.socketContentData)
-    const { title, description, videoUrl } = updatedContent;
+    const { title, description, videoUrl } = content;
 
     const [isVideoPaused, setIsVideoPaused] = useState(true)
 
