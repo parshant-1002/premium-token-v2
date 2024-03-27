@@ -75,7 +75,7 @@ const Header = ({ content = {}, partnersContent, winnerPopup }) => {
 									<span className="transform-none"><RenderIconWithHover iconUrl={addBaseUrlToUrls(airdropButton?.image)}  defaultIcon={ICONS.Airdrop} /><SafeHTML html={airdropButton?.text} /></span>
 								</button>
 								<button type="button" className="btn btn-md btn-primary" onClick={() => redirectToUrl(viewChartButton?.url)}><span className="transform-none"><SafeHTML html={viewChartButton?.text} /></span></button>
-								<button type="button" className="btn btn-md btn-secondary"><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
+								<button type="button" className="btn btn-md btn-secondary" onClick={() => redirectToUrl(buyTokenButton?.url)}><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
 							</div>
 						</div>
 					</div>

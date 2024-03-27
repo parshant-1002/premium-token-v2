@@ -34,10 +34,10 @@ const SocialMedia = ({content = {}}) => {
 				</div>
 				<div className="text-center d-flex justify-content-center mt-4 mt-md-4 footer_links">
 				<Link to = {ROUTES.TERMS_AND_CONDITIONS} className="text-success">
-            		Terms and conditions
+					<SafeHTML html={content?.terms}/>
           		</Link>
 				<Link to={ROUTES.PRIVACY_POLICY} className="text-success">
-					Privacy Policy
+					<SafeHTML html={content?.privacy}/>
 				</Link>
 				</div>
 			</div>
