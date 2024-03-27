@@ -3,6 +3,8 @@ import About from "../pages/about";
 import { ROUTES, WILDCARD_ROUTES } from "../shared/constants/routes";
 import HeaderContent from "../pages/content-management/header-content";
 import Home from "../pages/home/Home";
+import TermsAndConditions from "../pages/terms-and-conditions";
+import PrivacyPolicy from "../pages/privacy-policy";
 
 export const AUTH_ROUTES = [
     {
@@ -21,5 +23,13 @@ export const AUTH_ROUTES = [
         path: '*',
         element: <Navigate to={WILDCARD_ROUTES.PUBLIC} />,
         title: 'Rendering wildcard',
+    },
+    {
+        path: ROUTES.TERMS_AND_CONDITIONS,
+        element: <TermsAndConditions />,
+    },
+    {
+        path: ROUTES.PRIVACY_POLICY,
+        element: <PrivacyPolicy />,
     },
 ];
