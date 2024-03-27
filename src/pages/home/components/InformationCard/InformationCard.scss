@@ -10,10 +10,10 @@ $size44: 44px;
       box-shadow: 0px 0px 35px 0px rgba(0, 0, 0, 0.05);
       backdrop-filter: blur(40px);
       padding: 42px 16px 16px 16px;
-      text-align: $center; 
+      text-align: $center;
       height: 100%;
       @media (max-width:991px) {
-        margin-top: 22px; 
+        margin-top: 22px;
         height: calc(100% - 22px);
       }
       .card-img {
@@ -42,7 +42,7 @@ $size44: 44px;
         @include flexCenter;
         padding: 1px;
         @include border-radius(0 20px 0 20px);
-        background: linear-gradient(91.03deg, rgb(50 171 151) 1.7248211429%, rgb(255, 255, 255, .8) 51.5625%, rgb(50 171 151) 100%); 
+        background: linear-gradient(91.03deg, rgb(50 171 151) 1.7248211429%, rgb(255, 255, 255, .8) 51.5625%, rgb(50 171 151) 100%);
         .card-counter-no {
           @include flexCenter;
           padding: 0.5rem 1rem;
