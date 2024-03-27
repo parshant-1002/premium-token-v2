@@ -13,10 +13,10 @@ import { replaceTagWithValue } from "./helpers/utils";
 import { SectionTypes } from "../../helpers/contentManagement";
 
 const WinnerSection = ({ content = {}, socket }) => {
-  const [updatedContent, setUpdatedContent] = useState(content)
-  const socketData = useSelector((store) => store.contentManagementReducer.socketContentData)
+  // const [updatedContent, setUpdatedContent] = useState(content)
+  // const socketData = useSelector((store) => store.contentManagementReducer.socketContentData)
   // props destructuring
-  const { marketCap, latestWinnerDetails, connectWalletButtonText, prizeDescription, tokenHolderText, prize } = updatedContent;
+  const { marketCap, latestWinnerDetails, connectWalletButtonText, prizeDescription, tokenHolderText, prize } = content;
 
   //hooks
   const [blockChainData, setBlockChainData] = useState({})
