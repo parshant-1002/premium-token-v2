@@ -17,18 +17,21 @@
         height: 100%;
         min-height: 54px;
         position: $relative;
-        span {
+        padding-right: 55px;
+        span.render_html_safely {
+            display: $inline-block;
             @include font-size (.875);
             font-weight: $font-bold;
             color: $white-color;
-            line-height: 1;
+            line-height: 1.2;
             margin-left: 12px;
         }
     }
     .win_icon {
-        @include position($absolute, $top: 50%, $right: -20px);
+        @include position($absolute, $top: 50%, $right: -50px);
         @include transform (translateY(-50%));
         @include flexCenter;
+        width: 100px;
         z-index: 1;
         img {
             width: 100%;
