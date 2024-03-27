@@ -57,7 +57,7 @@ const Footer = ({ content = {}, partnersContent = {} }) => {
 
         <div className="footer_btm">
           <div className="row align-items-center">
-            <div className="col-md-6 text-center text-md-center order-2 order-md-1">
+            <div className="col-md-6 text-center text-md-start order-2 order-md-1">
               <span className="copyright_text">© 2024 PremiumToken. All rights reserved.</span>
             </div>
             <div className="col-md-6 order-1 order-md-2">
