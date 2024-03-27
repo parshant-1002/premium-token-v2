@@ -50,7 +50,6 @@ const HeaderContent = () => {
         }
     };
     const onSubmit = (data) => {
-        console.log(data);
     };
     return (
         <div>

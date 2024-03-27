@@ -1,4 +1,5 @@
 import { API } from "./constants"
+import { formatNumber } from "./constants/utils"
 
 export const addBaseUrlToUrls = (url)=>{
     return url
@@ -13,8 +14,17 @@ export const formatDate = (dateString, format = "DD-MM-YYYY") => {
 
 } 
 
-export const covertToMillion = (number) => {
-    return `$${(number / 1000000).toFixed(2)}M`
+export const convertToAppropriateUnit = (value) => {
+    const numZeros = Math.floor(Math.log10(value));
+    if (numZeros >= 6 && numZeros < 9) {
+        return (value / 1000000).toFixed(2) + ' M';
+    } else if (numZeros >= 9 && numZeros < 12) {
+        return (value / 1000000000).toFixed(2) + ' B';
+    } else if (numZeros >= 12) {
+        return (value / 1000000000000).toFixed(2) + ' T';
+    } else {
+        return formatNumber(value).toString();
+    }
 }
 
 export function removeEmptyKeys(obj) {

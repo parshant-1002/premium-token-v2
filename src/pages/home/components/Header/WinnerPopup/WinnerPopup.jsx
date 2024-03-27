@@ -10,7 +10,7 @@ import { WINNER_DESCRIPTION } from "../helpers/utils";
 export default function WinnerPopup({ show, onClose, partners, winnerPopup = {} }) {
   const {popUp1, popUp2, popUp3} = winnerPopup
   const [formData, setFormData] = useState({});
-  const [stepToShow, setStepToView] = useState(POPUP_TYPE.popUp2);
+  const [stepToShow, setStepToView] = useState(POPUP_TYPE.popUp1);
   const [prizeSelected, setPrizeSelected] = useState({
     first: false,
     second: true
@@ -36,7 +36,6 @@ export default function WinnerPopup({ show, onClose, partners, winnerPopup = {} 
   };
 
   const REFORMED_WINNER_MODAL_FORM_SCHEMA = WINNER_MODAL_FORM_SCHEMA(winnerPopup)
-  console.log(REFORMED_WINNER_MODAL_FORM_SCHEMA,"REFORMED_WINNER_MODAL_FORM_SCHEMA")
   const renderStep = () => {
     switch (stepToShow) {
       case POPUP_TYPE.popUp1:

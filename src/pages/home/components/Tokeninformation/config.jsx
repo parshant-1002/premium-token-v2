@@ -36,7 +36,6 @@ export const options = {
             font:  (context) => {
                 // Dynamically adjust font size based on the value of the segment
                 const value = context.dataset.data[context.dataIndex];
-                console.log(value,"context")
                 if (value >= 10) return { size: 16};  // For larger segments
                 if (value >= 5) return { size: 14 };   // For medium segments
                 return { size: 12 };                   // For smaller segments
@@ -62,7 +61,6 @@ export const options = {
 };
 
 export const AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA = (data = {}) => {
-    console.log(data,"dataairdro")
     const{discord, facebook, instagram, premiumToken, telegram, tiktok, title, twitter} = data
 
     return {

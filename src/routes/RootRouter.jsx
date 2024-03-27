@@ -11,7 +11,6 @@ function RootRouter() {
   const publicRoute = useRoutes(PUBLIC_ROUTES);
   const authenticated = useRoutes(AUTH_ROUTES);
   const token = useSelector((state) => state?.common?.token);
-  // console.log('token-->>>', token);
   const isAuthenticated = !!token;
   return (
     <HelmetProvider>

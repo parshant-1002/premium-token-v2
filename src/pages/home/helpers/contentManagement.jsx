@@ -568,5 +568,80 @@ export const DEFAULT_CONTENT = {
                 "hovers": "/uploads/files/PlatinumCars_1711307573174.png"
             }
         ]
+    },
+    winnerPopUps: {
+        "popUp2": {
+            "fullName": {
+                "title": "FULL NAME ",
+                "placeholder": "Lori Warf"
+            },
+            "dateOfBirth": {
+                "title": "DATE OF BIRTH",
+                "placeholder": "01/12/1997"
+            },
+            "phoneNumber": {
+                "title": "PHONE NUMBER",
+                "placeholder": "0919985643"
+            },
+            "country": {
+                "title": "COUNTRY",
+                "placeholder": "United Kingdom"
+            },
+            "city": {
+                "title": "CITY",
+                "placeholder": "London"
+            },
+            "streetAddress": {
+                "title": "STREET ADDRESS",
+                "placeholder": "Oxford Street 25"
+            },
+            "zip": {
+                "title": "ZIP",
+                "placeholder": "EC2P 2E"
+            },
+            "confirmButton": {
+                "text": "Confirm"
+            },
+            "title": "Congratz, you have won!",
+            "description": "Fill out the delivery address for the car you won."
+        },
+        "popUp1": {
+            "socialPlatforms": {
+                "title": "WHATSAPP/SKYPE/TELEGRAM",
+                "placeholder": "katie63"
+            },
+            "walletAddress": {
+                "title": "WALLET ADDRESS",
+                "placeholder": "xfsde3eedsd1e12wdsadasd",
+                "lockbuttonImageUrl": "/uploads/files/lamber_logo_1711312062514.png"
+            },
+            "prizeSection": {
+                "prize1": {
+                    "title": "350,000 $ worth of PremiumToken",
+                    "imageUrl": ICONS.PrizeTypeToken
+                },
+                "prize2": {
+                    "title": "Supercar to a value of 350,000 $",
+                    "imageUrl": ICONS.PrizeTypeCar
+                },
+                "title": "dsad"
+            },
+            "continueButton": {
+                "text": "Continue"
+            },
+            "title": "Congratz, you have won!",
+            "description": "Fill out the information below to get your prize."
+        },
+        "popUp3": {
+            "confirmationButton": {
+                "url": "winner@premiumtoken.com",
+                "text": "Yes, I am sure"
+            },
+            "checkAgainButton": {
+                "text": "Check again"
+            },
+            "title": "Are you sure you entered the correct information?",
+            "description": "We will contact you from the email:&nbsp;</p><p>winner@premiumtoken.com. Be aware of fake email!"
+        }
     }
 }

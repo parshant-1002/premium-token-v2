@@ -1,11 +1,11 @@
 import { ICONS } from "../../../../../assets"
-import { formatNumber, handleCopyLink } from "../../../../../shared/constants/utils"
-import { covertToMillion, formatDate } from "../../../../../shared/utilities"
+import {  handleCopyLink } from "../../../../../shared/constants/utils"
+import { convertToAppropriateUnit, formatDate } from "../../../../../shared/utilities"
 
 export const transformRow = (data)=>{
     return {
         prizetype: data.prizetype,
-        marketCap: covertToMillion(data.marketCap),
+        marketCap: convertToAppropriateUnit(data.marketCap),
         createdAt: formatDate( data.createdAt),
         walletAddress: <span className="wallet-address">{data.walletAddress} <em type="button" onClick={() => handleCopyLink(data.walletAddress, "Address")}><img src={ICONS.CopyIcon} alt="Copy" height={12} /></em></span>,
         chanceOfWinning: `${data.chanceOfWinning} %`

@@ -22,8 +22,6 @@ const CustomSlick = ({ children, slidesToShow = 4, responsive = [], handleNextCl
             responsive: responsive
         })
     };
-    if(check)
-    console.log(settings,"settings<><><><>")
     return (
             <div className='custom-slider' style={{ zIndex: "99999" }}>
                 <Slider ref={ref} {...settings} >

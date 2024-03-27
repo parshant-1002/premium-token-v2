@@ -5,7 +5,6 @@ import './style.scss';
 import { addBaseUrlToUrls } from "../../../../../shared/utilities";
 
 export default function Prize({ prizeSelected, disabled, setPrizeSelected, label = "" , imageUrl}) {
-    console.log('prizeSelected: ', prizeSelected);
     return <div className="prize_card">
         <div className="prize_wrap">
             <CircularCheckBox disabled={disabled} checked={prizeSelected} setChecked={setPrizeSelected} />

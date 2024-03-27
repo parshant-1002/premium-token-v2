@@ -6,7 +6,6 @@ import "./ConnectionCreator.scss";
 
 const ConnectionCreator = ({ content = {} }) => {
   const { title, premiumTokenButton, imageUrl, externalAuditButton, description, address } = content
-  console.log(content, "Connection")
   return (
     <section className="connection-creator position-relative">
       <div className="container">

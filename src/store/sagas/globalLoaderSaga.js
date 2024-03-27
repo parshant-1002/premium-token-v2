@@ -14,7 +14,6 @@ function* setLoader({ payload }) {
                 url: API.GET_DATA,
                 data: { ...payload }
             });
-            console.log(data);
         } catch (error) {
             yield put(stopLoading());
         } finally {

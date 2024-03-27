@@ -7,9 +7,6 @@ import { SOCIAL_MEDIA_ICONS_CONFIG } from "./helpers/contants";
 
 const SocialMedia = ({content = {}}) => {
 	const { title, description, twitter, telegram, premiumTokenTitle, airdrop, discord, email } = content;
-
-	//hooks
-	console.log(content,"socialmediacontent")
 	return (
 		<section className="footer-row position-relative">
 			<div className="container">

@@ -42,7 +42,7 @@ import RulesToWin3 from "./icons/Rules_To_Win3.svg"
 import RulesToWin4 from "./icons/Rules_To_Win4.svg"
 
 //Winner section
-import PrizeTypeToken from "./icons/Prize_Type_Token.svg"
+import PrizeTypeToken from "./icons/Prize_Type_Token.png"
 import PrizeTypeCar from "./icons/Prize_Type_Car.svg"
 
 //Winner Rules Section
@@ -102,6 +102,8 @@ import Featured_Image_4 from './icons/Featured_Image_4.svg';
 import Featured_Image_5 from './icons/Featured_Image_5.svg';
 import NoDataFound from "./img/no_data_found.svg"
 import CopyIcon from "./icons/copy_icon.svg"
+
+import walletIcon from "./img/Wallet_icon.png"
 
 export const ICONS = {
     VideoBanner: VideoBanner,
@@ -209,6 +211,10 @@ export const ICONS = {
     Featured_Image_5,
     NoDataFound,
     CopyIcon,
+}
+
+export const IMAGES = {
+    walletIcon
 }
 
 export const VIDEOS = {
