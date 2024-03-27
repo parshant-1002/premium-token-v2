@@ -4,8 +4,10 @@ import "./footer.scss";
 import { addBaseUrlToUrls } from "../../../../shared/utilities";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import WinnerPopup from "../Header/WinnerPopup/WinnerPopup";
+import { Link } from "react-router-dom";
+import { ROUTES } from "../../../../shared/constants/routes";
 
-const Footer = ({content = {},partnersContent = {}}) => {
+const Footer = ({ content = {}, partnersContent = {} }) => {
   const { premiumTokenTitle, viewChartButton, buyTokenButton, email } = content
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,7 +28,7 @@ const Footer = ({content = {},partnersContent = {}}) => {
   }, []);
 
   return (
-    <footer className={`footer bottom_footer ${isScrolled ? 'footer-sticky' : ''}`}>
+    <footer className={`footer ${isScrolled ? 'footer-sticky' : ''}`}>
       <div className="container">
         <div className="row align-items-center">
           <div className="col-lg-4 order-1">
@@ -47,8 +49,26 @@ const Footer = ({content = {},partnersContent = {}}) => {
               <span to="mailto:support@beaverswap.com" rel="follow">
                 <em className="me-2">
                   <img src={addBaseUrlToUrls(email?.imageUrl)} alt="Email" width={20} height={20} />
-                </em> <SafeHTML html={email?.emailAddress}/>
+                </em> <SafeHTML html={email?.emailAddress} />
               </span>
+            </div>
+          </div>
+        </div>
+
+        <div className="footer_btm">
+          <div className="row align-items-center">
+            <div className="col-md-6 text-center text-md-start order-2 order-md-1">
+              <span className="copyright_text"><SafeHTML html={content?.privacy} /></span>
+            </div>
+            <div className="col-md-6 order-1 order-md-2">
+              <div className="text-center d-flex justify-content-center justify-content-md-end footer_links">
+                <Link to={ROUTES.TERMS_AND_CONDITIONS}>
+                  <SafeHTML html={content?.terms} />
+                </Link>
+                <Link to={ROUTES.PRIVACY_POLICY}>
+                  <SafeHTML html={content?.privacy} />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
