@@ -4,6 +4,8 @@ import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import { RenderIconWithHover } from "../../../../shared/components/RenderIconWithHover";
 import { addBaseUrlToUrls, redirectToUrlInNewTab } from "../../../../shared/utilities";
 import { SOCIAL_MEDIA_ICONS_CONFIG } from "./helpers/contants";
+import { ROUTES } from "../../../../shared/constants/routes";
+import { Link } from "react-router-dom";
 
 const SocialMedia = ({content = {}}) => {
 	const { title, description, twitter, telegram, premiumTokenTitle, airdrop, discord, email } = content;
@@ -29,6 +31,14 @@ const SocialMedia = ({content = {}}) => {
 							})}
 						</div>
 					</div>
+				</div>
+				<div className="text-center d-flex justify-content-center mt-4 mt-md-4 footer_links">
+				<Link to = {ROUTES.TERMS_AND_CONDITIONS} className="text-success">
+            		Terms and conditions
+          		</Link>
+				<Link to={ROUTES.PRIVACY_POLICY} className="text-success">
+					Privacy Policy
+				</Link>
 				</div>
 			</div>
 			<div className="footer_left_shape d-none d-md-block">
