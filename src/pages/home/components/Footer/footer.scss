@@ -1,17 +1,20 @@
 @import "../../../../assets/scss/base";
 
 .scrolled {
-  @media (max-width:1200px){
-    padding-bottom: 114px;
-  }
-  @media (max-width:991px){
-    padding-bottom: 184px;
-  }
   footer {
-    @media (max-width:1200px){
-      @include position($fixed, $bottom:0, $left:0, $right:0);
-      @include transform (translateY(0));
-      z-index: 11;
+    .btn_sticky {
+      @media (max-width:1200px){
+        @include position($fixed, $bottom:0, $left:0, $right:0);
+        @include transition (all, .5s, ease-in-out, .10s);
+        @include transform (translateY(-10px));
+        z-index: 11;
+      }
+    }
+    &.add_sticky {
+      .btn_sticky {
+        @include transform (translateY(0));
+        @include position($static);
+      }
     }
   }
 }
@@ -19,10 +22,6 @@
 footer {
   padding:30px 0;
   background:$dark-green-color-300;
-  @media (max-width:991px){
-    @include transform (translateY(100%));
-    @include transition (all, .5s, ease-in-out, .10s);
-  }
   .btn {
     min-width: 150px;
   }
