@@ -7,7 +7,7 @@ import { FORM_VALIDATION_MESSAGES } from "../../../../../shared/constants/valida
 export const WINNER_MODAL_FORM_SCHEMA =(data)=>{
     const { popUp1, popUp2, popUp3 } = data
     return {
-  
+
     step1: {
         socialMedia: {
             type: INPUT_TYPES.TEXT,
@@ -21,7 +21,7 @@ export const WINNER_MODAL_FORM_SCHEMA =(data)=>{
         walletAddress: {
             type: INPUT_TYPES.TEXT,
             label: <SafeHTML html={popUp1?.walletAddress?.title} />,
-            icon: <RenderIconWithHover iconUrl={popUp1?.walletAddress?.lockbuttonImageUrl}/>,
+            icon: <span className="wallet_icon"><RenderIconWithHover iconUrl={popUp1?.walletAddress?.lockbuttonImageUrl}/></span>,
             className: 'form-control col-md-6',
             placeholder: popUp1?.walletAddress?.placeholder,
             schema: (data) => ({
@@ -96,7 +96,7 @@ export const WINNER_MODAL_FORM_SCHEMA =(data)=>{
             label: <SafeHTML html={popUp2?.zip?.title} />,
             className: 'form-control col-md-6',
             placeholder: popUp2?.zip?.placeholder,
-            schema: {   
+            schema: {
                 required: FORM_VALIDATION_MESSAGES().REQUIRED,
             }
         },

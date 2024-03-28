@@ -1,15 +1,15 @@
 @import "../../../../assets/scss/base";
 
 .video-banner {
-    @media (min-width:991.99px){
+    @media (min-width:991.99px) {
         padding: 72px 0;
     }
-    @media (max-width:991px){
+    @media (max-width:991px) {
         padding: 16px 0 30px;
     }
     &--info {
         .h2 {
-           color: $white-color;
+            color: $white-color;
         }
     }
     &-description {
@@ -22,18 +22,24 @@
 }
 
 .wrapperVideo {
+
     padding: 1px;
     margin-top: 30px;
     position: $relative;
     background: $white-color;
     background: linear-gradient(to bottom left, rgba($color: $white-color, $alpha: .6) 0%, rgba($color: $white-color, $alpha: 0.2) 25%, $body-color 50%, rgba($color: $white-color, $alpha: 0.04) 75%, rgba($color: $white-color, $alpha: .7) 100%);
     backdrop-filter: blur(500px);
+    margin-inline: $auto;
     @media (min-width:1200.99px) {
+        width: 90%;
+        height: 566px;
         @include border-radius(25px);
         margin-top: 52px;
     }
     @media (max-width:1200px) {
         @include border-radius(10px);
+        width: 100%;
+        height: 277px;
     }
     @at-root {
         .play_btn {
@@ -42,7 +48,8 @@
             background-color: $transparent;
             @include position($absolute, $top: 50%, $left: 50%);
             @include transform(translate(-50%, -50%));
-            img, svg {
+            img,
+            svg {
                 @media (min-width:1200px) {
                     width: 88px;
                     height: 88px;
@@ -58,22 +65,30 @@
             }
         }
     }
-}
-
-.video_home{
-    background-color: $body-color;
-    @media (min-width:1200.99px) {
-        @include border-radius (25px);
-    }
-    @media (max-width:1200px) {
-        @include border-radius (10px);
-    }
-    video {
-        @media (min-width:1200.99px) {
-            @include border-radius (25px);
-        }
-        @media (max-width:1200px) {
-            @include border-radius (10px);
+    @at-root {
+        .video_home {
+            background-color: $body-color;
+            display: $inline-block;
+            position: $relative;
+            overflow: $hidden;
+            width: 100%;
+            &::before {
+                content: "";
+                display: $block;
+                padding-top: 56.29%;
+            }
+            @media (min-width:1200.99px) {
+                @include border-radius (25px);
+            }
+            @media (max-width:1200px) {
+                @include border-radius (10px);
+            }
+            video {
+                @include position($absolute, $top: 0, $left: 0, $right: 0);
+                object-fit: $contain;
+                width: 100%;
+                height: 100%;
+            }
         }
     }
 }

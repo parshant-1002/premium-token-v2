@@ -28,7 +28,7 @@
         }
     }
     .win_icon {
-        @include position($absolute, $top: 50%, $right: -50px);
+        @include position($absolute, $top: 50%, $right: -30px);
         @include transform (translateY(-50%));
         @include flexCenter;
         width: 100px;
@@ -38,6 +38,13 @@
             max-height: 60px;
             object-fit: $contain;
         }
+    }
+}
+
+.wallet_icon {
+    @include position($absolute, $top:5px, $right:10px);
+    img {
+        width:22px;
     }
 }
 
