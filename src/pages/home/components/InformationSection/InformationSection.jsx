@@ -36,7 +36,8 @@ const InformationSection = ({ content = {} }) => {
             <CustomSlick responsive={responsiveConfig}>
               {rulesToWin?.map((item, index)=><InformationCard
                   illustration={addBaseUrlToUrls(item.imageUrl)}
-                  title={item.description}
+                  title={item?.title}
+                  description = {item?.description}
                   prop={index + 1}
                   item={item}
                   buyTokenButton={index === 0 && buyTokenButton}

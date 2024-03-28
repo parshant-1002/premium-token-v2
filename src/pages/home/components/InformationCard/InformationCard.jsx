@@ -7,6 +7,7 @@ const InformationCard = ({
   illustration,
   title,
   prop,
+  description,
   buyTokenButton = {},
 }) => {
   return (
@@ -20,7 +21,8 @@ const InformationCard = ({
         <div className="card-img">
           <RenderIconWithHover iconUrl={illustration} width = {225} height = {188}/>
         </div>
-        <SafeHTML html={title} />
+        <h3 className="h6"><SafeHTML html={title} /></h3>
+        <SafeHTML html={description} />
         {/* {buyTokenButton &&
         <div className="w-100 text-center btn_contain">
             <button type="button" className="btn btn-md btn-secondary" onClick={() => redirectToUrlInNewTab(buyTokenButton?.url)}><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
