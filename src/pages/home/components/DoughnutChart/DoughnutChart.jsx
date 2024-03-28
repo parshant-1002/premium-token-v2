@@ -2,16 +2,23 @@ import React, { useEffect, useState } from 'react';
 import Chart from "react-apexcharts";
 import { options } from '../../helpers/constants';
 import './style.scss';
+import { useSelector } from 'react-redux';
 
 const DoughnutChart = ({ series, innerTitle }) => {
-    const [chartOptions, setChartOptions] = useState(options(innerTitle));
-    useEffect(() => {
-        setChartOptions(options(innerTitle));
-    }, [innerTitle]);
-    const chartHeight = window.innerWidth > 768 ? 500 : 300; // Adjust height based on screen width
-    const chartWidth = window.innerWidth > 768 ? 500 : '100%'; // Adjust width based on screen widtinnerTitle
-    // Dynamically calculate the left margin to center the chart on mobile innerTitleinnerTitleinneinnerTitle
-    return <Chart key={innerTitle} width={chartWidth} height={chartHeight} options={chartOptions} series={series} type="donut" className="dough_chart" />    
+    const blockChainData = useSelector((store) => store.contentManagementReducer.blockChainData)
+    const [chartOptions, setChartOptions] = useState(null);
+
+    useEffect(()=>{
+        if(innerTitle && blockChainData?.tokenSupply){
+            setChartOptions(()=>options(innerTitle, blockChainData?.tokenSupply))
+        }
+    },[blockChainData, innerTitle])
+
+    const chartHeight = window.innerWidth > 768 ? 500 : 300; 
+    const chartWidth = window.innerWidth > 768 ? 500 : '100%'; 
+    return chartOptions ? <Chart key={blockChainData?.tokenSupply} width={chartWidth} height={chartHeight} options={chartOptions} series={series} type="donut" className="dough_chart" /> :
+        <Chart key={blockChainData?.tokenSupply} width={chartWidth} height={chartHeight} options={options(innerTitle, "100,000")} series={series} type="donut" className="dough_chart" />
+
 };
 
 export default DoughnutChart;
