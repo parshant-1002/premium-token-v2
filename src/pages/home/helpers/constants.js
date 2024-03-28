@@ -1,6 +1,6 @@
 export const secondHalfColorOptions = ["#4C7570", "#256059", "#389989", "#71AFA5"]
 export const firstHalfColorOptions = ["#031815", "#0D2624", "#1F423D", "#3D615D"]
-export const options = (innerTitle) => ({
+export const options = (innerTitle, tokenSupply) => ({
     colors: [...firstHalfColorOptions, ...secondHalfColorOptions],
     chart: {
         fontFamily: "Sora",
@@ -20,7 +20,7 @@ export const options = (innerTitle) => ({
                     name: {
                         show: true,
                         formatter: function (val) {
-                            return "TOTAL TOKENS"
+                            return innerTitle
                         }
                     },
                     value: {
@@ -38,7 +38,7 @@ export const options = (innerTitle) => ({
                         fontWeight: 800,
                         color: "#A7D7CF",
                         formatter: function (w) {
-                            return innerTitle 
+                            return tokenSupply 
                         }
                     }
                 },

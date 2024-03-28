@@ -28,7 +28,7 @@ const ConnectionMaker = ({ content = {} }) => {
 								<img
 									className="me-2"
 									alt=""
-									src="/heroiconsoutlinelink.svg"
+									src={content?.linkLogo}
 									width={25}
 									height={25}
 								/>

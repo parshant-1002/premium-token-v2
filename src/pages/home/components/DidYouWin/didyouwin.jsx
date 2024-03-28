@@ -14,7 +14,6 @@ import { useSelector } from "react-redux";
 const DidYouWin = ({content = {}}) => {
 	const[updatedContent, setUpdatedContent ] = useState(content)
 	const socketData = useSelector((store) => store.contentManagementReducer.socketContentData)
-	console.log(socketData,"socketData<><><>")
 	const { title, rules } = updatedContent
 
 	useEffect(()=>{

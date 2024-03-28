@@ -2,8 +2,11 @@ import { ICONS } from "../../../../assets";
 import { CustomSlick } from "../../../../shared/components/CustomSlick";
 import "./style.scss";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
+import { useSelector } from "react-redux";
 
 const RoadMap = ({content = {}}) => {
+  const blockChainData = useSelector((store) => store.contentManagementReducer.blockChainData)
+  console.log(blockChainData,"blockChainData")
   const{title, roadMap} = content
   const responsiveConfig = [
     {
@@ -53,7 +56,7 @@ const RoadMap = ({content = {}}) => {
       <div className="roadmap_wrap">
         <CustomSlick slidesToShow={6} responsive={responsiveConfig}>
           {roadMap?.map((item, index)=>{
-            return <div key = {item?._id} className={`timeline-item ${item?.level <= 2 ? "active" : ""}`}>
+            return <div key={item?._id} className={`timeline-item ${item?.level <= blockChainData?.roadMapLevel ? "active" : ""}`}>
                 <div className="timeline_block text-start text-md-center">
                   <h6 className="h6"><SafeHTML html={item?.title}/></h6>
                 <span><SafeHTML html={item?.completionTitle} /> <span className="text-success"><SafeHTML html={`${item?.completionTime} days`} /></span></span>
