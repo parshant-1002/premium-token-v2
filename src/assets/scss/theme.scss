@@ -119,12 +119,12 @@ button {
 }
 a {
     cursor: $pointer;
+    color: $text-color;
     text-decoration: $none;
-    color: $dark-green-color-500;
     @include transition-mixin (all, .5s, ease-in-out);
     &:hover,
     &:focus {
-        color: $dark-green-color-400;
+        color: $green-tin-color-600;
     }
 }
 p {

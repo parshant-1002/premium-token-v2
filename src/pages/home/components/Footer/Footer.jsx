@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { ICONS } from "../../../../assets";
 import "./footer.scss";
 import { addBaseUrlToUrls } from "../../../../shared/utilities";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
@@ -15,13 +14,27 @@ const Footer = ({ content = {}, partnersContent = {} }) => {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const bodyHeight = document.body.scrollHeight;
+      const bottomOffset = 330; // Adjust this value as needed
+
       if (scrollPosition > 400) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
       }
+
+      if (scrollPosition + windowHeight >= bodyHeight - bottomOffset) {
+        // Add a class to the footer when reaching the bottom
+        document.querySelector('footer').classList.add('add_sticky');
+      } else {
+        // Remove the class if not at the bottom
+        document.querySelector('footer').classList.remove('add_sticky');
+      }
     };
+
     window.addEventListener('scroll', handleScroll);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -37,7 +50,7 @@ const Footer = ({ content = {}, partnersContent = {} }) => {
             </div>
           </div>
 
-          <div className="col-lg-4 order-3 order-lg-2">
+          <div className="col-lg-4 order-3 order-lg-2 btn_sticky">
             <div className="d-flex justify-content-center gap-2">
               <button type="button" className="btn btn-md btn-primary" onClick={() => window.open(viewChartButton?.url, '_blank')}><span className="transform-none"><SafeHTML html={viewChartButton?.text} /></span></button>
               <button type="button" className="btn btn-md btn-secondary"><span className="transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
