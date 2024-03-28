@@ -17,7 +17,7 @@ const Tokeninformation = ({content = {}}) => {
 			</div>
 			<div className="token-column-text">
 				<h4 className="h5"><SafeHTML html={title} /></h4>
-				<SafeHTML html={subTitle} />
+				<small className="text-success"><SafeHTML html={subTitle} /></small>
 				<SafeHTML html={description} />
 			</div>
 		</div>
@@ -33,7 +33,7 @@ const Tokeninformation = ({content = {}}) => {
 
 				<div className="pie-chart text-center">
 					<div className="d-inline-block">
-						<DoughnutChart series={series}  className="chart" innerTitle = {innerTitle} />
+						<DoughnutChart series={series} className="chart" innerTitle = {innerTitle} />
 					</div>
 				</div>
 

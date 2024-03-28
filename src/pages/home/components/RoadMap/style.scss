@@ -73,18 +73,16 @@
       max-width: 90%;
       @include opacity (.7);
       position: $absolute;
-      left: 5%;
+      left: calc(5% + 20px);
     }
     .h6 {
       margin-bottom: 3px;
-    }
-    span {
-      color: $white-color;
     }
     p {
       margin-top: 3px;
       color: $text-color;
       @include font-size (.875);
+      font-weight: $font-medium;
     }
   }
 

@@ -46,11 +46,6 @@
           }
         }
       }
-      .h6 {
-        font-weight: $font-mediumbold;
-        @include font-size (1);
-        color: $text-color;
-      }
       p {
         @include font-size (.875);
         font-weight: $font-medium;

@@ -134,20 +134,13 @@ $staticBg: url(../../../assets/img/banner-bg.png);
                     margin-top: 10px;
                 }
             }
-
             &:last-child {
                 margin-bottom: 0px;
             }
         }
-
         p {
             margin-bottom: 30px;
-
-            @media (min-width:1200px) {
-                margin-bottom: 32px;
-            }
         }
-
         a {
             text-decoration: $underline;
             color: $white-color;
@@ -156,11 +149,9 @@ $staticBg: url(../../../assets/img/banner-bg.png);
                 color: rgba($white-color , 0.5);
             }
         }
-
         ol {
             padding: 0;
             list-style-position: inside;
-
             li {
                 &:not(:last-child) {
                     margin-bottom: 0.625rem;
