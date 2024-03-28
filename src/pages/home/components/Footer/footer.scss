@@ -3,7 +3,7 @@
 .scrolled {
   footer {
     .btn_sticky {
-      @media (max-width:1200px){
+      @media (max-width:991px){
         @include position($fixed, $bottom:0, $left:0, $right:0);
         @include transition (all, .5s, ease-in-out, .10s);
         @include transform (translateY(-10px));
@@ -54,7 +54,7 @@ footer {
 }
 
 .email_group {
-  @media (max-width:1200px) {
+  @media (max-width:991px) {
     margin: 10px 0 20px;
   }
   a {

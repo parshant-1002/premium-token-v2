@@ -67,7 +67,15 @@
       }
     }
   }
-
+  @media (min-width:1200px){
+    .slick-slide {
+      &:last-child {
+        .timeline_block {
+          left: 0;
+        }
+      }
+    }
+  }
   .timeline_block {
     @media (min-width:767.99px){
       max-width: 90%;
@@ -147,7 +155,7 @@
 // RoadMap Responsive
 @media (max-width:767px){
   .roadmap_wrap {
-    padding:0 15px 80px;
+    padding:0 15px 100px;
     .slick-track {
       @include flex-direction (column);
     }
