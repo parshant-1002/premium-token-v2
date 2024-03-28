@@ -17,7 +17,8 @@ const Tokeninformation = ({content = {}}) => {
 			</div>
 			<div className="token-column-text">
 				<h4 className="h5"><SafeHTML html={title} /></h4>
-				<small className="text-success"><SafeHTML html={subTitle} /></small>
+				<span className="text-white d-block"><SafeHTML html={value?.walletAddressKey} /></span>
+				<small className="text-success"><SafeHTML html={value?.walletAddressValue} /></small>
 				<SafeHTML html={description} />
 			</div>
 		</div>
