@@ -38,9 +38,10 @@ const Home = () => {
   },[])
 
   useEffect(() => {
+    console.log(socket,"socket")
     if (socket) {
       socket.on('contentData', (data) => {
-        dispatch(setSocketData(data));
+        dispatch(setSocketData(data?.data));
       });
     }
   }, [socket]);

@@ -3,7 +3,7 @@ import { API_METHODS, API_URLS, STATUS, STATUS_CODES } from "../../shared/consta
 import { startLoading, stopLoading } from "../actions/globalLoaderActions";
 import { CREATE_AIRDROP_REQUEST, GET_BLOCKCHAIN_DATA, GET_CONTENT_REQUEST, GET_WINNERS_LIST } from "../constants";
 import axios from "../../shared/apis/axiosInterceptor";
-import { setContent } from "../actions/contentManagement";
+import { setBlockChainData, setContent } from "../actions/contentManagement";
 
 function* getContent({ payload, callback = ()=>{} }) {
     try {
@@ -85,6 +85,7 @@ function* getBlockChainData({  callback = () => { } }) {
             yield put(stopLoading());
             callback(data.msg, STATUS.ERROR);
         } else {
+            yield put(setBlockChainData(data.data));
             callback(data.data, STATUS.SUCCESS);
             yield put(stopLoading());
         }

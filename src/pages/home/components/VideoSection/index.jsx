@@ -10,17 +10,17 @@ import { SectionTypes } from "../../helpers/contentManagement";
 
 const VideoSection = ({ content = {} }) => {
     const [updatedContent, setUpdatedContent] = useState(content)
-    // const socketData = useSelector((store) => store.contentManagementReducer.socketContentData)
-    const { title, description, videoUrl } = content;
+    const socketData = useSelector((store) => store.contentManagementReducer.socketContentData)
+    const { title, description } = updatedContent;
 
     const [isVideoPaused, setIsVideoPaused] = useState(true)
 
 
-    // useEffect(() => {
-    //     if (socketData) {
-    //         setUpdatedContent(socketData?.[SectionTypes.WINNER_RULES_SECTION])
-    //     }
-    // }, [socketData])
+    useEffect(() => {
+        if (Object.keys(socketData)?.length) {
+            setUpdatedContent((prev) => ({ ...prev, ...socketData?.[SectionTypes.VIDEO_SECTION] }))
+        }
+    }, [socketData])
 
     const handlePlay = () => {
         const video = document.querySelector("video");
@@ -55,7 +55,7 @@ const VideoSection = ({ content = {} }) => {
                 <div className="position-relative">
                     <div className="wrapperVideo">
                         <div className="video_home ratio ratio-21x9">
-                            <video id="video" src={addBaseUrlToUrls(videoUrl)} key={videoUrl} onPlay={hideIcon} onPause={showIcon} onEnded={showIcon}  width={1140} height={400} />
+                            <video id="video" src={addBaseUrlToUrls(content?.videoUrl)} key={content?.videoUrl} onPlay={hideIcon} onPause={showIcon} onEnded={showIcon}  width={1140} height={400} />
                         </div>
                        {isVideoPaused && <button className="play_btn" onClick={handlePlay} id="play_icon">
                             <svg width="88" height="88" viewBox="0 0 88 88" fill="none">
