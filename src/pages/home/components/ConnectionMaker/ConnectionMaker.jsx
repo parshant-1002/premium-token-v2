@@ -40,7 +40,7 @@ const ConnectionMaker = ({ content = {} }) => {
 									<img
 										className="me-2"
 										alt=""
-										src="/heroiconsoutlinedocumentarrowdown.svg"
+										src={content?.downloadDocButtonLogo	}
 									/>
 									<SafeHTML html={downloadDocbutton} />
 								</span>

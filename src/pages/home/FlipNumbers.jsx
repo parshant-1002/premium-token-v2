@@ -5,20 +5,20 @@ import { formatNumber } from '../../shared/constants/utils';
 const SmoothFlipCounter = ({ initialValue, socket }) => {
     const [value, setValue] = useState(0);
 
-    // useEffect(() => {
-    //     if (socket) {
-    //         socket.on('blockChainData', (data) => {
-    //             setValue(data?.marketCap)
-    //         });
-    //     }
-    // }, [socket]);
     useEffect(() => {
-        const interval = setInterval(() => {
-            setValue((prevValue) => prevValue + 5365);
-        }, 3000);
+        if (socket) {
+            socket.on('blockChainData', (data) => {
+                setValue(data?.marketCap)
+            });
+        }
+    }, [socket]);
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setValue((prevValue) => prevValue + 5365);
+    //     }, 3000);
 
-        return () => clearInterval(interval);
-    }, []);
+    //     return () => clearInterval(interval);
+    // }, []);
 
     const renderDigits = () => {
         const digits = formatNumber(value).toString().split('');
