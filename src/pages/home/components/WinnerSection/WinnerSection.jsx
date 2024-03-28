@@ -13,10 +13,10 @@ import { replaceTagWithValue } from "./helpers/utils";
 import { SectionTypes } from "../../helpers/contentManagement";
 
 const WinnerSection = ({ content = {}, socket }) => {
-  // const [updatedContent, setUpdatedContent] = useState(content)
-  // const socketData = useSelector((store) => store.contentManagementReducer.socketContentData)
+  const [updatedContent, setUpdatedContent] = useState(content)
+  const socketData = useSelector((store) => store.contentManagementReducer.socketContentData)
   // props destructuring
-  const { marketCap, latestWinnerDetails, connectWalletButtonText, prizeDescription, tokenHolderText, prize } = content;
+  const { marketCap, latestWinnerDetails, prizeDescription, tokenHolderText, prize } = updatedContent;
 
   //hooks
   const [blockChainData, setBlockChainData] = useState({})
@@ -29,12 +29,11 @@ const WinnerSection = ({ content = {}, socket }) => {
     }))
   }, [])
 
-
-  // useEffect(() => {
-  //   if (Object.keys(socketData).length) {
-  //     setUpdatedContent(socketData?.[SectionTypes.PRIZE_SECTION])
-  //   }
-  // }, [socketData])
+  useEffect(() => {
+    if (Object.keys(socketData).length) {
+      setUpdatedContent((prev)=> ({...prev, ...socketData?.[SectionTypes.PRIZE_SECTION]}))
+    }
+  }, [socketData])
 
 
   const counterSettings = {
@@ -58,7 +57,7 @@ const WinnerSection = ({ content = {}, socket }) => {
 
         <div className="subtitle">
           <span className="process">
-            <SafeHTML html={replaceTagWithValue(marketCap?.description, "$X", blockChainData?.nextWinnerMarketCap+"$")}/>
+            <SafeHTML html={marketCap?.description}/>
           </span>
         </div>
       </div>
@@ -77,7 +76,7 @@ const WinnerSection = ({ content = {}, socket }) => {
                 <div className="output">
                   <span className="text-white">{prizeDescription}</span>
                 </div>
-                <ConnectButton connectWalletButtonText={connectWalletButtonText} />
+                <ConnectButton connectWalletButtonText={content?.connectWalletButtonText} />
               </div>
             </div>
 

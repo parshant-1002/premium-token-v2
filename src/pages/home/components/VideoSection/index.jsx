@@ -10,17 +10,17 @@ import { SectionTypes } from "../../helpers/contentManagement";
 
 const VideoSection = ({ content = {} }) => {
     const [updatedContent, setUpdatedContent] = useState(content)
-    // const socketData = useSelector((store) => store.contentManagementReducer.socketContentData)
-    const { title, description, videoUrl } = content;
+    const socketData = useSelector((store) => store.contentManagementReducer.socketContentData)
+    const { title, description } = updatedContent;
 
     const [isVideoPaused, setIsVideoPaused] = useState(true)
 
 
-    // useEffect(() => {
-    //     if (socketData) {
-    //         setUpdatedContent(socketData?.[SectionTypes.WINNER_RULES_SECTION])
-    //     }
-    // }, [socketData])
+    useEffect(() => {
+        if (Object.keys(socketData)?.length) {
+            setUpdatedContent((prev) => ({ ...prev, ...socketData?.[SectionTypes.VIDEO_SECTION] }))
+        }
+    }, [socketData])
 
     const handlePlay = () => {
         const video = document.querySelector("video");
@@ -52,9 +52,22 @@ const VideoSection = ({ content = {} }) => {
                     <h1 className="h2"><SafeHTML html={title} /></h1>
                     <p><SafeHTML html={description} /></p>
                 </div>
-                <div className="wrapperVideo text-center">
-                    <div className="video_home ratio_custom">
-                        <video id="video" src={addBaseUrlToUrls(videoUrl)} key={videoUrl} onPlay={hideIcon} onPause={showIcon} onEnded={showIcon}  width={1140} height={400} />
+
+                <div className="wrapperVideo">
+                    <div className="video_home ratio ratio-21x9">
+                        <video id="video" src={addBaseUrlToUrls(content?.videoUrl)} key={content?.videoUrl} onPlay={hideIcon} onPause={showIcon} onEnded={showIcon} width={1140} height={400} />
+                        {isVideoPaused && <button className="play_btn" onClick={handlePlay} id="play_icon">
+                            <svg width="88" height="88" viewBox="0 0 88 88" fill="none">
+                                <g clipPath="url(#clip0_124_5224)">
+                                    <path d="M3.84961 43.9998V15.4169C3.84961 3.57476 16.6715 -3.83306 26.9152 2.09663L51.6824 16.3966L76.4496 30.6966C86.7105 36.6091 86.7105 51.4248 76.4496 57.3373L51.6824 71.6373L26.9152 85.9373C16.6715 91.8326 3.84961 84.442 3.84961 72.5998V43.9998Z" fill="#A7D7CF" />
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_124_5224">
+                                        <rect width="88" height="88" fill="white" />
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </button>}
                     </div>
                     {isVideoPaused && <button className="play_btn" onClick={handlePlay} id="play_icon">
                         <svg width="88" height="88" viewBox="0 0 88 88" fill="none">

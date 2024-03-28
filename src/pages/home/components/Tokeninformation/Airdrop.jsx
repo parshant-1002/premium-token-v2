@@ -35,7 +35,7 @@ const Airdrop = ({ content = {} }) => {
   return (
     <section className="position-relative airdrop_sec">
       <div className="container">
-        <div className="airdrop-main">
+        <div className="airdrop-main" id='airdrop_section'>
 
           <div className="heading_title text-center">
             <h2 className="h2"><SafeHTML html={title} /></h2>
@@ -44,6 +44,7 @@ const Airdrop = ({ content = {} }) => {
 
           <div className="whitelisted-row">
             <div className="white-listed-form ">
+              <h4><SafeHTML html={section1?.title}/></h4>
               <CustomForm
                 formData={AIRDROP_SCHEMA}
                 onSubmit={onSubmit}

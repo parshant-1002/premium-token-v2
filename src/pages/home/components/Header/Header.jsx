@@ -35,6 +35,10 @@ const Header = ({ content = {}, partnersContent, winnerPopup }) => {
 		redirectToUrlInNewTab(url)
 	}
 
+	const handleAirdropClick = ()=>{
+		document.getElementById("airdrop_section")?.scrollIntoView({ behavior: "smooth", block: "end", inline: "nearest" })
+	}
+
 	return (
 
 		<header className={isSticky ? 'header sticky-header' : 'header'}>
@@ -71,7 +75,7 @@ const Header = ({ content = {}, partnersContent, winnerPopup }) => {
 							</div>
 
 							<div className="w-100 d-flex justify-content-between flex-column-reverse flex-md-row align-items-center gap-12 header-button">
-								<button type="button" className="btn btn-md btn-primary" onClick={() => redirectToUrl(airdropButton?.url)}>
+								<button type="button" className="btn btn-md btn-primary" onClick={handleAirdropClick}>
 									<span className="transform-none"><RenderIconWithHover iconUrl={addBaseUrlToUrls(airdropButton?.image)}  defaultIcon={ICONS.Airdrop} /><SafeHTML html={airdropButton?.text} /></span>
 								</button>
 								<button type="button" className="btn btn-md btn-primary" onClick={() => redirectToUrl(viewChartButton?.url)}><span className="transform-none"><SafeHTML html={viewChartButton?.text} /></span></button>

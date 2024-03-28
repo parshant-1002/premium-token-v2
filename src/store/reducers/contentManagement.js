@@ -1,9 +1,10 @@
 import { REHYDRATE } from "redux-persist";
-import {  SET_CONTENT_REQUEST, SET_SOCKET_DATA } from "../constants";
+import {  SET_BLOCKCHAIN_DATA, SET_CONTENT_REQUEST, SET_SOCKET_DATA } from "../constants";
 
 const initialState = {
     homePageContent: {},
-    socketContentData : null,
+    socketContentData : {},
+    blockChainData:{}
 };
 
 const contentManagementReducer = (state = initialState, action) => {
@@ -17,6 +18,11 @@ const contentManagementReducer = (state = initialState, action) => {
             return {
                 ...state,
                 socketContentData: action.data
+            };
+        case SET_BLOCKCHAIN_DATA:
+            return {
+                ...state,
+                blockChainData: action.data
             };
         case REHYDRATE:
             let persistedHomePageContent =
