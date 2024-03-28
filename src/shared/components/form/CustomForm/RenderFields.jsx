@@ -89,12 +89,12 @@ export const RenderField = ({ field, id, handleRegister, handleInputChange, getV
             </div>
             <ErrorComponent error={errors[id]} render={field.render} />
             {field?.isShowInputCount ? (
-                <span className="badge bg-outline-primary rounded-50 ms-auto">
+                <span className="badge bg-outline-primary ms-auto">
                     {getValues(id)?.length}
                     /
                     {field?.schema?.maxLength?.value}
                 </span>
-            ) : null}            
+            ) : null}
         </div>
     );
 };

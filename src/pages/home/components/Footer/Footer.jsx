@@ -59,11 +59,11 @@ const Footer = ({ content = {}, partnersContent = {} }) => {
 
           <div className="col-lg-4 text-center text-lg-end order-2 order-lg-3">
             <div className="email_group">
-              <span to="mailto:support@beaverswap.com" rel="follow">
+              <a href="mailto:support@beaverswap.com">
                 <em className="me-2">
                   <img src={addBaseUrlToUrls(email?.imageUrl)} alt="Email" width={20} height={20} />
                 </em> <SafeHTML html={email?.emailAddress} />
-              </span>
+              </a>
             </div>
           </div>
         </div>
