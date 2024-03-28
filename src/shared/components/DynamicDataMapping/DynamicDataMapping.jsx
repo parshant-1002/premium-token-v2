@@ -19,7 +19,8 @@ const DynamicDataMapping = ({ pageData = {} }) => {
                             </div>
                             <div className="col-md-5">
                                 <div className="banner_pic">
-                                    <img src={ICONS.PremiumTokenBg} alt="Mr Cashback" width={500} height={500} className="img-fluid" />
+                                    <img src="https://d25oiye2xrq4w3.cloudfront.net/upload_1711569755930.png" alt="Mr Cashback" width={500} height={500} className="img-fluid" />
+                                    {/* <img src={ICONS.PremiumTokenBg} alt="Mr Cashback" width={500} height={500} className="img-fluid" /> */}
                                 </div>
                             </div>
                         </div>

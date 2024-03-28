@@ -37,6 +37,7 @@ const RoadMap = ({content = {}}) => {
         infinite: false,
         arrows: false,
         dots: true,
+        swipe: false,
         vertical: true,
         verticalSwiping: false,
       }
@@ -65,7 +66,6 @@ const RoadMap = ({content = {}}) => {
                 <svg className="line" width="221" height="31" viewBox="0 0 221 31" fill="none">
                   <path d="M221 1.0081C181 1.0081 152.5 30 110 30C68.5 30 40 1 0 1" stroke="#10312D" strokeWidth={8} />
                 </svg>
-
             </div>
           })}
         </CustomSlick>
