@@ -3,6 +3,7 @@ import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import { CustomSlick } from "../../../../shared/components/CustomSlick";
 import { ICONS } from "../../../../assets";
 import "./MarketPlace.scss";
+import { redirectToUrlInNewTab } from "../../../../shared/utilities";
 
 const MarketPlace = ({ content = {} }) => {
   const { cars, description, title } = content
@@ -53,9 +54,9 @@ const MarketPlace = ({ content = {} }) => {
         </div>
 
         <div className="text-center">
-          <button type="button" className="btn btn-md btn-secondary mw-240">
+          <button type="button" className="btn btn-md btn-secondary mw-240" onClick={()=> redirectToUrlInNewTab(content?.comingSoonButtonUrl)}>
             <span className="transform-none">
-              Coming soon
+              <SafeHTML html={content?.comingSoonButtonText}/>
               <em className="ms-3"><img src={ICONS.RightArrow} alt="premium" width={14} height={8} /></em>
             </span>
           </button>

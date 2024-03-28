@@ -17,7 +17,7 @@ export const RenderField = ({ field, id, handleRegister, handleInputChange, getV
             case INPUT_TYPES.TEXT_AREA:
             case 'password':
                 return (
-                    <TextField
+                                        <TextField
                         id={id}
                         type={inputType}
                         placeholder={field.placeholder}
@@ -27,7 +27,7 @@ export const RenderField = ({ field, id, handleRegister, handleInputChange, getV
                         minLength={field?.schema?.minLength?.value || ''}
                         icon = {field.icon || ""}
                     />
-                );
+                                    );
             case INPUT_TYPES.DATE:
                 return (
                     <Datepicker

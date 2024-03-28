@@ -84,7 +84,7 @@ const WinnerSection = ({ content = {}, socket }) => {
             {/* table slider */}
             <div className="table_list">
               <div className="prize_table">
-                <WinnerTable socket={socket} prize={prize} />
+                <WinnerTable socket={socket} prize={prize} content = {content}/>
               </div>
             </div>
           </div>

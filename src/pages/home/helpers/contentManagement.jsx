@@ -551,15 +551,15 @@ export const DEFAULT_CONTENT = {
     winnerPopUps: {
         "popUp2": {
             "fullName": {
-                "title": "FULL NAME ",
-                "placeholder": "Lori Warf"
+                "title": "FULL NAME",
+                "placeholder": "Lorri Warf"
             },
             "dateOfBirth": {
                 "title": "DATE OF BIRTH",
                 "placeholder": "01/12/1997"
             },
             "phoneNumber": {
-                "title": "PHONE NUMBER",
+                "title": "Phone number",
                 "placeholder": "0919985643"
             },
             "country": {
@@ -592,35 +592,33 @@ export const DEFAULT_CONTENT = {
             "walletAddress": {
                 "title": "WALLET ADDRESS",
                 "placeholder": "xfsde3eedsd1e12wdsadasd",
-                "lockbuttonImageUrl": "/uploads/files/lamber_logo_1711312062514.png"
+                "lockbuttonImageUrl": ICONS.AirDropBg
             },
             "prizeSection": {
                 "prize1": {
-                    "title": "350,000 $ worth of PremiumToken",
+                    "title": "$ 250,000  worth of PremiumToken",
                     "imageUrl": ICONS.PrizeTypeToken
                 },
                 "prize2": {
-                    "title": "Supercar to a value of 350,000 $",
+                    "title": "Supercar to a value of $250,000",
                     "imageUrl": ICONS.PrizeTypeCar
-                },
-                "title": "dsad"
+                }
             },
             "continueButton": {
                 "text": "Continue"
             },
             "title": "Congratz, you have won!",
-            "description": "Fill out the information below to get your prize."
+            "description": "<p>Fill out the information below to get your prize.<br></p>"
         },
         "popUp3": {
             "confirmationButton": {
-                "url": "winner@premiumtoken.com",
                 "text": "Yes, I am sure"
             },
             "checkAgainButton": {
                 "text": "Check again"
             },
             "title": "Are you sure you entered the correct information?",
-            "description": "We will contact you from the email:&nbsp;</p><p>winner@premiumtoken.com. Be aware of fake email!"
+            "description": "<p>We will contact you from the email: winner@premiumtoken.com. Be aware of fake emails!<br></p>"
         }
     }
 }
