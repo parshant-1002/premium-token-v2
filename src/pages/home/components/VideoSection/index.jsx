@@ -54,7 +54,7 @@ const VideoSection = ({ content = {} }) => {
                 </div>
 
                 <div className="wrapperVideo">
-                    <div className="video_home ratio ratio-21x9">
+                    <div className="video_home">
                         <video id="video" src={addBaseUrlToUrls(content?.videoUrl)} key={content?.videoUrl} onPlay={hideIcon} onPause={showIcon} onEnded={showIcon} width={1140} height={400} />
                         {isVideoPaused && <button className="play_btn" onClick={handlePlay} id="play_icon">
                             <svg width="88" height="88" viewBox="0 0 88 88" fill="none">
