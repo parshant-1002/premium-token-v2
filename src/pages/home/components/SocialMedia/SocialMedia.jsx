@@ -34,10 +34,10 @@ const SocialMedia = ({content = {}}) => {
 				</div>
 			</div>
 			<div className="footer_left_shape d-none d-md-block">
-				<img width={633} height="800" src={ICONS.FooterLeftBg} className="img-fluid" />
+				<img width={633} height="800" src={ICONS.FooterLeftBg} className="img-fluid" alt="" />
 			</div>
 			<div className="footer_right_shape d-none d-md-block">
-				<img width={756} height="955" src={ICONS.FooterRighttBg} className="img-fluid" />
+				<img width={756} height="955" src={ICONS.FooterRighttBg} className="img-fluid" alt="" />
 			</div>
 		</section>
 	);

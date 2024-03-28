@@ -18,7 +18,7 @@
         min-height: 54px;
         position: $relative;
         padding-right: 55px;
-        span.render_html_safely {
+        &>span {
             display: $inline-block;
             @include font-size (.875);
             font-weight: $font-bold;
