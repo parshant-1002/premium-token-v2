@@ -16,7 +16,7 @@ const Footer = ({ content = {}, partnersContent = {} }) => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
       const bodyHeight = document.body.scrollHeight;
-      const bottomOffset = 330; // Adjust this value as needed
+      const bottomOffset = 300; // Adjust this value as needed
 
       if (scrollPosition > 400) {
         setIsScrolled(true);
