@@ -22,7 +22,6 @@
 }
 
 .wrapperVideo {
-
     padding: 1px;
     margin-top: 30px;
     position: $relative;
@@ -39,7 +38,7 @@
     @media (max-width:1200px) {
         @include border-radius(10px);
         width: 100%;
-        height: 277px;
+        height: 204px;
     }
     @at-root {
         .play_btn {
