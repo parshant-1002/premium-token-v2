@@ -39,7 +39,7 @@ export default function Step1({
       secondaryBtnText="Auto-Name"
       preSubmitElement={
         <div className="prize_col">
-          <label><SafeHTML html={prizeSection?.title || "SELECT BETWEEN THE 2 PRIZES"}/></label>
+          <label><SafeHTML html={prizeSection?.title}/></label>
           <Prize
             label={"$250,000 worth of PremiumToken"}
             prizeSelected={prizeSelected.first}

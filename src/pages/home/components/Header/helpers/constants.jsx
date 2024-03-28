@@ -1,3 +1,4 @@
+import { RenderIconWithHover } from "../../../../../shared/components/RenderIconWithHover";
 import SafeHTML from "../../../../../shared/components/SanitizeHtml";
 import { INPUT_TYPES } from "../../../../../shared/constants";
 import { isValidSolanaAddress } from "../../../../../shared/constants/utils";
@@ -20,6 +21,7 @@ export const WINNER_MODAL_FORM_SCHEMA =(data)=>{
         walletAddress: {
             type: INPUT_TYPES.TEXT,
             label: <SafeHTML html={popUp1?.walletAddress?.title} />,
+            icon: <RenderIconWithHover iconUrl={popUp1?.walletAddress?.lockbuttonImageUrl}/>,
             className: 'form-control col-md-6',
             placeholder: popUp1?.walletAddress?.placeholder,
             schema: (data) => ({

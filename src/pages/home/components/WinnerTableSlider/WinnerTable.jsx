@@ -7,8 +7,9 @@ import { CustomSlick } from '../../../../shared/components/CustomSlick'
 import { addBaseUrlToUrls } from '../../../../shared/utilities'
 import { ICONS } from '../../../../assets'
 import { transformRow } from './helpers/utils'
+import SafeHTML from '../../../../shared/components/SanitizeHtml'
 
-const WinnerTable = ({ socket, prize }) => {
+const WinnerTable = ({ socket, prize, content }) => {
     const [skip, setSkip] = useState(0)
     const [totalCount, setTotalCount] = useState(null)
     const [tableData, setTableData] = useState([])
@@ -126,7 +127,6 @@ const WinnerTable = ({ socket, prize }) => {
             }
           },
       ]
-    console.log(tableData,"tableDAta><><><")
     return (tableData?.length ?
          <CustomSlick slidesToShow={1} handleNextClick={handleNextClick} responsive = {responsiveConfig}>
             {tableData?.map((pageData, index) => (
@@ -151,9 +151,9 @@ const WinnerTable = ({ socket, prize }) => {
         </CustomSlick> :
             <div className="d-flex justify-content-center flex-md-row flex-column align-items-center no-data-found">
                 <figure className="mb-0">
-                    <img src={ICONS.NoDataFound} width={302} height={202} alt="No Data" />
+                <img src={content?.noWinnerImageUrl} width={302} height={202} alt="No Data" />
                 </figure>
-                <p>Currently no winners.<br /> Stay tuned for updates!</p>
+            <p><SafeHTML html={content?.noWinnerText}/></p>
             </div>
     )
 }
