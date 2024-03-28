@@ -222,6 +222,8 @@ export const DEFAULT_CONTENT = {
         [WinnerListSectionEnum.TOKEN_HOLDER_TEXT]: "Token holders that joined automatic:",
         [WinnerListSectionEnum.PRIZE_DESCRIPTION]: "Did you win a prize?",
         [WinnerListSectionEnum.CONNECT_WALLET_BUTTON_TEXT]: "Connect wallet",
+        noWinnerText: ICONS.NoWinner,
+        noWinnerImageUrl: "Currently no winners.Stay tuned for updates!",
         [WinnerListSectionEnum.PRIZE]: [
             {
                 "type": "2",
@@ -412,7 +414,7 @@ export const DEFAULT_CONTENT = {
         },
         "title": "Token supply",
         "description": "Here you can see how the full token supply is divided, you can also see the wallet addresses, to see that they will never be used for anything other then what they are intended for and that they can not be drawn as a winner by the smart contract.",
-        "innerTitle": "888,888,888,888,888",
+        "innerTitle": "TOTAL TOKENS",
         "stats": []
     },
     "joinAirdrop": {

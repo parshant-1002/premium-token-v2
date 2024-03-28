@@ -5,7 +5,6 @@ import { startLoading, stopLoading } from "../actions/globalLoaderActions";
 import axios from '../../shared/apis/axiosInterceptor';
 
 function* checkIfUserIsWinner({ payload, callback = () => { } }) {
-    console.log(payload,"payload")
     try {
         yield put(startLoading());
         const { data, status } = yield axios({
@@ -13,7 +12,6 @@ function* checkIfUserIsWinner({ payload, callback = () => { } }) {
             url: `${API_URLS.CHECK_IS_WINNER}`,
             params: { ...payload }
         });
-        console.log(status,"in saga")
         if (status !== STATUS_CODES.SUCCESS) {
             yield put(stopLoading());
             callback(data.msg, STATUS.ERROR);

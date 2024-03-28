@@ -44,6 +44,7 @@ import RulesToWin4 from "./icons/Rules_To_Win4.svg"
 //Winner section
 import PrizeTypeToken from "./icons/Prize_Type_Token.png"
 import PrizeTypeCar from "./icons/Prize_Type_Car.svg"
+import NoWinner from "./icons/No_winner.png" 
 
 //Winner Rules Section
 import WinnerRulesSection1 from "./icons/Winner_Rules1.svg"
@@ -215,6 +216,7 @@ export const ICONS = {
     CopyIcon,
     RightArrow,
     LockIcon,
+    NoWinner
 }
 
 export const IMAGES = {
