@@ -10,7 +10,9 @@ const Featured = ({content = {}}) => {
 	return (
 		<section className="featured-on position-relative">
 			<div className="container">
-				<h2 className="h2 text-center"><SafeHTML html={title}/></h2>
+				<div className="heading_title text-center">
+					<h2 className="h2 text-center"><SafeHTML html={title}/></h2>
+				</div>
 				<div className="featured-row">
 					<Each of={features} render={(item, index) => (
 						<div className="fetured-image" key={index}>
