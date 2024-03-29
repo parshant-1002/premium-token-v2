@@ -13,6 +13,9 @@
   @media (max-width:767px){
     margin-bottom: 30px;
   }
+  .h2 {
+    color:$green-tin-color-600;
+  }
 }
 .line {
   position: $absolute;
@@ -29,6 +32,10 @@
 }
 
 .roadmap_wrap {
+  @media (min-width:1920.99){
+    max-width: 1920;
+    margin: 0 $auto;
+  }
   .slick-arrow {
     @media (min-width:991px){
       @include position($absolute, $top:-100px);
