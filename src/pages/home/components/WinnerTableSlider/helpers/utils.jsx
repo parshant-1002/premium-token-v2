@@ -8,6 +8,6 @@ export const transformRow = (data)=>{
         marketCap: convertToAppropriateUnit(data.marketCap),
         createdAt: formatDate( data.createdAt),
         walletAddress: <span className="wallet-address">{data.walletAddress} <em type="button" onClick={() => handleCopyLink(data.walletAddress, "Address")}><img src={ICONS.CopyIcon} alt="Copy" height={12} /></em></span>,
-        chanceOfWinning: `${data.chanceOfWinning} %`
+        chanceOfWinning: `${(data.chanceOfWinning).toFixed(2)} %`
     }
 }

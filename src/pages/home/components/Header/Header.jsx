@@ -113,7 +113,7 @@ const Header = ({ content = {}, partnersContent, winnerPopup }) => {
 							<span className="transform-none"><RenderIconWithHover iconUrl={addBaseUrlToUrls(airdropButton?.image)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Airdrop} /><SafeHTML html={airdropButton?.text} /></span>
 						</button>
 						<button type="button" className="btn btn-md btn-primary w-100" onClick={() => redirectToUrl(viewChartButton?.url)}><span className="transform-none" ><SafeHTML html={viewChartButton?.text} /></span></button>
-						<button type="button" className="btn btn-md btn-secondary w-100" onClick={() => handleOpenWinnerModal()}><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
+						<button type="button" className="btn btn-md btn-secondary w-100" onClick={() => redirectToUrl(buyTokenButton?.url)}><span className="text-white transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
 					</div>
 
 					<div className="brand_banner">

@@ -3,8 +3,14 @@ import React, { useEffect, useState } from 'react';
 import './style.scss';
 import SafeHTML from '../SanitizeHtml';
 import { ICONS } from '../../../assets';
+import { getContent } from '../../../store/actions/contentManagement';
+import { useDispatch } from 'react-redux';
 
-const   DynamicDataMapping = ({ pageData = {} }) => {
+const DynamicDataMapping = ({ pageData = {} }) => {
+    const dispatch = useDispatch()
+    useEffect(() => {
+        dispatch(getContent())
+    }, [])
     return (
         <>
             <div className="static_banner position-relative">

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./footer.scss";
-import { addBaseUrlToUrls } from "../../../../shared/utilities";
+import { addBaseUrlToUrls, redirectToUrlInNewTab } from "../../../../shared/utilities";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import WinnerPopup from "../Header/WinnerPopup/WinnerPopup";
 import { Link } from "react-router-dom";
@@ -53,7 +53,7 @@ const Footer = ({ content = {}, partnersContent = {} }) => {
           <div className="col-lg-4 order-3 order-lg-2 btn_sticky">
             <div className="d-flex justify-content-center gap-2">
               <button type="button" className="btn btn-md btn-primary" onClick={() => window.open(viewChartButton?.url, '_blank')}><span className="transform-none"><SafeHTML html={viewChartButton?.text} /></span></button>
-              <button type="button" className="btn btn-md btn-secondary"><span className="transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
+              <button type="button" className="btn btn-md btn-secondary" onClick={() => redirectToUrlInNewTab(buyTokenButton?.url)}><span className="transform-none"><SafeHTML html={buyTokenButton?.text} /></span></button>
             </div>
           </div>
 
