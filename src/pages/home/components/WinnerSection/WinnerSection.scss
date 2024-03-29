@@ -144,10 +144,10 @@
                 vertical-align: text-bottom;
                 line-height: 1.1;
                 @media (min-width:991.99px){
-                  max-width: 234px;
+                  max-width: 232px;
                 }
                 @media (max-width:991px){
-                  line-height: 1;
+                  line-height: 1.4;
                   max-width: 210px;
                   text-align: $right;
                 }
