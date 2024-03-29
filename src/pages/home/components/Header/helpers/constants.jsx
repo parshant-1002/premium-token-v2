@@ -4,8 +4,9 @@ import { INPUT_TYPES } from "../../../../../shared/constants";
 import { isValidSolanaAddress } from "../../../../../shared/constants/utils";
 import { FORM_VALIDATION_MESSAGES } from "../../../../../shared/constants/validations";
 
-export const WINNER_MODAL_FORM_SCHEMA =(data)=>{
+export const WINNER_MODAL_FORM_SCHEMA =(data, walletAddress)=>{
     const { popUp1, popUp2, popUp3 } = data
+    console.log(walletAddress,"walletaddressss")
     return {
 
     step1: {
@@ -24,16 +25,17 @@ export const WINNER_MODAL_FORM_SCHEMA =(data)=>{
             icon: <span className="wallet_icon"><RenderIconWithHover iconUrl={popUp1?.walletAddress?.lockbuttonImageUrl}/></span>,
             className: 'form-control col-md-6',
             placeholder: popUp1?.walletAddress?.placeholder,
-            schema: (data) => ({
-                required: FORM_VALIDATION_MESSAGES().REQUIRED,
-                validate: () => {
-                    const valid = isValidSolanaAddress(data);
-                    if (!valid) {
-                        return FORM_VALIDATION_MESSAGES().INVALID_SOLANA_ADDRESS;
-                    }
-                    return true;
-                },
-            })
+            disabled:true,
+            // schema: (data) => ({
+            //     required: FORM_VALIDATION_MESSAGES().REQUIRED,
+            //     validate: () => {
+            //         const valid = isValidSolanaAddress(data);
+            //         if (!valid) {
+            //             return FORM_VALIDATION_MESSAGES().INVALID_SOLANA_ADDRESS;
+            //         }
+            //         return true;
+            //     },
+            // })
         }
     },
     step2:{
