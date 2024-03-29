@@ -22,7 +22,7 @@ export default function Step1({
   REFORMED_WINNER_MODAL_FORM_SCHEMA
 }) {
   const { socialMedia, walletAddress } = formData;
-  const {  description, prizeSection, title } = popUp1
+  const {  description, prizeSection, title, continueButton } = popUp1
   const handleSubmit = (data) => {
     const step1Data = { prizeSelected, partnerSelected, ...data };
     handleSubmitStep1(step1Data);
@@ -32,11 +32,9 @@ export default function Step1({
     <CustomForm
       formData={REFORMED_WINNER_MODAL_FORM_SCHEMA?.step1}
       onSubmit={handleSubmit}
-      submitText={"Continue"}
+      submitText={continueButton?.text || "Continue"}
       defaultValues={{ socialMedia, walletAddress }}
       submitBtnClassName="btn btn-primary col-1"
-      // handleSecondaryButtonClick={handleAutoNameGeneration}
-      secondaryBtnText="Auto-Name"
       preSubmitElement={
         <div className="prize_col">
           <label><SafeHTML html={prizeSection?.title}/></label>
