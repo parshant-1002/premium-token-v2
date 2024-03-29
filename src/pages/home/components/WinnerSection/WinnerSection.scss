@@ -136,12 +136,19 @@
               }
               .wallet-address {
                 position: $relative;
-                padding-right: 16px;
+                padding-right: 18px;
                 @media (min-width:991.99px){
                   display: $inline-block;
                   vertical-align: text-bottom;
-                  max-width: 233px;
+                  max-width: 256px;
                   line-height: 1.1;
+                }
+                @media (max-width:991.99px){
+                  line-height: 1;
+                  display: $inline-block;
+                  white-space: normal;
+                  text-align: $right;
+                  word-break: break-word;
                 }
                 em {
                   @include position($absolute,$right:0, $top:0);

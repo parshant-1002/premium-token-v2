@@ -28,7 +28,6 @@
   }
 }
 
-
 .roadmap_wrap {
   .slick-arrow {
     @media (min-width:991px){
@@ -77,9 +76,11 @@
     }
   }
   .timeline_block {
-    @media (min-width:767.99px){
+    @media (min-width:1700px){
       max-width: 90%;
-      @include opacity (.7);
+    }
+    @media (min-width:767.99px){
+      // @include opacity (.7);
       position: $absolute;
       left: calc(5% + 20px);
     }
@@ -88,7 +89,7 @@
     }
     p {
       margin-top: 3px;
-      color: $text-color;
+      color: $white-color;
       @include font-size (.875);
       font-weight: $font-medium;
     }
@@ -97,7 +98,7 @@
   .timeline-item {
     @media (min-width:767.99px){
       position: $relative;
-      height: 500px;
+      height: 600px;
       &::before {
         content: '';
         width: 24px;
