@@ -29,6 +29,10 @@ const WinnerSection = ({ content = {}, socket }) => {
     }))
   }, [])
 
+  useEffect(()=>{
+    setUpdatedContent(content)
+  },[content])
+
   useEffect(() => {
     if (Object.keys(socketData).length) {
       setUpdatedContent((prev)=> ({...prev, ...socketData?.[SectionTypes.PRIZE_SECTION]}))

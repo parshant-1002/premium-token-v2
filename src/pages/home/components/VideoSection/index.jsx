@@ -15,6 +15,9 @@ const VideoSection = ({ content = {} }) => {
 
     const [isVideoPaused, setIsVideoPaused] = useState(true)
 
+    useEffect(()=>{
+        setUpdatedContent(content)
+      },[content])
 
     useEffect(() => {
         if (Object.keys(socketData)?.length) {

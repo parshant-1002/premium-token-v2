@@ -17,6 +17,10 @@ const DidYouWin = ({content = {}}) => {
 	const { title, rules } = updatedContent
 
 	useEffect(()=>{
+		setUpdatedContent(content)
+	  },[content])
+	
+	useEffect(()=>{
 		if(Object.keys(socketData).length){
 			setUpdatedContent((prev) => ({ ...prev, ...socketData?.[SectionTypes.WINNER_RULES_SECTION] }))
 		}
