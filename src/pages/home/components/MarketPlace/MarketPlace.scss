@@ -1,6 +1,6 @@
 @import '../../../../assets/scss/base';
 
-.mw-240 { 
+.mw-240 {
     min-width: 240px!important;
     @media (max-width:575px){
         min-width: 100%!important;
@@ -17,16 +17,19 @@
     .heading_title {
         max-width: 584px;
         p {
-            @include font-size (.938)
+            @include font-size (.938);
+            span {
+                color: $inherit;
+            }
         }
-    }  
+    }
 }
 
 .car_slider_bg {
     @include position($absolute, $left:0px, $top:-70%);
-    height: 100%; 
+    height: 100%;
     z-index: -1;
-    @include opacity(0.7); 
+    @include opacity(0.7);
     @media (max-width:1200px) {
         bottom:100px;
     }

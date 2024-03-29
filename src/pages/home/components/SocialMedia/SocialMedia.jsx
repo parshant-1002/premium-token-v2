@@ -14,8 +14,8 @@ const SocialMedia = ({content = {}}) => {
 			<div className="container">
 				<div className="footer_column_box mx-auto">
 					<div className="footer-together">
-						<div className="comon-heade-title">
-							<h2 className="h2 common_title  d-inline-block"><SafeHTML html={title}/></h2>
+						<div className="heading_title text-center">
+							<h2 className="h2 d-inline-block"><SafeHTML html={title}/></h2>
 							<p><SafeHTML html={description} /></p>
 						</div>
 						<div className="w-100 footer-button d-flex justify-content-center align-items-center">

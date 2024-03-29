@@ -62,6 +62,9 @@
                         word-break: break-all;
                         display: $inline-block;
                         @include font-size (.875);
+                        span {
+                            color: $inherit;
+                        }
                     }
                     P {
                         line-height: 1.3;
