@@ -95,7 +95,7 @@ function CustomForm({
                 )}
                 {isShowSubmit ? (
                     <Button
-                        onClick={handleSubmit(onSubmit)}
+                        onClick={handleSubmit((data, event) => onSubmit(data, event, reset))}
                         type="submit"
                         className="btn btn-lg btn-secondary w-100"
                         disabled={isDisabledSubmit}

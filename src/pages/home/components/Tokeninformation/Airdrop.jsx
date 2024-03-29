@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Info from './Info'
 import { ICONS } from '../../../../assets';
 import SafeHTML from '../../../../shared/components/SanitizeHtml';
@@ -14,12 +14,48 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import { hasAtLeastFourValues } from './helpers/utils';
 import "./airdrop.scss";
 
+const initialClickedState = {
+  flag: false,
+  data: null,
+  reset: null
+};
+
 const Airdrop = ({ content = {} }) => {
   const { description, section1, section2, title, buttonText } = content
   const AIRDROP_SCHEMA = AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA(section1)
   const dispatch = useDispatch()
   const { connect, wallet, publicKey, signMessage } = useWallet();
-  const onSubmit = async(data) => {
+
+  const [clickedConnect, setClickedConnect] = useState(initialClickedState);
+
+  useEffect( () => {
+    if(clickedConnect?.flag && publicKey){
+     handleCallSignMessage();
+    }
+ },[clickedConnect, publicKey])
+
+const handleCallSignMessage = async () => {
+  try {
+    const response = await handleSignMessage(signMessage)
+    if (response){
+      const payload = removeEmptyKeys(clickedConnect?.data)
+      payload.signature = response
+      dispatch(
+        createAirDrop(payload, (message, status) => {
+          if (status === STATUS.SUCCESS) {
+            toast.success(message);
+            clickedConnect?.reset();
+          }
+        })
+      );
+    }
+  } catch (error) {
+  } finally {
+    setClickedConnect(initialClickedState);
+  }
+};
+
+  const onSubmit = async(data, event, reset) => {
     try {
       if (!hasAtLeastFourValues(data)) {
         toast.error("Please complete at least four fields to qualify for the airdrop whitelist.");
@@ -29,22 +65,11 @@ const Airdrop = ({ content = {} }) => {
         setVisible(true);
       } else {
         await connect();
-        if (data?.walletAddress) {
-          const response = await handleSignMessage(signMessage)
-          console.log(response, "response<><><>><><><>")
-          if (response){
-            const payload = removeEmptyKeys(data)
-            payload.signature = response
-            dispatch(
-              createAirDrop(payload, (message, status) => {
-                if (status === STATUS.SUCCESS) {
-                  toast.success(message);
-                }
-              })
-            );
-          }
-
-        }
+        setClickedConnect({
+          flag: true,
+          data: data,
+          reset: reset
+        });
       }
     } catch (error) {
       console.error('Error connecting to wallet:', error);
