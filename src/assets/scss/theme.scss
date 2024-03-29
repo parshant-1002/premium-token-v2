@@ -390,6 +390,7 @@ label {
         &.disabled,
         &:disabled {
             @include opacity (.5);
+            background-color: #1c544c;
         }
         &::placeholder {
             color: #ACC7C3;
