@@ -25,7 +25,11 @@ const WinnerTable = ({ socket, prize, content }) => {
                 if (data?.data?.length) {
                 const firstPageData = data?.data?.slice(0,NUMBER_OF_ROWS_IN_PAGE)
                 const secondPageData = data?.data?.slice(NUMBER_OF_ROWS_IN_PAGE)
-                setTableData((prev) => ([...prev, firstPageData, secondPageData]))
+                const dataToAppend = [firstPageData]
+                if(secondPageData?.length){
+                    dataToAppend.push(secondPageData)
+                }
+                setTableData((prev) => ([...prev, ...dataToAppend]))
                 setTotalCount(data.totalCount)
                 setSkip(skip + NUMBER_OF_ROWS_IN_PAGE*2)
                 limitRef.current = NUMBER_OF_ROWS_IN_PAGE
@@ -34,6 +38,7 @@ const WinnerTable = ({ socket, prize, content }) => {
         }))
     }, [])
 
+    console.log(tableData,"tableDAta<><><><><>")
     function getWinnersData (skip){
         const payload = {
             skip,

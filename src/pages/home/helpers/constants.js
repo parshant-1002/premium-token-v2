@@ -89,7 +89,7 @@ export const options = (innerTitle, tokenSupply) => ({
                 `${value.toFixed(1)}%`;
         },
         style: {
-            fontSize: "12px",
+            fontSize: "16px",
             fontFamily: 'Lato',
         },
         offsetX: -25,
