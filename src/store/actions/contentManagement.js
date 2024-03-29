@@ -1,6 +1,6 @@
 import { CREATE_AIRDROP_REQUEST, GET_BLOCKCHAIN_DATA, GET_CONTENT_REQUEST, GET_WINNERS_LIST, SET_BLOCKCHAIN_DATA, SET_CONTENT_REQUEST, SET_SOCKET_DATA } from "../constants";
 
-export const getContent = (payload, callback)=>({
+export const getContent = (payload = {}, callback)=>({
     type: GET_CONTENT_REQUEST,
         payload,
         callback,
