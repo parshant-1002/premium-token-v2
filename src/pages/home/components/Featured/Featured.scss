@@ -8,10 +8,10 @@
     padding: 80px 0;
   }
   .h2 {
-    margin-bottom: 40px;
     line-height: 1;
   }
   .featured-row {
+    margin-top: 40px;
     @include flexbox;
     @include align-items ($center);
     gap: 12px;
