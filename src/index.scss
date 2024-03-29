@@ -1,6 +1,27 @@
 @import "assets/scss/base";
 @import "assets/scss/theme.scss";
 
+.heading_title {
+    margin: 0 $auto;
+    @media (min-width:991.99px){
+        max-width: 745px;
+    }
+    .h2 {
+        margin-bottom: 10px;
+        color: $green-tin-color-600;
+    }
+    p {
+        font-weight: $font-medium;
+        @include font-size (1.125);
+        color: $white-color;
+        line-height: 1.4;
+        margin: 0;
+        @media (max-width:767px){
+            @include font-size (.875);
+        }
+    }
+}
+
 $MobileBg: url(assets/img/mobile_group_bg.png);
 .mobile_bg {
     @media (min-width:767.99px) and (max-width:1279px){
