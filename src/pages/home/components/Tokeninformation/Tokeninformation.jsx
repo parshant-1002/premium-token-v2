@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import { firstHalfColorOptions, secondHalfColorOptions } from "../../helpers/constants";
 import { DoughnutChart } from "../DoughnutChart";
@@ -6,10 +7,21 @@ import "./Tokeninformation.scss";
 
 const Tokeninformation = ({content = {}}) => {
 	const { title, airdrop, burning, contest, development, exchangeAndTokenHolders, founders, marketing, winnerPrize, innerTitle, description } = content;
-	const firstHalfStats = { development: development, founders: founders, winnerPrize }
-	const secondHalfStats = {marketing, burning, exchangeAndTokenHolders}
-	const series = extractPercentages({...firstHalfStats, ...secondHalfStats})
-	const renderStats = (key,value = {}, index, colorOptions) => {
+	const stats = { development: development, founders: founders, winnerPrize,  marketing, burning, exchangeAndTokenHolders };
+	const [firstHalfStats,setFirstHalfStats] = useState();
+	const [secondHalfStats,setSecondHalfStats] = useState();
+
+	useEffect(() => {
+		const sortedStats = Object.values(stats||{})?.sort((statA, statB) => statA?.percentage - statB?.percentage);
+		const firstHalf = sortedStats?.slice(0,Math.ceil(sortedStats?.length/2));
+		const secondHalf = sortedStats?.slice(Math.ceil(sortedStats?.length/2),sortedStats?.length);
+        setFirstHalfStats(firstHalf);
+		setSecondHalfStats(secondHalf)
+	}, []);
+
+	const series = extractPercentages({...stats})
+	const renderStats = (value = {}, index, colorOptions) => {
+		
 		const { title,subTitle, percentage, description} = value;
 		return <div className="token-column-iner">
 			<div className="token-column-button">
@@ -40,14 +52,14 @@ const Tokeninformation = ({content = {}}) => {
 
 				<div className="token-grid-main">
 					<div className="token-column-left">
-						{Object.entries(firstHalfStats)?.map(([key, value], index)=>{
-							return renderStats(key, value, index, firstHalfColorOptions)
+						{firstHalfStats?.map((value, index)=>{
+							return renderStats( value, index, firstHalfColorOptions)
 						})}
 					</div>
 
 					<div className="token-column-right">
-						{Object.entries(secondHalfStats)?.map(([key, value], index) => {
-							return renderStats(key, value, index, secondHalfColorOptions)
+						{secondHalfStats?.map((value, index) => {
+							return renderStats( value, index, secondHalfColorOptions)
 						})}
 					</div>
 				</div>
