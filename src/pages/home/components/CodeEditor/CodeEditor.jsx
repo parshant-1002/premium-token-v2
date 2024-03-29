@@ -2,30 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Editor, { useMonaco } from '@monaco-editor/react';
 import "./editor.scss";
 import { ICONS } from '../../../../assets';
+import { SMART_CONTRACT_CODE } from './helpers/constants';
 
 function CodeEditor() {
     const [currentFile, setCurrentFile] = useState('SmartContract.js');
     const [files, setFiles] = useState({
-        'SmartContract.js': `import mongoose,{Schema} from 'mongoose';
-    // Collection name
-    export const collection = 'Product';
-    // Schema
-    const schema = new Schema({
-        name: {
-            type: String,
-            required: true
-        },
-        description: {
-            type: String
-        }
-    },
-        {
-            timestamps: true
-        });
-
-    // Model
-    export default mongoose.model(collection, schema, collection);
-`
+        'SmartContract.js': SMART_CONTRACT_CODE
     });
     const monaco = useMonaco();
 
