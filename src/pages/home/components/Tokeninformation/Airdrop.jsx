@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import { toast } from 'react-toastify';
+import { useWalletModal } from '@solana/wallet-adapter-react-ui';
+import { useDispatch } from 'react-redux';
+import { useWallet } from "@solana/wallet-adapter-react";
 import Info from './Info'
 import { ICONS } from '../../../../assets';
 import SafeHTML from '../../../../shared/components/SanitizeHtml';
@@ -8,9 +12,6 @@ import { AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA } from './config';
 import CustomForm from '../../../../shared/components/form/CustomForm/CustomForm';
 import { STATUS } from '../../../../shared/constants';
 import { createAirDrop } from '../../../../store/actions/contentManagement';
-import { toast } from 'react-toastify';
-import { useDispatch } from 'react-redux';
-import { useWallet } from "@solana/wallet-adapter-react";
 import { hasAtLeastFourValues } from './helpers/utils';
 import "./airdrop.scss";
 
@@ -25,7 +26,7 @@ const Airdrop = ({ content = {} }) => {
   const AIRDROP_SCHEMA = AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA(section1)
   const dispatch = useDispatch()
   const { connect, wallet, publicKey, signMessage } = useWallet();
-
+  const { setVisible } = useWalletModal();
   const [clickedConnect, setClickedConnect] = useState(initialClickedState);
 
   useEffect( () => {
