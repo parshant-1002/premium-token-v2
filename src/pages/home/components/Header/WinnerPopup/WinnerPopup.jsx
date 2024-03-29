@@ -33,6 +33,9 @@ export default function WinnerPopup({ show, onClose, partners, winnerPopup = {},
   };
   const handleSure = (data) => {
     const payload = transformClaimPrizeData(formData)
+    if(show){
+      payload.signature = show
+    }
     dispatch(claimPrize(payload, (message, status) => {
       if(status === STATUS.SUCCESS){
         toast.success(message)
@@ -91,7 +94,7 @@ export default function WinnerPopup({ show, onClose, partners, winnerPopup = {},
   };
   return (
     <CustomModal
-      show={show}
+      show={!!show}
       onClose={handleCloseModal}
     >
       <div className="title_group text-center">

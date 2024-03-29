@@ -1,6 +1,6 @@
-import { WalletMultiButton, useWalletModal } from "@solana/wallet-adapter-react-ui";
+import {  useWalletModal } from "@solana/wallet-adapter-react-ui";
 import useIsMounted from "../../../../shared/hooks/useIsMounted";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { shortenString } from "../../../../shared/constants/utils";
 import { useDispatch, useSelector } from "react-redux";
@@ -8,13 +8,15 @@ import { checkIfUserIsWinner } from "../../../../store/actions/WinnerSection";
 import { STATUS } from "../../../../shared/constants";
 import WinnerPopup from "../Header/WinnerPopup/WinnerPopup";
 import { SectionTypes } from "../../helpers/contentManagement";
-import { STRINGS } from "./helpers/constants";
+import { SIGNATURE_MESSAGE, STRINGS } from "./helpers/constants";
 import { toast } from "react-toastify";
+import bs58 from 'bs58';
+import { Buffer } from 'buffer';
 
 export default function ConnectButton() {
     const [popup, setPopup] = useState(false);
     const content = useSelector((state) => state.contentManagementReducer.homePageContent)
-    const { connect, connected, wallet,publicKey } = useWallet();
+    const { connect, wallet, publicKey, signTransaction, signMessage } = useWallet();
     const { setVisible } = useWalletModal();
     const mounted = useIsMounted();
     const dispatch = useDispatch()
@@ -24,12 +26,25 @@ export default function ConnectButton() {
 
     const handleClose = () => {
         setPopup(false)
-    }
-    const handleOpenWinnerModal = () => {
-        setPopup(true)
-    }
 
 
+    }
+    const handleOpenWinnerModal = (signature) => {
+        setPopup(signature)
+    }
+
+    const handleSignMessage = async () => {
+        try {
+            const message = SIGNATURE_MESSAGE;
+            const messageBuffer = Buffer.from(message, 'utf-8');
+            const signature = await signMessage(messageBuffer);
+            const signatureBase58 = bs58.encode(signature);
+            return signatureBase58;
+        } catch (err) {
+            console.log(err);
+            return null;
+        }
+    }
     const handleConnectClick = async () => {
         try {
             if (!wallet) {
@@ -37,10 +52,13 @@ export default function ConnectButton() {
             } else {
                await connect();
                if(publicKey){
-                   dispatch(checkIfUserIsWinner({ walletAddress: publicKey}, (data, status)=>{
+                   const response = await handleSignMessage()
+                   console.log(response,"response<><><>><><><>")
+                   if(response)
+                   dispatch(checkIfUserIsWinner({ walletAddress: publicKey, signature: response}, (data, status)=>{
                     if(status === STATUS.SUCCESS){
                         if(data?.isWinner){
-                            handleOpenWinnerModal()
+                            handleOpenWinnerModal(response)
                         }
                         else{
                             toast.error(STRINGS.WINNER_NOT_FOUND)
