@@ -1,5 +1,8 @@
+import { SIGNATURE_MESSAGE } from "../pages/home/components/ConnectButton/helpers/constants";
 import { API } from "./constants"
 import { formatNumber } from "./constants/utils"
+import bs58 from 'bs58';
+import { Buffer } from 'buffer';
 
 export const addBaseUrlToUrls = (url)=>{
     return url
@@ -34,4 +37,17 @@ export function removeEmptyKeys(obj) {
         }
         return acc;
     }, {});
+}
+
+export const handleSignMessage = async (signMessage) => {
+    try {
+        const message = SIGNATURE_MESSAGE;
+        const messageBuffer = Buffer.from(message, 'utf-8');
+        const signature = await signMessage(messageBuffer);
+        const signatureBase58 = bs58.encode(signature);
+        return signatureBase58;
+    } catch (err) {
+        console.log(err);
+        return null;
+    }
 }

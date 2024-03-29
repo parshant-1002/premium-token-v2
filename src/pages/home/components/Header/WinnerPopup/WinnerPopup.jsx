@@ -13,11 +13,11 @@ import { toast } from "react-toastify";
 
 export default function WinnerPopup({ show, onClose, partners, winnerPopup = {}, }) {
   const {popUp1, popUp2, popUp3} = winnerPopup
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState({walletAddress:show?.walletAddress});
   const [stepToShow, setStepToView] = useState(POPUP_TYPE.popUp1);
   const [prizeSelected, setPrizeSelected] = useState({
-    first: false,
-    second: true
+    first: true,
+    second: false
   });
   const [partnerSelected, setPartnerSelected] = useState({});
 
@@ -33,8 +33,8 @@ export default function WinnerPopup({ show, onClose, partners, winnerPopup = {},
   };
   const handleSure = (data) => {
     const payload = transformClaimPrizeData(formData)
-    if(show){
-      payload.signature = show
+    if(show?.signature){
+      payload.signature = show?.signature
     }
     dispatch(claimPrize(payload, (message, status) => {
       if(status === STATUS.SUCCESS){
@@ -50,7 +50,7 @@ export default function WinnerPopup({ show, onClose, partners, winnerPopup = {},
     setStepToView(POPUP_TYPE.popUp1);
   };
 
-  const REFORMED_WINNER_MODAL_FORM_SCHEMA = WINNER_MODAL_FORM_SCHEMA(winnerPopup)
+  const REFORMED_WINNER_MODAL_FORM_SCHEMA = WINNER_MODAL_FORM_SCHEMA(winnerPopup, show?.walletAddress)
   const renderStep = () => {
     switch (stepToShow) {
       case POPUP_TYPE.popUp1:

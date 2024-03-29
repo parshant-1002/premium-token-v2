@@ -1,35 +1,81 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Info from './Info'
 import { ICONS } from '../../../../assets';
 import SafeHTML from '../../../../shared/components/SanitizeHtml';
 import { Each } from '../../../../shared/components/Each';
-import { addBaseUrlToUrls, removeEmptyKeys } from '../../../../shared/utilities';
+import { addBaseUrlToUrls, handleSignMessage, removeEmptyKeys } from '../../../../shared/utilities';
 import { AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA } from './config';
 import CustomForm from '../../../../shared/components/form/CustomForm/CustomForm';
 import { STATUS } from '../../../../shared/constants';
 import { createAirDrop } from '../../../../store/actions/contentManagement';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
+import { useWallet } from "@solana/wallet-adapter-react";
 import { hasAtLeastFourValues } from './helpers/utils';
 import "./airdrop.scss";
+
+const initialClickedState = {
+  flag: false,
+  data: null,
+  reset: null
+};
 
 const Airdrop = ({ content = {} }) => {
   const { description, section1, section2, title, buttonText } = content
   const AIRDROP_SCHEMA = AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA(section1)
   const dispatch = useDispatch()
-  const onSubmit = (data) => {
-    if (!hasAtLeastFourValues(data)) {
-      toast.error("Please complete at least four fields to qualify for the airdrop whitelist.");
-      return
+  const { connect, wallet, publicKey, signMessage } = useWallet();
+
+  const [clickedConnect, setClickedConnect] = useState(initialClickedState);
+
+  useEffect( () => {
+    if(clickedConnect?.flag && publicKey){
+     handleCallSignMessage();
     }
-    const payload = removeEmptyKeys(data)
-    dispatch(
-      createAirDrop(payload, (message, status) => {
-        if (status === STATUS.SUCCESS) {
-          toast.success(message);
-        }
-      })
-    );
+ },[clickedConnect, publicKey])
+
+const handleCallSignMessage = async () => {
+  try {
+    const response = await handleSignMessage(signMessage)
+    if (response){
+      const payload = removeEmptyKeys(clickedConnect?.data)
+      payload.signature = response
+      dispatch(
+        createAirDrop(payload, (message, status) => {
+          if (status === STATUS.SUCCESS) {
+            toast.success(message);
+            clickedConnect?.reset();
+          }
+        })
+      );
+    }
+  } catch (error) {
+  } finally {
+    setClickedConnect(initialClickedState);
+  }
+};
+
+  const onSubmit = async(data, event, reset) => {
+    try {
+      if (!hasAtLeastFourValues(data)) {
+        toast.error("Please complete at least four fields to qualify for the airdrop whitelist.");
+        return
+      }
+      if (!wallet) {
+        setVisible(true);
+      } else {
+        await connect();
+        setClickedConnect({
+          flag: true,
+          data: data,
+          reset: reset
+        });
+      }
+    } catch (error) {
+      console.error('Error connecting to wallet:', error);
+    }
+  
+ 
   };
 
   return (

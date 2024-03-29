@@ -12,22 +12,23 @@ export const RenderField = ({ field, id, handleRegister, handleInputChange, getV
         setInputType((prev) => prev === INPUT_TYPES.PASSWORD ? INPUT_TYPES.TEXT : INPUT_TYPES.PASSWORD);
     };
     const renderInput = () => {
+        field.type == INPUT_TYPES.TEXT && console.log(field.value,"FIELDVALUE")
         switch (field.type) {
             case INPUT_TYPES.TEXT:
             case INPUT_TYPES.TEXT_AREA:
             case 'password':
                 return (
-                                        <TextField
+                        <TextField
                         id={id}
                         type={inputType}
+                        disabled = {!!field?.disabled}
                         placeholder={field.placeholder}
                         {...handleRegister(id)}
                         onChange={(e) => handleInputChange(id, e.target.value)}
                         maxLength={field?.schema?.maxLength?.value || ''}
                         minLength={field?.schema?.minLength?.value || ''}
                         icon = {field.icon || ""}
-                    />
-                                    );
+                    />);
             case INPUT_TYPES.DATE:
                 return (
                     <Datepicker
