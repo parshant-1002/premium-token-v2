@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import { firstHalfColorOptions, secondHalfColorOptions } from "../../helpers/constants";
 import { DoughnutChart } from "../DoughnutChart";
@@ -6,10 +6,14 @@ import { extractPercentages } from "./helpers/utils";
 import "./Tokeninformation.scss";
 
 const Tokeninformation = ({content = {}}) => {
-	const { title, airdrop, burning, contest, development, exchangeAndTokenHolders, founders, marketing, winnerPrize, innerTitle, description } = content;
-	const stats = { development: development, founders: founders, winnerPrize,  marketing, burning, exchangeAndTokenHolders };
 	const [firstHalfStats,setFirstHalfStats] = useState();
 	const [secondHalfStats,setSecondHalfStats] = useState();
+
+	const stats = useMemo(() => {
+		const { burning, development, exchangeAndTokenHolders, founders, marketing, winnerPrize } = content;
+		const stats = { development: development, founders: founders, winnerPrize,  marketing, burning, exchangeAndTokenHolders };
+         return stats;
+	},[content])
 
 	useEffect(() => {
 		const sortedStats = Object.values(stats||{})?.sort((statA, statB) => statA?.percentage - statB?.percentage);
@@ -17,11 +21,11 @@ const Tokeninformation = ({content = {}}) => {
 		const secondHalf = sortedStats?.slice(Math.ceil(sortedStats?.length/2),sortedStats?.length);
         setFirstHalfStats(firstHalf);
 		setSecondHalfStats(secondHalf)
-	}, []);
+	}, [stats]);
 
-	const series = extractPercentages({...stats})
-	const renderStats = (value = {}, index, colorOptions) => {
-		
+	const series =  useMemo(() => extractPercentages(stats), [stats]);
+
+	const renderStats = (value = {}, index, colorOptions) => {		
 		const { title,subTitle, percentage, description} = value;
 		return <div className="token-column-iner">
 			<div className="token-column-button">
@@ -40,13 +44,13 @@ const Tokeninformation = ({content = {}}) => {
 			<div className="container">
 
 				<div className="heading_title text-center mb-0">
-					<h2 className="h2"><SafeHTML html={title} /></h2>
-					<p><SafeHTML html={description} /></p>
+					<h2 className="h2"><SafeHTML html={content?.title} /></h2>
+					<p><SafeHTML html={content?.description} /></p>
 				</div>
 
 				<div className="pie-chart text-center">
 					<div className="d-inline-block">
-						<DoughnutChart series={series} className="chart" innerTitle = {innerTitle} />
+						<DoughnutChart series={series} className="chart" innerTitle = {content?.innerTitle} />
 					</div>
 				</div>
 
