@@ -12,7 +12,7 @@ const PremiumToken = ({ content = {} }) => {
                         <div className="token-summary text-center">
                             <h2 className="h2"><SafeHTML html={title} /></h2>
                             <p><SafeHTML html={description} /></p>
-                            <button type="button" className="btn btn-md btn-secondary" onClick={() =>redirectToUrlInNewTab()}>
+                            <button type="button" className="btn btn-md btn-secondary">
                                 <span className="transform-none"><SafeHTML html={comingSoonButtonText} />
                                     <em className="ms-2">
                                         <img src={ICONS.RightArrow} alt="premium" width={14} height={8} />

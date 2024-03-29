@@ -6,8 +6,8 @@ import "./Tokeninformation.scss";
 
 const Tokeninformation = ({content = {}}) => {
 	const { title, airdrop, burning, contest, development, exchangeAndTokenHolders, founders, marketing, winnerPrize, innerTitle, description } = content;
-	const firstHalfStats = {airdrop : airdrop, contest : contest, development:development, founders : founders}
-	const secondHalfStats = {winnerPrize, marketing, burning, exchangeAndTokenHolders}
+	const firstHalfStats = { development: development, founders: founders, winnerPrize }
+	const secondHalfStats = {marketing, burning, exchangeAndTokenHolders}
 	const series = extractPercentages({...firstHalfStats, ...secondHalfStats})
 	const renderStats = (key,value = {}, index, colorOptions) => {
 		const { title,subTitle, percentage, description} = value;
