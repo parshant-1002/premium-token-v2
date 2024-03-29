@@ -54,7 +54,13 @@ const MarketPlace = ({ content = {} }) => {
         </div>
 
         <div className="text-center">
-          <button type="button" className="btn btn-md btn-secondary mw-240" onClick={()=> redirectToUrlInNewTab(content?.comingSoonButtonUrl)}>
+          <button type="button" className="btn btn-md btn-secondary mw-240" onClick={()=> 
+            {
+              if(content?.comingSoonButtonUrl){
+
+                redirectToUrlInNewTab(content?.comingSoonButtonUrl)
+              }
+          }}>
             <span className="transform-none">
               <SafeHTML html={content?.comingSoonButtonText}/>
               <em className="ms-3"><img src={ICONS.RightArrow} alt="premium" width={14} height={8} /></em>

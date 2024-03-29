@@ -33,7 +33,7 @@ const Airdrop = ({ content = {} }) => {
   };
 
   return (
-    <section className="position-relative airdrop_sec">
+    <section className="position-relative airdrop_sec" >
       <div className="container">
         <div className="airdrop-main" id='airdrop_section'>
 

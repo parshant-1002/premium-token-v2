@@ -364,18 +364,6 @@ export const DEFAULT_CONTENT = {
         "description": "In the near future we aim to launch a market place for luxury and premium cars from our partners, where our token holders can buy this cars for PremiumToken!</p>"
     },
     "tokenSupply": {
-        "airdrop": {
-            "title": "AirDrop",
-            "description": "0.25% of the tokens will be used for AidDrops, one AirDrop will be held on the 1st of each month, for the next 10 months to come.",
-            "subTitle": "Wallet address: ....... ",
-            "percentage": 0.25
-        },
-        "contest": {
-            "title": "Contest and events",
-            "description": "0.75% of the tokens will be used for different contests and events in the future for our holders.",
-            "subTitle": "Wallet address: ....... ",
-            "percentage": 0.75
-        },
         "development": {
             "title": "Development",
             "description": "2.5% of the tokens will be used for development of PremiumToken, to improve it and develop new dapps, features, wallet and marketplaces in the future.",
@@ -384,27 +372,27 @@ export const DEFAULT_CONTENT = {
         },
         "founders": {
             "title": "Founders",
-            "description": "4% of the tokens will go to the founders of PremiumToken, but don’t worry we believe in PremiumToken and we wont be selling anything of anytime soon, we are here for the long run!",
-            "subTitle": "Wallet address: ....... ",
-            "percentage": 4
-        },
-        "winnerPrize": {
-            "title": "Prize for Winners",
-            "description": "5% of the tokens will be used for the winners that the smart contract draws, to purchase the premium car of their choice or by giving them $350,000 worth of PremiumToken.",
+            "description": "5% of the tokens will go to the founders of PremiumToken, but don’t worry we believe in PremiumToken and we wont be selling anything of anytime soon, we are here for the long run!",
             "subTitle": "Wallet address: ....... ",
             "percentage": 5
         },
+        "winnerPrize": {
+            "title": "Prize for Winners",
+            "description": "7.5% of the tokens will be used for the winners that the smart contract draws, to purchase the premium car of their choice or by giving them $350,000 worth of PremiumToken.",
+            "subTitle": "Wallet address: ....... ",
+            "percentage": 7.5
+        },
         "marketing": {
-            "title": "Marketing",
+            "title": "Presale",
             "description": "10% of the tokens will be used marketing of PremiumToken, with the help of the community and paying for marketing and advertising, it wont take long until we reach $1B market cap.",
             "subTitle": "Wallet address: ....... ",
             "percentage": 10
         },
         "burning": {
-            "title": "Burning",
-            "description": "12.5% of the tokens will be burnt overtime, to lower the supply and increase the price per token.",
+            "title": "Marketing",
+            "description": "20% of the tokens will be burnt overtime, to lower the supply and increase the price per token.",
             "subTitle": "Wallet address: ....... ",
-            "percentage": 12.5
+            "percentage": 20
         },
         "exchangeAndTokenHolders": {
             "title": "To excanges and token holders",
