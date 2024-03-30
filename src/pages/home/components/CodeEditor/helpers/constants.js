@@ -1,21 +1,36 @@
-export const SMART_CONTRACT_CODE = `mod constants;
-mod error;
-
-use anchor_lang::{
+export const SMART_CONTRACT_CODE = `use anchor_lang::{
     prelude::*,
     solana_program::{clock::Clock, hash::hash},
 };
 use anchor_spl::token::{self, TokenAccount};
-use crate::{constants::*, error::TokenCampaignError};
+
+pub const MASTER_SEED: &str = "master";
+pub const CAMPAIGN_SEED: &str = "campaign";
+pub const ENTRY_SEED: &str = "entry";
+
+use anchor_lang::prelude::error_code;
+
+#[error_code]
+pub enum TokenCampaignError {
+    #[msg("Winner already exists.")]
+    WinnerAlreadySelected,
+    #[msg("Cannot select a winner because the campaign has no participants.")]
+    NoEntries,
+    #[msg("Mint address is not the same.")]
+    InvalidMint,
+    #[msg("Not enough token holdings.")]
+    InsufficientTokens,
+}
+
 declare_id!("5Db6AmpiAySszzo84LVHmWpN2KiYyoxUaYZKwppX1cRt");
 
 #[program]
 mod token_campaign {
     use super::*;
 
-    pub fn initialize_master(_ctx: Context<InitializeMaster>) -> Result<()> {
-        let master = &mut _ctx.accounts.master;
-        let payer = &_ctx.accounts.payer;
+    pub fn initialize_master(ctx: Context<InitializeMaster>,) -> Result<()> {
+        let master = &mut ctx.accounts.master;
+        let payer = &ctx.accounts.payer;
 
         master.authority = *payer.key;
         Ok(())
@@ -44,9 +59,8 @@ mod token_campaign {
 
         Ok(())
     }
-    
-    //Draws one winner from participants based on their token holdings at each market cap milestone of $10,000,000. 
-    pub fn select_winner(ctx: Context<SelectWinner>, _campaign_id: u32) -> Result<()> {
+
+    pub fn select_winner(ctx: Context<SelectWinner>, campaign_id: u32) -> Result<()> {
         let campaign = &mut ctx.accounts.campaign;
 
         if campaign.winner_id.is_some() {
@@ -209,6 +223,4 @@ pub struct Entry {
     pub entry_to: u64,
     pub campaign_id: u32,
     pub entered_by: Pubkey,
-}`
-
-
+}`;

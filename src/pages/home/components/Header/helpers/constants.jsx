@@ -1,6 +1,6 @@
 import { RenderIconWithHover } from "../../../../../shared/components/RenderIconWithHover";
 import SafeHTML from "../../../../../shared/components/SanitizeHtml";
-import { INPUT_TYPES } from "../../../../../shared/constants";
+import { INPUT_TYPES, VALIDATION_REGEX } from "../../../../../shared/constants";
 import { isValidSolanaAddress } from "../../../../../shared/constants/utils";
 import { FORM_VALIDATION_MESSAGES } from "../../../../../shared/constants/validations";
 
@@ -17,6 +17,19 @@ export const WINNER_MODAL_FORM_SCHEMA =(data, walletAddress)=>{
             placeholder: popUp1?.socialPlatforms?.placeholder,
             schema: {
                 required: FORM_VALIDATION_MESSAGES().REQUIRED,
+            }
+        },
+        email: {
+            type: INPUT_TYPES.EMAIL,
+            label: <SafeHTML html={popUp1?.email?.title}/>,
+            className: 'form-control col-md-6',
+            placeholder: popUp1?.email?.placeholder,
+            schema: {
+                required: FORM_VALIDATION_MESSAGES().REQUIRED,
+                pattern: {
+                    value: VALIDATION_REGEX.EMAIL,
+                    message: FORM_VALIDATION_MESSAGES().VALID_EMAIL
+                },
             }
         },
         walletAddress: {

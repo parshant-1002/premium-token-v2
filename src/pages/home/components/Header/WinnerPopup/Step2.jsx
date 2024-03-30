@@ -5,11 +5,11 @@ import CountriesJson from '../../../../../assets/json/countries.json';
 
 const countries = CountriesJson.map(({ name }) => ({ label: name, value: name }));
 
-export default function Step2({ handleSubmitStep2, handleAutoNameGeneration, formData = {}, REFORMED_WINNER_MODAL_FORM_SCHEMA }) {
+export default function Step2({ handleSubmitStep2, handleAutoNameGeneration, popUp2, formData = {}, REFORMED_WINNER_MODAL_FORM_SCHEMA }) {
     // const [formSchema, setFormSchema] = useState(REFORMED_WINNER_MODAL_FORM_SCHEMA.step2);
     const [options, setOptions] = useState({ country: countries, city: []});
     const { name, dob, phoneNumber, country, city, streetAddress, zip } = formData || {};
-
+    const { confirmButton } = popUp2;
     const handleStateDataChange = (name, value) => {
         if (name === 'country') {
             const selectedCountry = CountriesJson.find(({ name }) => name === value?.value);
@@ -24,7 +24,7 @@ export default function Step2({ handleSubmitStep2, handleAutoNameGeneration, for
             <CustomForm
                 formData={REFORMED_WINNER_MODAL_FORM_SCHEMA.step2}
                 onSubmit={handleSubmitStep2}
-                submitText={BUTTON_LABELS.Continue}
+                submitText={confirmButton?.text || BUTTON_LABELS.Continue}
                 defaultValues={{ name, dob, phoneNumber, country, city, streetAddress, zip }}
                 onChangeValues={handleStateDataChange}
                 className="row"

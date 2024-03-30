@@ -8,7 +8,15 @@ export const addBaseUrlToUrls = (url)=>{
     return url
 }
 
-export const redirectToUrlInNewTab = (url) => window.open(url, '_blank')
+export const redirectToUrlInNewTab = (url) => url && window.open(url, '_blank')
+
+export const downloadFile =  (url, name) => {
+    const downloadLink = document.createElement('a');
+    downloadLink.href = url;
+    downloadLink.download = name || 'file';
+    downloadLink.target = '_blank'; // Open in a new tab
+    downloadLink.click();
+}
 
 export const formatDate = (dateString, format = "DD-MM-YYYY") => {
     const date = new Date(dateString);

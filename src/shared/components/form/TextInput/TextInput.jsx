@@ -10,7 +10,6 @@ export function ErrorComponent({ error, render }) {
 
 const TextField = React.forwardRef(
     function TextField({ type, placeholder, className = 'form-control', icon, ...otherProps }, ref) {
-        
         return type === INPUT_TYPES.TEXT_AREA ? (
             <textarea
                 className={className}

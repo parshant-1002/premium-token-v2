@@ -87,7 +87,7 @@ export const AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA = (data = {}) => {
     },
     telegramUsername: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover onClick={() => { redirectToUrlInNewTab(premiumToken?.link) }} iconUrl={addBaseUrlToUrls(telegram?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(telegram?.hovers)} />,
+        icon: <RenderIconWithHover onClick={() => { redirectToUrlInNewTab(telegram?.link) }} iconUrl={addBaseUrlToUrls(telegram?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(telegram?.hovers)} />,
         className: 'col-md-4',
         placeholder: telegram?.placeholder,
     },
