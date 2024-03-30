@@ -1,6 +1,7 @@
 @import '../../../../assets/scss/base';
 
 .roadMap_sec {
+  z-index: 11;
   @media (min-width:992px) {
     padding: 40px 0;
   }
