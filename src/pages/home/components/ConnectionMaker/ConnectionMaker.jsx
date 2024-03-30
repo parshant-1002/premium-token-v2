@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ICONS } from "../../../../assets";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
-import { addBaseUrlToUrls, redirectToUrlInNewTab } from "../../../../shared/utilities";
+import { addBaseUrlToUrls, downloadFile, redirectToUrlInNewTab } from "../../../../shared/utilities";
 import "./ConnectionMaker.scss";
 
 const ConnectionMaker = ({ content = {} }) => {
@@ -35,7 +35,7 @@ const ConnectionMaker = ({ content = {} }) => {
 									<SafeHTML html={url} />
 								</button>
 							 
-							<button className="btn btn-md btn-secondary w-100" onClick={()=>redirectToUrlInNewTab(downloadDocURL)}>
+							<button className="btn btn-md btn-secondary w-100" onClick={()=>downloadFile(downloadDocURL)}>
 								<span className="transform-none">
 									<img
 										className="me-2"

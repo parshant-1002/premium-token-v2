@@ -21,7 +21,7 @@ export default function Step1({
   popUp1 = {},
   REFORMED_WINNER_MODAL_FORM_SCHEMA
 }) {
-  const { socialMedia, walletAddress } = formData;
+  const { socialMedia, walletAddress, email } = formData;
   const {  description, prizeSection, title, continueButton } = popUp1
   const handleSubmit = (data) => {
     const step1Data = { prizeSelected, partnerSelected, ...data };
@@ -33,7 +33,7 @@ export default function Step1({
       formData={REFORMED_WINNER_MODAL_FORM_SCHEMA?.step1}
       onSubmit={handleSubmit}
       submitText={continueButton?.text || "Continue"}
-      defaultValues={{ socialMedia, walletAddress }}
+      defaultValues={{ socialMedia, walletAddress, email }}
       submitBtnClassName="btn btn-primary col-1"
       preSubmitElement={
         <div className="prize_col">

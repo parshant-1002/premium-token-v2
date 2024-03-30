@@ -10,6 +10,14 @@ export const addBaseUrlToUrls = (url)=>{
 
 export const redirectToUrlInNewTab = (url) => window.open(url, '_blank')
 
+export const downloadFile =  (url, name) => {
+    const downloadLink = document.createElement('a');
+    downloadLink.href = url;
+    downloadLink.download = name || 'file';
+    downloadLink.target = '_blank'; // Open in a new tab
+    downloadLink.click();
+}
+
 export const formatDate = (dateString, format = "DD-MM-YYYY") => {
     const date = new Date(dateString);
     const formattedDate = date.getDate().toString().padStart(2, '0') + '-' + (date.getMonth() + 1).toString().padStart(2, '0') + '-' + date.getFullYear();

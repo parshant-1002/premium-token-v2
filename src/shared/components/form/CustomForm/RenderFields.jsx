@@ -16,6 +16,7 @@ export const RenderField = ({ field, id, handleRegister, handleInputChange, getV
         switch (field.type) {
             case INPUT_TYPES.TEXT:
             case INPUT_TYPES.TEXT_AREA:
+            case INPUT_TYPES.EMAIL:
             case 'password':
                 return (
                         <TextField
