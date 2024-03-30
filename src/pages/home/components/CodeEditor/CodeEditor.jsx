@@ -99,6 +99,7 @@ function CodeEditor() {
                     automaticLayout: true,
                     domReadOnly: true,
                     readOnly:true,
+                    scrollBeyondLastLine: false,
                 }}
             />
         </div>

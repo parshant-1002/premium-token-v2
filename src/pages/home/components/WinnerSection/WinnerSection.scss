@@ -106,11 +106,6 @@
               &:last-child {
                 margin-bottom: 0;
               }
-              // &:first-child {
-              //   .td_img {
-              //     margin-top: -20px;
-              //   }
-              // }
             }
             td {
               background: $dark-green-color-600;
@@ -122,6 +117,9 @@
               vertical-align: middle;
               word-wrap: break-word;
               text-align: $left;
+              @media (min-width:1200px){
+                height: 76px;
+              }
               &:first-child {
                 @media (min-width:991.99px){
                   @include border-radius(12px 0 0 12px);
@@ -167,7 +165,7 @@
                 }
               }
               .td_img {
-                max-width: 92px;
+                max-width: 110px;
                 @media (max-width:991px){
                   display: $inline-block;
                   max-width:110px;

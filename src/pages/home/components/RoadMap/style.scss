@@ -110,8 +110,8 @@
         content: '';
         width: 24px;
         height: 24px;
-        background: $dark-green-color-400;
         border: 6px solid $transparent;
+        background: $dark-green-color-400;
         filter: drop-shadow(0px 0px 30px rgba(98, 153, 144, 0.75));
         @include border-radius (50%);
         position: $absolute;
@@ -148,37 +148,30 @@
   }
 }
 
-.roadmap_bg {
-  pointer-events: $none;
-  @media (min-width:767.99px){
-    @include position($absolute, $left:0, $top:-30%);
-    width: 100%; height: 100%;
-    pointer-events: $none;
-  }
-  @media (max-width:767px){
-    @include position($absolute, $right:0, $top:0%);
-  }
-}
-
 // RoadMap Responsive
 @media (max-width:767px){
   .roadmap_wrap {
     padding:0 15px 100px;
-    .slick-track {
-      @include flex-direction (column);
-    }
+    @include flexbox;
+    @include flex-direction (column);
     .slick-slide {
-      width: 100%!important;
+      // width: 100%!important;
       // @for $i from 0 through 9 {
       //   &:nth-child(#{$i}) {
       //     padding-left: 7px * $i; // Increase margin by 10px for each nth-child
       //   }
       // }
+      &:last-child {
+        .timeline-item {
+          visibility: $hidden;
+          @include opacity (0);
+        }
+      }
     }
     .timeline-item {
       position: $relative;
       padding-left: 30px;
-      max-width: 90%;
+      max-width: 96%;
       &::before {
         content: '';
         width: 17px;
@@ -186,8 +179,8 @@
         @include border-radius (50%);
         border: 4px solid $transparent;
         background: $dark-green-color-400;
-        filter: drop-shadow(0px 0px 30px rgba(98, 153, 144, 0.75));
         @include position($absolute, $left:0, $top:0);
+        filter: drop-shadow(0px 0px 30px rgba(98, 153, 144, 0.75));
         z-index: 1;
       }
       &::after {
@@ -210,14 +203,23 @@
         }
       }
       .timeline_block {
-        margin-bottom: 20px;
-        @media (max-width:575px){
-          margin-bottom: 12px;
-        }
+        margin-bottom: 15px;
         .h6 {
           @include font-size (0.938);
         }
       }
     }
+  }
+}
+
+.roadmap_bg {
+  pointer-events: $none;
+  @media (min-width:767.99px){
+    @include position($absolute, $left:0, $top:-30%);
+    width: 100%; height: 100%;
+    pointer-events: $none;
+  }
+  @media (max-width:767px){
+    @include position($absolute, $right:0, $top:0%);
   }
 }
