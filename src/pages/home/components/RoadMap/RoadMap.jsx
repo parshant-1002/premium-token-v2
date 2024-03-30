@@ -20,6 +20,16 @@ const RoadMap = ({content = {}}) => {
       }
     },
     {
+      breakpoint: 1380,
+      settings: {
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        infinite: false,
+        arrows: true,
+        dots: false,
+      }
+    },
+    {
       breakpoint: 1200,
       settings: {
         slidesToShow: 3,
