@@ -10,13 +10,13 @@ const RoadMap = ({content = {}}) => {
   const{title, roadMap} = content
   const responsiveConfig = [
     {
-      breakpoint: 1400,
+      breakpoint: 1570,
       settings: {
-        slidesToShow: 4,
+        slidesToShow: 5,
         slidesToScroll: 1,
         infinite: false,
-        arrows: false,
-        dots: true,
+        arrows: true,
+        dots: false,
       }
     },
     {
@@ -25,8 +25,8 @@ const RoadMap = ({content = {}}) => {
         slidesToShow: 3,
         slidesToScroll: 1,
         infinite: false,
-        arrows: false,
-        dots: true,
+        arrows: true,
+        dots: false,
       }
     },
     {

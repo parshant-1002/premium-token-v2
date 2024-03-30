@@ -55,9 +55,7 @@ $staticBg: url(../../../assets/img/banner-bg.png);
 
 .banner_pic {
     width: 100%;
-    @media (max-width: 767px){
-        margin-top: 30px;
-    }
+    margin-top: 30px;
 }
 
 // for mobile view
