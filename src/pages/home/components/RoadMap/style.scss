@@ -126,9 +126,12 @@
         left: 50%;
         z-index: 1;
         @media (max-width:1750px){
-          top: calc(50% - 61px);
+          top: calc(50% - 64px);
         }
       }
+    }
+    @media (min-width:1440px) and (max-width:1750px){
+      height: 550px;
     }
     &.active {
       .timeline_block {
