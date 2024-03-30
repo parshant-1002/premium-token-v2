@@ -47,6 +47,9 @@
         @media (max-width:991px) {
             gap:12px;
         }
+        @media (max-width:360px) {
+            gap:5px;
+        }
         button {
             min-width: 160px;
             max-width: 160px;

@@ -13,10 +13,10 @@
         display: grid;
         grid-template-columns: 1fr;
         gap: 100px;
-        max-width: 1096px;
-        margin: auto;
+        margin: $auto;
         margin-top: 64px;
-        align-items: center;
+        max-width: 1096px;
+        @include align-items ($center);
         @media (min-width:992px) {
             grid-template-columns: 1fr 1fr;
         }
@@ -36,12 +36,12 @@
                 padding: 8px 16px 8px 48px;
             }
             h4 {
+                font-weight: $font-medium;
                 color: $white-color;
                 text-align: $center;
-                font-size: 20px;
-                font-weight: $font-medium;
                 line-height: normal;
                 margin-bottom: 32px;
+                font-size: 20px;
             }
             .submit-drop{
                 margin-top: 32px;
@@ -79,7 +79,7 @@
             margin-bottom: 0;
         }
         .image_renderer {
-            @include position($absolute, $top:calc(9px), $left:14px);
+            @include position($absolute, $top:calc(8px), $left:14px);
             img {
                 width: 24px;
                 height: 24px;
@@ -91,13 +91,13 @@
             padding: 8px 16px 8px 48px;
             background: rgba(41, 101, 92, 0.25);
             &::placeholder {
-                color: #389989;
+                color: $green-tin-color-700;
             }
             &::-webkit-input-placeholder {
-                color: #389989;
+                color: $green-tin-color-700;
             }
             &:-ms-input-placeholder {
-                color:#389989;
+                color:$green-tin-color-700;
             }
         }
     }

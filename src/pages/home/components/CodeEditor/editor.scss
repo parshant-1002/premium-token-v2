@@ -2,19 +2,19 @@
 
 .editor_tabs {
     background-color: #020C0C;
-    border: 1px solid #389989;        
+    border: 1px solid #389989;
     @include border-radius (0 10px 10px 0);
     @media (min-width:1199.99px){
-        margin-top: 54px;      
+        margin-top: 54px;
       }
       @media (max-width:1200px){
-        margin-bottom: 40px;      
-        margin-top: 20px;  
+        margin-bottom: 40px;
+        margin-top: 20px;
     }
     &-item {
         @include flexbox;
         @include align-items(center);
-        border-bottom: 1px solid #389989;        
+        border-bottom: 1px solid #389989;
         button {
             padding:6px 16px;
             min-width: 140px;
@@ -25,15 +25,16 @@
             font-weight: $font-medium;
             @include transition(all ,0.3s, ease-in-out);
             color: rgba($color: $white-color, $alpha: 0.8);
-            @include font-size(0.875); 
+            @include font-size(0.875);
         }
     }
     .editor_box {
         height: 524px;
         overflow: $hidden;
+        padding-bottom: 20px;
         @include border-radius (0 0 10px 0);
         @media (max-width:767px){
-            height: 466px;            
+            height: 466px;
         }
         &:after {
             content: '';

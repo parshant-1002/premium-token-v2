@@ -22,12 +22,6 @@ $baseColor :rgba(3, 11, 11, 0.6);
         font-size:calc($Height40/1.5);
         line-height: $Height40;
     }
-    @media (min-width:992px) {
-        font-size:calc($digitHeight/1.5);
-        line-height: $digitHeight;
-        // @include font-size(4);
-        // height: $digitHeight;
-    }
     .digit_card {
         @include border-radius (10px);
         display: $inline-block;

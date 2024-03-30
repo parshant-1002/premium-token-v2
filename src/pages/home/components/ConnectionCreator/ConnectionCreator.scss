@@ -58,6 +58,9 @@
         line-height: 1.6;
         white-space: nowrap;
         width: max-content;
+        @media (max-width:575px){
+          @include font-size (.875);
+        }
       }
     }
   }
