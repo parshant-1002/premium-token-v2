@@ -1,4 +1,4 @@
-import { addBaseUrlToUrls, redirectToUrlInNewTab } from "../../../../shared/utilities";
+import { addBaseUrlToUrls, handleAirdropClick, redirectToUrlInNewTab } from "../../../../shared/utilities";
 import { RenderIconWithHover } from "../../../../shared/components/RenderIconWithHover";
 import { ICONS } from "../../../../assets";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
@@ -35,25 +35,13 @@ const Header = ({ content = {}, partnersContent, winnerPopup }) => {
 		redirectToUrlInNewTab(url)
 	}
 
-	const handleAirdropClick = ()=>{
-		
-		const airdropSection = document.getElementById("airdrop_section");
-		if (airdropSection) {
-			const yOffset = -120; // Adjust the offset value as needed
-			const y = airdropSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-			window.scrollTo({ top: y, behavior: 'smooth' });
-		}
-
-	}
-
 	return (
 
 		<header className={isSticky ? 'header sticky-header' : 'header'}>
 
 			<nav className={`navbar navbar-expand-xl bg-transparent py-0 ${isOpen ? 'menu-open' : ''}`}>
 				<div className="container">
-					<Link className="navbar-brand" href={"/"}>
+					<Link className="navbar-brand" to="/">
 						<RenderIconWithHover iconUrl={addBaseUrlToUrls(premiumTokenTitle)} hoverIconUrl={addBaseUrlToUrls(premiumTokenTitle)} defaultIcon={ICONS.Logo} />
 					</Link>
 

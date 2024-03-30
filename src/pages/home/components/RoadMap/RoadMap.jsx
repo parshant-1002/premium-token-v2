@@ -44,6 +44,7 @@ const RoadMap = ({content = {}}) => {
   ]
 
   const calculateHeight = () => {
+    if(window.innerWidth > 767) return;
     const items = document.querySelectorAll('.timeline-item');
     let totalHeight = 0;
     items.forEach((item, index) => {
