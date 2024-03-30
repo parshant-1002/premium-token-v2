@@ -7,7 +7,7 @@
         @include position($fixed, $bottom:0, $left:0, $right:0);
         @include transition (all, .5s, ease-in-out, .10s);
         @include transform (translateY(-10px));
-        z-index: 111;
+        z-index: 11;
       }
     }
     &.add_sticky {
