@@ -8,7 +8,7 @@ export const addBaseUrlToUrls = (url)=>{
     return url
 }
 
-export const redirectToUrlInNewTab = (url) => window.open(url, '_blank')
+export const redirectToUrlInNewTab = (url) => url && window.open(url, '_blank')
 
 export const downloadFile =  (url, name) => {
     const downloadLink = document.createElement('a');
