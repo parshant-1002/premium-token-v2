@@ -1,12 +1,12 @@
-import { ICONS } from "../../../../assets";
 import { CustomSlick } from "../../../../shared/components/CustomSlick";
-import "./style.scss";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
+import { ICONS } from "../../../../assets";
 import { useSelector } from "react-redux";
+import "./style.scss";
 
 const RoadMap = ({content = {}}) => {
   const blockChainData = useSelector((store) => store.contentManagementReducer.blockChainData)
-  console.log(blockChainData,"blockChainData")
+  // console.log(blockChainData,"blockChainData")
   const{title, roadMap} = content
   const responsiveConfig = [
     {
@@ -32,17 +32,33 @@ const RoadMap = ({content = {}}) => {
     {
       breakpoint: 767,
       settings: {
-        slidesToShow: 6,
-        slidesToScroll: 1,
+        vertical: true,
+        slidesToShow: 5,
+        slidesToScroll: 4,
         infinite: false,
         arrows: false,
         dots: true,
         swipe: false,
-        vertical: true,
-        verticalSwiping: false,
       }
     },
   ]
+
+  const calculateHeight = () => {
+    const items = document.querySelectorAll('.timeline-item');
+    let totalHeight = 0;
+    items.forEach((item, index) => {
+      if (index < 5) { // Assuming you want to show 4 items
+        totalHeight += item.offsetHeight;
+      }
+    });
+    document.querySelector('.roadmap_wrap .slick-list').style.height = `${totalHeight}px`;
+    // console.log(document.querySelector('.roadmap_wrap .slick-list').style.height = `${totalHeight}px`, '-- > Box Height');
+  };
+  // Call this function on page load and window resize
+  window.onload = calculateHeight;
+  window.onresize = calculateHeight;
+
+  const modifiedRoadMap = [...roadMap, {}];
 
   return (
     <section className="position-relative roadMap_sec">
@@ -56,7 +72,7 @@ const RoadMap = ({content = {}}) => {
 
       <div className="roadmap_wrap">
         <CustomSlick slidesToShow={6} responsive={responsiveConfig}>
-          {roadMap?.map((item, index)=>{
+          {modifiedRoadMap?.map((item, index)=>{
             return <div key={item?._id} className={`timeline-item ${item?.level <= blockChainData?.roadMapLevel ? "active" : ""}`}>
                 <div className="timeline_block text-start text-md-center">
                   <h6 className="h6"><SafeHTML html={item?.title}/></h6>
