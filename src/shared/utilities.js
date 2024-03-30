@@ -59,3 +59,15 @@ export const handleSignMessage = async (signMessage) => {
         return null;
     }
 }
+
+export const handleAirdropClick = ()=>{
+		
+    const airdropSection = document.getElementById("airdrop_section");
+    if (airdropSection) {
+        const yOffset = -120; // Adjust the offset value as needed
+        const y = airdropSection.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+        window.scrollTo({ top: y, behavior: 'smooth' });
+    }
+
+}

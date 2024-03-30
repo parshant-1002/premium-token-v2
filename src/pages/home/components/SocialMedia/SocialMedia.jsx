@@ -2,13 +2,20 @@ import { ICONS } from "../../../../assets";
 import "./SocialMedia.scss";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
 import { RenderIconWithHover } from "../../../../shared/components/RenderIconWithHover";
-import { addBaseUrlToUrls, redirectToUrlInNewTab } from "../../../../shared/utilities";
+import { addBaseUrlToUrls, handleAirdropClick, redirectToUrlInNewTab } from "../../../../shared/utilities";
 import { SOCIAL_MEDIA_ICONS_CONFIG } from "./helpers/contants";
 import { ROUTES } from "../../../../shared/constants/routes";
 import { Link } from "react-router-dom";
 
 const SocialMedia = ({content = {}}) => {
 	const { title, description, twitter, telegram, premiumTokenTitle, airdrop, discord, email } = content;
+	const handleSocialButtonClick = (url, key) => {
+		if(key === 'airdrop'){
+			handleAirdropClick();
+		} else {
+			redirectToUrlInNewTab(url);
+		}
+	}
 	return (
 		<section className="footer-row position-relative">
 			<div className="container">
@@ -20,7 +27,7 @@ const SocialMedia = ({content = {}}) => {
 						</div>
 						<div className="w-100 footer-button d-flex justify-content-center align-items-center">
 							{Object.entries(SOCIAL_MEDIA_ICONS_CONFIG(content)).map(([key, item], index)=>{
-								return <button type="button" key={key} className="btn btn-md btn-primary w-100" onClick={() => redirectToUrlInNewTab(item?.url)}>
+								return <button type="button" key={key} className="btn btn-md btn-primary w-100" onClick={() => handleSocialButtonClick(item?.url, key)}>
 									<span className="transform-none">
 										<div className="image_renderer">
 											<RenderIconWithHover iconUrl={addBaseUrlToUrls(item?.imageUrl)}/>
