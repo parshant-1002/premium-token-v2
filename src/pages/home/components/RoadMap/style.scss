@@ -45,26 +45,26 @@
     }
     &.slick{
       &-next {
-        @media (min-width:1200.99px){
-          right:calc(50vw - 1140px / 2);
+        @media (min-width:767.99px){
+          right:calc(50vw - 720px / 2);
         }
         @media (min-width:991.99px){
           right:calc(50vw - 960px / 2);
         }
-        @media (min-width:767.99px){
-          right:calc(50vw - 720px / 2);
+        @media (min-width:1200.99px){
+          right:calc(50vw - 1140px / 2);
         }
       }
       &-prev {
         left: $auto;
-        @media (min-width:1200.99px){
-          right:calc(50vw - 1140px / 2 + 60px);
+        @media (min-width:767.99px){
+          right:calc(50vw - 720px / 2 + 60px);
         }
         @media (min-width:991.99px){
           right:calc(50vw - 960px / 2 + 60px);
         }
-        @media (min-width:767.99px){
-          right:calc(50vw - 720px / 2 + 60px);
+        @media (min-width:1200.99px){
+          right:calc(50vw - 1140px / 2 + 60px);
         }
       }
     }
