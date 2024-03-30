@@ -17,7 +17,7 @@
         height: 100%;
         min-height: 54px;
         position: $relative;
-        padding-right: 55px;
+        padding-right: 96px;
         &>span {
             display: $inline-block;
             @include font-size (.875);
@@ -28,14 +28,13 @@
         }
     }
     .win_icon {
-        @include position($absolute, $top: 50%, $right: -30px);
+        @include position($absolute, $top: 50%, $right: -25px);
         @include transform (translateY(-50%));
-        @include flexCenter;
-        width: 100px;
+        max-width: 120px;
         z-index: 1;
         img {
             width: 100%;
-            max-height: 60px;
+            max-height: 58px;
             object-fit: $contain;
         }
     }
