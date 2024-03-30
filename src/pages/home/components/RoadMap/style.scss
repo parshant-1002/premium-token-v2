@@ -67,6 +67,13 @@
     //     }
     //   }
     // }
+    &:last-child{
+      .timeline-item {
+        &::before {
+          display: $none;
+        }
+      }
+    }
     &:nth-child(odd){
       .timeline_block {
         top: calc(50% + 30px);
@@ -119,7 +126,7 @@
         left: 50%;
         z-index: 1;
         @media (max-width:1750px){
-          top: calc(50% - 53px);
+          top: calc(50% - 61px);
         }
       }
     }
