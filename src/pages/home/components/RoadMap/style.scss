@@ -37,7 +37,10 @@
     margin: 0 $auto;
   }
   .slick-arrow {
-    @media (min-width:991px){
+    @media (min-width:767.99px){
+      @include position($absolute, $top:-100px);
+    }
+    @media (min-width:767.99px){
       @include position($absolute, $top:-100px);
     }
     &.slick{
@@ -45,11 +48,23 @@
         @media (min-width:1200.99px){
           right:calc(50vw - 1140px / 2);
         }
+        @media (min-width:991.99px){
+          right:calc(50vw - 960px / 2);
+        }
+        @media (min-width:767.99px){
+          right:calc(50vw - 720px / 2);
+        }
       }
       &-prev {
         left: $auto;
         @media (min-width:1200.99px){
           right:calc(50vw - 1140px / 2 + 60px);
+        }
+        @media (min-width:991.99px){
+          right:calc(50vw - 960px / 2 + 60px);
+        }
+        @media (min-width:767.99px){
+          right:calc(50vw - 720px / 2 + 60px);
         }
       }
     }
@@ -69,6 +84,10 @@
     // }
     &:last-child{
       .timeline-item {
+        .timeline_block {
+          visibility: $hidden;
+          @include opacity (0);
+        }
         &::before {
           display: $none;
         }
@@ -110,10 +129,17 @@
   }
 
   .timeline-item {
-    @media (min-width:767.99px){
+    @media (min-width:767.99px) {
       position: $relative;
+    }
+    @media (min-width:1750.99px){
       height: 600px;
-      &::before {
+    }
+    @media (min-width:767.99px) and (max-width:1750px){
+      height: 420px;
+    }
+    &::before {
+      @media (min-width:767.99px){
         content: '';
         width: 24px;
         height: 24px;
@@ -122,16 +148,24 @@
         filter: drop-shadow(0px 0px 30px rgba(98, 153, 144, 0.75));
         @include border-radius (50%);
         position: $absolute;
-        top: calc(40% - 7px);
         left: 50%;
         z-index: 1;
-        @media (max-width:1750px){
-          top: calc(50% - 64px);
-        }
       }
-    }
-    @media (min-width:1440px) and (max-width:1750px){
-      height: 550px;
+      @media (min-width:1750.99px){
+        top: calc(40% - 7px);
+      }
+      @media (min-width:1200.99px) and (max-width:1750px){
+        top: calc(50% - 47px);
+      }
+      @media (max-width:1200px){
+        top: calc(50% - 44px);
+      }
+      @media (min-width:991.99px) and (max-width:1024px){
+        top: calc(50% - 40px);
+      }
+      @media (min-width:767.99px) and (max-width:991px){
+        top: calc(50% - 37px);
+      }
     }
     &.active {
       .timeline_block {
