@@ -25,14 +25,14 @@ export const formatDate = (dateString, format = "DD-MM-YYYY") => {
 
 } 
 
-export const convertToAppropriateUnit = (value) => {
+export const convertToAppropriateUnit = (value, precision=2) => {
     const numZeros = Math.floor(Math.log10(value));
     if (numZeros >= 6 && numZeros < 9) {
-        return (value / 1000000).toFixed(2) + ' M';
+        return (value / 1000000).toFixed(precision) + ' M';
     } else if (numZeros >= 9 && numZeros < 12) {
-        return (value / 1000000000).toFixed(2) + ' B';
+        return (value / 1000000000).toFixed(precision) + ' B';
     } else if (numZeros >= 12) {
-        return (value / 1000000000000).toFixed(2) + ' T';
+        return (value / 1000000000000).toFixed(precision) + ' T';
     } else {
         return formatNumber(value).toString();
     }

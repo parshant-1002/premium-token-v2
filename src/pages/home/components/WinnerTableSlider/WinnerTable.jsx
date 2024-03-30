@@ -88,7 +88,7 @@ const WinnerTable = ({ socket, prize, content }) => {
         }
     }
     const renderTableRow = (row = {}) => {
-        const reformedRow = transformRow(row)
+        const reformedRow = transformRow(row, true)
         const getImageUrl = (prizeType)=>{
             return addBaseUrlToUrls( prize?.find((item) => item.type == prizeType)?.imageUrl)
         }

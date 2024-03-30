@@ -27,6 +27,7 @@ export default function Step1({
     const step1Data = { prizeSelected, partnerSelected, ...data };
     handleSubmitStep1(step1Data);
   };
+
   return (
 
     <CustomForm

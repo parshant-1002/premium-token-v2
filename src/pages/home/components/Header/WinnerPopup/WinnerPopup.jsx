@@ -32,7 +32,7 @@ export default function WinnerPopup({ show, onClose, partners, winnerPopup = {},
     setStepToView(POPUP_TYPE.popUp3);
   };
   const handleSure = (data) => {
-    const payload = transformClaimPrizeData(formData)
+    const payload = transformClaimPrizeData(formData, prizeSelected)
     if(show?.signature){
       payload.signature = show?.signature
     }

@@ -135,6 +135,6 @@ export const POPUP_TYPE = {
 }
 
 export const prizeType = {
-    first:1,
-    second:2
+    first:2,
+    second:1
 }

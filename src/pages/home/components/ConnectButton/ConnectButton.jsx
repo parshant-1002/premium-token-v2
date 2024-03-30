@@ -29,12 +29,11 @@ export default function ConnectButton() {
   const handleClose = () => {
     setPopup(false);
   };
+
   const handleOpenWinnerModal = (signature) => {
     setPopup({ signature, walletAddress: publicKey });
   };
 
-  
-  
 
   const handleConnectClick = async () => {
     

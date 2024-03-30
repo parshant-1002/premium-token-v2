@@ -18,10 +18,9 @@ function findTrueKey(obj) {
   return null; // Return null if no true value is found
 }
 
-export const transformClaimPrizeData = (data = {}) => {
+export const transformClaimPrizeData = (data = {}, prizeSelected) => {
   const {
     walletAddress,
-    prizeSelected,
     name,
     dob,
     phoneNumber,
