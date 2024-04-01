@@ -28,7 +28,7 @@ const Home = () => {
   const dispatch = useDispatch()
   const socket = useSocket();
 
-  useEffect(()=>{ 
+  useEffect(()=> {
     dispatch(getContent({},(data, status)=>{
       if(status === STATUS.SUCCESS){
         const mergedContent = merge({}, DEFAULT_CONTENT, data);

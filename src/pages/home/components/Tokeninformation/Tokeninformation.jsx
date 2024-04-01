@@ -27,7 +27,7 @@ const Tokeninformation = ({content = {}}) => {
 
 	const renderStats = (value = {}, index, colorOptions) => {		
 		const { title,subTitle, percentage, description} = value;
-		return <div className="token-column-iner">
+		return <div key={`${title}-${index}`} className="token-column-iner">
 			<div className="token-column-button">
 				<button className="bg-green-600" style={{ backgroundColor: colorOptions[index]}}><SafeHTML html={percentage}/>%</button>
 			</div>

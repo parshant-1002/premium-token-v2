@@ -84,7 +84,7 @@ const RoadMap = ({content = {}}) => {
       <div className="roadmap_wrap">
         <CustomSlick slidesToShow={6} responsive={responsiveConfig}>
           {modifiedRoadMap?.map((item, index)=>{
-            return <div key={item?._id} className={`timeline-item ${item?.level <= blockChainData?.roadMapLevel ? "active" : ""}`}>
+            return <div key={`${item?._id}-${index}`} className={`timeline-item ${item?.level <= blockChainData?.roadMapLevel ? "active" : ""}`}>
                 <div className="timeline_block text-start text-md-center">
                   <h6 className="h6"><SafeHTML html={item?.title}/></h6>
                   <span className="text-white"><SafeHTML html={item?.completionTitle} /> <span className="text-success"><SafeHTML html={`${item?.completionTime} days`} /></span></span>

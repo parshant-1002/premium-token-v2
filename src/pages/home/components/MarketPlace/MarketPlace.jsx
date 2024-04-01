@@ -44,8 +44,8 @@ const MarketPlace = ({ content = {} }) => {
         <div className="market-row">
           <CustomSlick slidesToShow={3} responsive={responsiveConfig}>
             {
-              cars?.map((item) =>
-                <div className="market-col">
+              cars?.map((item, index) =>
+                <div key={`${item?.title}-${index}`} className="market-col">
                   <Card car={item} />
                 </div>
               )

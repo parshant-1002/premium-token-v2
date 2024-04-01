@@ -35,6 +35,7 @@ const InformationSection = ({ content = {} }) => {
           <div className="card-slider-row">
             <CustomSlick responsive={responsiveConfig}>
               {rulesToWin?.map((item, index)=><InformationCard
+                  key={`${item?.title}-${index}`}
                   illustration={addBaseUrlToUrls(item.imageUrl)}
                   title={item?.title}
                   description = {item?.description}

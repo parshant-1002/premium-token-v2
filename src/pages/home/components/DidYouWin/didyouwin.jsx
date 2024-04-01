@@ -54,7 +54,7 @@ const DidYouWin = ({content = {}}) => {
 				<div className="card-slider-row did-you-win-row">
 					<CustomSlick slidesToShow={1} responsive={responsiveConfig}>
 						{rules?.map((item, index) =>
-							<div className="col-lg-3">
+							<div key={`${item?.title}-${index}`} className="col-lg-3">
 								<div className="card-box-green position-relative">
 									<div className="card-counter">
 										<span className="card-counter-no">{index+1} </span>

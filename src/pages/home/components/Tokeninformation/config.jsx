@@ -111,7 +111,7 @@ export const AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA = (data = {}) => {
     },
     tiktokProfileURL: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover link={discord?.link} onClick={() => { redirectToUrlInNewTab(discord?.link) }} iconUrl={addBaseUrlToUrls(tiktok?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(tiktok?.hovers)} />,
+        icon: <RenderIconWithHover link={tiktok?.link} onClick={() => { redirectToUrlInNewTab(tiktok?.link) }} iconUrl={addBaseUrlToUrls(tiktok?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(tiktok?.hovers)} />,
         className: 'col-md-4',
         placeholder: tiktok?.placeholder,
     },

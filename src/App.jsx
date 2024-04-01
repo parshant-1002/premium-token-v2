@@ -9,6 +9,7 @@ import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import { endpoint } from './shared/constants';
 import { PhantomWalletAdapter } from '@solana/wallet-adapter-wallets';
+import Loader from './shared/components/loader';
 import RootRouter from './routes/RootRouter';
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -51,7 +52,7 @@ function App() {
                         <PersistGate loading={null} persistor={persistor}>
                             <HelmetProvider>
                                 <BrowserRouter>
-                                    {/* <Loader /> */}
+                                    <Loader />
                                     <ScrollToTop />
                                     <ToastContainer autoClose={3000} limit={3} />
                                     <RootRouter />
