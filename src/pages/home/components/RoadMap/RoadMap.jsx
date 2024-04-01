@@ -10,7 +10,7 @@ const RoadMap = ({content = {}}) => {
   const{title, roadMap} = content
   const responsiveConfig = [
     {
-      breakpoint: 1570,
+      breakpoint: 1620,
       settings: {
         slidesToShow: 5,
         slidesToScroll: 1,
