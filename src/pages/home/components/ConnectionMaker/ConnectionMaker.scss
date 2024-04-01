@@ -34,8 +34,11 @@
                 @include flexbox;
                 @include align-items(center);
                 width: 100%;
-                margin-bottom: 32px;
+                margin-bottom: 15px;
                 text-align: $left;
+                &:nth-last-of-type(1) {
+                    margin-bottom: 32px;
+                }
                 span {
                     color: $text-color;
                     text-overflow: ellipsis;
