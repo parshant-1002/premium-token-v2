@@ -2,7 +2,7 @@ import { ICONS } from "../../../../assets";
 import { Each } from "../../../../shared/components/Each";
 import { RenderIconWithHover } from "../../../../shared/components/RenderIconWithHover";
 import SafeHTML from "../../../../shared/components/SanitizeHtml";
-import { addBaseUrlToUrls } from "../../../../shared/utilities";
+import { addBaseUrlToUrls, redirectToUrlInNewTab } from "../../../../shared/utilities";
 import "./Featured.scss";
 
 const Featured = ({content = {}}) => {
@@ -15,7 +15,7 @@ const Featured = ({content = {}}) => {
 				</div>
 				<div className="featured-row">
 					<Each of={features} render={(item, index) => (
-						<div className="fetured-image" key={index}>
+						<div className="fetured-image" key={index} onClick={() => redirectToUrlInNewTab(item?.url)}>
 							<RenderIconWithHover iconUrl={addBaseUrlToUrls(item?.imageUrl)} hoverIconUrl={addBaseUrlToUrls(item?.hovers)}/>
 						</div>
 					)}/>

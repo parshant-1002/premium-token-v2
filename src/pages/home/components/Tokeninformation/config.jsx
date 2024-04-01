@@ -66,7 +66,7 @@ export const AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA = (data = {}) => {
     return {
     walletAddress: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover onClick ={ ()=>{redirectToUrlInNewTab(premiumToken?.link)} } iconUrl={addBaseUrlToUrls(premiumToken?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(premiumToken?.hovers)} />,
+        icon: <RenderIconWithHover link={premiumToken?.link} onClick ={ ()=>{redirectToUrlInNewTab(premiumToken?.link)} } iconUrl={addBaseUrlToUrls(premiumToken?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(premiumToken?.hovers)} />,
         className: 'col-md-4',
         placeholder: premiumToken?.placeholder,
         schema: (data)=>({
@@ -81,37 +81,37 @@ export const AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA = (data = {}) => {
     },
     twitterProfileURL: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover onClick={() => { redirectToUrlInNewTab(twitter?.link) }}  iconUrl={addBaseUrlToUrls(twitter?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(twitter?.hovers)} />,
+        icon: <RenderIconWithHover  link={twitter?.link} onClick={() => { redirectToUrlInNewTab(twitter?.link) }}  iconUrl={addBaseUrlToUrls(twitter?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(twitter?.hovers)} />,
         className: 'col-md-4',
         placeholder: twitter?.placeholder,
     },
     telegramUsername: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover onClick={() => { redirectToUrlInNewTab(telegram?.link) }} iconUrl={addBaseUrlToUrls(telegram?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(telegram?.hovers)} />,
+        icon: <RenderIconWithHover  link={telegram?.link} onClick={() => { redirectToUrlInNewTab(telegram?.link) }} iconUrl={addBaseUrlToUrls(telegram?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(telegram?.hovers)} />,
         className: 'col-md-4',
         placeholder: telegram?.placeholder,
     },
     instagramProfileURL: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover onClick={() => { redirectToUrlInNewTab(instagram?.link) }}  iconUrl={addBaseUrlToUrls(instagram?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(instagram?.hovers)} />,
+        icon: <RenderIconWithHover link={instagram?.link} onClick={() => { redirectToUrlInNewTab(instagram?.link) }}  iconUrl={addBaseUrlToUrls(instagram?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(instagram?.hovers)} />,
         className: 'col-md-4',
         placeholder: instagram?.placeholder,
     },
     facebookProfileURL: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover onClick={() => { redirectToUrlInNewTab(facebook?.link) }}  iconUrl={addBaseUrlToUrls(facebook?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(facebook?.hovers)} />,
+        icon: <RenderIconWithHover link={facebook?.link} onClick={() => { redirectToUrlInNewTab(facebook?.link) }}  iconUrl={addBaseUrlToUrls(facebook?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(facebook?.hovers)} />,
         className: 'col-md-4',
         placeholder: facebook?.placeholder,
     },
     discordUsername: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover onClick={() => { redirectToUrlInNewTab(discord?.link) }} iconUrl={addBaseUrlToUrls(discord?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(discord?.hovers)} />,
+        icon: <RenderIconWithHover link={discord?.link} onClick={() => { redirectToUrlInNewTab(discord?.link) }} iconUrl={addBaseUrlToUrls(discord?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(discord?.hovers)} />,
         className: 'col-md-4',
         placeholder: discord?.placeholder,
     },
     tiktokProfileURL: {
         type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover onClick={() => { redirectToUrlInNewTab(tiktok?.link) }} iconUrl={addBaseUrlToUrls(tiktok?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(tiktok?.hovers)} />,
+        icon: <RenderIconWithHover link={discord?.link} onClick={() => { redirectToUrlInNewTab(discord?.link) }} iconUrl={addBaseUrlToUrls(tiktok?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(tiktok?.hovers)} />,
         className: 'col-md-4',
         placeholder: tiktok?.placeholder,
     },
