@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import "./Header.scss";
 import { Link } from "react-router-dom";
 import WinnerPopup from "./WinnerPopup/WinnerPopup";
+import { ROUTES } from "../../../../shared/constants/routes";
 
 const Header = ({ content = {}, partnersContent, winnerPopup }) => {
 	const { twitter, discord, telegram, viewChartButton, airdropButton, buyTokenButton, premiumTokenTitle } = content
@@ -85,8 +86,8 @@ const Header = ({ content = {}, partnersContent, winnerPopup }) => {
 				<div className="mobileMenuList d-xl-none justify-content-between flex-column flex-xl-row align-items-center gap-12">
 
 					<div className="w-100 d-flex header_toggle">
-						<Link className="navbar-brand" href={"/"}>
-							<RenderIconWithHover iconUrl={addBaseUrlToUrls(premiumTokenTitle)} hoverIconUrl={"./img-1.svg"} defaultIcon={ICONS.Logo} />
+						<Link className="navbar-brand" to={ROUTES.HOMEPAGE}>
+							<RenderIconWithHover iconUrl={addBaseUrlToUrls(premiumTokenTitle)} hoverIconUrl={addBaseUrlToUrls(premiumTokenTitle)} defaultIcon={ICONS.Logo} />
 						</Link>
 
 						<button className="close_menu" onClick={toggleMenu}>

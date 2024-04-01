@@ -14,6 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "@solana/wallet-adapter-react-ui/styles.css";
 import './App.scss';
+import ScrollToTop from './pages/home/components/ScrollTop/ScrollToTop';
 
 function App() {
     const [scrolled, setScrolled] = useState(false);
@@ -51,6 +52,7 @@ function App() {
                             <HelmetProvider>
                                 <BrowserRouter>
                                     {/* <Loader /> */}
+                                    <ScrollToTop />
                                     <ToastContainer autoClose={3000} limit={3} />
                                     <RootRouter />
                                 </BrowserRouter>
