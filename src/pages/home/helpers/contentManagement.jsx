@@ -186,7 +186,7 @@ export const DEFAULT_CONTENT = {
     [SectionTypes.VIDEO_SECTION]: {
         "title": "",
         "description": "",
-        "videoUrl": VIDEOS.DemoVideo,
+        "videoUrl": "",
     },
     [SectionTypes.PRIZE_SECTION]: {
         [PrizeSectionEnum.LATEST_WINNER_DETAILS]: {
