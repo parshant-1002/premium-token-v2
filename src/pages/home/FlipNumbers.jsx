@@ -3,8 +3,10 @@ import "./flipnumber.scss"
 import { formatNumber } from '../../shared/constants/utils';
 
 const SmoothFlipCounter = ({ initialValue, socket }) => {
-    const [value, setValue] = useState(0);
-
+    const [value, setValue] = useState(initialValue);
+  useEffect(()=>{
+    setValue(initialValue)
+  },[initialValue])
     useEffect(() => {
         if (socket) {
             socket.on('blockChainData', (data) => {

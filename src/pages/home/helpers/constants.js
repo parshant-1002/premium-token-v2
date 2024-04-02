@@ -36,7 +36,7 @@ export const options = (innerTitle, tokenSupply) => ({
                         fontSize: window.innerWidth > 768 ? '16px' : '14px', // Adjust font size based on screen width
                         fontFamily: 'Lato',
                         fontWeight: 800,
-                        color: "#A7D7CF",
+                        color: "#40d1b4",
                         formatter: function (w) {
                             return tokenSupply 
                         }
