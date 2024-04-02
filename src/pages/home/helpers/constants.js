@@ -1,5 +1,7 @@
 export const secondHalfColorOptions = ["#4C7570", "#256059", "#389989", "#71AFA5"]
 export const firstHalfColorOptions = ["#031815", "#0D2624", "#1F423D", "#3D615D"]
+
+export const colors = [...firstHalfColorOptions, ...secondHalfColorOptions];
 export const options = (innerTitle, tokenSupply) => ({
     colors: [...firstHalfColorOptions, ...secondHalfColorOptions],
     chart: {
@@ -139,4 +141,9 @@ export const options = (innerTitle, tokenSupply) => ({
 
 export const BUTTON_LABELS = {
     Continue: "Continue"
+}
+export const mapDonutChartData = (data) => {
+    return (data || []).map((value, index) => {
+        return { label: '', value: value, color:  colors[index] }
+    });
 }
