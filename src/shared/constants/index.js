@@ -72,7 +72,7 @@ export const VALIDATION_REGEX = {
 /* Constants for RPC Connection the Solana Blockchain */
 export const commitmentLevel = "processed";
 export const endpoint =
-    import.meta.env.NEXT_PUBLIC_ALCHEMY_RPC_URL || clusterApiUrl("devnet");
+    import.meta.env.VITE_PUBLIC_ALCHEMY_RPC_URL || clusterApiUrl(import.meta.env.VITE_ENVIRONMENT === "production" ? "mainnet-beta" : "devnet");
 export const connection = new Connection(endpoint, commitmentLevel);
 
 
