@@ -3,7 +3,7 @@ import Chart from 'react-apexcharts';
 import { options } from '../../helpers/constants';
 import './style.scss';
 import { useSelector } from 'react-redux';
-import { convertToAppropriateUnit } from '../../../../shared/utilities';
+import { convertToLocale } from '../../../../shared/utilities';
 
 const DoughnutChart = ({ series, innerTitle }) => {
   const blockChainData = useSelector(
@@ -16,7 +16,7 @@ const DoughnutChart = ({ series, innerTitle }) => {
       setChartOptions(() =>
         options(
           innerTitle,
-          convertToAppropriateUnit(blockChainData?.tokenSupply, 0)
+          convertToLocale(blockChainData?.tokenSupply)
         )
       );
     }

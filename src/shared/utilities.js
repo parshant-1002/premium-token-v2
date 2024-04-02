@@ -71,3 +71,13 @@ export const handleAirdropClick = ()=>{
     }
 
 }
+
+export const convertToLocale = (number)=> {
+    if(isNaN(number)) {
+        return number
+    }
+    number = Number(number);
+    number = Number.isInteger(number) ? number : number.toFixed(2);
+    let localeCode = 'en-US';
+    return number.toLocaleString(localeCode);  
+}
