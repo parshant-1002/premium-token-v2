@@ -62,7 +62,7 @@ $size44: 44px;
       }
       p {
         font-weight: $font-bold;
-        @include font-size(1);
+        @include font-size(.875);
       }
     }
   }
