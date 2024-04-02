@@ -16,9 +16,9 @@ function DocumentTitle({ isAuthenticated = false }) {
   const title = matchedRoute ? matchedRoute.title : '';
   return (
     <Helmet>
-      <title>Premium token</title>
+      <title>PremiumToken - Buy, hold and win</title>
       <meta title={title} />
-      <meta name="description" content="Join a community of like minded people who share your interests, and make new friends today!" />
+      <meta name="description" content="Buy, hold and win $250,000, our smart contract will automatically draw a winner at each $10M market cap that we reach!" />
     </Helmet>
   );
 }

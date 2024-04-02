@@ -53,7 +53,7 @@
         color: $text-color;
         text-overflow: ellipsis;
         font-weight: $font-bold;
-        @include font-size (.725);
+        @include font-size (0.938);
         overflow: $hidden;
         line-height: 1.6;
         white-space: nowrap;
