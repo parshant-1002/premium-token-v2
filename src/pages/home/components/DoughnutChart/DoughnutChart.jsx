@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
 import { mapDonutChartData } from "../../helpers/constants";
 import { useSelector } from "react-redux";
-import { convertToAppropriateUnit } from "../../../../shared/utilities";
+import { convertToAppropriateUnit, convertToLocale } from "../../../../shared/utilities";
 import "./style.scss"
 const MyD3Component = ({ series, innerTitle }) => {
   const ref = useRef();
@@ -126,17 +126,16 @@ const MyD3Component = ({ series, innerTitle }) => {
       // Add label and text on the center
       svg
         .append("text")
-        .text(innerTitle?.toUpperCase() || "")
+        .text(innerTitle || "")
         .attr("text-anchor", "middle")
         .attr("font-size", "18px")
         .attr("font-weight", "800")
-        .attr("text-transform", "uppercase")
         .attr("y", -10)
-        .style("fill", "#a7d7cf");
+        .style("fill", "#40d1b4");
 
       svg
         .append("text")
-        .text(blockChainData?.tokenSupply ? convertToAppropriateUnit(blockChainData?.tokenSupply, 0) : '')
+        .text(blockChainData?.tokenSupply ? convertToLocale(blockChainData?.tokenSupply) : '')
         .attr("text-anchor", "middle")
         .attr("font-size", "24px")
         .attr("font-weight", "800")
