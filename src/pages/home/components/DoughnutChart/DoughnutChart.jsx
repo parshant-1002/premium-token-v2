@@ -85,13 +85,13 @@ const MyD3Component = ({ series, innerTitle }) => {
           const angle = midangle < Math.PI ? 1 : -1; // Determine the angle based on the position of posB
 
           // Calculate the distance between posB and posC
-          const distanceBC = Math.sqrt((posA[0] - posB[0]) ** 2 + (posA[1] - posB[1]) ** 2) + 35;
+          const distanceBC = Math.sqrt((posA[0] - posB[0]) ** 2 + (posA[1] - posB[1]) ** 2) + 20;
 
           // Determine the direction of posC based on the angle
           const posC = angle === 1 ?
             [posB[0] + distanceBC, posB[1]] :  // If angle is on the left side, position to the left
             [posB[0] - distanceBC, posB[1]];   // If angle is on the right side, position to the right
-
+          posB[0] = posB[0] + angle * 15;
           return [posA, posB, posC];
         });
 
@@ -111,8 +111,7 @@ const MyD3Component = ({ series, innerTitle }) => {
           const midangle = d.startAngle + (d.endAngle - d.startAngle) / 2;
           const angle = midangle < Math.PI ? 1 : -1; // Determine the angle based on the position of posB
           // Calculate the distance between posB and posC
-          const distanceBC = Math.sqrt((posA[0] - posB[0]) ** 2 + (posA[1] - posB[1]) ** 2);
-          console.log('distanceBC: ', distanceBC);
+          const distanceBC = Math.sqrt((posA[0] - posB[0]) ** 2 + (posA[1] - posB[1]) ** 2) - 15;
 
           // Determine the direction of posC based on the angle
           const posC = angle === 1 ?
