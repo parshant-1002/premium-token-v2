@@ -157,7 +157,7 @@ const MyD3Component = ({ series, innerTitle }) => {
         .attr("text-anchor", "middle")
         .attr("font-size", calculateFontSize(24, 0.5))
         .attr("font-weight", "800")
-        .attr("y", 20)
+        .attr("y", window.innerWidth > 768 ? 20 : 10)
         .style("fill", "white");
 
       svg.append("path")
