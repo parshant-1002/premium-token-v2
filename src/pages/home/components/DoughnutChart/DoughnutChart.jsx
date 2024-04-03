@@ -5,11 +5,11 @@ import { useSelector } from "react-redux";
 import { convertToAppropriateUnit, convertToLocale } from "../../../../shared/utilities";
 import "./style.scss";
 
-const calculateFontSize = (size) => {
+const calculateFontSize = (size, resizer = 0.6) => {
   if (window.innerWidth > 768) {
     return `${size}px`; // Font size for larger screens
   } else {
-    return `${size - 5}px`; // Font size for smaller screens
+    return `${size * resizer}px`; // Font size for smaller screens
   }
 };
 
@@ -21,7 +21,7 @@ const MyD3Component = ({ series, innerTitle }) => {
   useEffect(() => {
     const updateDimensions = () => {
       setDimensions({
-        width: window.innerWidth > 768 ? 600 : window.innerWidth,
+        width: window.innerWidth > 768 ? 600 : window.innerWidth > 400 ? 400 : (window.innerWidth - 10),
         height: window.innerWidth > 768 ? 600 : 400
       });
     };
@@ -155,7 +155,7 @@ const MyD3Component = ({ series, innerTitle }) => {
         .append("text")
         .text(blockChainData?.tokenSupply ? convertToLocale(blockChainData?.tokenSupply) : '')
         .attr("text-anchor", "middle")
-        .attr("font-size", calculateFontSize(24))
+        .attr("font-size", calculateFontSize(24, 0.5))
         .attr("font-weight", "800")
         .attr("y", 20)
         .style("fill", "white");
