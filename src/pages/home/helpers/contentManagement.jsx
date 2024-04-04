@@ -229,10 +229,10 @@ export const DEFAULT_CONTENT = {
                 "type": "2",
                 "imageUrl": ICONS.PrizeTypeToken
             },
-            {
-                "type": "1",
-                "imageUrl": ICONS.PrizeTypeCar
-            }
+            // {
+            //     "type": "1",
+            //     "imageUrl": ICONS.PrizeTypeCar
+            // }
         ]
     },
     [SectionTypes.WINNER_RULES_SECTION]: {
@@ -573,10 +573,10 @@ export const DEFAULT_CONTENT = {
                     "title": "",
                     "imageUrl": ICONS.PrizeTypeToken
                 },
-                "prize2": {
-                    "title": "",
-                    "imageUrl": ICONS.PrizeTypeCar
-                }
+                // "prize2": {
+                //     "title": "",
+                //     "imageUrl": ICONS.PrizeTypeCar
+                // }
             },
             "continueButton": {
                 "text": ""
