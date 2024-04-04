@@ -50,14 +50,14 @@ export default function Step1({
             }}
             imageUrl={prizeSection?.prize1?.imageUrl}
           />
-          <Prize
+          {/* <Prize
             label={"Supercar to a value of $250,000"}
             prizeSelected={prizeSelected.second}
             setPrizeSelected={(checked) =>
               setPrizeSelected({ second: checked })
             }
             imageUrl={prizeSection?.prize2?.imageUrl}
-          />
+          /> */}
 {/* 
           <div className="partners_col">
             <label>{DEFAULT_CONTENT.SELECT_PARTNER}</label>

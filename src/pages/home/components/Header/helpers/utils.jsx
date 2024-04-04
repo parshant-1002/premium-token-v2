@@ -32,7 +32,7 @@ export const transformClaimPrizeData = (data = {}, prizeSelected) => {
   } = data;
   return {
     walletAddress: walletAddress,
-    prizePrefferedtype: prizeType?.[findTrueKey(prizeSelected)],
+    // prizePrefferedtype: prizeType?.[findTrueKey(prizeSelected)],
     fullName: name,
     dateOfBirth: new Date(dob).toISOString(),
     mobileNumber: phoneNumber,
