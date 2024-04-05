@@ -25,7 +25,7 @@ export default function WinnerPopup({ show, onClose, partners, winnerPopup = {},
 
   const handleSubmitStep1 = (data) => {
     setFormData((prev) => ({ ...prev, ...data }));
-    setStepToView(POPUP_TYPE.popUp2);
+    setStepToView(POPUP_TYPE.popUp3);
   };
   const handleSubmitStep2 = (data) => {
     setFormData((prev) => ({ ...prev, ...data }));

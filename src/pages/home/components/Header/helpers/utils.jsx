@@ -28,18 +28,20 @@ export const transformClaimPrizeData = (data = {}, prizeSelected) => {
     city,
     streetAddress,
     zip,
+    socialMedia,
     email,
   } = data;
   return {
     walletAddress: walletAddress,
     // prizePrefferedtype: prizeType?.[findTrueKey(prizeSelected)],
-    fullName: name,
-    dateOfBirth: new Date(dob).toISOString(),
-    mobileNumber: phoneNumber,
-    country: country?.value,
-    city: city?.value,
-    streetAddress: streetAddress,
-    zipCode: zip,
+    // fullName: name,
+    // dateOfBirth: new Date(dob).toISOString(),
+    // mobileNumber: phoneNumber,
+    // country: country?.value,
+    // city: city?.value,
+    // streetAddress: streetAddress,
+    // zipCode: zip,
+    socialMedia,
     email
   };
 };
