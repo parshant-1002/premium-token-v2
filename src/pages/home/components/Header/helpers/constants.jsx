@@ -10,28 +10,28 @@ export const WINNER_MODAL_FORM_SCHEMA =(data, walletAddress)=>{
     return {
 
     step1: {
-        socialMedia: {
-            type: INPUT_TYPES.TEXT,
-            label: <SafeHTML html={popUp1?.socialPlatforms?.title}/>,
-            className: 'form-control col-md-6',
-            placeholder: popUp1?.socialPlatforms?.placeholder,
-            schema: {
-                required: FORM_VALIDATION_MESSAGES().REQUIRED,
-            }
-        },
-        email: {
-            type: INPUT_TYPES.EMAIL,
-            label: <SafeHTML html={popUp1?.email?.title}/>,
-            className: 'form-control col-md-6',
-            placeholder: popUp1?.email?.placeholder,
-            schema: {
-                required: FORM_VALIDATION_MESSAGES().REQUIRED,
-                pattern: {
-                    value: VALIDATION_REGEX.EMAIL,
-                    message: FORM_VALIDATION_MESSAGES().VALID_EMAIL
-                },
-            }
-        },
+        // socialMedia: {
+        //     type: INPUT_TYPES.TEXT,
+        //     label: <SafeHTML html={popUp1?.socialPlatforms?.title}/>,
+        //     className: 'form-control col-md-6',
+        //     placeholder: popUp1?.socialPlatforms?.placeholder,
+        //     schema: {
+        //         required: FORM_VALIDATION_MESSAGES().REQUIRED,
+        //     }
+        // },
+        // email: {
+        //     type: INPUT_TYPES.EMAIL,
+        //     label: <SafeHTML html={popUp1?.email?.title}/>,
+        //     className: 'form-control col-md-6',
+        //     placeholder: popUp1?.email?.placeholder,
+        //     schema: {
+        //         required: FORM_VALIDATION_MESSAGES().REQUIRED,
+        //         pattern: {
+        //             value: VALIDATION_REGEX.EMAIL,
+        //             message: FORM_VALIDATION_MESSAGES().VALID_EMAIL
+        //         },
+        //     }
+        // },
         walletAddress: {
             type: INPUT_TYPES.TEXT,
             label: <SafeHTML html={popUp1?.walletAddress?.title} />,

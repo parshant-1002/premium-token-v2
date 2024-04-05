@@ -41,7 +41,7 @@ export const transformClaimPrizeData = (data = {}, prizeSelected) => {
     // city: city?.value,
     // streetAddress: streetAddress,
     // zipCode: zip,
-    socialMedia,
-    email
+    // socialMedia,
+    // email
   };
 };

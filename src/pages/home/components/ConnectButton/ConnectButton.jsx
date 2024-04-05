@@ -30,13 +30,12 @@ export default function ConnectButton() {
     setPopup(false);
   };
 
-  const handleOpenWinnerModal = (signature) => {
-    setPopup({ signature, walletAddress: publicKey });
+  const handleOpenWinnerModal = () => {
+    setPopup({ walletAddress: publicKey });
   };
 
 
   const handleConnectClick = async () => {
-    
     try {
       if (!wallet) {
         setVisible(true);
@@ -49,17 +48,17 @@ export default function ConnectButton() {
     }
   };
 
-  const handleCallSignMessage = async () => {
+  const handleCallSignMessage = () => {
     try {
-      const response = await handleSignMessage(signMessage);
-      if (response) {
+      // const response = await handleSignMessage(signMessage);
+      // if (response) {
         dispatch(
           checkIfUserIsWinner(
-            { walletAddress: publicKey, signature: response },
+            { walletAddress: publicKey },
             (data, status) => {
               if (status === STATUS.SUCCESS) {
                 if (data?.isWinner) {
-                  handleOpenWinnerModal(response);
+                  handleOpenWinnerModal();
                 } else {
                   toast.error(STRINGS.WINNER_NOT_FOUND);
                 }
@@ -67,7 +66,7 @@ export default function ConnectButton() {
             }
           )
         );
-      }
+      // }
     } catch (error) {
       
     } finally {

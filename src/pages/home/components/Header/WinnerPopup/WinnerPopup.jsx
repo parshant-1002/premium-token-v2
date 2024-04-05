@@ -10,8 +10,11 @@ import { useDispatch } from "react-redux";
 import { claimPrize } from "../../../../../store/actions/WinnerSection";
 import { STATUS } from "../../../../../shared/constants";
 import { toast } from "react-toastify";
+import { handleSignMessage } from "../../../../../shared/utilities";
+import { useWallet } from "@solana/wallet-adapter-react";
 
 export default function WinnerPopup({ show, onClose, partners, winnerPopup = {}, }) {
+  const { signMessage } = useWallet();
   const {popUp1, popUp2, popUp3} = winnerPopup
   const [formData, setFormData] = useState({walletAddress:show?.walletAddress});
   const [stepToShow, setStepToView] = useState(POPUP_TYPE.popUp1);
@@ -31,17 +34,20 @@ export default function WinnerPopup({ show, onClose, partners, winnerPopup = {},
     setFormData((prev) => ({ ...prev, ...data }));
     setStepToView(POPUP_TYPE.popUp3);
   };
-  const handleSure = (data) => {
-    const payload = transformClaimPrizeData(formData, prizeSelected)
-    if(show?.signature){
-      payload.signature = show?.signature
-    }
-    dispatch(claimPrize(payload, (message, status) => {
-      if(status === STATUS.SUCCESS){
-        toast.success(message)
+  const handleSure = async (data) => {
+    const response = await handleSignMessage(signMessage);
+    if (response) {
+      const payload = transformClaimPrizeData(formData, prizeSelected)
+      if(response){
+        payload.signature = response
       }
-    }))
-    handleCloseModal();
+      dispatch(claimPrize(payload, (message, status) => {
+        if(status === STATUS.SUCCESS){
+          toast.success(message)
+        }
+      }))
+      handleCloseModal();
+    }
   };
   const handleCheckAgain = () => {
     setStepToView(POPUP_TYPE.popUp1);
