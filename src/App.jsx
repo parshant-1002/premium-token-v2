@@ -48,7 +48,7 @@ function App() {
     const solFlareWallet = new SolflareWalletAdapter();
     return (
         <ConnectionProvider endpoint={endpoint}>
-            <WalletProvider wallets={[phantomWallet]}>
+            <WalletProvider wallets={[phantomWallet, coinbaseWallet, solFlareWallet]}>
                 <WalletModalProvider>
                     <Provider store={store}>
                         <PersistGate loading={null} persistor={persistor}>
