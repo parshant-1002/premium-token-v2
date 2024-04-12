@@ -26,10 +26,10 @@ export default function WinnerPopup({ show, onClose, partners, winnerPopup = {},
 
   const dispatch = useDispatch()
 
-  const handleSubmitStep1 = (data) => {
-    setFormData((prev) => ({ ...prev, ...data }));
-    setStepToView(POPUP_TYPE.popUp3);
-  };
+  // const handleSubmitStep1 = (data) => {
+  //   setFormData((prev) => ({ ...prev, ...data }));
+  //   setStepToView(POPUP_TYPE.popUp3);
+  // };
   const handleSubmitStep2 = (data) => {
     setFormData((prev) => ({ ...prev, ...data }));
     setStepToView(POPUP_TYPE.popUp3);
@@ -37,7 +37,7 @@ export default function WinnerPopup({ show, onClose, partners, winnerPopup = {},
   const handleSure = async (data) => {
     const response = await handleSignMessage(signMessage);
     if (response) {
-      const payload = transformClaimPrizeData(formData, prizeSelected)
+      const payload = transformClaimPrizeData(data, prizeSelected)
       if(response){
         payload.signature = response
       }
@@ -68,7 +68,7 @@ export default function WinnerPopup({ show, onClose, partners, winnerPopup = {},
             setPrizeSelected={setPrizeSelected}
             partnerSelected={partnerSelected}
             setPartnerSelected={setPartnerSelected}
-            handleSubmitStep1={handleSubmitStep1}
+            handleSubmitStep1={handleSure}
             popUp1 = {popUp1}
             REFORMED_WINNER_MODAL_FORM_SCHEMA={REFORMED_WINNER_MODAL_FORM_SCHEMA}
           />
