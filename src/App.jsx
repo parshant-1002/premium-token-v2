@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import { endpoint } from './shared/constants';
-import { PhantomWalletAdapter } from '@solana/wallet-adapter-wallets';
+import { CoinbaseWalletAdapter, PhantomWalletAdapter, SolflareWalletAdapter } from '@solana/wallet-adapter-wallets';
 import Loader from './shared/components/loader';
 import RootRouter from './routes/RootRouter';
 import 'react-toastify/dist/ReactToastify.css';
@@ -44,6 +44,8 @@ function App() {
     }, []);
 
     const phantomWallet = new PhantomWalletAdapter();
+    const coinbaseWallet = new CoinbaseWalletAdapter();
+    const solFlareWallet = new SolflareWalletAdapter();
     return (
         <ConnectionProvider endpoint={endpoint}>
             <WalletProvider wallets={[phantomWallet]}>
