@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 
 // eslint-disable-next-line react/prop-types
 function DocumentTitle({ isAuthenticated = false }) {
-  const metaSectionContent = useSelector((store) => store.contentManagementReducer.homePageContent.metaSection)
+  const metaSectionContent = useSelector((store) => store.contentManagementReducer.homePageContent)?.metaSection
   const location = useLocation();
   const ROUTES = PUBLIC_ROUTES.concat(
     isAuthenticated ? AUTH_ROUTES : PUBLIC_ROUTES,
