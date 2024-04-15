@@ -12,8 +12,9 @@ import { AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA } from './config';
 import CustomForm from '../../../../shared/components/form/CustomForm/CustomForm';
 import { STATUS } from '../../../../shared/constants';
 import { createAirDrop } from '../../../../store/actions/contentManagement';
-import { hasAtLeastFourValues } from './helpers/utils';
+import { hasAtLeastNumberOfValues } from './helpers/utils';
 import "./airdrop.scss";
+import { REQUIRED_NUMBER_OF_AIDROP_FIELDS } from './helpers/constants';
 
 const initialClickedState = {
   flag: false,
@@ -58,8 +59,8 @@ const handleCallSignMessage = async () => {
 
   const onSubmit = async(data, event, reset) => {
     try {
-      if (!hasAtLeastFourValues(data)) {
-        toast.error("Please complete at least four fields to qualify for the airdrop whitelist.");
+      if (!hasAtLeastNumberOfValues(data, REQUIRED_NUMBER_OF_AIDROP_FIELDS)) {
+        toast.error("Please complete at least two fields to qualify for the airdrop whitelist.");
         return
       }
       if (!wallet) {

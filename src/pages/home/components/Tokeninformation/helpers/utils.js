@@ -1,11 +1,11 @@
-export function hasAtLeastFourValues(obj) {
+export function hasAtLeastNumberOfValues(obj, number) {
     let count = 0;
     for (const key in obj) {
         if (obj[key].trim() !== '') {
             count++;
         }
     }
-    return count >= 4;
+    return count >= number;
 }
 
 export function extractPercentages(obj) {

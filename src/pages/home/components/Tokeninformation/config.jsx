@@ -97,23 +97,23 @@ export const AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA = (data = {}) => {
         className: 'col-md-4',
         placeholder: instagram?.placeholder,
     },
-    facebookProfileURL: {
-        type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover link={facebook?.link} onClick={() => { redirectToUrlInNewTab(facebook?.link) }}  iconUrl={addBaseUrlToUrls(facebook?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(facebook?.hovers)} />,
-        className: 'col-md-4',
-        placeholder: facebook?.placeholder,
-    },
+    // facebookProfileURL: {
+    //     type: INPUT_TYPES.TEXT,
+    //     icon: <RenderIconWithHover link={facebook?.link} onClick={() => { redirectToUrlInNewTab(facebook?.link) }}  iconUrl={addBaseUrlToUrls(facebook?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(facebook?.hovers)} />,
+    //     className: 'col-md-4',
+    //     placeholder: facebook?.placeholder,
+    // },
     discordUsername: {
         type: INPUT_TYPES.TEXT,
         icon: <RenderIconWithHover link={discord?.link} onClick={() => { redirectToUrlInNewTab(discord?.link) }} iconUrl={addBaseUrlToUrls(discord?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(discord?.hovers)} />,
         className: 'col-md-4',
         placeholder: discord?.placeholder,
     },
-    tiktokProfileURL: {
-        type: INPUT_TYPES.TEXT,
-        icon: <RenderIconWithHover link={tiktok?.link} onClick={() => { redirectToUrlInNewTab(tiktok?.link) }} iconUrl={addBaseUrlToUrls(tiktok?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(tiktok?.hovers)} />,
-        className: 'col-md-4',
-        placeholder: tiktok?.placeholder,
-    },
+    // tiktokProfileURL: {
+    //     type: INPUT_TYPES.TEXT,
+    //     icon: <RenderIconWithHover link={tiktok?.link} onClick={() => { redirectToUrlInNewTab(tiktok?.link) }} iconUrl={addBaseUrlToUrls(tiktok?.iconUrl)} hoverIconUrl={addBaseUrlToUrls(tiktok?.hovers)} />,
+    //     className: 'col-md-4',
+    //     placeholder: tiktok?.placeholder,
+    // },
 
 }};
