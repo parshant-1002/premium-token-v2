@@ -1,4 +1,4 @@
-import { useWalletModal } from "@solana/wallet-adapter-react-ui";
+import { WalletMultiButton, useWalletModal } from "@solana/wallet-adapter-react-ui";
 import useIsMounted from "../../../../shared/hooks/useIsMounted";
 import { useEffect, useState } from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
@@ -92,15 +92,7 @@ export default function ConnectButton() {
         />
       )}
       {mounted && (
-        <button
-          type="button"
-          className="btn btn-md btn-secondary"
-          onClick={handleConnectClick}
-        >
-          <span className="transform-none">
-            {publicKey ? publicKeyToWalletAdress(publicKey) : "Connect Wallet"}
-          </span>
-        </button>
+        <WalletMultiButton className="phantom-wallet-button" />
       )}
     </>
   );
