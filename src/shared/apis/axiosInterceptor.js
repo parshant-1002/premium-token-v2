@@ -31,9 +31,6 @@ const createInstance = (baseURL, headers) => {
           console.log("error in interceptor:", e);
         }
       }
-      if(error?.message){
-        toast.error(error?.message);
-      }
       return Promise.reject(error);
     }
   );

@@ -28,7 +28,7 @@ const Airdrop = ({ content = {} }) => {
   const AIRDROP_SCHEMA = AIRDROP_SOCIAL_FIELDS_FORM_SCHEMA(section1)
   const dispatch = useDispatch()
   const { connect, wallet, publicKey, signMessage } = useWallet();
-  const { setVisible } = useWalletModal();
+  const { setVisible, visible } = useWalletModal();
   const [clickedConnect, setClickedConnect] = useState(initialClickedState);
   const [walletConnectCalled, setWalletConnectCalled] = useState(initialClickedState);
   const isSigningMessage = useRef(false);
@@ -52,15 +52,26 @@ const Airdrop = ({ content = {} }) => {
               toast.success(message);
               clickedConnect?.reset();
             }
+            else {
+              toast.error(message);
+            }
           })
         );
       }
     } catch (error) {
+      toast.error(error);
     } finally {
       isSigningMessage.current = false;
       setClickedConnect(initialClickedState);
     }
   };
+  
+  useEffect(() => {
+    if (!visible) {
+      setWalletConnectCalled(false);
+      setClickedConnect(false);
+    }
+  }, [visible])
 
   const onSubmit = (data, event, reset) => {
     try {
@@ -111,12 +122,12 @@ const Airdrop = ({ content = {} }) => {
 
           <div className="whitelisted-row">
             <div className="white-listed-form ">
-              <h4><SafeHTML html={section1?.title}/></h4>
+              <h4><SafeHTML html={section1?.title} /></h4>
               <CustomForm
                 formData={AIRDROP_SCHEMA}
                 onSubmit={onSubmit}
                 defaultValues={{}}
-                submitText={<SafeHTML html={section1?.buttonText}/>}
+                submitText={<SafeHTML html={section1?.buttonText} />}
               />
             </div>
             <div className="airdrop-info">
