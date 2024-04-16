@@ -1,21 +1,22 @@
-import { WalletMultiButton, useWalletModal } from "@solana/wallet-adapter-react-ui";
-import useIsMounted from "../../../../shared/hooks/useIsMounted";
-import { useEffect, useState } from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
-import { shortenString } from "../../../../shared/constants/utils";
+import { WalletMultiButton, useWalletModal } from "@solana/wallet-adapter-react-ui";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { checkIfUserIsWinner } from "../../../../store/actions/WinnerSection";
-import { STATUS } from "../../../../shared/constants";
-import WinnerPopup from "../Header/WinnerPopup/WinnerPopup";
-import { SectionTypes } from "../../helpers/contentManagement";
-import { SIGNATURE_MESSAGE, STRINGS } from "./helpers/constants";
 import { toast } from "react-toastify";
-import { handleSignMessage } from "../../../../shared/utilities";
+import { STATUS } from "../../../../shared/constants";
+import { shortenString } from "../../../../shared/constants/utils";
+import useIsMounted from "../../../../shared/hooks/useIsMounted";
+import { checkIfUserIsWinner } from "../../../../store/actions/WinnerSection";
+import { SectionTypes } from "../../helpers/contentManagement";
+import WinnerPopup from "../Header/WinnerPopup/WinnerPopup";
+import { STRINGS } from "./helpers/constants";
+
 
 export default function ConnectButton() {
   const [popup, setPopup] = useState(false);
   const [clickedConnect, setClickedConnect] = useState(false);
   const [walletConnectCalled, setWalletConnectCalled] = useState(false);
+  const { setVisible, visible } = useWalletModal();
   const content = useSelector(
     (state) => state.contentManagementReducer.homePageContent
   );
@@ -33,9 +34,13 @@ export default function ConnectButton() {
   const handleOpenWinnerModal = () => {
     setPopup({ walletAddress: publicKey });
   };
+  useEffect(() => {
+    if (!visible) {
+      setWalletConnectCalled(false);
+      setClickedConnect(false);
+    }
+  }, [visible])
 
-
-  const { setVisible } = useWalletModal();
   const handleConnectClick = () => {
     setWalletConnectCalled(true);
     if (!wallet) {
@@ -60,8 +65,6 @@ export default function ConnectButton() {
 
   const handleCallSignMessage = () => {
     try {
-      // const response = await handleSignMessage(signMessage);
-      // if (response) {
       dispatch(
         checkIfUserIsWinner(
           { walletAddress: publicKey },
@@ -76,7 +79,6 @@ export default function ConnectButton() {
           }
         )
       );
-      // }
     } catch (error) {
 
     } finally {

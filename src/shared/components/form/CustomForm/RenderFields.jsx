@@ -13,6 +13,7 @@ export const RenderField = ({
   handleInputChange,
   getValues,
   errors,
+  onInput,
   value,
   control,
   options,
@@ -41,6 +42,7 @@ export const RenderField = ({
             maxLength={field?.schema?.maxLength?.value || ''}
             minLength={field?.schema?.minLength?.value || ''}
             icon={field.icon || ''}
+            onInput={onInput}
           />
         );
       case INPUT_TYPES.DATE:
