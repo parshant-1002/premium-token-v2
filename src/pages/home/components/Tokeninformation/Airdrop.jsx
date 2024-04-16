@@ -51,7 +51,7 @@ const Airdrop = ({ content = {} }) => {
           createAirDrop(payload, (message, status) => {
             if (status === STATUS.SUCCESS) {
               toast.success(message);
-              clickedConnect?.reset();
+              // clickedConnect?.reset();
             }
             else {
               toast.error(message);
