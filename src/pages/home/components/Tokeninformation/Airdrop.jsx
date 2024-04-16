@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { toast } from 'react-toastify';
 import { useWalletModal } from '@solana/wallet-adapter-react-ui';
 import { useDispatch } from 'react-redux';
@@ -31,16 +31,16 @@ const Airdrop = ({ content = {} }) => {
   const { setVisible } = useWalletModal();
   const [clickedConnect, setClickedConnect] = useState(initialClickedState);
   const [walletConnectCalled, setWalletConnectCalled] = useState(initialClickedState);
-
-
+  const isSigningMessage = useRef(false);
 
   useEffect(() => {
-    if (clickedConnect?.flag && publicKey) {
+    if (clickedConnect?.flag && publicKey && !isSigningMessage.current) {
       handleCallSignMessage();
     }
   }, [clickedConnect, publicKey])
 
   const handleCallSignMessage = async () => {
+    isSigningMessage.current = true;
     try {
       const response = await handleSignMessage(signMessage)
       if (response) {
@@ -57,6 +57,7 @@ const Airdrop = ({ content = {} }) => {
       }
     } catch (error) {
     } finally {
+      isSigningMessage.current = false;
       setClickedConnect(initialClickedState);
     }
   };
@@ -64,7 +65,7 @@ const Airdrop = ({ content = {} }) => {
   const onSubmit = (data, event, reset) => {
     try {
       if (!hasAtLeastNumberOfValues(data, REQUIRED_NUMBER_OF_AIDROP_FIELDS)) {
-        toast.error("Please complete at least two fields to qualify for the airdrop whitelist.");
+        toast.error("Please complete at least two social media fields to qualify for the airdrop whitelist.");
         return
       }
       setWalletConnectCalled({ flag: true, data, reset })
@@ -115,7 +116,7 @@ const Airdrop = ({ content = {} }) => {
                 formData={AIRDROP_SCHEMA}
                 onSubmit={onSubmit}
                 defaultValues={{}}
-                submitText= {<SafeHTML html={section1?.buttonText}/>}
+                submitText={<SafeHTML html={section1?.buttonText}/>}
               />
             </div>
             <div className="airdrop-info">
