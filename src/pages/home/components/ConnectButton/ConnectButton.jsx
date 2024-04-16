@@ -52,7 +52,6 @@ export default function ConnectButton() {
 
   }
   useEffect(() => {
-    debugger
     if (wallet && walletConnectCalled) {
       handleConnectWallet();
       setWalletConnectCalled(false)
