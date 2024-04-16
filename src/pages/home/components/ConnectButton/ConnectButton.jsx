@@ -15,11 +15,11 @@ import { handleSignMessage } from "../../../../shared/utilities";
 export default function ConnectButton() {
   const [popup, setPopup] = useState(false);
   const [clickedConnect, setClickedConnect] = useState(false);
+  const [walletConnectCalled, setWalletConnectCalled] = useState(false);
   const content = useSelector(
     (state) => state.contentManagementReducer.homePageContent
   );
-  const { connect, wallet, publicKey, signMessage } = useWallet();
-  const { setVisible } = useWalletModal();
+  const { connect, wallet, publicKey } = useWallet();
   const mounted = useIsMounted();
   const dispatch = useDispatch();
   const publicKeyToWalletAdress = (publicKey) => {
@@ -35,40 +35,51 @@ export default function ConnectButton() {
   };
 
 
-  const handleConnectClick = async () => {
-    try {
-      if (!wallet) {
-        setVisible(true);
-      } else {
-        await connect();
-        setClickedConnect(true);
-      }
-    } catch (error) {
-      
+  const { setVisible } = useWalletModal();
+  const handleConnectClick = () => {
+    setWalletConnectCalled(true);
+    if (!wallet) {
+      setVisible(true);
     }
   };
+  const handleConnectWallet = async () => {
+    try {
+      await connect();
+      setClickedConnect(true);
+    } catch (error) {
+      toast.error(STRINGS.WALLET_NOT_CONNECTED);
+    }
+
+  }
+  useEffect(() => {
+    debugger
+    if (wallet && walletConnectCalled) {
+      handleConnectWallet();
+      setWalletConnectCalled(false)
+    }
+  }, [walletConnectCalled, wallet])
 
   const handleCallSignMessage = () => {
     try {
       // const response = await handleSignMessage(signMessage);
       // if (response) {
-        dispatch(
-          checkIfUserIsWinner(
-            { walletAddress: publicKey },
-            (data, status) => {
-              if (status === STATUS.SUCCESS) {
-                if (data?.isWinner) {
-                  handleOpenWinnerModal();
-                } else {
-                  toast.error(STRINGS.WINNER_NOT_FOUND);
-                }
+      dispatch(
+        checkIfUserIsWinner(
+          { walletAddress: publicKey },
+          (data, status) => {
+            if (status === STATUS.SUCCESS) {
+              if (data?.isWinner) {
+                handleOpenWinnerModal();
+              } else {
+                toast.error(STRINGS.WINNER_NOT_FOUND);
               }
             }
-          )
-        );
+          }
+        )
+      );
       // }
     } catch (error) {
-      
+
     } finally {
       setClickedConnect(false);
     }
@@ -92,7 +103,17 @@ export default function ConnectButton() {
         />
       )}
       {mounted && (
-        <WalletMultiButton className="phantom-wallet-button" />
+        !publicKey ?
+          <button
+            type="button"
+            className="btn btn-md btn-secondary"
+            onClick={handleConnectClick}
+          >
+            <span className="transform-none">
+              {publicKey ? publicKeyToWalletAdress(publicKey) : "Connect Wallet"}
+            </span>
+          </button> :
+          <WalletMultiButton className="phantom-wallet-button" />
       )}
     </>
   );

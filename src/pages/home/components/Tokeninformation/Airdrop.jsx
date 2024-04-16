@@ -15,6 +15,7 @@ import { createAirDrop } from '../../../../store/actions/contentManagement';
 import { hasAtLeastNumberOfValues } from './helpers/utils';
 import "./airdrop.scss";
 import { REQUIRED_NUMBER_OF_AIDROP_FIELDS } from './helpers/constants';
+import { STRINGS } from '../ConnectButton/helpers/constants';
 
 const initialClickedState = {
   flag: false,
@@ -29,57 +30,74 @@ const Airdrop = ({ content = {} }) => {
   const { connect, wallet, publicKey, signMessage } = useWallet();
   const { setVisible } = useWalletModal();
   const [clickedConnect, setClickedConnect] = useState(initialClickedState);
+  const [walletConnectCalled, setWalletConnectCalled] = useState(initialClickedState);
 
-  useEffect( () => {
-    if(clickedConnect?.flag && publicKey){
-     handleCallSignMessage();
+
+
+  useEffect(() => {
+    if (clickedConnect?.flag && publicKey) {
+      handleCallSignMessage();
     }
- },[clickedConnect, publicKey])
+  }, [clickedConnect, publicKey])
 
-const handleCallSignMessage = async () => {
-  try {
-    const response = await handleSignMessage(signMessage)
-    if (response){
-      const payload = removeEmptyKeys(clickedConnect?.data)
-      payload.signature = response
-      dispatch(
-        createAirDrop(payload, (message, status) => {
-          if (status === STATUS.SUCCESS) {
-            toast.success(message);
-            clickedConnect?.reset();
-          }
-        })
-      );
-    }
-  } catch (error) {
-  } finally {
-    setClickedConnect(initialClickedState);
-  }
-};
-
-  const onSubmit = async(data, event, reset) => {
+  const handleCallSignMessage = async () => {
     try {
+      const response = await handleSignMessage(signMessage)
+      if (response) {
+        const payload = removeEmptyKeys(clickedConnect?.data)
+        payload.signature = response
+        dispatch(
+          createAirDrop(payload, (message, status) => {
+            if (status === STATUS.SUCCESS) {
+              toast.success(message);
+              clickedConnect?.reset();
+            }
+          })
+        );
+      }
+    } catch (error) {
+    } finally {
+      setClickedConnect(initialClickedState);
+    }
+  };
+
+  const onSubmit = (data, event, reset) => {
+    try {
+      setWalletConnectCalled({ flag: true, data, reset })
       if (!hasAtLeastNumberOfValues(data, REQUIRED_NUMBER_OF_AIDROP_FIELDS)) {
         toast.error("Please complete at least two fields to qualify for the airdrop whitelist.");
         return
       }
       if (!wallet) {
         setVisible(true);
-      } else {
-        await connect();
-        setClickedConnect({
-          flag: true,
-          data: data,
-          reset: reset
-        });
       }
     } catch (error) {
       console.error('Error connecting to wallet:', error);
     }
-  
- 
+
+
   };
 
+  const handleConnectWallet = async (data, reset) => {
+    try {
+      await connect();
+      setClickedConnect({
+        flag: true,
+        data: data,
+        reset: reset
+      });
+    } catch (error) {
+      console.log('error: ', error);
+      toast.error(STRINGS.WALLET_NOT_CONNECTED);
+    }
+
+  }
+  useEffect(() => {
+    if (wallet && walletConnectCalled?.flag) {
+      handleConnectWallet(walletConnectCalled?.data, walletConnectCalled?.reset);
+      setWalletConnectCalled(false)
+    }
+  }, [walletConnectCalled, wallet])
   return (
     <section className="position-relative airdrop_sec" >
       <div className="container">
