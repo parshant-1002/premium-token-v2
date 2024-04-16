@@ -63,11 +63,11 @@ const Airdrop = ({ content = {} }) => {
 
   const onSubmit = (data, event, reset) => {
     try {
-      setWalletConnectCalled({ flag: true, data, reset })
       if (!hasAtLeastNumberOfValues(data, REQUIRED_NUMBER_OF_AIDROP_FIELDS)) {
         toast.error("Please complete at least two fields to qualify for the airdrop whitelist.");
         return
       }
+      setWalletConnectCalled({ flag: true, data, reset })
       if (!wallet) {
         setVisible(true);
       }
