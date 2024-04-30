@@ -40,7 +40,6 @@ const WinnerTable = ({ socket, prize, content }) => {
     );
   }, []);
 
-  console.log(tableData, 'tableDAta<><><><><>');
   function getWinnersData(skip) {
     const payload = {
       skip,

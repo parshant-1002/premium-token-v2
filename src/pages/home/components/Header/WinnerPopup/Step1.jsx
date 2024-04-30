@@ -32,6 +32,7 @@ export default function Step1({
 
     <CustomForm
       formData={REFORMED_WINNER_MODAL_FORM_SCHEMA?.step1}
+      className='winner_popup'
       onSubmit={handleSubmit}
       submitText={continueButton?.text || "Continue"}
       defaultValues={{ socialMedia, walletAddress, email }}

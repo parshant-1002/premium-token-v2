@@ -5,7 +5,7 @@ import { CREATE_AIRDROP_REQUEST, GET_BLOCKCHAIN_DATA, GET_CONTENT_REQUEST, GET_W
 import axios from "../../shared/apis/axiosInterceptor";
 import { setBlockChainData, setContent } from "../actions/contentManagement";
 
-function* getContent({ payload, callback = ()=>{} }) {
+function* getContent({ payload, callback = () => { } }) {
     try {
         yield put(startLoading());
         const { data, status } = yield axios({
@@ -67,14 +67,15 @@ function* createAirDrop({ payload, callback = () => { } }) {
             yield put(stopLoading());
         }
     } catch (error) {
+        console.log('error: ', error);
         yield put(stopLoading());
-        callback('SOMETHING WENT WRONG', STATUS.ERROR);
+        callback(error?.response?.data?.message, STATUS.ERROR);
     } finally {
         yield put(stopLoading());
     }
 }
 
-function* getBlockChainData({  callback = () => { } }) {
+function* getBlockChainData({ callback = () => { } }) {
     try {
         yield put(startLoading());
         const { data, status } = yield axios({

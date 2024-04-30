@@ -41,7 +41,7 @@
 }
 
 .wallet_icon {
-    @include position($absolute, $top:5px, $right:10px);
+        @include position($absolute, $top:5px, $right:10px);
     img {
         width:22px;
     }
@@ -125,4 +125,10 @@
         color: $white-color;
         border: 0;
     }
+}
+
+.winner_popup{
+    .form-control{
+        @include font-size(0.765)
+}
 }

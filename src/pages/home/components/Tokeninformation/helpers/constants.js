@@ -1,0 +1,1 @@
+export const REQUIRED_NUMBER_OF_AIDROP_FIELDS = 3

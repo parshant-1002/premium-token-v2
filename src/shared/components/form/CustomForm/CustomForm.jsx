@@ -27,7 +27,6 @@ function CustomForm({
         reset,
         setValue,
         getValues,
-        // formState,
         control,
         formState: { errors }
     } = useForm({ defaultValues: { ...defaultValues } });
@@ -36,12 +35,10 @@ function CustomForm({
         onChangeValues(name, value);
     };
 
-    // useEffect(() => {
-    //     if (Object.keys(defaultValues).length) {
-    //         reset({ ...defaultValues });
-    //     }
-    // }, [defaultValues]);
-
+    const handleInput = (e) => {
+        const { name, value } = e.target;
+        handleInputChange(name, value);
+    };
     useEffect(() => {
         const subscription = watch((value, { name, type }) => {
             handleStateDataChange(name, value[name], type);
@@ -59,7 +56,7 @@ function CustomForm({
         <form
             id={id}
             className={className}
-            // onSubmit={handleSubmit(onSubmit)}
+        // onSubmit={handleSubmit(onSubmit)}
         >
             {Object.keys(formData).map((key) => {
                 return (
@@ -70,6 +67,7 @@ function CustomForm({
                         handleRegister={handleRegister}
                         handleInputChange={handleInputChange}
                         value={getValues()[key]}
+                        onInput={handleInput}
                         getValues={getValues}
                         errors={errors}
                         control={control}

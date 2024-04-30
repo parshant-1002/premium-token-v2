@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react';
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import { endpoint } from './shared/constants';
-import { CoinbaseWalletAdapter, PhantomWalletAdapter, SolflareWalletAdapter } from '@solana/wallet-adapter-wallets';
+import { CoinbaseWalletAdapter, PhantomWalletAdapter, SolflareWalletAdapter, WalletConnectWalletAdapter } from '@solana/wallet-adapter-wallets';
 import Loader from './shared/components/loader';
 import RootRouter from './routes/RootRouter';
 import 'react-toastify/dist/ReactToastify.css';
@@ -46,9 +46,23 @@ function App() {
     const phantomWallet = new PhantomWalletAdapter();
     const coinbaseWallet = new CoinbaseWalletAdapter();
     const solFlareWallet = new SolflareWalletAdapter();
+    const walletConnectWallet = new WalletConnectWalletAdapter({
+        network: "mainnet-beta",
+        options: {
+            relayUrl: 'wss://relay.walletconnect.com',
+            projectId: import.meta.env.VITE_PROJECT_ID,
+            metadata: {
+                name: 'Premium Token',
+                description: 'Premium Token',
+                url: 'https://github.com/solana-labs/wallet-adapter',
+                icons: ['https://avatars.githubusercontent.com/u/35608259?s=200'],
+            },
+            chains: ['eip155:1'],
+        },
+    });
     return (
         <ConnectionProvider endpoint={endpoint}>
-            <WalletProvider wallets={[phantomWallet, coinbaseWallet, solFlareWallet]}>
+            <WalletProvider wallets={[phantomWallet, coinbaseWallet, solFlareWallet, walletConnectWallet]}>
                 <WalletModalProvider>
                     <Provider store={store}>
                         <PersistGate loading={null} persistor={persistor}>

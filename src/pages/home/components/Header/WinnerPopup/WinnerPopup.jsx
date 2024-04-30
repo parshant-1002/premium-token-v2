@@ -12,6 +12,7 @@ import { STATUS } from "../../../../../shared/constants";
 import { toast } from "react-toastify";
 import { handleSignMessage } from "../../../../../shared/utilities";
 import { useWallet } from "@solana/wallet-adapter-react";
+import "./style.scss";
 
 export default function WinnerPopup({ show, onClose, partners, winnerPopup = {}, }) {
   const { signMessage } = useWallet();
