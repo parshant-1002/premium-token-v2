@@ -12,7 +12,7 @@ import WinnerPopup from "../Header/WinnerPopup/WinnerPopup";
 import { STRINGS } from "./helpers/constants";
 
 
-export default function ConnectButton() {
+export default function ConnectButton({ connectWalletButtonText = "Connect Wallet" }) {
   const [popup, setPopup] = useState(false);
   const [clickedConnect, setClickedConnect] = useState(false);
   const [walletConnectCalled, setWalletConnectCalled] = useState(false);
@@ -111,7 +111,7 @@ export default function ConnectButton() {
             onClick={handleConnectClick}
           >
             <span className="transform-none">
-              {publicKey ? publicKeyToWalletAdress(publicKey) : "Connect Wallet"}
+              {publicKey ? publicKeyToWalletAdress(publicKey) : connectWalletButtonText }
             </span>
           </button> :
           <WalletMultiButton className="phantom-wallet-button" />

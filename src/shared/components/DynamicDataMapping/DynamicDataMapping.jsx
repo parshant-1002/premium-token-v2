@@ -4,13 +4,25 @@ import './style.scss';
 import SafeHTML from '../SanitizeHtml';
 import { ICONS } from '../../../assets';
 import { getContent } from '../../../store/actions/contentManagement';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { STATUS } from '../../constants';
 
 const DynamicDataMapping = ({ pageData = {} }) => {
+    const languageId = useSelector((store) => store.contentManagementReducer.languageId);
     const dispatch = useDispatch()
     useEffect(() => {
-        dispatch(getContent())
-    }, [])
+        if(languageId){
+        const payload = {
+            languageId: languageId
+        }
+            dispatch(getContent(payload, (data, status) => {
+                if (status === STATUS.ERROR){
+                    toast.error(STRINGS.SOMETHING_WENT_WRONG)
+                }
+            }))
+        }
+  
+    }, [languageId])
     return (
         <>
             <div className="static_banner position-relative">

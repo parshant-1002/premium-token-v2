@@ -76,7 +76,7 @@ const DidYouWin = ({content = {}}) => {
 						)}
 					</CustomSlick>
 					<div className="w-100 text-center btn_contain mt-4 pt-2">
-						<ConnectButton/>
+						<ConnectButton connectWalletButtonText={content?.connectWalletButtonText}/>
 					</div>
 				</div>
 			</div>

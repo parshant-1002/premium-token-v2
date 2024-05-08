@@ -19,7 +19,6 @@ const ConnectionMaker = ({ content = {} }) => {
     url,
     auditLinks,
   } = content;
-  console.log(content, 'content<><><><><><>');
   return (
     <section className="connectionMaker position-relative">
       <div className="container position-relative">

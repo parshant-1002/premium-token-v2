@@ -57,7 +57,6 @@ export const handleSignMessage = async (signMessage) => {
         const signatureBase58 = bs58.encode(signature);
         return signatureBase58;
     } catch (err) {
-        console.log(err);
         toast.error(err?.message || 'An error occurred while signing the message');
         return null;
     }

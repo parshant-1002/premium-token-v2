@@ -9,13 +9,12 @@ import { ConnectionMaker } from './components/ConnectionMaker';
 import { Featured } from './components/Featured';
 import { MarketPlace } from './components/MarketPlace';
 import { Tokeninformation } from './components/Tokeninformation';
-import { Partners } from './components/Partners';
 import { Footer } from './components/Footer';
 import { SocialMedia } from './components/SocialMedia';
 import VideoSection from './components/VideoSection';
 import { PremiumToken } from './components/PremiumToken';
 import { useEffect, useMemo, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   getContent,
   setSocketData,
@@ -23,32 +22,46 @@ import {
 import { DidYouWin } from './components/DidYouWin';
 import Airdrop from './components/Tokeninformation/Airdrop';
 import useSocket from '../../shared/hooks/useSocket';
-import { STATUS } from '../../shared/constants';
+import { STATUS, STRINGS } from '../../shared/constants';
 import { DEFAULT_CONTENT, SectionTypes } from './helpers/contentManagement';
 import { merge } from 'lodash';
+import { toast } from 'react-toastify';
 const Home = () => {
   const [content, setContent] = useState(DEFAULT_CONTENT);
+  const languageId = useSelector((store) => store.contentManagementReducer.languageId);
   const dispatch = useDispatch();
   const socket = useSocket();
 
   useEffect(() => {
+    if (languageId){
+      const payload = {
+        languageId: languageId
+      }
+      getData(payload);
+    }
+  }, [languageId]);
+
+  // useEffect(() => {
+  //   if (socket) {
+  //     socket.on('contentData', (data) => {
+  //       dispatch(setSocketData(data?.data));
+  //     });
+  //   }
+  // }, [socket]);
+
+  const getData = (payload = {})=>{
     dispatch(
-      getContent({}, (data, status) => {
+      getContent(payload, (data, status) => {
         if (status === STATUS.SUCCESS) {
           const mergedContent = merge({}, DEFAULT_CONTENT, data);
           setContent(mergedContent);
         }
+        else{
+          toast.error(STRINGS.SOMETHING_WENT_WRONG)
+        }
       })
     );
-  }, []);
-
-  useEffect(() => {
-    if (socket) {
-      socket.on('contentData', (data) => {
-        dispatch(setSocketData(data?.data));
-      });
-    }
-  }, [socket]);
+  }
 
   const getContentData = useMemo(() => (sectionType) => content?.[sectionType], [content]);
 
@@ -58,6 +71,7 @@ const Home = () => {
         content={getContentData(SectionTypes.HEADERS)}
         partnersContent={getContentData(SectionTypes.PARTNERS)}
         winnerPopup={getContentData(SectionTypes.WINNER_POPUP)}
+        getData={getData}
       />}
       {getContentData(SectionTypes.VIDEO_SECTION).isVisible && (
         <VideoSection content={getContentData(SectionTypes.VIDEO_SECTION)} />

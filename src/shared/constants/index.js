@@ -19,7 +19,8 @@ export const API_URLS = {
     CREATE_AIRDROP_REQUEST: VERSION + "/createAirdrop",
     GET_BLOCKCHAIN_DATA: VERSION + "/getBlockChainData",
     CHECK_IS_WINNER: VERSION + "/winnerSelection/checkWinner",
-    POST_PRIZE_SELECTION_DATA : VERSION + "/winnerSelection/claimPrize"
+    POST_PRIZE_SELECTION_DATA : VERSION + "/winnerSelection/claimPrize",
+    GET_LANGUAGE_OPTIONS: VERSION + "/language/list"
 }
 
 export const API_METHODS = {
@@ -78,5 +79,6 @@ export const connection = new Connection(endpoint, commitmentLevel);
 
 export const STRINGS = {
     TEXT_COPIED : (text = "Text") => `${text} copied successfully.`,
-    SOMETHING_WENT_WRONG:"Something went wrong"
+    SOMETHING_WENT_WRONG:"Something went wrong",
+    ERROR_CHANGING_LANGUAGE:"Error while changing the language."
 }

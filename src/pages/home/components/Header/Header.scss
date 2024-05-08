@@ -54,7 +54,7 @@
     outline: 0!important;
     box-shadow: $none!important;
     @media(max-width:1199.98px) {
-      @include position($absolute, $right: 25px, $top: 5px);
+      @include position($absolute, $right: 1  5px, $top: 10px);
     }
     &:focus {
       outline: $none;

@@ -7,8 +7,9 @@ import "./Header.scss";
 import { Link } from "react-router-dom";
 import WinnerPopup from "./WinnerPopup/WinnerPopup";
 import { ROUTES } from "../../../../shared/constants/routes";
+import MultiLanguageSelect from "../MultiLanguageSelect";
 
-const Header = ({ content = {}, partnersContent, winnerPopup }) => {
+const Header = ({ content = {}, partnersContent, winnerPopup, getData = ()=>{} }) => {
 	const { twitter, discord, telegram, viewChartButton, airdropButton, buyTokenButton, premiumTokenTitle } = content
 	const [isSticky, setIsSticky] = useState(false);
 	const handleScroll = () => {
@@ -80,6 +81,9 @@ const Header = ({ content = {}, partnersContent, winnerPopup }) => {
 							</div>
 						</div>
 					</div>
+					
+					<MultiLanguageSelect getData={getData} />
+					
 				</div>
 
 				{/* Responsive Menu */}

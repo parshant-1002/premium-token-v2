@@ -1,0 +1,53 @@
+@import '../../../../assets/scss/base';
+
+.lang_btn {
+    @media (max-width: 1200px) {
+        padding-right: 35px;
+    }
+    .react-select {
+        .react-prefix {
+            &__control {
+                background: $transparent;
+                border: 0;
+            }
+            &__single-value {
+                img {
+                    margin-right: 10px; 
+                    width: 26px;
+                    height: 26px;
+                    object-fit: $cover;
+                    @include border-radius (50%);
+                    background-color: $black-color;
+                }
+            }
+        }
+        .react-prefix {
+            &__menu-list {
+                max-height: 165px;
+            }
+            &__control--menu-is-open {
+                .react-prefix__indicators {
+                    svg {
+                        @include transition (all, .5s, ease-in-out);
+                        @include transform (scale(-1));
+                    }
+                }
+            }
+            &__menu {
+                min-width: 160px;
+                right: 0;                
+            }
+            &__option{
+                img {
+                    width: 16px;
+                    height: 16px;
+                    margin-right: 10px;
+                    object-fit: $cover;
+                    @include border-radius (50%);
+                    background-color: $black-color;
+                }
+            }
+        }
+    }
+}
+

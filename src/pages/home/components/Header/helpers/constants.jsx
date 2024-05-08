@@ -6,7 +6,6 @@ import { FORM_VALIDATION_MESSAGES } from "../../../../../shared/constants/valida
 
 export const WINNER_MODAL_FORM_SCHEMA =(data, walletAddress)=>{
     const { popUp1, popUp2, popUp3 } = data
-    console.log(walletAddress,"walletaddressss")
     return {
 
     step1: {

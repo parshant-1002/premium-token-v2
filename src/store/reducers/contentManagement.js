@@ -1,10 +1,12 @@
 import { REHYDRATE } from "redux-persist";
-import {  SET_BLOCKCHAIN_DATA, SET_CONTENT_REQUEST, SET_SOCKET_DATA } from "../constants";
+import {  SET_BLOCKCHAIN_DATA, SET_CONTENT_REQUEST, SET_LANGUAGE_ID, SET_SOCKET_DATA } from "../constants";
+import { DEFAULT_LANGUAGE_ID } from "../../pages/home/components/MultiLanguageSelect/helpers/constants";
 
 const initialState = {
     homePageContent: {},
     socketContentData : {},
-    blockChainData:{}
+    blockChainData:{},
+    languageId: DEFAULT_LANGUAGE_ID
 };
 
 const contentManagementReducer = (state = initialState, action) => {
@@ -23,6 +25,11 @@ const contentManagementReducer = (state = initialState, action) => {
             return {
                 ...state,
                 blockChainData: action.data
+            };
+        case SET_LANGUAGE_ID:
+            return {
+                ...state,
+                languageId: action.data
             };
         case REHYDRATE:
             let persistedHomePageContent =

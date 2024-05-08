@@ -1,5 +1,3 @@
-import { ICONS, VIDEOS } from "../../../assets";
-
 export const SectionTypes = {
     HEADERS: 'headers',
     VIDEO_SECTION: 'videoSection',
@@ -158,15 +156,15 @@ export const DEFAULT_CONTENT = {
     [SectionTypes.HEADERS]: {
         [HeaderEnum.TWITTER]: {
             "url": "",
-            "image": ICONS.Twitter
+            // "image": ICONS.Twitter
         },
         [HeaderEnum.DISCORD]: {
             "url": "",
-            "image": ICONS.Discord
+            // "image": ICONS.Discord
         },
         [HeaderEnum.TELEGRAM]: {
             "url": "",
-            "image": ICONS.Telegram,
+            // "image": ICONS.Telegram,
         },
         [HeaderEnum.VIEW_CHART_BUTTON]: {
             "url": "",
@@ -174,14 +172,14 @@ export const DEFAULT_CONTENT = {
         },
         [HeaderEnum.AIRDROP_BUTTON]: {
             "url": "",
-            "image": ICONS.Airdrop,
+            // "image": ICONS.Airdrop,
             "text": ""
         },
         [HeaderEnum.BUY_TOKEN_BUTTON]: {
             "url": "",
             "text": ""
         },
-        [HeaderEnum.PREMIUM_TOKEN_TITLE]: ICONS.Logo
+        // [HeaderEnum.PREMIUM_TOKEN_TITLE]: ICONS.Logo
     },
     [SectionTypes.VIDEO_SECTION]: {
         "title": "",
@@ -201,19 +199,19 @@ export const DEFAULT_CONTENT = {
         [PrizeSectionEnum.TITLE]: "",
         [PrizeSectionEnum.RULES_TO_WIN]: [
             {
-                "imageUrl": ICONS.RulesToWin1,
+                // "imageUrl": ICONS.RulesToWin1,
                 "description": ""
             },
             {
-                "imageUrl": ICONS.RulesToWin2,
+                // "imageUrl": ICONS.RulesToWin2,
                 "description": ""
             },
             {
-                "imageUrl": ICONS.RulesToWin3,
+                // "imageUrl": ICONS.RulesToWin3,
                 "description": ""
             },
             {
-                "imageUrl": ICONS.RulesToWin4,
+                // "imageUrl": ICONS.RulesToWin4,
                 "description": ""
             }
         ]
@@ -222,12 +220,12 @@ export const DEFAULT_CONTENT = {
         [WinnerListSectionEnum.TOKEN_HOLDER_TEXT]: "",
         [WinnerListSectionEnum.PRIZE_DESCRIPTION]: "",
         [WinnerListSectionEnum.CONNECT_WALLET_BUTTON_TEXT]: "",
-        noWinnerText: ICONS.NoWinner,
+        // noWinnerText: ICONS.NoWinner,
         noWinnerImageUrl: "",
         [WinnerListSectionEnum.PRIZE]: [
             {
                 "type": "2",
-                "imageUrl": ICONS.PrizeTypeToken
+                // "imageUrl": ICONS.PrizeTypeToken
             },
             // {
             //     "type": "1",
@@ -239,22 +237,22 @@ export const DEFAULT_CONTENT = {
         "title": "",
         "rules": [
             {
-                "imageUrl": ICONS.WinnerRulesSection1,
+                // "imageUrl": ICONS.WinnerRulesSection1,
                 title:"",
                 "description": ""
             },
             {
-                "imageUrl": ICONS.WinnerRulesSection2,
+                // "imageUrl": ICONS.WinnerRulesSection2,
                 title:"",
                 "description": ""
             },
             {
-                "imageUrl": ICONS.WinnerRulesSection3,
+                // "imageUrl": ICONS.WinnerRulesSection3,
                 title:"",
                 "description": ""
             },
             {
-                "imageUrl": ICONS.WinnerRulesSection4,
+                // "imageUrl": ICONS.WinnerRulesSection4,
                 title:"",
                 "description": ""
             }
@@ -268,7 +266,7 @@ export const DEFAULT_CONTENT = {
         "githubTitle": "",
         "githubViewButtonText": "",
         "githubViewButtonUrl": "",
-        "githubLogo": ICONS.GithubLogo,
+        // "githubLogo": ICONS.GithubLogo,
     },
     "roadmapSection": {
         "title": "",
@@ -321,12 +319,12 @@ export const DEFAULT_CONTENT = {
         "title": "",
         "description": "",
         "comingSoonButtonText": "",
-        "imageUrl": ICONS.PremiumTokenMobile
+        // "imageUrl": ICONS.PremiumTokenMobile
     },
     "externalAudit": {
         "title": "",
         "description": "",
-        "image": ICONS.ExternalAudit,
+        // "image": ICONS.ExternalAudit,
         "url": "",
         "downloadDocbutton": "",
         "downloadDocURL": ""
@@ -343,14 +341,14 @@ export const DEFAULT_CONTENT = {
             "text": "",
             "url": ""
         },
-        "imageUrl": ICONS.TokenInfo,
+        // "imageUrl": ICONS.TokenInfo,
     },
     "premiumMarketPlace": {
         "title": "",
         "cars": [
             {
                 "title": "",
-                "imageUrl": ICONS.Marketplace_car1
+                // "imageUrl": ICONS.Marketplace_car1
             },
             // {
             //     "title": "",
@@ -408,39 +406,39 @@ export const DEFAULT_CONTENT = {
     "joinAirdrop": {
         "section1": {
             "premiumToken": {
-                "iconUrl": ICONS.AirdropWallet,
+                // "iconUrl": ICONS.AirdropWallet,
                 "placeholder": "Enter your PremiumToken wallet address",
-                "hovers": ICONS.WalletHover
+                // "hovers": ICONS.WalletHover
             },
             "twitter": {
-                "iconUrl": ICONS.Twitter,
+                // "iconUrl": ICONS.Twitter,
                 "placeholder": "Enter URL to your Twitter profile",
-                "hovers": ICONS.TwitterHover
+                // "hovers": ICONS.TwitterHover
             },
             "telegram": {
-                "iconUrl": ICONS.Telegram,
+                // "iconUrl": ICONS.Telegram,
                 "placeholder": "Enter your Telegram username",
-                "hovers": ICONS.TelegramHover
+                // "hovers": ICONS.TelegramHover
             },
             "instagram": {
-                "iconUrl": ICONS.Instagram,
+                // "iconUrl": ICONS.Instagram,
                 "placeholder": "Enter URL to your Instagram profile",
-                "hovers": ICONS.InstagramHover
+                // "hovers": ICONS.InstagramHover
             },
             "facebook": {
-                "iconUrl": ICONS.Facebook,
+                // "iconUrl": ICONS.Facebook,
                 "placeholder": "Enter URL to your Facebook profile",
-                "hovers": ICONS.FacebookHover
+                // "hovers": ICONS.FacebookHover
             },
             "discord": {
-                "iconUrl": ICONS.Discord,
+                // "iconUrl": ICONS.Discord,
                 "placeholder": "Enter your username on Discord",
-                "hovers": ICONS.DiscordHover
+                // "hovers": ICONS.DiscordHover
             },
             "tiktok": {
-                "iconUrl": ICONS.TikTok,
+                // "iconUrl": ICONS.TikTok,
                 "placeholder": "Enter URL to your TikTok profile",
-                "hovers": ICONS.TikTokHover
+                // "hovers": ICONS.TikTokHover
             },
             "title": "Get whitelisted for AirDrop",
             "buttonText": "Submit airdrop",
@@ -451,17 +449,17 @@ export const DEFAULT_CONTENT = {
             {
                 "_id": "66007a6f54941acef4028177",
                 "title": "",
-                "imageUrl": ICONS.Airdrop_Section_Two_1
+                // "imageUrl": ICONS.Airdrop_Section_Two_1
             },
             {
                 "_id": "66007a6f54941acef4028178",
                 "title": "",
-                "imageUrl": ICONS.Airdrop_Section_Two_2
+                // "imageUrl": ICONS.Airdrop_Section_Two_2
             },
             {
                 "_id": "66007a6f54941acef4028179",
                 "title": "",
-                "imageUrl": ICONS.Airdrop_Section_Two_3
+                // "imageUrl": ICONS.Airdrop_Section_Two_3
             }
         ]
     },
@@ -472,7 +470,7 @@ export const DEFAULT_CONTENT = {
             {
                 "position": "CEO & Product Manager",
                 "name": "Mike Stoneberg",
-                "companyLogo": ICONS.Partner
+                // "companyLogo": ICONS.Partner
             },
 
         ]
@@ -480,30 +478,30 @@ export const DEFAULT_CONTENT = {
     "footers": {
         "twitter": {
             "url": "",
-            "imageUrl": ICONS.Twitter,
+            // "imageUrl": ICONS.Twitter,
             "title": "",
-            "hovers": ICONS.TwitterHover
+            // "hovers": ICONS.TwitterHover
         },
         "discord": {
             "url": "",
-            "imageUrl": ICONS.Discord,
+            // "imageUrl": ICONS.Discord,
             "title": "",
-            "hovers": ICONS.DiscordHover
+            // "hovers": ICONS.DiscordHover
         },
         "telegram": {
             "url": "",
-            "imageUrl": ICONS.Telegram,
+            // "imageUrl": ICONS.Telegram,
             "title": "",
-            "hovers": ICONS.TelegramHover
+            // "hovers": ICONS.TelegramHover
         },
         "airdrop": {
-            "imageUrl": ICONS.Airdrop,
+            // "imageUrl": ICONS.Airdrop,
             "title": "",
             "url": "",
-            "hovers": ICONS.Airdrop
+            // "hovers": ICONS.Airdrop
         },
         "email": {
-            "imageUrl": ICONS.Email,
+            // "imageUrl": ICONS.Email,
             "emailAddress": ""
         },
         "premiumTokenTitle": "",
@@ -515,12 +513,12 @@ export const DEFAULT_CONTENT = {
     "updatedAt": "",
     [SectionTypes.FEATURE_SECTION]: {
         "title": "",
-        "features": [
-            {
-                "imageUrl": ICONS.Featured_Image_1,
-                "hovers": ICONS.Featured_Image_1
-            },
-        ]
+        // "features": [
+        //     {
+        //         "imageUrl": ICONS.Featured_Image_1,
+        //         "hovers": ICONS.Featured_Image_1
+        //     },
+        // ]
     },
     winnerPopUps: {
         "popUp2": {
@@ -566,12 +564,12 @@ export const DEFAULT_CONTENT = {
             "walletAddress": {
                 "title": "",
                 "placeholder": "",
-                "lockbuttonImageUrl": ICONS.AirDropBg
+                // "lockbuttonImageUrl": ICONS.AirDropBg
             },
             "prizeSection": {
                 "prize1": {
                     "title": "",
-                    "imageUrl": ICONS.PrizeTypeToken
+                    // "imageUrl": ICONS.PrizeTypeToken
                 },
                 // "prize2": {
                 //     "title": "",

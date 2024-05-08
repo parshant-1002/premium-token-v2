@@ -1,0 +1,1 @@
+export const DEFAULT_LANGUAGE_ID = "66336b112ee32b0f1d79eb99"

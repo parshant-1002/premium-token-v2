@@ -1,4 +1,4 @@
-import { CREATE_AIRDROP_REQUEST, GET_BLOCKCHAIN_DATA, GET_CONTENT_REQUEST, GET_WINNERS_LIST, SET_BLOCKCHAIN_DATA, SET_CONTENT_REQUEST, SET_SOCKET_DATA } from "../constants";
+import { CREATE_AIRDROP_REQUEST, GET_BLOCKCHAIN_DATA, GET_CONTENT_REQUEST, GET_LANGUAGE_OPTIONS, GET_WINNERS_LIST, SET_BLOCKCHAIN_DATA, SET_CONTENT_REQUEST, SET_LANGUAGE_ID, SET_SOCKET_DATA } from "../constants";
 
 export const getContent = (payload = {}, callback)=>({
     type: GET_CONTENT_REQUEST,
@@ -33,6 +33,12 @@ export const getBlockChainData = (callback) =>({
 }
 )
 
+export const getLanguageOptions = (callback) => ({
+    type: GET_LANGUAGE_OPTIONS,
+    callback,
+}
+)
+
 export const setSocketData = (data) => ({
     type: SET_SOCKET_DATA,
     data
@@ -41,6 +47,12 @@ export const setSocketData = (data) => ({
 
 export const setBlockChainData = (data) => ({
     type: SET_BLOCKCHAIN_DATA,
+    data
+}
+)
+
+export const setLanguageId = (data) => ({
+    type: SET_LANGUAGE_ID,
     data
 }
 )
